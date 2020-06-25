@@ -12,6 +12,7 @@ define( "IMG_TYPE_THUMB", "thumb" );
 define( "CATEGORY_THUMB_WIDTH", 120 );
 define( "JPEG_QUALITY", 85 );
 require( CLASS_PATH . "/courses.php" );
+require( CLASS_PATH . "/lessons.php" );
 function handleException( $exception ) {
   echo "Sorry, a problem occurred. Please try later.";
   error_log( $exception->getMessage() );

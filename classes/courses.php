@@ -104,26 +104,7 @@ class Courses{
         return(array("results" => $list));
 	}
 	
-	public static function getDuplicateList($name)
-	{
-		$conn = new PDO(DB_DSN,DB_USERNAME,DB_PASSWORD);
-		$sql = "SELECT SQL_CALC_FOUND_ROWS * FROM category WHERE cat_name = :name";
-		$stmt = $conn->prepare($sql);
-		$stmt->bindValue(":name",$name,PDO::PARAM_STR);
-		$stmt->execute();
-		$list = array();
-		
-		while($row = $stmt->fetch())
-		{
-			$category = new Category($row);
-			$list[] = $category;
-		}
-		
-		$sql = "SELECT FOUND_ROWS() AS totalRows";
-		$totalRows = $conn->query($sql)->fetch();
-		$conn = null;
-        return(array("results" => $list,"totalRows" => $totalRows[0]));
-	}
+	
 	
 	public static function getCoursesById($id){
 		

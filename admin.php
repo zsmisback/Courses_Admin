@@ -36,6 +36,14 @@ switch ( $action ) {
   deletecourses();
   break;
   
+   case 'addlessons';
+  addlessons();
+  break;
+  
+  case 'viewlessons':
+  viewlessons();
+  break;
+  
   case 'logout':
   logout();
   break;
@@ -167,6 +175,34 @@ function viewcourses(){
 
 
 	require(TEMPLATE_PATH."/listcourses.php");
+}
+
+//Lessons
+
+function addlessons(){
+	
+  if(isset($_POST['submit']))
+  {
+	  $lessons = new Lessons;
+	  $lessons->storeFormValues($_POST);
+	  $lessons->insert();
+	  viewlessons();
+	  return;
+  }
+  
+  
+    $results = array();
+	$data = Courses::getCoursesList();
+	$results['courses'] = $data['results'];
+	require(TEMPLATE_PATH."/addlessons.php");
+}
+
+function viewlessons(){
+	
+	$results = array();
+	$data = Lessons::getLessonsList();
+	$results['lessons'] = $data['results'];
+	require(TEMPLATE_PATH."/listlessons.php");
 }
 
 function login(){
