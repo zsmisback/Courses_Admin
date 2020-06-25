@@ -207,6 +207,12 @@ function addlessons(){
 
 function editlessons(){
 	
+	if(!isset($_GET['lesson_id']) || !$_GET['lesson_id'])
+	{
+		viewlessons();
+		return;
+		
+	}
 	
 	if(isset($_POST['submit']))
 	{
@@ -225,8 +231,35 @@ function editlessons(){
 
 function deletelessons(){
 	
-	$results = array();
-	$results['lessons'] = Lessons::getLessonsById((int)($_GET['lesson_id']));
+	if(!isset($_GET['lesson_id']) || !$_GET['lesson_id'])
+	{
+		viewlessons();
+		return;
+	}
+	
+	$error = '';
+	
+	if(isset($_POST['submit']))
+	{
+		$vpcode = $_POST['vpcode'];
+		if(empty($vpcode))
+		{
+			$error = "Please enter the vpcode";
+		}
+		elseif($vpcode !== "deletethislesson")
+		{
+			$error = "Invalid vpcode";
+		}
+		else
+		{
+			$lessons = new Lessons;
+			$lessons->storeFormValues($_POST);
+			$lessons->deletes();
+			viewlessons();
+		    return;
+		}
+		
+	}
 	require(TEMPLATE_PATH."/deletelessons.php");
 }
 
