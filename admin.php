@@ -28,12 +28,12 @@ switch ( $action ) {
   viewcourses();
   break;
   
-  case 'editcategory':
-  editcategory();
+  case 'editcourses':
+  editcourses();
   break;
   
-  case 'deletecategory';
-  deletecategory();
+  case 'deletecourses';
+  deletecourses();
   break;
   
   case 'logout':
@@ -68,45 +68,46 @@ function addcourses(){
 	   $courses = new Courses;
 	   $courses->storeFormValues($_POST);
 	   $courses->insert();
-	   $courses->insert2();
        $courses->storeUploadedImage($_FILES['image']);
+	   viewcourses();
+	   return;
 
 	
 	}
 	require(TEMPLATE_PATH."/addcourses.php");
 }
 
-function editcategory(){
+function editcourses(){
 	
-	if(!isset($_GET['cat_id']) || !$_GET['cat_id'])
+	if(!isset($_GET['course_id']) || !$_GET['course_id'])
 	{
-		viewcategory();
+		viewcourses();
 		return;
 	}
 	
-	if(isset($_POST['editcat']))
+	if(isset($_POST['submit']))
 	{
 		
 		
 		if (empty($_FILES['image']['name']))
         {			
 		
-              $category = new Category;
-		      $category->storeFormValues($_POST);
-		       $category->editonlytext();
-			   viewcategory();
-		        return;
+              $courses = new Courses;
+		      $courses->storeFormValues($_POST);
+		       $courses->editonlytext();
+			   viewcourses();
+		       return;
 		  
 	  
 	    }
 		else
 		{
-			$category = new Category;
-		    $category->storeFormValues($_POST);
-		     $category->edit();
-			$category->storeUploadedImage($_FILES['image']);
-			viewcategory();
-		    return;
+			$courses = new Courses;
+		    $courses->storeFormValues($_POST);
+		     $courses->edit();
+			$courses->storeUploadedImage($_FILES['image']);
+			viewcourses();
+		       return;
 		}
 		
 		
@@ -116,31 +117,46 @@ function editcategory(){
 
 
     $results = array();
-	$results['category_info'] = Category::getCategoryById((int)$_GET['cat_id']);
-	require(TEMPLATE_PATH."/editcategory.php");
+	$results['courses'] = Courses::getCoursesById((int)$_GET['course_id']);
+	$results['courses_continue'] = Courses::getCoursesById2((int)$_GET['course_id']);
+	require(TEMPLATE_PATH."/editcourses.php");
 }
 
-function deletecategory(){
+function deletecourses(){
 	
-	if(!isset($_GET['cat_id']) || !$_GET['cat_id'])
+	if(!isset($_GET['course_id']) || !$_GET['course_id'])
 	{
-		viewcategory();
+		viewcourses();
 		return;
 	}
 	
-	if(isset($_POST['deletecat']))
+	$error = '';
+	
+	if(isset($_POST['submit']))
 	{
-		
-			$category = new Category;
-			$category->storeFormValues($_POST);
-			$category->deletes();
-			viewcategory();
+		$vpcode = $_POST['vpcode'];
+		if(empty($vpcode))
+		{
+			$error = "Please enter the vpcode";
+		}
+		elseif($vpcode !== "deletethiscourse")
+		{
+			$error = "Invalid vpcode";
+		}
+		else
+		{
+			$courses = new Courses;
+			$courses->storeFormValues($_POST);
+			$courses->deletes();
+			$courses->deleteImages();
+			viewcourses();
 		    return;
+		}
 		
 	}
 	
 	
-	require(TEMPLATE_PATH."/deletecategory.php");
+	require(TEMPLATE_PATH."/deletecourses.php");
 }
 
 function viewcourses(){
@@ -171,10 +187,10 @@ function login(){
 
 function logout(){
 	
-	$_SESSION = array();
+	
 
 
-session_destroy();
+
 
   $_SESSION = array();
    session_destroy();

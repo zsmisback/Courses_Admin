@@ -16,7 +16,8 @@ class Courses{
 	public $course_award=null;
 	public $course_material=null;
 	public $course_age_group=null;
-	
+	public $course_pre_requisite=null;
+	public $course_unique=null;
 	
 	public function __construct($data=array())
 	{
@@ -76,6 +77,14 @@ class Courses{
 		{
 			$this->course_age_group = $data['course_age_group'];
 		}
+		if(isset($data['course_pre_requisite']))
+		{
+			$this->course_pre_requisite = $data['course_pre_requisite'];
+		}
+		if(isset($data['course_unique']))
+		{
+			$this->course_unique = $data['course_unique'];
+		}
 	}
 	
 	public static function getCoursesList()
@@ -123,6 +132,7 @@ class Courses{
 		$stmt = $conn->prepare($sql);
 		$stmt->bindValue(":id",$id,PDO::PARAM_INT);
 		$stmt->execute();
+
 		$row = $stmt->fetch();
 		$conn = null;
 		if($row) return new Courses($row);
@@ -131,13 +141,13 @@ class Courses{
 	public static function getCoursesById2($id){
 		
 		$conn = new PDO(DB_DSN,DB_USERNAME,DB_PASSWORD);
-		$sql = "SELECT * FROM category WHERE cat_id = :id";
+		$sql = "SELECT * FROM courses_continue WHERE course_id = :id";
 		$stmt = $conn->prepare($sql);
 		$stmt->bindValue(":id",$id,PDO::PARAM_INT);
 		$stmt->execute();
 		$row = $stmt->fetch();
 		$conn = null;
-		if($row) return new Category($row);
+		if($row) return new Courses($row);
 	}
 	
 	public function storeFormValues($params){
@@ -226,9 +236,11 @@ class Courses{
 	
 	public function insert(){
 		
-		
+		$token = 'sadkjeawhijwajdilhasilfjaehioryweapirjpway9uprpjrpewahjrej23136513123q08192383431';
+		$token = str_shuffle($token);
+		$token= substr($token,0,10);
 		$conn = new PDO(DB_DSN,DB_USERNAME,DB_PASSWORD);
-		$sql = "INSERT INTO courses(course_name,course_code,course_summary,course_tags,course_by,course_language,course_image)VALUES(:course_name,:course_code,:course_summary,:course_tags,:course_by,:course_language,:course_image)";
+		$sql = "INSERT INTO courses(course_name,course_code,course_summary,course_tags,course_by,course_language,course_image,course_unique)VALUES(:course_name,:course_code,:course_summary,:course_tags,:course_by,:course_language,:course_image,:course_unique)";
 		$stmt = $conn->prepare($sql);
 		$stmt->bindValue(":course_name",$this->course_name,PDO::PARAM_STR);
 		$stmt->bindValue(":course_code",$this->course_code,PDO::PARAM_STR);
@@ -237,17 +249,11 @@ class Courses{
 		$stmt->bindValue(":course_by",$this->course_by,PDO::PARAM_STR);
 		$stmt->bindValue(":course_language",$this->course_language,PDO::PARAM_STR);
 		$stmt->bindValue(":course_image",$this->course_image,PDO::PARAM_STR);
+		$stmt->bindValue(":course_unique",$token,PDO::PARAM_STR);
 		$stmt->execute();
 		$this->course_id = $conn->lastInsertId();
-		$conn = null;
-	}
-	
-	public function insert2(){
-		
-		
-		$conn = new PDO(DB_DSN,DB_USERNAME,DB_PASSWORD);
-		$sql = "INSERT INTO courses_continue(course_rating,course_total_time,course_reading,course_award,course_material,course_age_group)VALUES(:course_rating,:course_total_time,:course_reading,:course_award,:course_material,:course_age_group)";
-		$stmt = $conn->prepare($sql);
+		$sql2 = "INSERT INTO courses_continue(course_rating,course_total_time,course_reading,course_award,course_material,course_age_group,course_pre_requisite,course_unique)VALUES(:course_rating,:course_total_time,:course_reading,:course_award,:course_material,:course_age_group,:course_pre_requisite,:course_unique)";
+		$stmt = $conn->prepare($sql2);
 		
 		$stmt->bindValue(":course_rating",$this->course_rating,PDO::PARAM_STR);
 		$stmt->bindValue(":course_total_time",$this->course_total_time,PDO::PARAM_STR);
@@ -255,10 +261,14 @@ class Courses{
 		$stmt->bindValue(":course_award",$this->course_award,PDO::PARAM_STR);
 		$stmt->bindValue(":course_material",$this->course_material,PDO::PARAM_STR);
 		$stmt->bindValue(":course_age_group",$this->course_age_group,PDO::PARAM_STR);
+		$stmt->bindValue(":course_pre_requisite",$this->course_pre_requisite,PDO::PARAM_STR);
+		$stmt->bindValue(":course_unique",$token,PDO::PARAM_STR);
 		$stmt->execute();
 		$this->course_id = $conn->lastInsertId();
 		$conn = null;
 	}
+	
+	
 	
 	public function edit(){
 		
@@ -274,15 +284,8 @@ class Courses{
 		$stmt->bindValue(":course_image",$this->course_image,PDO::PARAM_STR);
 		$stmt->bindValue(":course_id",$this->course_id,PDO::PARAM_INT);
 		$stmt->execute();
-		$conn = null;
-		
-	}
-	
-	public function edit2(){
-		
-		$conn = new PDO(DB_DSN,DB_USERNAME,DB_PASSWORD);
-		$sql = "UPDATE courses_continue SET course_rating = :course_rating,course_total_time = :course_total_time,course_reading = :course_reading,course_award = :course_award,course_material = :course_material,course_age_group = :course_age_group WHERE course_id = :course_id";
-		$stmt = $conn->prepare($sql);
+		$sql2 = "UPDATE courses_continue SET course_rating = :course_rating,course_total_time = :course_total_time,course_reading = :course_reading,course_award = :course_award,course_material = :course_material,course_age_group = :course_age_group,course_pre_requisite = :course_pre_requisite WHERE course_id = :course_id";
+		$stmt = $conn->prepare($sql2);
 		
 		$stmt->bindValue(":course_rating",$this->course_rating,PDO::PARAM_STR);
 		$stmt->bindValue(":course_total_time",$this->course_total_time,PDO::PARAM_STR);
@@ -290,20 +293,40 @@ class Courses{
 		$stmt->bindValue(":course_award",$this->course_award,PDO::PARAM_STR);
 		$stmt->bindValue(":course_material",$this->course_material,PDO::PARAM_STR);
 		$stmt->bindValue(":course_age_group",$this->course_age_group,PDO::PARAM_STR);
+		$stmt->bindValue(":course_pre_requisite",$this->course_pre_requisite,PDO::PARAM_STR);
 		$stmt->bindValue(":course_id",$this->course_id,PDO::PARAM_INT);
 		$stmt->execute();
 		$conn = null;
 		
 	}
 	
+	
+	
 	public function editonlytext(){
 		
 		$conn = new PDO(DB_DSN,DB_USERNAME,DB_PASSWORD);
-		$sql = "UPDATE category SET cat_name = :cat_name,cat_desc = :cat_desc WHERE cat_id = :cat_id";
+		$sql = "UPDATE courses SET course_name = :course_name,course_code = :course_code,course_summary = :course_summary,course_tags = :course_tags,course_by = :course_by,course_language = :course_language WHERE course_id = :course_id";
 		$stmt = $conn->prepare($sql);
-		$stmt->bindValue(":cat_name",$this->cat_name,PDO::PARAM_STR);
-		$stmt->bindValue(":cat_desc",$this->cat_desc,PDO::PARAM_STR);
-		$stmt->bindValue(":cat_id",$this->cat_id,PDO::PARAM_INT);
+		$stmt->bindValue(":course_name",$this->course_name,PDO::PARAM_STR);
+		$stmt->bindValue(":course_code",$this->course_code,PDO::PARAM_STR);
+		$stmt->bindValue(":course_summary",$this->course_summary,PDO::PARAM_STR);
+		$stmt->bindValue(":course_tags",$this->course_tags,PDO::PARAM_STR);
+		$stmt->bindValue(":course_by",$this->course_by,PDO::PARAM_STR);
+		$stmt->bindValue(":course_language",$this->course_language,PDO::PARAM_STR);
+		
+		$stmt->bindValue(":course_id",$this->course_id,PDO::PARAM_INT);
+		$stmt->execute();
+		$sql2 = "UPDATE courses_continue SET course_rating = :course_rating,course_total_time = :course_total_time,course_reading = :course_reading,course_award = :course_award,course_material = :course_material,course_age_group = :course_age_group,course_pre_requisite = :course_pre_requisite WHERE course_id = :course_id";
+		$stmt = $conn->prepare($sql2);
+		
+		$stmt->bindValue(":course_rating",$this->course_rating,PDO::PARAM_STR);
+		$stmt->bindValue(":course_total_time",$this->course_total_time,PDO::PARAM_STR);
+		$stmt->bindValue(":course_reading",$this->course_reading,PDO::PARAM_STR);
+		$stmt->bindValue(":course_award",$this->course_award,PDO::PARAM_STR);
+		$stmt->bindValue(":course_material",$this->course_material,PDO::PARAM_STR);
+		$stmt->bindValue(":course_age_group",$this->course_age_group,PDO::PARAM_STR);
+		$stmt->bindValue(":course_pre_requisite",$this->course_pre_requisite,PDO::PARAM_STR);
+		$stmt->bindValue(":course_id",$this->course_id,PDO::PARAM_INT);
 		$stmt->execute();
 		$conn = null;
 		
@@ -312,9 +335,13 @@ class Courses{
 	public function deletes(){
 		
 		$conn = new PDO(DB_DSN,DB_USERNAME,DB_PASSWORD);
-		$sql = "DELETE FROM category WHERE cat_id = :cat_id LIMIT 1";
+		$sql = "DELETE FROM courses WHERE course_id = :course_id LIMIT 1";
 		$stmt = $conn->prepare($sql);
-		$stmt->bindValue(":cat_id",$this->cat_id,PDO::PARAM_INT);
+		$stmt->bindValue(":course_id",$this->course_id,PDO::PARAM_INT);
+		$stmt->execute();
+		$sql2 = "DELETE FROM courses_continue WHERE course_id = :course_id LIMIT 1";
+		$stmt = $conn->prepare($sql2);
+		$stmt->bindValue(":course_id",$this->course_id,PDO::PARAM_INT);
 		$stmt->execute();
 		$conn = null;
 	}
