@@ -28,8 +28,9 @@
 											<br>
 											<input class="form-control py-4" id="inputLastName" type="password" placeholder="Re-enter the password" name="re_pass"/>
 											<br>
-											
-											
+											<input class="form-control py-4" id="inputLastName" type="password" placeholder="Enter the vpcode" name="vpcode"/>
+											<br>
+											<p><?php echo $error; ?></p>
                                            
                                             <div class="form-group mt-4 mb-0"><button type='btn btn-primary' name='submit'>Submit</button></div>
                                         </form>

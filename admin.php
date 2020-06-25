@@ -312,11 +312,26 @@ function editusers(){
 		return;
 	}
 	
+	$error = '';
 	if(isset($_POST['submit']))
 	{
+		$vpcode = $_POST['vpcode'];
+		if(empty($vpcode))
+		{
+			$error = "Please enter the vpcode";
+		}
+		elseif($vpcode !== 'edittheuser')
+		{
+			$error = "Invalid vpcode";
+		}
+		else
+		{
 		$users = new Admins;
 		$users->storeFormValues($_POST);
 		$users->edit();
+		viewadmins();
+		return;
+		}
 	}
 	
 	$results['users'] = Admins::getUsersById((int)($_GET['user_id']));
