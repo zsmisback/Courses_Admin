@@ -1,13 +1,13 @@
 <?php include 'header.php'; ?>
  
                     <div class="container-fluid">
-                        <h1 class="mt-4">Courses</h1>
+                        <h1 class="mt-4">Lessons</h1>
                         
                         
                         <div class="card mb-4">
                             <div class="card-header">
                                 <i class="fas fa-table mr-1"></i>
-                                Courses List
+                                Lessons List
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">

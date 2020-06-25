@@ -40,6 +40,14 @@ switch ( $action ) {
   addlessons();
   break;
   
+  case 'editlessons':
+  editlessons();
+  break;
+  
+  case 'deletelessons':
+  deletelessons();
+  break;
+  
   case 'viewlessons':
   viewlessons();
   break;
@@ -195,6 +203,31 @@ function addlessons(){
 	$data = Courses::getCoursesList();
 	$results['courses'] = $data['results'];
 	require(TEMPLATE_PATH."/addlessons.php");
+}
+
+function editlessons(){
+	
+	
+	if(isset($_POST['submit']))
+	{
+		$lessons = new Lessons;
+		$lessons->storeFormValues($_POST);
+		$lessons->edit();
+		viewlessons();
+		return;
+	}
+	$results = array();
+	$data = Courses::getCoursesList();
+	$results['lessons'] = Lessons::getLessonsById((int)($_GET['lesson_id']));
+	$results['courses'] = $data['results']; 
+	require(TEMPLATE_PATH."/editlessons.php");
+}
+
+function deletelessons(){
+	
+	$results = array();
+	$results['lessons'] = Lessons::getLessonsById((int)($_GET['lesson_id']));
+	require(TEMPLATE_PATH."/deletelessons.php");
 }
 
 function viewlessons(){
