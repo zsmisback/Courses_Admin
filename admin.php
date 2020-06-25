@@ -24,11 +24,7 @@ switch ( $action ) {
   addcourses();
   break;
   
-  case 'viewcourses':
-  viewcourses();
-  break;
-  
-  case 'editcourses':
+   case 'editcourses':
   editcourses();
   break;
   
@@ -36,7 +32,11 @@ switch ( $action ) {
   deletecourses();
   break;
   
-   case 'addlessons';
+  case 'viewcourses':
+  viewcourses();
+  break;
+  
+  case 'addlessons';
   addlessons();
   break;
   
@@ -54,6 +54,10 @@ switch ( $action ) {
   
   case 'addadmins':
   addadmins();
+  break;
+  
+  case 'editusers':
+  editusers();
   break;
   
   case 'viewadmins':
@@ -296,6 +300,27 @@ function addadmins(){
 		return;
 	}
 	require(TEMPLATE_PATH."/addadmins.php");
+}
+
+//Edit User and Admin Databases
+
+function editusers(){
+	
+	if(!isset($_GET['user_id']) || !$_GET['user_id'])
+	{
+		viewadmins();
+		return;
+	}
+	
+	if(isset($_POST['submit']))
+	{
+		$users = new Admins;
+		$users->storeFormValues($_POST);
+		$users->edit();
+	}
+	
+	$results['users'] = Admins::getUsersById((int)($_GET['user_id']));
+	require(TEMPLATE_PATH."/editusers.php");
 }
 
 //View Admins
