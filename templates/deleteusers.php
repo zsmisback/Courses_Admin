@@ -6,7 +6,7 @@
                         </ol>
             
                         <form method = "post" enctype="multipart/form-data">
-										<input type='hidden' name='user_id' value='<?php echo $_GET['user_id']; ?>' />
+										<input type='hidden' name='user_id' value='<?php echo $_SESSION['user_id']; ?>' />
 										
 										<input class='form-control' type='password' name='vpcode' placeholder='Please enter your vpcode'/>
 										<p><?php echo $error; ?></p>

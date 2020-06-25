@@ -56,6 +56,14 @@ switch ( $action ) {
   addcomments();
   break;
   
+  case 'editcomments':
+  editcomments();
+  break;
+  
+  case 'deletecomments':
+  deletecomments();
+  break;
+  
   case 'viewcomments':
   viewcomments();
   break;
@@ -217,8 +225,10 @@ function viewcourses(){
 	require(TEMPLATE_PATH."/listcourses.php");
 }
 
-//Lessons
+//Lessons------------------------------------
 
+
+//Add lessons
 function addlessons(){
 	
   if(isset($_POST['submit']))
@@ -305,15 +315,69 @@ function viewlessons(){
 
 //Comments---------------------------
 
+//Add comments
 function addcomments(){
 	
+	if(isset($_POST['submit']))
+	{
+		$comments = new Comments;
+		$comments->storeFormValues($_POST);
+		$comments->insert();
+		dashboard();
+		return;
+	}
+	$data = Lessons::getLessonsList();
+	$results['lessons'] = $data['results'];
 	require(TEMPLATE_PATH."/addcomments.php");
+}
+
+//Edit comments
+function editcomments(){
+	
+	if(!isset($_GET['comment_id']) || !$_GET['comment_id'])
+	{
+		viewcomments();
+		return;
+	}
+	
+	if(isset($_POST['submit']))
+	{
+		$comments = new Comments;
+		$comments->storeFormValues($_POST);
+		$comments->edit();
+		viewcomments();
+		return;
+	}
+	
+	$data = Lessons::getLessonsList();
+	$results['lessons'] = $data['results'];
+	$results['comments'] = Comments::getCommentsById((int)$_GET['comment_id']);
+	require(TEMPLATE_PATH."/editcomments.php");
+}
+
+//Delete Comments
+
+function deletecomments(){
+	
+	if(!isset($_GET['comment_id']) || !$_GET['comment_id'])
+	{
+		viewcomments();
+		return;
+	}
+	
+	$comments = new Comments;
+	$comments->storeFormValues($_POST);
+	$comments->deletes();
+	viewcomments();
+    return;
 }
 
 function viewcomments(){
 	
 	
-	require(TEMPLATE_PATH."/viewcomments.php");
+	$data = Comments::getCommentsList();
+	$results['comments'] = $data['results'];
+	require(TEMPLATE_PATH."/listcomments.php");
 }
 
 //Users--------------------------
@@ -461,13 +525,19 @@ function login(){
 	
 	$error = '';
 	
+	if(isset($_SESSION["loggedin"]))
+	{
+		dashboard();
+		return;
+	}
 	if(isset($_POST['login']))
 	{
 		
 		
 			$_SESSION["loggedin"] = true;
-			dashboard();
-		    return;
+			$_SESSION["username"] = $_POST['email'];
+			header("Location:admin.php?action=dashboard");
+			exit;
 		
 	}
 	require(TEMPLATE_PATH."/login.php");

@@ -6,10 +6,10 @@
                         </ol>
             
                         <form method = "post" enctype="multipart/form-data">
-						<input type="hidden" name="comment_by" value="<?php echo $_SESSION['username']; ?>"/>
+						<input type="hidden" name="comment_id" value="<?php echo $_GET['comment_id']; ?>"/>
 						
                          Comment Summary:                   
-						<textarea class="form-control py-4 ckeditor" id="inputLastName" type="text" placeholder="Comment Summary" name="comment_summary"></textarea>
+						<textarea class="form-control py-4 ckeditor" id="inputLastName" type="text" placeholder="Comment Summary" name="comment_summary"><?php echo $results['comments']->comment_summary; ?></textarea>
 						<br>
 						<div class="form-group">
                         <label for="sel1">Select Lesson:</label>
