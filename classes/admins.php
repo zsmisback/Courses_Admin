@@ -171,15 +171,36 @@ class Admins{
 		
 	}
 	
+//Bans/Unbans a user or an admin
+
+
+    public function ban(){
+		
+		$conn = new PDO(DB_DSN,DB_USERNAME,DB_PASSWORD);
+		$sql = "UPDATE users SET user_ban = :ban WHERE user_id = :user_id";
+		$stmt = $conn->prepare($sql);
+		if($this->user_ban == 0)
+		{
+		$stmt->bindValue(":ban",1,PDO::PARAM_INT);
+		}
+		else
+		{
+		 $stmt->bindValue(":ban",0,PDO::PARAM_INT);
+		}
+		$stmt->bindValue(":user_id",$this->user_id,PDO::PARAM_INT);
+		$stmt->execute();
+		$conn = null;
+	}	
+	
 	
 	
 	
 	public function deletes(){
 		
 		$conn = new PDO(DB_DSN,DB_USERNAME,DB_PASSWORD);
-		$sql = "DELETE FROM lessons WHERE lesson_id = :lesson_id LIMIT 1";
+		$sql = "DELETE FROM users WHERE user_id = :user_id LIMIT 1";
 		$stmt = $conn->prepare($sql);
-		$stmt->bindValue(":lesson_id",$this->lesson_id,PDO::PARAM_INT);
+		$stmt->bindValue(":user_id",$this->user_id,PDO::PARAM_INT);
 		$stmt->execute();
 		$conn = null;
 	}

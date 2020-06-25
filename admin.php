@@ -52,12 +52,28 @@ switch ( $action ) {
   viewlessons();
   break;
   
+  case 'addcomments':
+  addcomments();
+  break;
+  
+  case 'viewcomments':
+  viewcomments();
+  break;
+  
   case 'addadmins':
   addadmins();
   break;
   
   case 'editusers':
   editusers();
+  break;
+  
+  case 'banusers':
+  banusers();
+  break;
+  
+  case 'deleteusers':
+  deleteusers();
   break;
   
   case 'viewadmins':
@@ -287,8 +303,22 @@ function viewlessons(){
 	require(TEMPLATE_PATH."/listlessons.php");
 }
 
-//Users
+//Comments---------------------------
 
+function addcomments(){
+	
+	require(TEMPLATE_PATH."/addcomments.php");
+}
+
+function viewcomments(){
+	
+	
+	require(TEMPLATE_PATH."/viewcomments.php");
+}
+
+//Users--------------------------
+
+//Add an admin
 function addadmins(){
 	
 	if(isset($_POST['submit']))
@@ -338,6 +368,76 @@ function editusers(){
 	require(TEMPLATE_PATH."/editusers.php");
 }
 
+//Ban Users/Admins
+
+function banusers(){
+	
+	if(!isset($_GET['user_id']) || !$_GET['user_id'])
+	{
+		viewadmins();
+		return;
+	}
+	$error = '';
+	
+	if(isset($_POST['submit']))
+	{
+		$vpcode = $_POST['vpcode'];
+		if(empty($vpcode))
+		{
+			$error = "Please enter the vpcode";
+		}
+		elseif($vpcode !== 'bantheuser')
+		{
+			$error = "Invalid vpcode";
+		}
+		else
+		{
+			$users = new Admins;
+			$users->storeFormValues($_POST);
+			$users->ban();
+			viewusers();
+			return;
+		}
+		
+	}
+	$results['users'] = Admins::getUsersById((int)$_GET['user_id']);
+	require(TEMPLATE_PATH."/banusers.php");
+}
+
+//Delete Users/Admins
+function deleteusers(){
+	
+	if(!isset($_GET['user_id']) || !$_GET['user_id'])
+	{
+		viewadmins();
+		return;
+	}
+	$error = '';
+	
+	if(isset($_POST['submit']))
+	{
+		$vpcode = $_POST['vpcode'];
+		if(empty($vpcode))
+		{
+			$error = "Please enter the vpcode";
+		}
+		elseif($vpcode !== 'deletetheuser')
+		{
+			$error = "Invalid vpcode";
+		}
+		else
+		{
+			$users = new Admins;
+			$users->storeFormValues($_POST);
+			$users->deletes();
+			viewusers();
+			return;
+		}
+	}
+	require(TEMPLATE_PATH."/deleteusers.php");
+	
+}
+
 //View Admins
 function viewadmins(){
 	
@@ -356,6 +456,7 @@ function viewusers(){
 	require(TEMPLATE_PATH."/listusers.php");
 }
 
+//Login
 function login(){
 	
 	$error = '';
@@ -372,6 +473,7 @@ function login(){
 	require(TEMPLATE_PATH."/login.php");
 }
 
+//Logout
 function logout(){
 	
 	

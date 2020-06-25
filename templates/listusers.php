@@ -17,7 +17,7 @@
                                                 <th>User Name</th>
                                                 <th>User Contact</th>
                                                 <th>User Email</th>
-                                                <th>Block</th>
+                                                <th>Ban/Unban</th>
                                                 <th>Edit</th>
                                                 <th>Delete</th>
                                             </tr>
@@ -27,7 +27,7 @@
                                                 <th>User Name</th>
                                                 <th>User Contact</th>
                                                 <th>User Email</th>
-                                                <th>Block</th>
+                                                <th>Ban/Unban</th>
                                                 <th>Edit</th>
                                                 <th>Delete</th>
                                             </tr>
@@ -44,11 +44,11 @@
                                                 <td>$users->user_email_address</td>";
 												if($users->user_ban == 0)
 												{
-                                                 echo"<td><a class='btn btn-primary' href='admin.php?action=blockusers&user_id=$users->user_id'/>Block</a></td>";
+                                                 echo"<td><a class='btn btn-primary' href='admin.php?action=banusers&user_id=$users->user_id'/>Ban</a></td>";
 												}
 												else
 												{
-													echo"<td><a class='btn btn-primary' href='admin.php?action=blockusers&user_id=$users->user_id'/>Unblock</a></td>";
+													echo"<td><a class='btn btn-primary' href='admin.php?action=banusers&user_id=$users->user_id'/>Unban</a></td>";
 												}
 												echo"
                                                 <td><a class='btn btn-primary' href='admin.php?action=editusers&user_id=$users->user_id'/>Edit</a></td>
