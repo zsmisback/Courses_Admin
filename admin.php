@@ -52,6 +52,18 @@ switch ( $action ) {
   viewlessons();
   break;
   
+  case 'addadmins':
+  addadmins();
+  break;
+  
+  case 'viewadmins':
+  viewadmins();
+  break;
+  
+  case 'viewusers':
+  viewusers();
+  break;
+  
   case 'logout':
   logout();
   break;
@@ -269,6 +281,39 @@ function viewlessons(){
 	$data = Lessons::getLessonsList();
 	$results['lessons'] = $data['results'];
 	require(TEMPLATE_PATH."/listlessons.php");
+}
+
+//Users
+
+function addadmins(){
+	
+	if(isset($_POST['submit']))
+	{
+		$admins = new Admins;
+		$admins->storeFormValues($_POST);
+		$admins->insert();
+		viewadmins();
+		return;
+	}
+	require(TEMPLATE_PATH."/addadmins.php");
+}
+
+//View Admins
+function viewadmins(){
+	
+	$results = array();
+	$data = Admins::getAdminsList();
+	$results['admins'] = $data['results'];
+	require(TEMPLATE_PATH."/listadmins.php");
+}
+
+//View Users
+function viewusers(){
+	
+	$results = array();
+	$data = Admins::getUsersList();
+	$results['users'] = $data['results'];
+	require(TEMPLATE_PATH."/listusers.php");
 }
 
 function login(){
