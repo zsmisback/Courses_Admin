@@ -11,23 +11,30 @@
                                             <div class="form-row">
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        
-                                                        <input class="form-control py-4" id="inputFirstName" type="text" placeholder="Admin Name" name="user_name" />
+                                                        <label for="user_names">Admin Name:</label>
+                                                        <input class="form-control py-4" id="user_names" type="text" placeholder="Admin Name" name="user_name" />
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        
-                                                        <input class="form-control py-4" id="inputLastName" type="text" placeholder="Admin Contact No" name="user_contact"/>
+                                                        <label for="user_contacts">Admin Contact No:</label>
+                                                        <input class="form-control py-4" id="user_contacts" type="text" placeholder="Admin Contact No" name="user_contact"/>
                                                     </div>
                                                 </div>
                                             </div>
-											<input class="form-control py-4" id="inputLastName" type="text" placeholder="Admin Email Address" name="user_email_address"/>
+											<label for="user_email_addresss">Admin Email Address:</label>
+											<input class="form-control py-4" id="user_email_addresss" type="text" placeholder="Admin Email Address" name="user_email_address"/>
 											<br>
-											<input class="form-control py-4" id="inputLastName" type="password" placeholder="Admin Password" name="user_password"/>
+											<label for="user_passwords">Admin Password:</label>
+											<input class="form-control py-4" id="user_passwords" type="password" placeholder="Admin Password" name="user_password"/>
 											<br>
-											<input class="form-control py-4" id="inputLastName" type="password" placeholder="Re-enter the password" name="re_pass"/>
+											<label for="re_passs">Re-enter the password:</label>
+											<input class="form-control py-4" id="re_passs" type="password" placeholder="Re-enter the password" name="re_pass"/>
 											<br>
+											<label for="vpcodes">Enter the Vpcode:</label>
+											<input class="form-control py-4" id="vpcodes" type="password" placeholder="Enter the vpcode" name="vpcode"/>
+											<br>
+											<p><?php echo $error; ?></p>
 											
 											
                                            

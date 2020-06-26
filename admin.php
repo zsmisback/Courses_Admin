@@ -389,13 +389,26 @@ function viewcomments(){
 //Add an admin
 function addadmins(){
 	
+	$error = '';
 	if(isset($_POST['submit']))
 	{
+		$vpcode = $_POST['vpcode'];
+		if(empty($vpcode))
+		{
+			$error = "Please enter the vpcode";
+		}
+		elseif($vpcode !== 'addanadmin')
+		{
+			$error = "Invalid vpcode";
+		}
+		else
+		{
 		$admins = new Admins;
 		$admins->storeFormValues($_POST);
 		$admins->insert();
 		viewadmins();
 		return;
+		}
 	}
 	require(TEMPLATE_PATH."/addadmins.php");
 }

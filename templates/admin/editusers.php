@@ -11,24 +11,28 @@
                                             <div class="form-row">
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        
-                                                        <input class="form-control py-4" id="inputFirstName" type="text" placeholder="User/Admin Name" name="user_name" value="<?php echo $results['users']->user_name; ?>"/>
+                                                        <label for="user_names">User/Admin Name:</label>
+                                                        <input class="form-control py-4" id="user_names" type="text" placeholder="User/Admin Name" name="user_name" value="<?php echo $results['users']->user_name; ?>"/>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        
-                                                        <input class="form-control py-4" id="inputLastName" type="text" placeholder="User/Admin Contact No" name="user_contact" value="<?php echo $results['users']->user_contact; ?>"/>
+                                                        <label for="user_contacts">User/Admin Contact No:</label>
+                                                        <input class="form-control py-4" id="user_contacts" type="text" placeholder="User/Admin Contact No" name="user_contact" value="<?php echo $results['users']->user_contact; ?>"/>
                                                     </div>
                                                 </div>
                                             </div>
-											<input class="form-control py-4" id="inputLastName" type="text" placeholder="User/Admin Email Address" name="user_email_address" value="<?php echo $results['users']->user_email_address; ?>"/>
+											<label for="user_email_addresss">User/Admin Email Address:</label>
+											<input class="form-control py-4" id="user_email_addresss" type="text" placeholder="User/Admin Email Address" name="user_email_address" value="<?php echo $results['users']->user_email_address; ?>"/>
 											<br>
-											<input class="form-control py-4" id="inputLastName" type="password" placeholder="User/Admin Password" name="user_password"/>
+											<label for="user_passwords">User/Admin Password:</label>
+											<input class="form-control py-4" id="user_passwords" type="password" placeholder="User/Admin Password" name="user_password"/>
 											<br>
+											<label for="user_email_addresss">Re-enter the password:</label>
 											<input class="form-control py-4" id="inputLastName" type="password" placeholder="Re-enter the password" name="re_pass"/>
 											<br>
-											<input class="form-control py-4" id="inputLastName" type="password" placeholder="Enter the vpcode" name="vpcode"/>
+											<label for="vpcodes">Enter the Vpcode:</label>
+											<input class="form-control py-4" id="vpcodes" type="password" placeholder="Enter the vpcode" name="vpcode"/>
 											<br>
 											<p><?php echo $error; ?></p>
                                            

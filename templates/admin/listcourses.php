@@ -17,7 +17,7 @@
                                                 <th>Course Name</th>
                                                 <th>Course Code</th>
                                                 <th>Course By</th>
-                                                <th>Course Language</th>
+                                                <th>Course Price</th>
                                                 <th>Edit</th>
                                                 <th>Delete</th>
                                             </tr>
@@ -27,7 +27,7 @@
                                                 <th>Course Name</th>
                                                 <th>Course Code</th>
                                                 <th>Course By</th>
-                                                <th>Course Language</th>
+                                                <th>Course Price</th>
                                                 <th>Edit</th>
                                                 <th>Delete</th>
                                             </tr>
@@ -41,8 +41,17 @@
                                             <tr>
                                                 <td>$courses->course_name</td>
                                                 <td>$courses->course_code</td>
-                                                <td>$courses->course_by</td>
-                                                <td>$courses->course_language</td>
+                                                <td>$courses->course_by</td>";
+												
+											if(empty($courses->course_price))
+											{												
+                                               echo "<td>Free</td>";
+											}
+											else
+											{
+												echo" <td>$courses->course_price</td>";
+											}
+											echo"	
                                                 <td><a class='btn btn-primary' href='admin.php?action=editcourses&course_id=$courses->course_id'/>Edit</a></td>
                                                 <td><a class='btn btn-primary' href='admin.php?action=deletecourses&course_id=$courses->course_id'/>Delete</a></td>
                                             </tr>";
