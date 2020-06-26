@@ -12,6 +12,7 @@ class Courses{
 	public $course_by=null;
 	public $course_language=null;
 	public $course_image="";
+	public $course_price=null;
 	public $course_rating=null;
 	public $course_total_time=null;
 	public $course_reading=null;
@@ -56,6 +57,10 @@ class Courses{
 		if(isset($data['course_image']))
 		{
 			$this->course_image = $data['course_image'];
+		}
+		if(isset($data['course_price']))
+		{
+			$this->course_price = $data['course_price'];
 		}
 		if(isset($data['course_rating']))
 		{
@@ -239,7 +244,7 @@ class Courses{
 		$token = str_shuffle($token);
 		$token= substr($token,0,10);
 		$conn = new PDO(DB_DSN,DB_USERNAME,DB_PASSWORD);
-		$sql = "INSERT INTO courses(course_name,course_code,course_summary,course_tags,course_by,course_language,course_image,course_unique)VALUES(:course_name,:course_code,:course_summary,:course_tags,:course_by,:course_language,:course_image,:course_unique)";
+		$sql = "INSERT INTO courses(course_name,course_code,course_summary,course_tags,course_by,course_language,course_image,course_price,course_unique)VALUES(:course_name,:course_code,:course_summary,:course_tags,:course_by,:course_language,:course_image,:course_price,:course_unique)";
 		$stmt = $conn->prepare($sql);
 		$stmt->bindValue(":course_name",$this->course_name,PDO::PARAM_STR);
 		$stmt->bindValue(":course_code",$this->course_code,PDO::PARAM_STR);
@@ -248,6 +253,7 @@ class Courses{
 		$stmt->bindValue(":course_by",$this->course_by,PDO::PARAM_STR);
 		$stmt->bindValue(":course_language",$this->course_language,PDO::PARAM_STR);
 		$stmt->bindValue(":course_image",$this->course_image,PDO::PARAM_STR);
+		$stmt->bindValue(":course_price",$this->course_price,PDO::PARAM_STR);
 		$stmt->bindValue(":course_unique",$token,PDO::PARAM_STR);
 		$stmt->execute();
 		$this->course_id = $conn->lastInsertId();
@@ -273,7 +279,7 @@ class Courses{
 	public function edit(){
 		
 		$conn = new PDO(DB_DSN,DB_USERNAME,DB_PASSWORD);
-		$sql = "UPDATE courses SET course_name = :course_name,course_code = :course_code,course_summary = :course_summary,course_tags = :course_tags,course_by = :course_by,course_language = :course_language,course_image = :course_image WHERE course_id = :course_id";
+		$sql = "UPDATE courses SET course_name = :course_name,course_code = :course_code,course_summary = :course_summary,course_tags = :course_tags,course_by = :course_by,course_language = :course_language,course_image = :course_image,course_price = :course_price WHERE course_id = :course_id";
 		$stmt = $conn->prepare($sql);
 		$stmt->bindValue(":course_name",$this->course_name,PDO::PARAM_STR);
 		$stmt->bindValue(":course_code",$this->course_code,PDO::PARAM_STR);
@@ -282,6 +288,7 @@ class Courses{
 		$stmt->bindValue(":course_by",$this->course_by,PDO::PARAM_STR);
 		$stmt->bindValue(":course_language",$this->course_language,PDO::PARAM_STR);
 		$stmt->bindValue(":course_image",$this->course_image,PDO::PARAM_STR);
+		$stmt->bindValue(":course_price",$this->course_price,PDO::PARAM_STR);
 		$stmt->bindValue(":course_id",$this->course_id,PDO::PARAM_INT);
 		$stmt->execute();
 		$sql2 = "UPDATE courses_continue SET course_rating = :course_rating,course_total_time = :course_total_time,course_reading = :course_reading,course_award = :course_award,course_material = :course_material,course_age_group = :course_age_group,course_pre_requisite = :course_pre_requisite WHERE course_id = :course_id";
@@ -306,7 +313,7 @@ class Courses{
 	public function editonlytext(){
 		
 		$conn = new PDO(DB_DSN,DB_USERNAME,DB_PASSWORD);
-		$sql = "UPDATE courses SET course_name = :course_name,course_code = :course_code,course_summary = :course_summary,course_tags = :course_tags,course_by = :course_by,course_language = :course_language WHERE course_id = :course_id";
+		$sql = "UPDATE courses SET course_name = :course_name,course_code = :course_code,course_summary = :course_summary,course_tags = :course_tags,course_by = :course_by,course_language = :course_language,course_price = :course_price WHERE course_id = :course_id";
 		$stmt = $conn->prepare($sql);
 		$stmt->bindValue(":course_name",$this->course_name,PDO::PARAM_STR);
 		$stmt->bindValue(":course_code",$this->course_code,PDO::PARAM_STR);
@@ -314,7 +321,7 @@ class Courses{
 		$stmt->bindValue(":course_tags",$this->course_tags,PDO::PARAM_STR);
 		$stmt->bindValue(":course_by",$this->course_by,PDO::PARAM_STR);
 		$stmt->bindValue(":course_language",$this->course_language,PDO::PARAM_STR);
-		
+		$stmt->bindValue(":course_price",$this->course_price,PDO::PARAM_STR);
 		$stmt->bindValue(":course_id",$this->course_id,PDO::PARAM_INT);
 		$stmt->execute();
 		$sql2 = "UPDATE courses_continue SET course_rating = :course_rating,course_total_time = :course_total_time,course_reading = :course_reading,course_award = :course_award,course_material = :course_material,course_age_group = :course_age_group,course_pre_requisite = :course_pre_requisite WHERE course_id = :course_id";

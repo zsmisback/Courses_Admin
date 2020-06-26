@@ -105,10 +105,7 @@ switch ( $action ) {
 
 function dashboard(){
 	
-	if(isset($_SESSION["loggedin"]))
-	{
-		echo "Hey";
-	}
+	
 	require(TEMPLATE_PATH."/index.php");
 	
 }

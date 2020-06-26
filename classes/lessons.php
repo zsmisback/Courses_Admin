@@ -11,6 +11,7 @@ class Lessons{
 	public $lesson_content=null;
 	public $lesson_by=null;
 	public $lesson_vid_url=null;
+	public $lesson_status=null;
 	public $lesson_unique=null;
 	public $course_name=null;
 	
@@ -45,6 +46,10 @@ class Lessons{
 		if(isset($data['lesson_vid_url']))
 		{
 			$this->lesson_vid_url = $data['lesson_vid_url'];
+		}
+		if(isset($data['lesson_status']))
+		{
+			$this->lesson_status = $data['lesson_status'];
 		}
 		if(isset($data['lesson_unique']))
 		{
@@ -109,7 +114,7 @@ class Lessons{
 		$token = str_shuffle($token);
 		$token= substr($token,0,10);
 		$conn = new PDO(DB_DSN,DB_USERNAME,DB_PASSWORD);
-		$sql = "INSERT INTO lessons(lesson_name,lesson_no,lesson_for,lesson_content,lesson_by,lesson_vid_url,lesson_unique)VALUES(:lesson_name,:lesson_no,:lesson_for,:lesson_content,:lesson_by,:lesson_vid_url,:lesson_unique)";
+		$sql = "INSERT INTO lessons(lesson_name,lesson_no,lesson_for,lesson_content,lesson_by,lesson_vid_url,lesson_status,lesson_unique)VALUES(:lesson_name,:lesson_no,:lesson_for,:lesson_content,:lesson_by,:lesson_vid_url,:lesson_status,:lesson_unique)";
 		$stmt = $conn->prepare($sql);
 		$stmt->bindValue(":lesson_name",$this->lesson_name,PDO::PARAM_STR);
 		$stmt->bindValue(":lesson_no",$this->lesson_no,PDO::PARAM_INT);
@@ -117,6 +122,7 @@ class Lessons{
 		$stmt->bindValue(":lesson_content",$this->lesson_content,PDO::PARAM_STR);
 		$stmt->bindValue(":lesson_by",$this->lesson_by,PDO::PARAM_STR);
 		$stmt->bindValue(":lesson_vid_url",$this->lesson_vid_url,PDO::PARAM_STR);
+		$stmt->bindValue(":lesson_status",$this->lesson_status,PDO::PARAM_INT);
 		$stmt->bindValue(":lesson_unique",$token,PDO::PARAM_STR);
 		$stmt->execute();
 		$this->lesson_id = $conn->lastInsertId();
@@ -129,7 +135,7 @@ class Lessons{
 	public function edit(){
 		
 		$conn = new PDO(DB_DSN,DB_USERNAME,DB_PASSWORD);
-		$sql = "UPDATE lessons SET lesson_name = :lesson_name,lesson_no = :lesson_no,lesson_for = :lesson_for,lesson_content = :lesson_content,lesson_by = :lesson_by,lesson_vid_url = :lesson_vid_url WHERE lesson_id = :lesson_id";
+		$sql = "UPDATE lessons SET lesson_name = :lesson_name,lesson_no = :lesson_no,lesson_for = :lesson_for,lesson_content = :lesson_content,lesson_by = :lesson_by,lesson_vid_url = :lesson_vid_url,lesson_status = :lesson_status WHERE lesson_id = :lesson_id";
 		$stmt = $conn->prepare($sql);
 		$stmt->bindValue(":lesson_name",$this->lesson_name,PDO::PARAM_STR);
 		$stmt->bindValue(":lesson_no",$this->lesson_no,PDO::PARAM_INT);
@@ -137,6 +143,7 @@ class Lessons{
 		$stmt->bindValue(":lesson_content",$this->lesson_content,PDO::PARAM_STR);
 		$stmt->bindValue(":lesson_by",$this->lesson_by,PDO::PARAM_STR);
 		$stmt->bindValue(":lesson_vid_url",$this->lesson_vid_url,PDO::PARAM_STR);
+		$stmt->bindValue(":lesson_status",$this->lesson_status,PDO::PARAM_INT);
 		$stmt->bindValue(":lesson_id",$this->lesson_id,PDO::PARAM_INT);
 		$stmt->execute();
 		$conn = null;
