@@ -44,7 +44,7 @@
                                                 <td>$comments->comment_create</td>
                                                 <td>$comments->comment_by</td>
                                                 <td><a class='btn btn-primary' href='admin.php?action=editcomments&comment_id=$comments->comment_id'/>Edit</a></td>
-                                                <td><a class='btn btn-primary' href='admin.php?action=deletecommentss&comment_id=$comments->comment_id'/>Delete</a></td>
+                                                <td><a class='btn btn-primary' href='admin.php?action=deletecomments&comment_id=$comments->comment_id'/>Delete</a></td>
                                             </tr>";
 										}
 											?>

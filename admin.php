@@ -365,11 +365,29 @@ function deletecomments(){
 		return;
 	}
 	
-	$comments = new Comments;
-	$comments->storeFormValues($_POST);
-	$comments->deletes();
-	viewcomments();
-    return;
+	$error = '';
+	
+	if(isset($_POST['submit']))
+	{
+		$vpcode = $_POST['vpcode'];
+		if(empty($vpcode))
+		{
+			$error = "Please enter the vpcode";
+		}
+		elseif($vpcode !== "deletethiscomment")
+		{
+			$error = "Invalid vpcode";
+		}
+		else
+		{
+	      $comments = new Comments;
+	      $comments->storeFormValues($_POST);
+	      $comments->deletes();
+	      viewcomments();
+          return;
+	     }
+	}
+	require(TEMPLATE_PATH."/deletecomments.php");
 }
 
 function viewcomments(){
