@@ -9,14 +9,14 @@
                                             <div class="form-row">
                                                 <div class="col-md-8">
                                                     <div class="form-group">
-                                                        
-                                                        <input class="form-control py-4" id="inputFirstName" type="text" placeholder="Enter lesson name" name="lesson_name" />
+                                                        <label for="lesson_names">Lesson Name:</label>
+                                                        <input class="form-control py-4" id="lesson_names" type="text" placeholder="Enter lesson name" name="lesson_name" />
                                                     </div>
                                                 </div>
                                                 <div class="col-md-4">
                                                     <div class="form-group">
-                                                        
-                                                        <input class="form-control py-4" id="inputLastName" type="text" placeholder="Enter lesson No" name="lesson_no"/>
+                                                        <label for="lesson_no">Lesson No:</label>
+                                                        <input class="form-control py-4" id="lesson_nos" type="number" placeholder="Enter lesson No" name="lesson_no"/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -41,9 +41,11 @@
                                               Lesson Content:  
                                              <textarea class="form-control py-4 ckeditor" id="inputEmailAddress" type="text" name="lesson_content" placeholder="Enter lesson content"></textarea>
                                             </div>
-											<input class="form-control py-4" id="inputLastName" type="text" placeholder="Lesson By" name="lesson_by"/>
+											<label for="lesson_bys">Lesson By:</label>
+											<input class="form-control py-4" id="lesson_bys" type="text" placeholder="Lesson By" name="lesson_by"/>
 											<br>
-											<input class="form-control py-4" id="inputLastName" type="text" placeholder="Lesson Vid Url" name="lesson_vid_url"/>
+											<label for="lesson_vid_urls">Lesson Video Url:</label>
+											<input class="form-control py-4" id="lesson_vid_urls" type="text" placeholder="Lesson Vid Url" name="lesson_vid_url"/>
 											<br>
 											<div class="form-group">
                                             <label for="sel2">Lesson Status:</label>

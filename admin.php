@@ -267,7 +267,9 @@ function editlessons(){
 	}
 	$results = array();
 	$data = Courses::getCoursesList();
+
 	$results['lessons'] = Lessons::getLessonsById((int)($_GET['lesson_id']));
+	
 	$results['courses'] = $data['results']; 
 	require(TEMPLATE_PATH."/editlessons.php");
 }

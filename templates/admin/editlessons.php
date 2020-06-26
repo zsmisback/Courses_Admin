@@ -10,20 +10,21 @@
                                             <div class="form-row">
                                                 <div class="col-md-8">
                                                     <div class="form-group">
-                                                        
-                                                        <input class="form-control py-4" id="inputFirstName" type="text" placeholder="Enter lesson name" name="lesson_name" value="<?php echo $results['lessons']->lesson_name; ?>" />
+                                                        <label for="lesson_names">Lesson Name:</label>
+                                                        <input class="form-control py-4" id="lesson_names" type="text" placeholder="Enter lesson name" name="lesson_name" value="<?php echo $results['lessons']->lesson_name; ?>" />
                                                     </div>
                                                 </div>
                                                 <div class="col-md-4">
                                                     <div class="form-group">
-                                                        
-                                                        <input class="form-control py-4" id="inputLastName" type="text" placeholder="Enter lesson No" name="lesson_no" value="<?php echo $results['lessons']->lesson_no; ?>"/>
+                                                        <label for="lesson_nos">Lesson No:</label>
+                                                        <input class="form-control py-4" id="lesson_nos" type="number" placeholder="Enter lesson No" name="lesson_no" value="<?php echo $results['lessons']->lesson_no; ?>"/>
                                                     </div>
                                                 </div>
                                             </div>
 											<div class="form-group">
                                             <label for="sel1">Select list:</label>
                                             <select class="form-control" id="sel1" name="lesson_for">
+											
 											<?php
 											
 											foreach($results['courses'] as $courses)
