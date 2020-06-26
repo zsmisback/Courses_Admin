@@ -25,20 +25,18 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Table structure for table `purchases`
 --
 
-CREATE TABLE `users` (
+CREATE TABLE `purchases` (
+  `purchase_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
-  `user_name` varchar(255) NOT NULL,
-  `user_contact` varchar(255) NOT NULL,
-  `user_email_address` varchar(255) NOT NULL,
-  `user_password` varchar(255) NOT NULL,
-  `user_courses` varchar(550) NOT NULL,
-  `user_certificates` varchar(255) NOT NULL,
-  `user_lvl` int(11) NOT NULL,
-  `user_ban` int(11) NOT NULL,
-  `user_unique` varchar(255) NOT NULL
+  `purchase_type` varchar(255) NOT NULL,
+  `purchase_for` int(11) NOT NULL,
+  `purchase_amount` varchar(255) NOT NULL,
+  `purchase_at` datetime NOT NULL,
+  `purchase_status` varchar(255) NOT NULL,
+  `t_id` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -46,20 +44,20 @@ CREATE TABLE `users` (
 --
 
 --
--- Indexes for table `users`
+-- Indexes for table `purchases`
 --
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`user_id`);
+ALTER TABLE `purchases`
+  ADD PRIMARY KEY (`purchase_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT for table `purchases`
 --
-ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+ALTER TABLE `purchases`
+  MODIFY `purchase_id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

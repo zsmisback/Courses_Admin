@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 26, 2020 at 07:00 PM
+-- Generation Time: Jun 26, 2020 at 06:59 PM
 -- Server version: 10.4.10-MariaDB
 -- PHP Version: 7.3.12
 
@@ -25,41 +25,43 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Table structure for table `addcourses_test`
 --
 
-CREATE TABLE `users` (
+CREATE TABLE `addcourses_test` (
+  `course_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
-  `user_name` varchar(255) NOT NULL,
-  `user_contact` varchar(255) NOT NULL,
-  `user_email_address` varchar(255) NOT NULL,
-  `user_password` varchar(255) NOT NULL,
-  `user_courses` varchar(550) NOT NULL,
-  `user_certificates` varchar(255) NOT NULL,
-  `user_lvl` int(11) NOT NULL,
-  `user_ban` int(11) NOT NULL,
-  `user_unique` varchar(255) NOT NULL
+  `courses_added` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `addcourses_test`
+--
+
+INSERT INTO `addcourses_test` (`course_id`, `user_id`, `courses_added`) VALUES
+(1, 1, 16),
+(9, 2, 18),
+(13, 2, 16);
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `users`
+-- Indexes for table `addcourses_test`
 --
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`user_id`);
+ALTER TABLE `addcourses_test`
+  ADD PRIMARY KEY (`course_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT for table `addcourses_test`
 --
-ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+ALTER TABLE `addcourses_test`
+  MODIFY `course_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
