@@ -101,6 +101,8 @@ switch ( $action ) {
   break;
 }
 
+//Dashboard-------------------------------------
+
 function dashboard(){
 	
 	if(isset($_SESSION["loggedin"]))
@@ -110,6 +112,8 @@ function dashboard(){
 	require(TEMPLATE_PATH."/index.php");
 	
 }
+
+//Courses------------------------------------------------
 
 function addcourses(){
 	
@@ -323,7 +327,7 @@ function addcomments(){
 		$comments = new Comments;
 		$comments->storeFormValues($_POST);
 		$comments->insert();
-		dashboard();
+		viewcomments();
 		return;
 	}
 	$data = Lessons::getLessonsList();
@@ -365,29 +369,12 @@ function deletecomments(){
 		return;
 	}
 	
-	$error = '';
-	
-	if(isset($_POST['submit']))
-	{
-		$vpcode = $_POST['vpcode'];
-		if(empty($vpcode))
-		{
-			$error = "Please enter the vpcode";
-		}
-		elseif($vpcode !== "deletethiscomment")
-		{
-			$error = "Invalid vpcode";
-		}
-		else
-		{
-	      $comments = new Comments;
-	      $comments->storeFormValues($_POST);
+	     $comments = Comments::getCommentsById((int)$_GET['comment_id']);
 	      $comments->deletes();
 	      viewcomments();
-          return;
-	     }
-	}
-	require(TEMPLATE_PATH."/deletecomments.php");
+		  return;
+	
+	
 }
 
 function viewcomments(){
