@@ -25,6 +25,10 @@
                                             <select class="form-control" id="sel1" name="lesson_for">
 											<?php
 											
+											if(empty($results['courses']))
+											{
+												echo"<option value='no'>No Courses available</option>";
+											}
 											foreach($results['courses'] as $courses)
 											{
                                             echo"<option value='$courses->course_id'>$courses->course_name</option>";

@@ -2,6 +2,8 @@
 
 class Courses{
 	
+//Pass variables with the same name as the sql columns	
+
 	public $course_id=null;
 	public $course_name=null;
 	public $course_code=null;
@@ -18,6 +20,8 @@ class Courses{
 	public $course_age_group=null;
 	public $course_pre_requisite=null;
 	public $course_unique=null;
+
+//Store data when object is called
 	
 	public function __construct($data=array())
 	{
@@ -87,6 +91,8 @@ class Courses{
 		}
 	}
 	
+//Get Courses List
+	
 	public static function getCoursesList()
 	{
 		$conn = new PDO(DB_DSN,DB_USERNAME,DB_PASSWORD);
@@ -105,6 +111,7 @@ class Courses{
 	}
 	
 	
+//Get a single course row data by Id
 	
 	public static function getCoursesById($id){
 		
@@ -119,6 +126,8 @@ class Courses{
 		if($row) return new Courses($row);
 	}
 	
+//Get a single course row data related to the courses table from the courses_continue table
+	
 	public static function getCoursesById2($id){
 		
 		$conn = new PDO(DB_DSN,DB_USERNAME,DB_PASSWORD);
@@ -131,9 +140,13 @@ class Courses{
 		if($row) return new Courses($row);
 	}
 	
+//Store a forms value
+	
 	public function storeFormValues($params){
 		$this->__construct($params);
 	}
+	
+//Store and move an uploaded image
 	
 	public function storeUploadedImage($image){
 		
@@ -198,6 +211,7 @@ class Courses{
 		}
 	}
 	
+//Delete an image based off the course table Id 	
 	public function deleteImages(){
 		
 	 foreach (glob(CATEGORY_IMAGE_PATH ."/".IMG_TYPE_FULLSIZE . "/" . $this->course_id . ".*") as $filename)
@@ -211,9 +225,13 @@ class Courses{
 	 $this->course_image = "";
 	}
 	
+//Get the path of the folder where the image will be stored
+	
 	public function getImagePath( $type=IMG_TYPE_FULLSIZE ) {
     return ( $this->course_id && $this->course_image ) ? ( CATEGORY_IMAGE_PATH . "/$type/" . $this->course_id . $this->course_image ) : false;
   }
+	
+//Insert data into both the courses and courses_continue tables
 	
 	public function insert(){
 		
@@ -250,6 +268,7 @@ class Courses{
 	}
 	
 	
+//Update data in both the courses and courses_continue table
 	
 	public function edit(){
 		
@@ -282,6 +301,7 @@ class Courses{
 	}
 	
 	
+//Update only the text of the courses and courses_continue table without removing the Image
 	
 	public function editonlytext(){
 		
@@ -313,6 +333,8 @@ class Courses{
 		
 	}
 	
+//Delete data from both courses and courses_continue table by their Id
+	
 	public function deletes(){
 		
 		$conn = new PDO(DB_DSN,DB_USERNAME,DB_PASSWORD);
@@ -326,8 +348,29 @@ class Courses{
 		$stmt->execute();
 		$conn = null;
 	}
+
+//Check if a lesson/lessons exist in a course
+	
+	public static function checkLessonsExist($id){
+	
+	$conn = new PDO(DB_DSN,DB_USERNAME,DB_PASSWORD);
+	$sql = "SELECT * FROM lessons LEFT JOIN courses ON course_id = lesson_for WHERE lessons = :id";
+	$stmt = $conn->prepare($sql);
+	$stmt->bindValue(":id",$id,PDO::PARAM_INT);
+	$stmt->execute();
+	$list = array();
+	while($row = $stmt->fetch())
+		{
+			$courses = new Courses($row);
+			$list[] = $courses;
+		}
+		
+		$conn = null;
+        return(array("results" => $list));
+}
 	
 }
+
 
 
 ?>
