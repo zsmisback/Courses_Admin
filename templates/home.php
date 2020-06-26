@@ -168,7 +168,7 @@
                     <div class='number'>
                       <span>2,219/6,000</span>
                     </div>
-                    <div class='price text-right'><del class='mr-3'>$23</del><span>Free</span></div>
+                    <div class='price text-right'><del class='mr-3'>$23</del><a href='index.php?action=addcourses&course_id=$courses->course_id'><span>Free</span></a></div>
                   </div>
                 </div>
               </div>

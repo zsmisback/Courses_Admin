@@ -3,13 +3,17 @@
 require( "config.php" );
 session_start();
 $action = isset( $_GET['action'] ) ? $_GET['action'] : "";
-
+$_SESSION['user_id'] = 2;
 
 
 switch ( $action ) {
   
   case 'home':
   home();
+  break;
+  
+  case 'addcourses':
+  addcourses();
   break;
   
   case 'login':
@@ -43,24 +47,28 @@ function home(){
 
 function addcourses(){
 	
-	$error = '';
-	$cat_name = '';
-	$cat_desc = '';
-	$vpc = '';
-	
-	if(isset($_POST['submit']))
+	if(!isset($_GET['course_id']) || !$_GET['course_id'])
 	{
-		
-	   $courses = new Courses;
-	   $courses->storeFormValues($_POST);
-	   $courses->insert();
-       $courses->storeUploadedImage($_FILES['image']);
-	   viewcourses();
-	   return;
-
-	
+		home();
+		return;
 	}
-	require(TEMPLATE_PATH."/addcourses.php");
+	
+	$results = array();
+	
+	$results['addcourses'] = Courses::getAddCoursesById((int)$_GET['course_id']);
+	if(!empty($results['addcourses']))
+	{
+		echo "No";
+		home();
+	    return;
+	}
+	else
+	{
+	Courses::addaCourse((int)$_GET['course_id']);
+	home();
+	return;
+	}
+	
 }
 
 function editcourses(){

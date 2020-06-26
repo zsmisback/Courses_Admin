@@ -3,8 +3,10 @@
 class Courses{
 	
 //Pass variables with the same name as the sql columns	
-
+    
 	public $course_id=null;
+	public $user_id=null;
+	public $courses_added=null;
 	public $course_name=null;
 	public $course_code=null;
 	public $course_summary=null;
@@ -29,6 +31,14 @@ class Courses{
 		if(isset($data['course_id'])) 
 		{
 		$this->course_id = $data['course_id'];
+		}
+		if(isset($data['user_id'])) 
+		{
+		$this->user_id = $data['user_id'];
+		}
+		if(isset($data['courses_added'])) 
+		{
+		$this->courses_added = $data['courses_added'];
 		}
 		if(isset($data['course_name']))
 		{
@@ -375,6 +385,35 @@ class Courses{
 		$conn = null;
         return(array("results" => $list));
 }
+
+
+//Get all courses added by Id
+
+    public static function getAddCoursesById($id){
+		
+		$conn = new PDO(DB_DSN,DB_USERNAME,DB_PASSWORD);
+		$sql = "SELECT * FROM addcourses_test WHERE courses_added = :courses_added AND user_id = :user_id";
+		$stmt = $conn->prepare($sql);
+		$stmt->bindValue(":courses_added",$id,PDO::PARAM_INT);
+		$stmt->bindValue(":user_id",$_SESSION['user_id'],PDO::PARAM_INT);
+		$stmt->execute();
+		$row = $stmt->fetch();
+		if($row)return new Courses($row);
+		
+	}
+
+//Adds a course to the addcourse_test table
+
+    public static function addaCourse($id){
+		$conn = new PDO(DB_DSN,DB_USERNAME,DB_PASSWORD);
+		$sql = "INSERT INTO addcourses_test(user_id,courses_added)VALUES(:user_id,:courses_added)";
+		$stmt= $conn->prepare($sql);
+		$stmt->bindValue(":user_id",$_SESSION['user_id'],PDO::PARAM_INT);
+		$stmt->bindValue(":courses_added",$id,PDO::PARAM_INT);
+		$stmt->execute();
+		
+		$conn = null;
+	}
 	
 }
 
