@@ -2,6 +2,8 @@
 
 class Lessons{
 	
+//Pass variables with the same name as the sql columns
+	
 	public $lesson_id=null;
 	public $lesson_name=null;
 	public $lesson_no=null;
@@ -11,6 +13,8 @@ class Lessons{
 	public $lesson_vid_url=null;
 	public $lesson_unique=null;
 	public $course_name=null;
+	
+//Store data when object is called
 	
 	public function __construct($data=array())
 	{
@@ -52,6 +56,8 @@ class Lessons{
 		}
 		
 	}
+
+//Get Lessons List Along with courses data
 	
 	public static function getLessonsList()
 	{
@@ -72,6 +78,8 @@ class Lessons{
 	
 	
 	
+//Get a single lesson row By Id
+	
 	public static function getLessonsById($id){
 		
 		$conn = new PDO(DB_DSN,DB_USERNAME,DB_PASSWORD);
@@ -87,10 +95,13 @@ class Lessons{
 	
 	
 	
+//Store a Forms Value	
 	public function storeFormValues($params){
 		$this->__construct($params);
 	}
 	
+	
+//Insert a forms value into the lessons table
 	
 	public function insert(){
 		
@@ -113,6 +124,7 @@ class Lessons{
 	}
 	
 	
+//Update a forms value in the lessons table
 	
 	public function edit(){
 		
@@ -133,6 +145,7 @@ class Lessons{
 	
 	
 	
+//Delete a row from the lessons table 
 	
 	public function deletes(){
 		
