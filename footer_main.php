@@ -11,14 +11,33 @@
           <div class="row">
             <div class="col-md-12">
               <ul class="list-unstyled">
-                <li><a href="index.php?action=home">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="courses.html">Courses</a></li>
+			  <?php
+                
+			if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true)
+			{				
+		echo  "<li><a href='index.php?action=home'>Home</a></li>
+                <li><a href='about.html'>About Us</a></li>
+                <li><a href='courses.html'>Courses</a></li>
               
-                <li><a href="index.php?action=login">Login</a></li>
-                <li><a href="index.php?action=signup">SignUp</a></li>
-                <li><a href="#">CheckValidate
-                  <br>Certificate</li>
+                <li><a href='index.php?action=login'>Login</a></li>
+                <li><a href='index.php?action=signup'>SignUp</a></li>
+                <li><a href='#'>CheckValidate
+                  <br>Certificate</li>";
+			}
+			else
+			{
+				echo"<li><a href='index.php?action=home'>Home</a></li>
+                    <li><a href='yourcourses.html'>YourCourses</a></li>
+                    <li><a href='query.html'>Support</a></li>
+                  
+                    <li><a href='profile.html'>Profile</a></li>
+                    <li><a href='index.php?action=courses'>Explore</a></li>
+                    <li><a href='certificate.html'>Certificate</a></li>
+
+                    <li><a href='#'>CheckValidate
+                      <br>Certificate</li>";
+			}
+				?>
     
          
               </ul>
