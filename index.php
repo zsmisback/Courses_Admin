@@ -20,7 +20,9 @@ switch ( $action ) {
   login();
   break;
   
-  
+  case 'signup':
+  signup();
+  break;
   
   case 'logout':
   logout();
@@ -31,7 +33,7 @@ switch ( $action ) {
   break;
 }
 
-//Dashboard-------------------------------------
+//Home-------------------------------------
 
 function home(){
 	
@@ -41,6 +43,28 @@ function home(){
 	$results['courses'] = $data['results'];
 	require(TEMPLATE_PATH_INDEX."/home.php");
 	
+}
+
+function signup(){
+	
+	$results = array();
+	if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true)
+	{
+		
+	}
+	else
+	{
+		home();
+		return;
+	}
+	if($_SERVER['REQUEST_METHOD'] == 'POST')
+	{
+		$users = new Admins;
+	    $users->storeFormValues($_POST);
+	    $users->insert();
+	  
+	}
+	require(TEMPLATE_PATH_INDEX."/signup.php");
 }
 
 //Courses------------------------------------------------

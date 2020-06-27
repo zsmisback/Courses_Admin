@@ -116,6 +116,7 @@ class Admins{
 		$this->__construct($params);
 	}
 	
+//Inserts both the user and admins details
 	
 	public function insert(){
 		
