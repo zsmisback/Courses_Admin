@@ -44,7 +44,7 @@
           <div class='row bg-light align-items-center p-4 episode'>
             <div class='col-md-9'>
               <p class='meta'>Lesson $lessons->lesson_no</p>
-              <h2><a href='#'>$lessons->lesson_name</a></h2>
+              <h2><a href='.?action=content&lesson_id=$lessons->lesson_id'>$lessons->lesson_name</a></h2>
               <p>$lessons->lesson_content</p>
             </div>
             <div class='col-md-3 text-center'>
@@ -210,11 +210,31 @@
                     </div>";
 					if(empty($courses->course_price))
 					{
-                    echo"<div class='price text-right'><a href='index.php?action=addcourses&course_id=$courses->course_id'><span>Free</span></a></div>";
+                    echo"<div class='price text-right'>";
+					if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true)
+					 {
+					   echo"<a href='index.php?action=login'>";
+					 }
+					 else
+					 {
+						 echo"<a href='index.php?action=addcourses&course_id=$courses->course_id'>";
+					 }
+					
+					echo"<span>Free</span></a></div>";
 					}
 					else
 					{
-						echo"<div class='price text-right'><a href='index.php?action=addcourses&course_id=$courses->course_id'><span>Rs.$courses->course_price</span></a></div>";
+						echo"<div class='price text-right'>";
+						if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true)
+					 {
+					   echo"<a href='index.php?action=login'>";
+					 }
+					 else
+					 {
+						 echo"<a href='index.php?action=addcourses&course_id=$courses->course_id'>";
+					 }
+						
+						echo"<span>Rs.$courses->course_price</span></a></div>";
 					}
             echo"</div>
                 </div>
