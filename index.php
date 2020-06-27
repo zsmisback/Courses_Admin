@@ -15,6 +15,11 @@ switch ( $action ) {
   case 'courses':
   courses();
   break;
+  
+  case 'lessons':
+  lessons();
+  break;
+  
   case 'addcourses':
   addcourses();
   break;
@@ -42,7 +47,7 @@ function home(){
 	
 	
 	$results = array();
-	$data = Courses::getCoursesList();
+	$data = Courses::getLimitedCourses();
 	$results['courses'] = $data['results'];
 	require(TEMPLATE_PATH_INDEX."/home.php");
 	
@@ -61,6 +66,11 @@ function courses(){
 	$results['totalpages'] = $data2['totalPages'];
 	$results['recent_courses'] = $data3['results'];
 	require(TEMPLATE_PATH_INDEX."/courses.php");
+}
+
+function lessons(){
+	
+	require(TEMPLATE_PATH_INDEX."/lessons.php");
 }
 
 function signup(){

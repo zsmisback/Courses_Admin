@@ -103,8 +103,8 @@
                   <img src='Profilepics/Courses/fullsize/$courses->course_id$courses->course_image' alt='Image' class='img-fluid'>
                 </figure>
                 <div class='text'>
-                  <h2 class='heading'><a href='#'>$courses->course_name</a></h2>
-                  <p class='mb-4'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit qui neque sint eveniet tempore sapiente.</p>
+                  <h2 class='heading'><a href='.?action=lessons&course_id=$courses->course_id'>$courses->course_name</a></h2>
+                  <p class='mb-4'>$courses->course_summary</p>
                   <div class='meta d-flex align-items-center'>
                     <div class='number'>
                       <span>$courses->course_language</span>

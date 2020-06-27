@@ -34,11 +34,11 @@
         echo"<div class='col-md-12 col-lg-6 mb-5'>
                 <div class='block-19'>
                   <figure>
-                    <a href='course-single.html'><img src='Profilepics/Courses/fullsize/$courses->course_id$courses->course_image' alt='Image' class='img-fluid'></a>
+                    <a href='.?action=lessons&course_id=$courses->course_id'><img src='Profilepics/Courses/fullsize/$courses->course_id$courses->course_image' alt='Image' class='img-fluid'></a>
                   </figure>
                     <div class='text'>
-                      <h2 class='heading'><a href='#'>$courses->course_code</a></h2>
-					  <a href='#' style='color:#80878a; font-size: 15px;'>$courses->course_name</a></h2>
+                      <h2 class='heading'><a href='.?action=lessons&course_id=$courses->course_id'>$courses->course_code</a></h2>
+					  <a href='.?action=lessons&course_id=$courses->course_id' style='color:#80878a; font-size: 15px;'>$courses->course_name</a></h2>
                       <p class='mb-4'>$courses->course_summary</p>
                       <div class='meta d-flex align-items-center'>
                         <div class='number'>
@@ -107,7 +107,7 @@
 			  {
 			  echo"
                 <li>
-                  <a href='#' class='d-flex'>
+                  <a href='.?action=lessons&course_id=$courses->course_id' class='d-flex'>
                     <figure class='image mr-3'>
                       <img src='Profilepics/Courses/fullsize/$recent_courses->course_id$recent_courses->course_image' alt='' class='img-fluid'>
                     </figure>
