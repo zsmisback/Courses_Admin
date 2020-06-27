@@ -124,6 +124,32 @@ class Courses{
 		$conn = null;
         return(array("results" => $list));
 	}
+
+//Get Courses List With a Limit
+
+    public static function getLimitedCourses($numRows = 12){
+		
+		$page = isset($_GET['page']) ? $_GET['page'] : 1;
+        $start = ($page - 1) * $numRows;
+		$conn = new PDO(DB_DSN,DB_USERNAME,DB_PASSWORD);
+		$sql = "SELECT SQL_CALC_FOUND_ROWS * FROM courses ORDER BY course_id DESC LIMIT :start,:numRows";
+		$stmt = $conn->prepare($sql);
+		$stmt->bindValue(":start",$start,PDO::PARAM_INT);
+		$stmt->bindValue(":numRows",$numRows,PDO::PARAM_INT);
+		$stmt->execute();
+		$list = array();
+		
+		while($row = $stmt->fetch())
+		{
+			$courses = new Courses($row);
+			$list[] = $courses;
+		}
+		
+		$conn = null;
+		return(array("results"=>$list));
+	}
+
+
 	
 	
 //Get a single course row data by Id

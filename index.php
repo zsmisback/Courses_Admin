@@ -12,6 +12,9 @@ switch ( $action ) {
   home();
   break;
   
+  case 'courses':
+  courses();
+  break;
   case 'addcourses':
   addcourses();
   break;
@@ -43,6 +46,14 @@ function home(){
 	$results['courses'] = $data['results'];
 	require(TEMPLATE_PATH_INDEX."/home.php");
 	
+}
+
+function courses(){
+	
+	$results = array();
+	$data = Courses::getLimitedCourses();
+	$results['courses'] = $data['results'];
+	require(TEMPLATE_PATH_INDEX."/courses.php");
 }
 
 function signup(){

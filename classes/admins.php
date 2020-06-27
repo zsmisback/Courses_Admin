@@ -218,7 +218,7 @@ class Admins{
 		$stmt->bindColumn("user_id",$id);
 		$stmt->bindColumn("user_password",$pass);
 		$exists = $stmt->fetch();
-	    
+	    $conn = null;
 		
 		
 		return(array("exists"=>$exists,"pass"=>$pass,"id"=>$id));
