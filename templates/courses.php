@@ -43,9 +43,17 @@
                       <div class='meta d-flex align-items-center'>
                         <div class='number'>
                           <span>$courses->course_language</span>
-                        </div>
-                        <div class='price text-right'><del class='mr-3'>$23</del><span>Free</span></div>
-                      </div>
+                        </div>";
+					if(empty($courses->course_price))
+					{						
+                      echo"<div class='price text-right'><span>Free</span></div>";
+					}
+					else
+					{
+						echo"<div class='price text-right'><span>Rs.$courses->course_price</span></div>";
+						
+					}
+           echo"     </div>
                     </div>
                   </div>
                 
@@ -107,14 +115,21 @@
 			  {
 			  echo"
                 <li>
-                  <a href='.?action=lessons&course_id=$courses->course_id' class='d-flex'>
+                  <a href='.?action=lessons&course_id=$recent_courses->course_id' class='d-flex'>
                     <figure class='image mr-3'>
                       <img src='Profilepics/Courses/fullsize/$recent_courses->course_id$recent_courses->course_image' alt='' class='img-fluid'>
                     </figure>
                     <div class='text'>
-                      <h3 class='heading'>$recent_courses->course_code</h3>
-                      <span class='meta'>$34</span>
-                    </div>
+                      <h3 class='heading'>$recent_courses->course_code</h3>";
+					if(empty($recent_courses->course_price))
+					{						
+                      echo"<span class='meta'>Free</span>";
+					}
+					else
+					{
+						echo"<span class='meta'>Rs.$recent_courses->course_price</span>";
+					}
+              echo"</div>
                   </a>
                 </li>";
 			  }

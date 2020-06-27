@@ -108,9 +108,16 @@
                   <div class='meta d-flex align-items-center'>
                     <div class='number'>
                       <span>$courses->course_language</span>
-                    </div>
-                    <div class='price text-right'><del class='mr-3'>$23</del><a href='index.php?action=addcourses&course_id=$courses->course_id'><span>Free</span></a></div>
-                  </div>
+                    </div>";
+					if(empty($courses->course_price))
+					{
+                     echo"<div class='price text-right'><a href='index.php?action=addcourses&course_id=$courses->course_id'><span>Free</span></a></div>";
+					}
+					else
+					{
+						echo"<div class='price text-right'><a href='index.php?action=addcourses&course_id=$courses->course_id'><span>Rs.$courses->course_price</span></a></div>";
+					}
+             echo"</div>
                 </div>
               </div>
           </div>";

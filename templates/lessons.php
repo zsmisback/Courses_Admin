@@ -43,7 +43,7 @@
        echo"		
           <div class='row bg-light align-items-center p-4 episode'>
             <div class='col-md-9'>
-              <p class='meta'>Lesson 1</p>
+              <p class='meta'>Lesson $lessons->lesson_no</p>
               <h2><a href='#'>$lessons->lesson_name</a></h2>
               <p>$lessons->lesson_content</p>
             </div>
@@ -130,39 +130,32 @@
               <div class="block-25 mb-5">
                 <div class="heading">Recent Courses</div>
                 <ul>
-                  <li>
-                    <a href="#" class="d-flex">
-                      <figure class="image mr-3">
-                        <img src="images/img_1.png" alt="" class="img-fluid">
-                      </figure>
-                      <div class="text">
-                        <h3 class="heading">Create cool websites using this template</h3>
-                        <span class="meta">$34</span>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" class="d-flex">
-                      <figure class="image mr-3">
-                        <img src="images/img_2.png" alt="" class="img-fluid">
-                      </figure>
-                      <div class="text">
-                        <h3 class="heading">Create cool websites using this template</h3>
-                        <span class="meta">$34</span>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" class="d-flex">
-                      <figure class="image mr-3">
-                        <img src="images/img_3.png" alt="" class="img-fluid">
-                      </figure>
-                      <div class="text">
-                        <h3 class="heading">Create cool websites using this template</h3>
-                        <span class="meta">$34</span>
-                      </div>
-                    </a>
-                  </li>
+                  <?php
+			  foreach($results['recent_courses'] as $recent_courses)
+			  {
+			  echo"
+                <li>
+                  <a href='.?action=lessons&course_id=$recent_courses->course_id' class='d-flex'>
+                    <figure class='image mr-3'>
+                      <img src='Profilepics/Courses/fullsize/$recent_courses->course_id$recent_courses->course_image' alt='' class='img-fluid'>
+                    </figure>
+                    <div class='text'>
+                      <h3 class='heading'>$recent_courses->course_code</h3>";
+					 if(empty($recent_courses->course_price))
+                     {						 
+                      echo"<span class='meta'>Free</span>";
+					 }
+					 else
+					 {
+						 echo"<span class='meta'>Rs.$recent_courses->course_price</span>";
+					 }
+                echo"</div>
+                  </a>
+                </li>";
+			  }
+				?>
+				
+                  
                 </ul>
               </div>
   
@@ -200,149 +193,36 @@
         </div>
         <div class="container-fluid block-11 element-animate">
           <div class="nonloop-block-11 owl-carousel">
-            <div class="item">
-              <div class="block-19">
-                  <figure>
-                    <img src="images/img_1.png" alt="Image" class="img-fluid">
-                  </figure>
-                  <div class="text">
-                    <h2 class="heading"><a href="#">Advanced JavaScript Learning</a></h2>
-                    <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit qui neque sint eveniet tempore sapiente.</p>
-                    <div class="meta d-flex align-items-center">
-                      <div class="number">
-                        <span>2,219/6,000</span>
-                      </div>
-                      <div class="price text-right"><del class="mr-3">$23</del><span>Free</span></div>
-                    </div>
-                  </div>
-                </div>
-            </div>
-  
-            <div class="item">
-              <div class="block-19">
-                  <figure>
-                    <img src="images/img_3.png" alt="Image" class="img-fluid">
-                  </figure>
-                  <div class="text">
-                    <h2 class="heading"><a href="#">Advanced JavaScript Learning</a></h2>
-                    <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit qui neque sint eveniet tempore sapiente.</p>
-                    <div class="meta d-flex align-items-center">
-                      <div class="number">
-                        <span>2,219/6,000</span>
-                      </div>
-                      <div class="price text-right"><del class="mr-3">$23</del><span>Free</span></div>
-                    </div>
-                  </div>
-                </div>
-            </div>
-  
-            <div class="item">
-              <div class="block-19">
+		  <?php
+            foreach($results['recommended_courses'] as $courses)
+   {   
+	echo" <div class='item'>
+            <div class='block-19'>
                 <figure>
-                  <img src="images/img_2.png" alt="Image" class="img-fluid">
+                  <img src='Profilepics/Courses/fullsize/$courses->course_id$courses->course_image' alt='Image' class='img-fluid'>
                 </figure>
-                <div class="text">
-                  <h2 class="heading"><a href="#">Introduction to CSS</a></h2>
-                  <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit qui neque sint eveniet tempore sapiente.</p>
-                  <div class="meta d-flex align-items-center">
-                    <div class="number">
-                      <span>1,903/3,000</span>
-                    </div>
-                    <div class="price text-right"><span>$10.99</span></div>
-                  </div>
+                <div class='text'>
+                  <h2 class='heading'><a href='.?action=lessons&course_id=$courses->course_id'>$courses->course_name</a></h2>
+                  <p class='mb-4'>$courses->course_summary</p>
+                  <div class='meta d-flex align-items-center'>
+                    <div class='number'>
+                      <span>$courses->course_language</span>
+                    </div>";
+					if(empty($courses->course_price))
+					{
+                    echo"<div class='price text-right'><a href='index.php?action=addcourses&course_id=$courses->course_id'><span>Free</span></a></div>";
+					}
+					else
+					{
+						echo"<div class='price text-right'><a href='index.php?action=addcourses&course_id=$courses->course_id'><span>Rs.$courses->course_price</span></a></div>";
+					}
+            echo"</div>
                 </div>
               </div>
-            </div>
-  
-            <div class="item">
-              <div class="block-19">
-                <figure>
-                  <img src="images/img_1.jpg" alt="Image" class="img-fluid">
-                </figure>
-                <div class="text">
-                  <h2 class="heading"><a href="#">Design &amp; Develop</a></h2>
-                  <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit qui neque sint eveniet tempore sapiente.</p>
-                  <div class="meta d-flex align-items-center">
-                    <div class="number">
-                      <span>23/100</span>
-                    </div>
-                    <div class="price text-right"><del class="mr-3">$23</del><span>Free</span></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-  
-            <div class="item">
-              <div class="block-19">
-                  <figure>
-                    <img src="images/img_1.jpg" alt="Image" class="img-fluid">
-                  </figure>
-                  <div class="text">
-                    <h2 class="heading"><a href="#">Advanced JavaScript Learning</a></h2>
-                    <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit qui neque sint eveniet tempore sapiente.</p>
-                    <div class="meta d-flex align-items-center">
-                      <div class="number">
-                        <span>2,219/6,000</span>
-                      </div>
-                      <div class="price text-right"><del class="mr-3">$23</del><span>Free</span></div>
-                    </div>
-                  </div>
-                </div>
-            </div>
-  
-            <div class="item">
-              <div class="block-19">
-                  <figure>
-                    <img src="images/img_3.jpg" alt="Image" class="img-fluid">
-                  </figure>
-                  <div class="text">
-                    <h2 class="heading"><a href="#">Advanced JavaScript Learning</a></h2>
-                    <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit qui neque sint eveniet tempore sapiente.</p>
-                    <div class="meta d-flex align-items-center">
-                      <div class="number">
-                        <span>2,219/6,000</span>
-                      </div>
-                      <div class="price text-right"><del class="mr-3">$23</del><span>Free</span></div>
-                    </div>
-                  </div>
-                </div>
-            </div>
-  
-            <div class="item">
-              <div class="block-19">
-                <figure>
-                  <img src="images/img_2.jpg" alt="Image" class="img-fluid">
-                </figure>
-                <div class="text">
-                  <h2 class="heading"><a href="#">Introduction to CSS</a></h2>
-                  <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit qui neque sint eveniet tempore sapiente.</p>
-                  <div class="meta d-flex align-items-center">
-                    <div class="number">
-                      <span>1,903/3,000</span>
-                    </div>
-                    <div class="price text-right"><span>$10.99</span></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-  
-            <div class="item">
-              <div class="block-19">
-                <figure>
-                  <img src="images/img_1.jpg" alt="Image" class="img-fluid">
-                </figure>
-                <div class="text">
-                  <h2 class="heading"><a href="#">Design &amp; Develop</a></h2>
-                  <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit qui neque sint eveniet tempore sapiente.</p>
-                  <div class="meta d-flex align-items-center">
-                    <div class="number">
-                      <span>23/100</span>
-                    </div>
-                    <div class="price text-right"><del class="mr-3">$23</del><span>Free</span></div>
-                  </div>
-                </div>
-              </div>
-            </div>
+          </div>";
+   }
+		  
+		  ?>
             
           </div>
         </div>

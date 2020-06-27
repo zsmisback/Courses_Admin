@@ -78,10 +78,14 @@ function lessons(){
 	
 	$results = array();
 	$data = Lessons::getLessonsByCourseId((int)$_GET['course_id']);
+	$data2 = Courses::getLimitedCourses(8);
+	$data3 = Courses::getLimitedCourses();
 	$results['courses'] = Courses::getCoursesById((int)$_GET['course_id']);
 	$results['courses_continue'] = Courses::getCoursesById2((int)$_GET['course_id']);
 	$results['lessons'] = $data['results'];
 	$results['lessons_continue'] = $data['results_cont'];
+	$results['recent_courses'] = $data2['results'];
+	$results['recommended_courses'] = $data3['results'];
 	require(TEMPLATE_PATH_INDEX."/lessons.php");
 }
 
