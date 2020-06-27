@@ -15,7 +15,7 @@
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="courses.html">Courses</a></li>
               
-                <li><a href="login.html">Login</a></li>
+                <li><a href="index.php?action=login">Login</a></li>
                 <li><a href="index.php?action=signup">SignUp</a></li>
                 <li><a href="#">CheckValidate
                   <br>Certificate</li>

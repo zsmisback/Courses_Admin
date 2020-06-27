@@ -39,7 +39,7 @@
                 <a class="nav-link active" href="courses.html">Courses</a>
               </li>
 			    <li class="nav-item">
-                <a class="nav-link" href="login.html">Login</a>
+                <a class="nav-link" href="index.php?action=login">Login</a>
               </li>
 			    <li class="nav-item">
                 <a class="nav-link" href="index.php?action=signup">SignUp</a>

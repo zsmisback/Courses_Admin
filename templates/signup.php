@@ -14,22 +14,23 @@
             <div class="form-wrap">
               <h2 class="mb-5"><i style="font-size:30px" class="fa">&#xf02d;</i> &nbsp; SignUp New Account</h2>
               <form method="post">
+			  <input type="hidden" name="user_lvl" value="0"/>
                     <div class="row">
                     <div class="col-md-12 form-group">
                       <label for="name">Name</label>
-                      <input type="text" id="name" class="form-control py-2" name="user_name">
+                      <input type="text" id="name" class="form-control py-2" name="user_name" value="<?php echo $user_name; ?>">
                     </div>
                   </div>
 				   <div class="row">
                     <div class="col-md-12 form-group">
                       <label for="name">Contact</label>
-                      <input type="number" id="number" class="form-control py-2" name="user_contact">
+                      <input type="number" id="number" class="form-control py-2" name="user_contact" value="<?php echo $user_contact; ?>">
                     </div>
                   </div>
                   <div class="row">
                     <div class="col-md-12 form-group">
                       <label for="name">Email Address</label>
-                      <input type="email" id="Email" class="form-control py-2" name="user_email_address">
+                      <input type="email" id="Email" class="form-control py-2" name="user_email_address" value="<?php echo $user_email_address; ?>">
                     </div>
                   </div>
                   <div class="row">
@@ -50,7 +51,7 @@
                        I’m in for emails with exciting discounts and personalized recommendations
                   </label>
                    </div>
-                  
+                  <p><?php echo $error; ?></p>
                   <div class="row">
                     <div class="col-md-6 form-group">
                       <input type="submit" value="Register" name="submit" class="btn btn-primary px-5 py-2">

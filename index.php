@@ -3,7 +3,7 @@
 require( "config.php" );
 session_start();
 $action = isset( $_GET['action'] ) ? $_GET['action'] : "";
-$_SESSION['user_id'] = 2;
+
 
 
 switch ( $action ) {
@@ -57,11 +57,18 @@ function signup(){
 		home();
 		return;
 	}
+	$error = '';
+	$user_name = '';
+	$user_contact = '';
+	$user_email_address = '';
+	
 	if($_SERVER['REQUEST_METHOD'] == 'POST')
 	{
 		$users = new Admins;
 	    $users->storeFormValues($_POST);
 	    $users->insert();
+		login();
+		return;
 	  
 	}
 	require(TEMPLATE_PATH_INDEX."/signup.php");
@@ -486,24 +493,44 @@ function viewusers(){
 //Login
 function login(){
 	
-	$error = '';
 	
-	if(isset($_SESSION["loggedin"]))
+	
+	$results = array();
+	if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true)
 	{
-		dashboard();
+		
+	}
+	else
+	{
+		home();
 		return;
 	}
-	if(isset($_POST['login']))
+	$error = '';
+	if($_SERVER['REQUEST_METHOD'] == 'POST')
 	{
-		
-		
-			$_SESSION["loggedin"] = true;
-			$_SESSION["username"] = $_POST['email'];
-			header("Location:admin.php?action=dashboard");
-			exit;
-		
+		$users = new Admins;
+		$users->storeFormValues($_POST);
+		$userinfo = $users->login();
+		if($userinfo['exists'] > 0)
+		{
+			if(password_verify($_POST['user_password'],$userinfo['pass']))
+			{
+				$_SESSION["loggedin"] = true;
+				$_SESSION["user_id"] = $userinfo["id"];
+				home();
+				return;
+			}
+			else
+			{
+				$error = "The Email or Password does not exist";
+			}
+		}
+		else
+		{
+			$error = "The Email or Password does not exist";
+		}
 	}
-	require(TEMPLATE_PATH."/login.php");
+	require(TEMPLATE_PATH_INDEX."/login.php");
 }
 
 //Logout
