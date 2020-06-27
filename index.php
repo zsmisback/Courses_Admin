@@ -70,6 +70,16 @@ function courses(){
 
 function lessons(){
 	
+	if(!isset($_GET['course_id']) || !$_GET['course_id'])
+	{
+		home();
+		return;
+	}
+	
+	$results = array();
+	$data = Lessons::getLessonsByCourseId((int)$_GET['course_id']);
+	$results['lessons'] = $data['results'];
+	$results['lessons_continue'] = $data['results_cont'];
 	require(TEMPLATE_PATH_INDEX."/lessons.php");
 }
 

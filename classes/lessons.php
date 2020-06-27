@@ -14,7 +14,18 @@ class Lessons{
 	public $lesson_status=null;
 	public $lesson_unique=null;
 	public $course_name=null;
-	
+	public $course_summary=null;
+	public $course_tags=null;
+	public $course_by=null;
+	public $course_language=null;
+	public $course_price=null;
+	public $course_rating=null;
+	public $course_total_time=null;
+	public $course_reading=null;
+	public $course_award=null;
+	public $course_material=null;
+	public $course_age_group=null;
+	public $course_pre_requisite=null;
 //Store data when object is called
 	
 	public function __construct($data=array())
@@ -59,6 +70,54 @@ class Lessons{
 		{
 			$this->course_name = $data['course_name'];
 		}
+		if(isset($data['course_summary']))
+		{
+			$this->course_summary = $data['course_summary'];
+		}
+		if(isset($data['course_tags']))
+		{
+			$this->course_tags = $data['course_tags'];
+		}
+		if(isset($data['course_by']))
+		{
+			$this->course_by = $data['course_by'];
+		}
+		if(isset($data['course_language']))
+		{
+			$this->course_language = $data['course_language'];
+		}
+		if(isset($data['course_price']))
+		{
+			$this->course_price = $data['course_price'];
+		}
+		if(isset($data['course_rating']))
+		{
+			$this->course_rating = $data['course_rating'];
+		}
+		if(isset($data['course_total_time']))
+		{
+			$this->course_total_time = $data['course_total_time'];
+		}
+		if(isset($data['course_reading']))
+		{
+			$this->course_reading = $data['course_reading'];
+		}
+		if(isset($data['course_award']))
+		{
+			$this->course_award = $data['course_award'];
+		}
+		if(isset($data['course_material']))
+		{
+			$this->course_material = $data['course_material'];
+		}
+		if(isset($data['course_age_group']))
+		{
+			$this->course_age_group = $data['course_age_group'];
+		}
+		if(isset($data['course_pre_requisite']))
+		{
+			$this->course_pre_requisite = $data['course_pre_requisite'];
+		}
 		
 	}
 
@@ -99,7 +158,34 @@ class Lessons{
 	}
 	
 	
-	
+//Get All the lessons in a course By Id
+
+	public static function getLessonsByCourseId($id){
+		
+		$conn = new PDO(DB_DSN,DB_USERNAME,DB_PASSWORD);
+		$sql = "SELECT * FROM lessons LEFT JOIN courses ON course_id = lesson_for WHERE lesson_for = :lesson_for";
+		$stmt = $conn->prepare($sql);
+		$stmt->bindValue(":lesson_for",$id,PDO::PARAM_INT);
+		$stmt->execute();
+		$list = array();
+		while($row = $stmt->fetch())
+		{
+			$lessons = new Lessons($row);
+			$list[] = $lessons;
+		}
+		$sql = "SELECT * FROM lessons LEFT JOIN courses_continue ON course_id = lesson_for WHERE lesson_for = :lesson_for";
+		$stmt = $conn->prepare($sql);
+		$stmt->bindValue(":lesson_for",$id,PDO::PARAM_INT);
+		$stmt->execute();
+		$list2 = array();
+		while($row2 = $stmt->fetch())
+		{
+			$lessons2 = new Lessons($row2);
+			$list2[] = $lessons2;
+		}
+		$conn = null;
+		return(array("results"=>$list,"results_cont"=>$list2));
+	}
 	
 	
 //Store a Forms Value	

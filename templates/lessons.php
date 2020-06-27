@@ -20,8 +20,8 @@
                 <div class="container">
                   <div class="row">
                     <div class="col-md-12 pt-2">
-                      <h2>Financial Managment</h2>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis laborum repellat quisquam, illo soluta, deleniti, nesciunt illum eveniet tempore sed necessitatibus eligendi rerum. Cum maxime, aliquam incidunt voluptatem enim eum.</p>
+                      <h2><?php echo $results['lessons'][0]->course_name; ?></h2>
+                      <p><?php echo $results['lessons'][0]->course_summary; ?></p>
                     </div>
                   </div>
                 </div>
@@ -31,73 +31,25 @@
               
             </div>
           </div>
-          <div class="row bg-light align-items-center p-4 episode">
-            <div class="col-md-9">
-              <p class="meta">Lesson 1 <a href="#">Runtime 2:53</a></p>
-              <h2><a href="#">Some Title Here For The Video</a></h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, fugit!</p>
+		 <?php
+		
+		foreach($results['lessons'] as $lessons)
+		{
+       echo"		
+          <div class='row bg-light align-items-center p-4 episode'>
+            <div class='col-md-9'>
+              <p class='meta'>Lesson 1 <a href='.?action=content&lesson_id=$lessons->lesson_id'>Runtime 2:53</a></p>
+              <h2><a href='#'>$lessons->lesson_name</a></h2>
+              <p>$lessons->lesson_content</p>
             </div>
-            <div class="col-md-3 text-center">
-                <a class="btn btn-primary px-3 py-2" href="lesson1.html" role="button">Watch Video</a>
+            <div class='col-md-3 text-center'>
+                <a class='btn btn-primary px-3 py-2' href='.?action=content&lesson_id=$lessons->lesson_id' role='button'>Watch Video</a>
 
             </div>
-          </div>
+          </div>";
+		}
   
-          <div class="row align-items-center p-4 episode">
-            <div class="col-md-9">
-              <p class="meta">Lesson 2 <a href="#">Runtime 5:12</a></p>
-              <h2><a href="#">Some Title Here For The Video</a></h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, fugit!</p>
-            </div>
-            <div class="col-md-3 text-center">
-                <a class="btn btn-primary px-3 py-2" href="lesson1.html" role="button">Watch Video</a>
-
-            </div>
-          </div>
-  
-          <div class="row bg-light align-items-center p-4 episode">
-            <div class="col-md-9">
-              <p class="meta">Lesson 3 <a href="#">Runtime 5:12</a></p>
-              <h2><a href="#">Some Title Here For The Video</a></h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, fugit!</p>
-            </div>
-            <div class="col-md-3 text-center">
-                <a class="btn btn-primary px-3 py-2" href="lesson1.html" role="button">Watch Video</a>
-            </div>
-          </div>
-  
-          <div class="row align-items-center p-4 episode">
-            <div class="col-md-9">
-              <p class="meta">Lesson 4 <a href="#">Runtime 6:55</a></p>
-              <h2><a href="#">Some Title Here For The Video</a></h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, fugit!</p>
-            </div>
-            <div class="col-md-3 text-center">
-                <a class="btn btn-primary px-3 py-2" href="lesson1.html" role="button">Watch Video</a>
-            </div>
-          </div>
-  
-          <div class="row bg-light align-items-center p-4 episode">
-            <div class="col-md-9">
-              <p class="meta">Lesson 5 <a href="#">Runtime 14:33</a></p>
-              <h2><a href="#">Some Title Here For The Video</a></h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, fugit!</p>
-            </div>
-            <div class="col-md-3 text-center">
-                <a class="btn btn-primary px-3 py-2" href="lesson1.html" role="button">Watch Video</a>
-            </div>
-          </div>
-
-          <div class="row align-items-center p-4 episode">
-            <div class="col-md-9">
-              <p class="meta">Lesson 6 <a href="#">Runtime 14:33</a></p>
-              <h2><a href="#">Some Title Here For The Video</a></h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, fugit!</p>
-            </div>
-            <div class="col-md-3 text-center">
-                <a class="btn btn-primary px-3 py-2" href="lesson1.html" role="button">Watch Video</a>
-            </div>
-          </div>
+          ?>
         </div>
       </section>
             </div>
@@ -107,13 +59,13 @@
               <div class="block-28 mb-5">
                 <h2 class="heading">Course Details</h2>
                 <ul>
-                  <li><span class="text-1">Duration</span> <span class="text-2">50 days</span></li>
-                  <li><span class="text-1">Lectures</span> <span class="text-2">201</span></li>
-                  <li><span class="text-1">Quizzes</span> <span class="text-2">8</span></li>
-                  <li><span class="text-1">Course Certificate</span> <span class="text-2">Yes</span></li>
-                  <li><span class="text-1">Subject</span> <span class="text-2">Web Development</span></li>
-                  <li><span class="text-1">Language</span> <span class="text-2">English</span></li>
-                  <li><span class="text-1">Price</span> <span class="text-2">$102.00</span></li>
+                  <li><span class="text-1">Duration - <span class="text-2">50 days</span></li>
+                  <li><span class="text-1">Lectures - </span> <span class="text-2">201</span></li>
+                  <li><span class="text-1">Quizzes - </span> <span class="text-2">8</span></li>
+                  <li><span class="text-1">Course Certificate - </span> <span class="text-2">Yes</span></li>
+                  <li><span class="text-1">Subject - </span> <span class="text-2">Web Development</span></li>
+                  <li><span class="text-1">Language - </span> <span class="text-2">English</span></li>
+                  <li><span class="text-1">Price - </span> <span class="text-2">$102.00</span></li>
                 </ul>
               </div>
   
