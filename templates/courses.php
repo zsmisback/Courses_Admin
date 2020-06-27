@@ -24,6 +24,10 @@
           <div class="col-md-6 col-lg-8 order-md-2">
             <div class="row">
 			<?php
+			if(empty($results['courses']))
+			{
+				echo "<h3>No Courses</h3>";
+			}
 			
 		foreach($results['courses'] as $courses)
 		{		
@@ -33,11 +37,12 @@
                     <a href='course-single.html'><img src='Profilepics/Courses/fullsize/$courses->course_id$courses->course_image' alt='Image' class='img-fluid'></a>
                   </figure>
                     <div class='text'>
-                      <h2 class='heading'><a href='#'>$courses->course_name</a></h2>
+                      <h2 class='heading'><a href='#'>$courses->course_code</a></h2>
+					  <a href='#' style='color:#80878a; font-size: 15px;'>$courses->course_name</a></h2>
                       <p class='mb-4'>$courses->course_summary</p>
                       <div class='meta d-flex align-items-center'>
                         <div class='number'>
-                          <span>2,219/6,000</span>
+                          <span>$courses->course_language</span>
                         </div>
                         <div class='price text-right'><del class='mr-3'>$23</del><span>Free</span></div>
                       </div>
@@ -54,11 +59,25 @@
               <div class="col-md-12 text-center">
                 <div class="block-27">
                   <ul>
-                    <li><a href="#">&lt;</a></li>
-                    <li class="active"><span>1</span></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">&gt;</a></li>
+				  <?php
+                    
+					
+		        if($results['page'] == 1)
+		       {
+			     echo"";
+		       }
+		        else
+		        {
+			     echo"<li><a href='.?action=courses&page=$results[prev]'>&lt;</a></li>";
+                
+				}
+				for($pageNumbers=1;$pageNumbers<=$results['totalpages'];$pageNumbers++) :
+		      echo"
+				    <li><a href='.?action=courses&page=$pageNumbers'>$pageNumbers</a></li>";
+					endfor;
+					
+                echo"<li><a href='.?action=courses&page=$results[next]'>&gt;</a></li>";
+					?>
                   </ul>
                 </div>
               </div>

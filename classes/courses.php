@@ -150,7 +150,33 @@ class Courses{
 	}
 
 
-	
+//Get Courses Pagination That is limited
+
+    public static function getPagination($numRows = 12){
+		
+		
+		$conn = new PDO(DB_DSN,DB_USERNAME,DB_PASSWORD);
+		$sql = "SELECT SQL_CALC_FOUND_ROWS * FROM courses ORDER BY course_id DESC";
+		$result = $conn->query($sql);
+		$list = array();
+		
+		while($row = $result->fetch())
+		{
+			$courses = new courses($row);
+			$list[] = $courses;
+		}
+		
+		
+        $page = isset($_GET['page']) ? $_GET['page'] : 1;
+        $start = 1;
+		$prev = $page - 1;
+        $next = $page + 1;
+		$sql = "SELECT FOUND_ROWS() AS totalRows";
+		$totalRows = $conn->query($sql)->fetch();
+		$total_pages = ceil($totalRows[0]/$numRows);
+		$conn = null;
+		return(array("results" => $list,"page" => $page,"prev" => $prev,"next" => $next,"totalPages" => $total_pages));
+	}	
 	
 //Get a single course row data by Id
 	

@@ -52,7 +52,12 @@ function courses(){
 	
 	$results = array();
 	$data = Courses::getLimitedCourses();
+	$data2 = Courses::getPagination();
 	$results['courses'] = $data['results'];
+	$results['page'] = $data2['page'];
+	$results['prev'] = $data2['prev'];
+	$results['next'] = $data2['next'];
+	$results['totalpages'] = $data2['totalPages'];
 	require(TEMPLATE_PATH_INDEX."/courses.php");
 }
 
