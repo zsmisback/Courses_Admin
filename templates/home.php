@@ -100,14 +100,14 @@
 	echo" <div class='item'>
             <div class='block-19'>
                 <figure>
-                  <img src='images/img_1.png' alt='Image' class='img-fluid'>
+                  <img src='Profilepics/Courses/fullsize/$courses->course_id$courses->course_image' alt='Image' class='img-fluid'>
                 </figure>
                 <div class='text'>
                   <h2 class='heading'><a href='#'>$courses->course_name</a></h2>
                   <p class='mb-4'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit qui neque sint eveniet tempore sapiente.</p>
                   <div class='meta d-flex align-items-center'>
                     <div class='number'>
-                      <span>2,219/6,000</span>
+                      <span>$courses->course_language</span>
                     </div>
                     <div class='price text-right'><del class='mr-3'>$23</del><a href='index.php?action=addcourses&course_id=$courses->course_id'><span>Free</span></a></div>
                   </div>
