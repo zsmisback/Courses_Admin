@@ -31,7 +31,7 @@
           
                 <div class="row">
                   <div class="col-md-6 form-group float-md-left ">
-                    <input type="submit" name="submit" value="Login"> 
+                    <input type="submit" name="submit" value="Login" class="btn btn-primary px-4 py-2"> 
                  
                   </div>
 				    <div class="col-md-6 form-group float-md-center ">
