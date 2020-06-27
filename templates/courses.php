@@ -102,39 +102,25 @@
             <div class="block-25 mb-5">
               <div class="heading">Recent Courses</div>
               <ul>
+			  <?php
+			  foreach($results['recent_courses'] as $recent_courses)
+			  {
+			  echo"
                 <li>
-                  <a href="#" class="d-flex">
-                    <figure class="image mr-3">
-                      <img src="images/img_1.png" alt="" class="img-fluid">
+                  <a href='#' class='d-flex'>
+                    <figure class='image mr-3'>
+                      <img src='Profilepics/Courses/fullsize/$recent_courses->course_id$recent_courses->course_image' alt='' class='img-fluid'>
                     </figure>
-                    <div class="text">
-                      <h3 class="heading">Create cool websites using this template</h3>
-                      <span class="meta">$34</span>
+                    <div class='text'>
+                      <h3 class='heading'>$recent_courses->course_code</h3>
+                      <span class='meta'>$34</span>
                     </div>
                   </a>
-                </li>
-                <li>
-                  <a href="#" class="d-flex">
-                    <figure class="image mr-3">
-                      <img src="images/img_2.png" alt="" class="img-fluid">
-                    </figure>
-                    <div class="text">
-                      <h3 class="heading">Create cool websites using this template</h3>
-                      <span class="meta">$34</span>
-                    </div>
-                  </a>
-                </li>
-                <li>
-                  <a href="#" class="d-flex">
-                    <figure class="image mr-3">
-                      <img src="images/img_3.png" alt="" class="img-fluid">
-                    </figure>
-                    <div class="text">
-                      <h3 class="heading">Create cool websites using this template</h3>
-                      <span class="meta">$34</span>
-                    </div>
-                  </a>
-                </li>
+                </li>";
+			  }
+				?>
+                
+                  
               </ul>
             </div>
 

@@ -53,11 +53,13 @@ function courses(){
 	$results = array();
 	$data = Courses::getLimitedCourses();
 	$data2 = Courses::getPagination();
+	$data3 = Courses::getLimitedCourses(8);
 	$results['courses'] = $data['results'];
 	$results['page'] = $data2['page'];
 	$results['prev'] = $data2['prev'];
 	$results['next'] = $data2['next'];
 	$results['totalpages'] = $data2['totalPages'];
+	$results['recent_courses'] = $data3['results'];
 	require(TEMPLATE_PATH_INDEX."/courses.php");
 }
 
