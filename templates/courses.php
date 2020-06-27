@@ -46,11 +46,11 @@
                         </div>";
 					if(empty($courses->course_price))
 					{						
-                      echo"<div class='price text-right'><span>Free</span></div>";
+                      echo"<div class='price text-right'><a href='index.php?action=addcourses&course_id=$courses->course_id'><span>Free</span></a></div>";
 					}
 					else
 					{
-						echo"<div class='price text-right'><span>Rs.$courses->course_price</span></div>";
+						echo"<div class='price text-right'><a href='index.php?action=addcourses&course_id=$courses->course_id'><span>Rs.$courses->course_price</span></a></div>";
 						
 					}
            echo"     </div>
