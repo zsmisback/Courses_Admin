@@ -73,7 +73,7 @@
 				}
 				for($pageNumbers=1;$pageNumbers<=$results['totalpages'];$pageNumbers++) :
 		      echo"
-				    <li><a href='.?action=courses&page=$pageNumbers'>$pageNumbers</a></li>";
+				    <li><a href='.?action=courses&page=$pageNumbers'>$pageNumbers</a></li>&nbsp;";
 					endfor;
 					
                 echo"<li><a href='.?action=courses&page=$results[next]'>&gt;</a></li>";
