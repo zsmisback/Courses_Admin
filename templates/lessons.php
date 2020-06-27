@@ -20,8 +20,9 @@
                 <div class="container">
                   <div class="row">
                     <div class="col-md-12 pt-2">
-                      <h2><?php echo $results['lessons'][0]->course_name; ?></h2>
-                      <p><?php echo $results['lessons'][0]->course_summary; ?></p>
+					
+                      <h2><?php echo $results['courses']->course_name; ?></h2>
+                      <p><?php echo $results['courses']->course_summary; ?></p>
                     </div>
                   </div>
                 </div>
@@ -33,12 +34,16 @@
           </div>
 		 <?php
 		
+		if(empty($results['lessons']))
+		{
+			echo "<h2>No lessons</h2>";
+		}
 		foreach($results['lessons'] as $lessons)
 		{
        echo"		
           <div class='row bg-light align-items-center p-4 episode'>
             <div class='col-md-9'>
-              <p class='meta'>Lesson 1 <a href='.?action=content&lesson_id=$lessons->lesson_id'>Runtime 2:53</a></p>
+              <p class='meta'>Lesson 1</p>
               <h2><a href='#'>$lessons->lesson_name</a></h2>
               <p>$lessons->lesson_content</p>
             </div>
@@ -56,24 +61,11 @@
             <!-- END content -->
             <div class="col-md-6 col-lg-4 order-md-2">
               
-              <div class="block-28 mb-5">
-                <h2 class="heading">Course Details</h2>
-                <ul>
-                  <li><span class="text-1">Duration - <span class="text-2">50 days</span></li>
-                  <li><span class="text-1">Lectures - </span> <span class="text-2">201</span></li>
-                  <li><span class="text-1">Quizzes - </span> <span class="text-2">8</span></li>
-                  <li><span class="text-1">Course Certificate - </span> <span class="text-2">Yes</span></li>
-                  <li><span class="text-1">Subject - </span> <span class="text-2">Web Development</span></li>
-                  <li><span class="text-1">Language - </span> <span class="text-2">English</span></li>
-                  <li><span class="text-1">Price - </span> <span class="text-2">$102.00</span></li>
-                </ul>
-              </div>
-  
-              <div class="block-28 text-center mb-5">
+			  <div class="block-28 text-center mb-5">
                 <figure>
                   <img src="images/teacher2.jpg" alt="" class="img-fluid">
                 </figure>
-                <h2 class="heading">Pooja Joshi</h2>
+                <h2 class="heading"><?php echo $results['courses']->course_by; ?></h2>
                 <h3 class="subheading">JavaScript </h3>
                 <p>
                   <a href="#" class="fa fa-twitter p-2"></a>
@@ -83,6 +75,57 @@
                 <p>Hi I'm Pooja Joshi, consectetur adipisicing elit. Quibusdam nulla beatae modi itaque nemo magni molestiae explicabo sint dolorum cum</p>
                 
               </div>
+			  
+              <div class="block-28 mb-5">
+                <h2 class="heading">Course Details</h2>
+                <ul>
+                  <li><span class="text-1">Duration - <span class="text-2"><?php echo $results['courses_continue']->course_reading; ?></span></li>
+           
+                  <li><span class="text-1">Subject - </span> <span class="text-2"><?php echo $results['courses']->course_name; ?></span></li>
+                  <li><span class="text-1">Language - </span> <span class="text-2"><?php echo $results['courses']->course_language; ?></span></li>
+				  <li><span class="text-1">Age Group - </span> <span class="text-2"><?php echo $results['courses_continue']->course_age_group; ?></span></li>
+				  <li><span class="text-1">Rating - </span> <span class="text-2"><?php echo $results['courses_continue']->course_rating; ?></span></li>
+				<?php 
+				if(empty($results['courses']->course_price))
+				{
+					echo"<li><span class='text-1'>Free</span></li>";
+				}
+				else
+				{
+				echo"
+                <li><span class='text-1'>Price - Rs.</span> <span class='text-2'>";
+				foreach($results['lessons'] as $price)
+				{
+				echo"$price->course_price";
+				}
+				echo"</span></li>";
+				}
+				?>
+                </ul>
+              </div>
+			  
+			  <div class="block-28 mb-5">
+                <h2 class="heading">Course Awards</h2>
+                <ul>
+               <?php echo $results['courses_continue']->course_award; ?>
+                </ul>
+              </div>
+			  
+			  <div class="block-28 mb-5">
+                <h2 class="heading">Materials Required</h2>
+                <ul>
+               <?php echo $results['courses_continue']->course_material; ?>
+                </ul>
+              </div>
+			  
+			  <div class="block-28 mb-5">
+                <h2 class="heading">Pre-Requisites</h2>
+                <ul>
+               <?php echo $results['courses_continue']->course_pre_requisite; ?>
+                </ul>
+              </div>
+  
+              
   
               <div class="block-25 mb-5">
                 <div class="heading">Recent Courses</div>
