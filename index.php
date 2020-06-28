@@ -20,6 +20,10 @@ switch ( $action ) {
   lessons();
   break;
   
+  case 'content':
+  content();
+  break;
+  
   case 'addcourses':
   addcourses();
   break;
@@ -87,6 +91,25 @@ function lessons(){
 	$results['recent_courses'] = $data2['results'];
 	$results['recommended_courses'] = $data3['results'];
 	require(TEMPLATE_PATH_INDEX."/lessons.php");
+}
+
+function content(){
+	
+	if(!isset($_GET['lesson_id']) || !$_GET['lesson_id'])
+	{
+		home();
+		return;
+	}
+	$results = array();
+	$data = Courses::getLimitedCourses(8);
+	$data2 = Lessons::getPagination((int)$_GET['course_id']);
+	$results['courses'] = $data['results'];
+	$results['lessons'] = Lessons::getLessonsById((int)$_GET['lesson_id']);
+	$results['totalpages'] = $data2['totalPages'];
+	$results['paginations'] = $data2['results'];
+	
+	require(TEMPLATE_PATH_INDEX."/content.php");
+	
 }
 
 function signup(){

@@ -162,7 +162,7 @@ class Courses{
 		
 		while($row = $result->fetch())
 		{
-			$courses = new courses($row);
+			$courses = new Courses($row);
 			$list[] = $courses;
 		}
 		

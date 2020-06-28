@@ -36,7 +36,7 @@
                   <input type="submit" class="search-submit btn btn-primary" value="Search">  
                 </form>
                 <p class="text-center mb-5">We have more than 500 courses to improve your skills</p>
-                <p class="text-center "><a href="signUp.html" class="btn py-3 px-5">SignUp</a></p>
+                <p class="text-center "><a href=".?action=signup" class="btn py-3 px-5">SignUp</a></p>
               </div>
             </div>
             
@@ -87,7 +87,7 @@
           <div class="col-md-7 text-center section-heading">
             <h2 class="text-danger heading">Popular Courses</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit qui neque sint eveniet tempore sapiente.</p>
-            <p><a href="#" class="new btn btn-primary mt-4 py-2 px-4"><span class="ion-ios-book mr-2"></span>Enroll Now</a></p>
+            <p><a href=".?action=signup" class="new btn btn-primary mt-4 py-2 px-4"><span class="ion-ios-book mr-2"></span>Enroll Now</a></p>
           </div>
         </div>
       </div>

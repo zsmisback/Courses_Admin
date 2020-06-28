@@ -44,11 +44,11 @@
           <div class='row bg-light align-items-center p-4 episode'>
             <div class='col-md-9'>
               <p class='meta'>Lesson $lessons->lesson_no</p>
-              <h2><a href='.?action=content&lesson_id=$lessons->lesson_id'>$lessons->lesson_name</a></h2>
+              <h2><a href='.?action=content&course_id=$_GET[course_id]&lesson_id=$lessons->lesson_id'>$lessons->lesson_name</a></h2>
               <p>$lessons->lesson_content</p>
             </div>
             <div class='col-md-3 text-center'>
-                <a class='btn btn-primary px-3 py-2' href='.?action=content&lesson_id=$lessons->lesson_id' role='button'>Watch Video</a>
+                <a class='btn btn-primary px-3 py-2' href='.?action=content&course_id=$_GET[course_id]&lesson_id=$lessons->lesson_id' role='button'>Watch Video</a>
 
             </div>
           </div>";
