@@ -30,7 +30,7 @@
                     <li><a href='yourcourses.html'>YourCourses</a></li>
                     <li><a href='query.html'>Support</a></li>
                   
-                    <li><a href='profile.html'>Profile</a></li>
+                    <li><a href='index.php?action=profile'>Profile</a></li>
                     <li><a href='index.php?action=courses'>Explore</a></li>
                     <li><a href='certificate.html'>Certificate</a></li>
 

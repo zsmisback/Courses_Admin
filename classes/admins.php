@@ -8,6 +8,8 @@ class Admins{
 	public $user_email_address=null;
 	public $user_password=null;
 	public $user_certificates=null;
+	public $user_about=null;
+	public $user_image="";
 	public $user_lvl=null;
 	public $user_ban=null;
 	public $user_unique=null;
@@ -37,6 +39,14 @@ class Admins{
 		if(isset($data['user_certificates']))
 		{
 			$this->user_certificates = $data['user_certificates'];
+		}
+		if(isset($data['user_about']))
+		{
+			$this->user_about = $data['user_about'];
+		}
+		if(isset($data['user_image']))
+		{
+			$this->user_image = $data['user_image'];
 		}
 		if(isset($data['user_lvl']))
 		{
@@ -138,7 +148,10 @@ class Admins{
 		$conn = null;
 	}
 	
+//Insert New
+
 	
+//Edits both the users and admins details
 	
 	public function edit(){
 		

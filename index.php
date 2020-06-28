@@ -36,6 +36,10 @@ switch ( $action ) {
   signup();
   break;
   
+  case 'profile':
+  profile();
+  break;
+  
   case 'logout':
   logout();
   break;
@@ -141,6 +145,18 @@ function signup(){
 	require(TEMPLATE_PATH_INDEX."/signup.php");
 }
 
+function profile(){
+	
+	if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true)
+	{
+		home();
+		return;
+	}
+	
+	$results = array();
+	$results['user'] = Admins::getUsersById((int)$_SESSION['user_id']);
+	require(TEMPLATE_PATH_INDEX."/profile.php");
+}
 //Courses------------------------------------------------
 
 function addcourses(){

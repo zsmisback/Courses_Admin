@@ -84,7 +84,7 @@
               <li class='nav-item dropdown'>
                 <a class='nav-link dropdown-toggle' href='#' id='dropdown05' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>Profile</a>
                 <div class='dropdown-menu' aria-labelledby='dropdown05'>
-                  <a class='dropdown-item' href='profile.html'>View Profile</a>
+                  <a class='dropdown-item' href='index.php?action=profile'>View Profile</a>
                   <a class='dropdown-item' href='index.php?action=logout'>Logout
                 </a>
                  
