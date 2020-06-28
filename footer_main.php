@@ -28,11 +28,11 @@
 			{
 				echo"<li><a href='index.php?action=home'>Home</a></li>
                     <li><a href='yourcourses.html'>YourCourses</a></li>
-                    <li><a href='query.html'>Support</a></li>
+                    <li><a href='index.php?action=query'>Support</a></li>
                   
                     <li><a href='index.php?action=profile'>Profile</a></li>
                     <li><a href='index.php?action=courses'>Explore</a></li>
-                    <li><a href='certificate.html'>Certificate</a></li>
+                    <li><a href='#'>Certificate</a></li>
 
                     <li><a href='#'>CheckValidate
                       <br>Certificate</li>";

@@ -72,8 +72,8 @@
               <li class='nav-item dropdown'>
                 <a class='nav-link dropdown-toggle' href='#' id='dropdown05' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>Support</a>
                 <div class='dropdown-menu' aria-labelledby='dropdown05'>
-                  <a class='dropdown-item' href='query.html'>Place a query</a>
-                  <a class='dropdown-item' href='listquery.html'>List of query</a>
+                  <a class='dropdown-item' href='index.php?action=query'>Place a query</a>
+                  <a class='dropdown-item' href='index.php?action=listquery'>List of query</a>
                   <a class='dropdown-item' href='#'>Unique Code to speak on Phone
                 </a>
                  

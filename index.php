@@ -44,6 +44,14 @@ switch ( $action ) {
   userpass();
   break;
   
+  case 'query':
+  query();
+  break;
+  
+  case 'listquery':
+  listquery();
+  break;
+  
   case 'logout':
   logout();
   break;
@@ -222,214 +230,28 @@ function userpass(){
 	
 	require(TEMPLATE_PATH_INDEX."/password.php");
 }
-//Courses------------------------------------------------
 
-function addcourses(){
+function query(){
 	
-	if(!isset($_GET['course_id']) || !$_GET['course_id'])
+	if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true)
 	{
 		home();
 		return;
 	}
 	
-	$results = array();
+	require(TEMPLATE_PATH_INDEX."/query.php");
+}
+
+function listquery(){
 	
-	$results['addcourses'] = Courses::getAddCoursesById((int)$_GET['course_id']);
-	if(!empty($results['addcourses']))
+	if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true)
 	{
-		echo "No";
 		home();
-	    return;
-	}
-	else
-	{
-	Courses::addaCourse((int)$_GET['course_id']);
-	home();
-	return;
-	}
-	
-}
-
-function editcourses(){
-	
-	if(!isset($_GET['course_id']) || !$_GET['course_id'])
-	{
-		viewcourses();
 		return;
 	}
 	
-	if(isset($_POST['submit']))
-	{
-		
-		
-		if (empty($_FILES['image']['name']))
-        {			
-		
-              $courses = new Courses;
-		      $courses->storeFormValues($_POST);
-		       $courses->editonlytext();
-			   viewcourses();
-		       return;
-		  
-	  
-	    }
-		else
-		{
-			$courses = new Courses;
-		    $courses->storeFormValues($_POST);
-		     $courses->edit();
-			$courses->storeUploadedImage($_FILES['image']);
-			viewcourses();
-		       return;
-		}
-		
-		
-	   
-		
-	}
-
-
-    $results = array();
-	$results['courses'] = Courses::getCoursesById((int)$_GET['course_id']);
-	$results['courses_continue'] = Courses::getCoursesById2((int)$_GET['course_id']);
-	require(TEMPLATE_PATH."/editcourses.php");
+	require(TEMPLATE_PATH_INDEX."/listquery.php");
 }
-
-function deletecourses(){
-	
-	if(!isset($_GET['course_id']) || !$_GET['course_id'])
-	{
-		viewcourses();
-		return;
-	}
-	
-	$error = '';
-	
-	if(isset($_POST['submit']))
-	{
-		$vpcode = $_POST['vpcode'];
-		if(empty($vpcode))
-		{
-			$error = "Please enter the vpcode";
-		}
-		elseif($vpcode !== "deletethiscourse")
-		{
-			$error = "Invalid vpcode";
-		}
-		else
-		{
-			$courses = new Courses;
-			$courses->storeFormValues($_POST);
-			$courses->deletes();
-			$courses->deleteImages();
-			viewcourses();
-		    return;
-		}
-		
-	}
-	
-	
-	require(TEMPLATE_PATH."/deletecourses.php");
-}
-
-function viewcourses(){
-	
-	$results = array();
-	$data = Courses::getCoursesList();
-	$results['courses'] = $data['results'];
-
-
-	require(TEMPLATE_PATH."/listcourses.php");
-}
-
-//Lessons------------------------------------
-
-
-//Add lessons
-function addlessons(){
-	
-  if(isset($_POST['submit']))
-  {
-	  $lessons = new Lessons;
-	  $lessons->storeFormValues($_POST);
-	  $lessons->insert();
-	  viewlessons();
-	  return;
-  }
-  
-  
-    $results = array();
-	$data = Courses::getCoursesList();
-	$results['courses'] = $data['results'];
-	require(TEMPLATE_PATH."/addlessons.php");
-}
-
-function editlessons(){
-	
-	if(!isset($_GET['lesson_id']) || !$_GET['lesson_id'])
-	{
-		viewlessons();
-		return;
-		
-	}
-	
-	if(isset($_POST['submit']))
-	{
-		$lessons = new Lessons;
-		$lessons->storeFormValues($_POST);
-		$lessons->edit();
-		viewlessons();
-		return;
-	}
-	$results = array();
-	$data = Courses::getCoursesList();
-	$results['lessons'] = Lessons::getLessonsById((int)($_GET['lesson_id']));
-	$results['courses'] = $data['results']; 
-	require(TEMPLATE_PATH."/editlessons.php");
-}
-
-function deletelessons(){
-	
-	if(!isset($_GET['lesson_id']) || !$_GET['lesson_id'])
-	{
-		viewlessons();
-		return;
-	}
-	
-	$error = '';
-	
-	if(isset($_POST['submit']))
-	{
-		$vpcode = $_POST['vpcode'];
-		if(empty($vpcode))
-		{
-			$error = "Please enter the vpcode";
-		}
-		elseif($vpcode !== "deletethislesson")
-		{
-			$error = "Invalid vpcode";
-		}
-		else
-		{
-			$lessons = new Lessons;
-			$lessons->storeFormValues($_POST);
-			$lessons->deletes();
-			viewlessons();
-		    return;
-		}
-		
-	}
-	require(TEMPLATE_PATH."/deletelessons.php");
-}
-
-function viewlessons(){
-	
-	$results = array();
-	$data = Lessons::getLessonsList();
-	$results['lessons'] = $data['results'];
-	require(TEMPLATE_PATH."/listlessons.php");
-}
-
 //Comments---------------------------
 
 //Add comments
