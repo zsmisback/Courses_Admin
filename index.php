@@ -252,6 +252,21 @@ function listquery(){
 	
 	require(TEMPLATE_PATH_INDEX."/listquery.php");
 }
+
+function addcourses(){
+	
+	$results = array();
+	$data = 
+	$results['addedcourses'] = Courses::getAddCoursesById((int)$_GET['course_id']);
+	if(!empty($results['addedcourses']))
+	{
+		echo "No";
+	}
+	else
+	{
+	 Courses::addaCourse((int)$_GET['course_id']);
+	}
+}
 //Comments---------------------------
 
 //Add comments
