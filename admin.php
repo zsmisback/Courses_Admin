@@ -76,6 +76,10 @@ switch ( $action ) {
   editusers();
   break;
   
+  case 'edituserspass':
+  edituserspass();
+  break;
+  
   case 'banusers':
   banusers();
   break;
@@ -435,18 +439,78 @@ function editusers(){
 		{
 			$error = "Invalid vpcode";
 		}
+		elseif(empty($_FILES['image']['name']))
+		{
+			$users = new Admins;
+		    $users->storeFormValues($_POST);
+		    $users->edit_new_admin();
+			viewadmins();
+			return;
+			
+		}
 		else
 		{
-		$users = new Admins;
-		$users->storeFormValues($_POST);
-		$users->edit();
-		viewadmins();
-		return;
+			
+		   $users = new Admins;
+		    $users->storeFormValues($_POST);
+		    $users->edit_with_image_admin();
+		  $users->storeUploadedImageAdmin($_FILES['image']);
+		  viewadmins();
+		  return;
 		}
 	}
 	
 	$results['users'] = Admins::getUsersById((int)($_GET['user_id']));
 	require(TEMPLATE_PATH."/editusers.php");
+}
+
+//Edit User/Admin Password
+
+function edituserspass(){
+	
+	if(!isset($_GET['user_id']) || !$_GET['user_id'])
+	{
+		viewadmins();
+		return;
+	}
+	
+	$error = '';
+	
+	if($_SERVER["REQUEST_METHOD"] == "POST")
+	{
+		$results = array();
+	    $data = Admins::get_current_password((int)$_GET['user_id']);
+	    $results['password'] = $data['password'];
+		
+		
+		
+		if(!password_verify($_POST['curr_pass'],$results['password']))
+		{
+			$error = "This password does not match your current password";
+		}
+		elseif(empty($_POST['user_password']))
+		{
+			$error = "Please type in your new password";
+		}
+		elseif($_POST['re_pass'] !== $_POST['user_password'])
+		{
+			$error = "This password does not match your new password";
+		}
+		elseif($_POST['vpcode'] !== "editthepassword")
+		{
+			$error = "Invalid Vpcode";
+		}
+		else
+		{
+		 $users = new Admins;
+		 $users->storeFormValues($_POST);
+		 $users->edit_password_admin();
+		 header("Location:admin.php?action=viewadmins");
+		
+		}
+		
+	}
+	require(TEMPLATE_PATH."/edituserspass.php");
 }
 
 //Ban Users/Admins

@@ -192,6 +192,71 @@ class Admins{
 		}
 	}
 	
+//Store and move uploaded Images-Admin Area
+
+	public function storeUploadedImageAdmin($image){
+		
+		if($image['error'] == UPLOAD_ERR_OK)
+		{
+			
+			
+			$this->deleteImages();
+			
+			$this->user_image = strtolower(strrchr($image['name'],'.'));
+			$tempFilename = trim($image['tmp_name']);
+			
+			if(is_uploaded_file($tempFilename)){
+				
+				if(!(move_uploaded_file($tempFilename,$this->getImagePath()))) trigger_error( "Admins::storeUploadedImage(): Couldn't move uploaded file.", E_USER_ERROR );
+				
+			}
+			
+			
+			$attrs = getimagesize($this->getImagePath());
+			$imageWidth = $attrs[0];
+			$imageHeight = $attrs[1];
+			$imageType = $attrs[2];
+			
+			switch($imageType){
+				case IMAGETYPE_GIF:
+				$imageResource = imagecreatefromgif($this->getImagePath());
+				break;
+				
+				case IMAGETYPE_JPEG:
+				$imageResource = imagecreatefromjpeg($this->getImagePath());
+				break;
+				
+				case IMAGETYPE_PNG:
+				$imageResource = imagecreatefrompng($this->getImagePath());
+				break;
+				
+				default:
+                trigger_error ( "Admins::storeUploadedImage(): Unhandled or unknown image type ($imageType)", E_USER_ERROR );
+			}
+			
+			$thumbHeight = intval($imageHeight/$imageWidth * CATEGORY_THUMB_WIDTH);
+			$thumbResource = imagecreatetruecolor(CATEGORY_THUMB_WIDTH,$thumbHeight);
+			imagecopyresampled($thumbResource,$imageResource,0,0,0,0,CATEGORY_THUMB_WIDTH, $thumbHeight, $imageWidth, $imageHeight );
+			
+			// Save the thumbnail
+      switch ( $imageType ) {
+        case IMAGETYPE_GIF:
+          imagegif ( $thumbResource, $this->getImagePath( IMG_TYPE_THUMB ) );
+          break;
+        case IMAGETYPE_JPEG:
+          imagejpeg ( $thumbResource, $this->getImagePath( IMG_TYPE_THUMB ), JPEG_QUALITY );
+          break;
+        case IMAGETYPE_PNG:
+          imagepng ( $thumbResource, $this->getImagePath( IMG_TYPE_THUMB ) );
+          break;
+        default:
+          trigger_error ( "Admins::storeUploadedImage(): Unhandled or unknown image type ($imageType)", E_USER_ERROR );
+      }
+			
+		$this->edit_with_image_admin();
+		}
+	}
+	
 //Delete an image based off the course table Id 	
 	public function deleteImages(){
 		
@@ -291,6 +356,26 @@ class Admins{
 		
 	}
 	
+//Edit New Admin
+
+    public function edit_new_admin(){
+		
+		
+		$conn = new PDO(DB_DSN,DB_USERNAME,DB_PASSWORD);
+		$sql = "UPDATE users SET user_name = :user_name,user_contact = :user_contact,user_email_address = :user_email_address,user_about = :user_about WHERE user_id = :user_id";
+		$stmt = $conn->prepare($sql);
+		$stmt->bindValue(":user_name",$this->user_name,PDO::PARAM_STR);
+		$stmt->bindValue(":user_contact",$this->user_contact,PDO::PARAM_STR);
+		$stmt->bindValue(":user_email_address",$this->user_email_address,PDO::PARAM_STR);
+		$stmt->bindValue(":user_about",$this->user_about,PDO::PARAM_STR);
+		$stmt->bindValue(":user_id",$this->user_id,PDO::PARAM_INT);
+		$stmt->execute();
+		$conn = null;
+		
+		
+		
+	}	
+	
 //Update the user data if an image is uploaded
 	
 	public function edit_with_image(){
@@ -306,6 +391,29 @@ class Admins{
 			$stmt->bindValue(":user_about",$this->user_about,PDO::PARAM_STR);
 			$stmt->bindValue(":user_image",$this->user_image,PDO::PARAM_STR);
 		    $stmt->bindValue(":user_id",$_SESSION['user_id'],PDO::PARAM_INT);
+		    $stmt->execute();
+		    $conn = null;
+	
+		
+		
+		
+	}
+	
+//Update the user data if an image is uploaded-Admin Area
+
+	public function edit_with_image_admin(){
+		
+		
+		$conn = new PDO(DB_DSN,DB_USERNAME,DB_PASSWORD);
+		
+			$sql = "UPDATE users SET user_name = :user_name,user_contact = :user_contact,user_email_address = :user_email_address,user_about = :user_about,user_image = :user_image WHERE user_id = :user_id";
+			$stmt = $conn->prepare($sql);
+		    $stmt->bindValue(":user_name",$this->user_name,PDO::PARAM_STR);
+		    $stmt->bindValue(":user_contact",$this->user_contact,PDO::PARAM_STR);
+		    $stmt->bindValue(":user_email_address",$this->user_email_address,PDO::PARAM_STR);
+			$stmt->bindValue(":user_about",$this->user_about,PDO::PARAM_STR);
+			$stmt->bindValue(":user_image",$this->user_image,PDO::PARAM_STR);
+		    $stmt->bindValue(":user_id",$this->user_id,PDO::PARAM_INT);
 		    $stmt->execute();
 		    $conn = null;
 	
@@ -340,6 +448,21 @@ class Admins{
 		$stmt->execute();
 		$conn = null;
 	}
+	
+//Edit the User/Admin Password-Admin area
+
+	public function edit_password_admin(){
+		
+		$hash = password_hash($this->user_password,PASSWORD_DEFAULT);
+		$conn = new PDO(DB_DSN,DB_USERNAME,DB_PASSWORD);
+		$sql = "UPDATE users SET user_password = :user_password WHERE user_id = :user_id";
+		$stmt = $conn->prepare($sql);
+		$stmt->bindValue(":user_password",$hash,PDO::PARAM_STR);
+		$stmt->bindValue(":user_id",$this->user_id,PDO::PARAM_INT);
+		$stmt->execute();
+		$conn = null;
+	}
+	
 //Bans/Unbans a user or an admin
 
 
