@@ -8,6 +8,7 @@ define( "CLASS_PATH", "classes" );
 define( "TEMPLATE_PATH", "templates/admin" );
 define( "TEMPLATE_PATH_INDEX","templates");
 define("CATEGORY_IMAGE_PATH" , "Profilepics/Courses");
+define("USER_IMAGE_PATH" , "Profilepics/Users");
 define( "IMG_TYPE_FULLSIZE", "fullsize" );
 define( "IMG_TYPE_THUMB", "thumb" );
 define( "CATEGORY_THUMB_WIDTH", 120 );

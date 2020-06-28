@@ -40,6 +40,10 @@ switch ( $action ) {
   profile();
   break;
   
+  case 'userpass':
+  userpass();
+  break;
+  
   case 'logout':
   logout();
   break;
@@ -138,8 +142,8 @@ function signup(){
 		$users = new Admins;
 	    $users->storeFormValues($_POST);
 	    $users->insert();
-		login();
-		return;
+		header("Location:index.php?action=login");
+		
 	  
 	}
 	require(TEMPLATE_PATH_INDEX."/signup.php");
@@ -153,9 +157,70 @@ function profile(){
 		return;
 	}
 	
+	if($_SERVER["REQUEST_METHOD"] == "POST")
+	{
+		if (empty($_FILES['image']['name']))
+		{
+			$users = new Admins;
+		    $users->storeFormValues($_POST);
+		    $users->edit_new();
+		}
+		else
+		{
+			
+		   $users = new Admins;
+		    $users->storeFormValues($_POST);
+		    $users->edit_with_image();
+		  $users->storeUploadedImage($_FILES['image']);
+		}
+	}
 	$results = array();
 	$results['user'] = Admins::getUsersById((int)$_SESSION['user_id']);
 	require(TEMPLATE_PATH_INDEX."/profile.php");
+}
+
+function userpass(){
+	
+	
+	if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true)
+	{
+		home();
+		return;
+	}
+	
+	$error = '';
+	
+	if($_SERVER["REQUEST_METHOD"] == "POST")
+	{
+		$results = array();
+	    $data = Admins::get_current_password((int)$_SESSION['user_id']);
+	    $results['password'] = $data['password'];
+		
+		if(!password_verify($_POST['curr_pass'],$results['password']))
+		{
+			$error = "This password does not match your current password";
+		}
+		elseif(empty($_POST['user_password']))
+		{
+			$error = "Please type in your new password";
+		}
+		elseif($_POST['re_pass'] !== $_POST['user_password'])
+		{
+			$error = "This password does not match your new password";
+		}
+		else
+		{
+		 $users = new Admins;
+		 $users->storeFormValues($_POST);
+		 $users->edit_password();
+		 
+		 header("Location:index.php?action=profile");
+		}
+		
+	}
+	
+	
+	require(TEMPLATE_PATH_INDEX."/password.php");
 }
 //Courses------------------------------------------------
 
