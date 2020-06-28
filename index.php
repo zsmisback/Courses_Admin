@@ -52,6 +52,10 @@ switch ( $action ) {
   listquery();
   break;
   
+  case 'yourcourses':
+  yourcourses();
+  break;
+  
   case 'logout':
   logout();
   break;
@@ -260,12 +264,36 @@ function addcourses(){
 	$results['addedcourses'] = Courses::getAddCoursesById((int)$_GET['course_id']);
 	if(!empty($results['addedcourses']))
 	{
-		echo "No";
+		home();
+		return;
 	}
 	else
 	{
 	 Courses::addaCourse((int)$_GET['course_id']);
+	 home();
+	 return;
 	}
+}
+
+function yourcourses(){
+	
+	if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true)
+	{
+		home();
+		return;
+	}
+	
+	$results = array();
+	$data = Courses::getLimitedCourses(8);
+	$data2 = Courses::listYourCourses();
+	$data3 = Courses::getYourCoursesPagination();
+	$results['recent_courses'] = $data['results'];
+	$results['your_courses'] = $data2['results'];
+	$results['page'] = $data3['page'];
+	$results['prev'] = $data3['prev'];
+	$results['next'] = $data3['next'];
+	$results['totalpages'] = $data3['totalPages'];
+	require(TEMPLATE_PATH_INDEX."/yourcourses.php");
 }
 //Comments---------------------------
 

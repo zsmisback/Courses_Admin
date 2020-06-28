@@ -67,7 +67,7 @@
                 <a class='nav-link active' href='index.php?action=home'>Home</a>
               </li>
               <li class='nav-item'>
-                <a class='nav-link active' href='#'>YourCourses</a>
+                <a class='nav-link active' href='index.php?action=yourcourses'>YourCourses</a>
               </li>
               <li class='nav-item dropdown'>
                 <a class='nav-link dropdown-toggle' href='#' id='dropdown05' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>Support</a>

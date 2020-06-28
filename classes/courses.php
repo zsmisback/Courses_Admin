@@ -439,7 +439,7 @@ class Courses{
 }
 
 
-//Get all courses added by Id
+//Checks if a course is already added by Id
 
     public static function getAddCoursesById($id){
 		
@@ -467,7 +467,61 @@ class Courses{
 		$conn = null;
 	}
 	
+//List all the courses owned by the user
+	
+	public static function listYourCourses($numRows = 12){
+		
+		$page = isset($_GET['page']) ? $_GET['page'] : 1;
+        $start = ($page - 1) * $numRows;
+		$conn = new PDO(DB_DSN,DB_USERNAME,DB_PASSWORD);
+		$sql = "SELECT SQL_CALC_FOUND_ROWS * FROM addcourses_test LEFT JOIN courses ON course_id = courses_added WHERE user_id = :user_id ORDER BY courses_id DESC LIMIT :start,:numRows";
+		$stmt= $conn->prepare($sql);
+		$stmt->bindValue(":user_id",$_SESSION['user_id'],PDO::PARAM_INT);
+		$stmt->bindValue(":start",$start,PDO::PARAM_INT);
+		$stmt->bindValue(":numRows",$numRows,PDO::PARAM_INT);
+		$stmt->execute();
+		$list = array();
+		while($row = $stmt->fetch())
+		{
+			$courses = new Courses($row);
+			$list[] = $courses;
+		}
+		$conn = null;
+		return(array("results"=>$list));
+	}
+	
+//Get the pagination for Your Courses
+
+    public static function getYourCoursesPagination($numRows = 12){
+		
+		
+		$conn = new PDO(DB_DSN,DB_USERNAME,DB_PASSWORD);
+		$sql = "SELECT SQL_CALC_FOUND_ROWS * FROM addcourses_test LEFT JOIN courses ON course_id = courses_added WHERE user_id = :user_id ORDER BY courses_id DESC";
+		$stmt = $conn->prepare($sql);
+		$stmt->bindValue(":user_id",$_SESSION['user_id'],PDO::PARAM_INT);
+        $stmt->execute();		
+		$list = array();
+		
+		while($row = $stmt->fetch())
+		{
+			$courses = new Courses($row);
+			$list[] = $courses;
+		}
+		
+		
+        $page = isset($_GET['page']) ? $_GET['page'] : 1;
+        $start = 1;
+		$prev = $page - 1;
+        $next = $page + 1;
+		$sql = "SELECT FOUND_ROWS() AS totalRows";
+		$totalRows = $conn->query($sql)->fetch();
+		$total_pages = ceil($totalRows[0]/$numRows);
+		$conn = null;
+		return(array("results" => $list,"page" => $page,"prev" => $prev,"next" => $next,"totalPages" => $total_pages));
+	}	
+	
 }
+
 
 
 

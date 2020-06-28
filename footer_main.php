@@ -27,7 +27,7 @@
 			else
 			{
 				echo"<li><a href='index.php?action=home'>Home</a></li>
-                    <li><a href='yourcourses.html'>YourCourses</a></li>
+                    <li><a href='index.php?action=yourcourses'>YourCourses</a></li>
                     <li><a href='index.php?action=query'>Support</a></li>
                   
                     <li><a href='index.php?action=profile'>Profile</a></li>
