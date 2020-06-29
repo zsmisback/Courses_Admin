@@ -40,7 +40,7 @@
                 <div class="new">
                   <h2 class="mb-5"><i class='fa fa-user' style='font-size:36px'></i> &nbsp; Change Profile</h2>
                   <form method="post" enctype="multipart/form-data">
-				  
+				  <input type="hidden" name="user_id" value="<?php echo $_SESSION['user_id']; ?>"/>
                         <div class="row">
                         <div class="col-md-12 form-group">
                           <label for="name">Name</label>

@@ -139,7 +139,6 @@ class Admins{
 			
 			$this->user_image = strtolower(strrchr($image['name'],'.'));
 			$tempFilename = trim($image['tmp_name']);
-			
 			if(is_uploaded_file($tempFilename)){
 				
 				if(!(move_uploaded_file($tempFilename,$this->getImagePath()))) trigger_error( "Admins::storeUploadedImage(): Couldn't move uploaded file.", E_USER_ERROR );
@@ -262,6 +261,7 @@ class Admins{
 		
 	 foreach (glob(USER_IMAGE_PATH ."/".IMG_TYPE_FULLSIZE . "/" . $this->user_id . ".*") as $filename)
 	 {
+		 
 		 if(!unlink($filename)) trigger_error("Admins::deleteImages(): Couldn't delete image file.",E_USER_ERROR);
 	 }
 	 foreach (glob(USER_IMAGE_PATH ."/".IMG_TYPE_THUMB . "/" . $this->user_id . ".*") as $filename)
