@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 26, 2020 at 06:59 PM
+-- Generation Time: Jun 29, 2020 at 07:57 PM
 -- Server version: 10.4.10-MariaDB
 -- PHP Version: 7.3.12
 
@@ -46,9 +46,9 @@ CREATE TABLE `courses` (
 --
 
 INSERT INTO `courses` (`course_id`, `course_name`, `course_code`, `course_summary`, `course_tags`, `course_by`, `course_language`, `course_image`, `course_price`, `course_unique`) VALUES
-(16, 'Bachelors of commerce', 'Bcom', 'Something aobut it', 'something,someone', 'Someone', 'english', '.jpg', '', 'hi62jwuj1y'),
-(17, 'Hey', 'das', 'ds', 'ds', 'ds', 'hindi', '.jpg', '', 'q68a43iy3j'),
-(18, 'Testing this one', '32', '32', '32', '52', 'marathi', '.jpg', '', 'dwa0s3wwpe');
+(22, 'Bachelors of commerce', 'Bcom', 'Something', 'something,someone', 'Someone', 'English', '.jpg', '22', '9a31ysd93e'),
+(23, 'IBM Data Science', 'IBM', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit qui neque sint eveniet tempore sapiente.', 'something,someone', 'Someones', 'English', '.jpg', '', 'akjiwyau12'),
+(24, 'HTML', 'Hyper Text Markup Language', 'Lorem ipsum dolor sit amet consectetur adipisicing elit.', 'something,someone', 'Someone', 'Hindi', '.jpg', '22', 'lsjld122p3');
 
 --
 -- Indexes for dumped tables
@@ -68,7 +68,7 @@ ALTER TABLE `courses`
 -- AUTO_INCREMENT for table `courses`
 --
 ALTER TABLE `courses`
-  MODIFY `course_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `course_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

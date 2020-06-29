@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 26, 2020 at 06:59 PM
+-- Generation Time: Jun 29, 2020 at 07:57 PM
 -- Server version: 10.4.10-MariaDB
 -- PHP Version: 7.3.12
 
@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `addcourses_test` (
-  `course_id` int(11) NOT NULL,
+  `courses_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `courses_added` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -38,10 +38,10 @@ CREATE TABLE `addcourses_test` (
 -- Dumping data for table `addcourses_test`
 --
 
-INSERT INTO `addcourses_test` (`course_id`, `user_id`, `courses_added`) VALUES
-(1, 1, 16),
-(9, 2, 18),
-(13, 2, 16);
+INSERT INTO `addcourses_test` (`courses_id`, `user_id`, `courses_added`) VALUES
+(19, 13, 23),
+(20, 13, 22),
+(21, 13, 24);
 
 --
 -- Indexes for dumped tables
@@ -51,7 +51,7 @@ INSERT INTO `addcourses_test` (`course_id`, `user_id`, `courses_added`) VALUES
 -- Indexes for table `addcourses_test`
 --
 ALTER TABLE `addcourses_test`
-  ADD PRIMARY KEY (`course_id`);
+  ADD PRIMARY KEY (`courses_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -61,7 +61,7 @@ ALTER TABLE `addcourses_test`
 -- AUTO_INCREMENT for table `addcourses_test`
 --
 ALTER TABLE `addcourses_test`
-  MODIFY `course_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `courses_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

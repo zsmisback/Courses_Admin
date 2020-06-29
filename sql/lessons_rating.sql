@@ -25,39 +25,44 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `purchases`
+-- Table structure for table `lessons_rating`
 --
 
-CREATE TABLE `purchases` (
-  `purchase_id` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `purchase_type` varchar(255) NOT NULL,
-  `purchase_for` int(11) NOT NULL,
-  `purchase_amount` varchar(255) NOT NULL,
-  `purchase_at` datetime NOT NULL,
-  `purchase_status` varchar(255) NOT NULL,
-  `t_id` varchar(255) NOT NULL
+CREATE TABLE `lessons_rating` (
+  `ids` int(11) NOT NULL,
+  `lesson` int(11) NOT NULL,
+  `lesson_rating` int(11) NOT NULL,
+  `lesson_rating_by` int(11) NOT NULL,
+  `lesson_rating_unique` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `lessons_rating`
+--
+
+INSERT INTO `lessons_rating` (`ids`, `lesson`, `lesson_rating`, `lesson_rating_by`, `lesson_rating_unique`) VALUES
+(1, 7, 2, 13, 'eep3ppuwik'),
+(2, 7, 5, 13, 'hhr3jyliiy');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `purchases`
+-- Indexes for table `lessons_rating`
 --
-ALTER TABLE `purchases`
-  ADD PRIMARY KEY (`purchase_id`);
+ALTER TABLE `lessons_rating`
+  ADD PRIMARY KEY (`ids`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT for table `purchases`
+-- AUTO_INCREMENT for table `lessons_rating`
 --
-ALTER TABLE `purchases`
-  MODIFY `purchase_id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `lessons_rating`
+  MODIFY `ids` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

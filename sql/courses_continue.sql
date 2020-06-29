@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 26, 2020 at 07:00 PM
+-- Generation Time: Jun 29, 2020 at 07:57 PM
 -- Server version: 10.4.10-MariaDB
 -- PHP Version: 7.3.12
 
@@ -30,12 +30,12 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `courses_continue` (
   `course_id` int(255) NOT NULL,
-  `course_rating` varchar(255) NOT NULL,
+  `course_rating` int(11) NOT NULL,
   `course_total_time` varchar(255) NOT NULL,
   `course_reading` varchar(255) NOT NULL,
   `course_award` blob NOT NULL,
   `course_material` blob NOT NULL,
-  `course_age_group` blob NOT NULL,
+  `course_age_group` varchar(255) NOT NULL,
   `course_pre_requisite` blob NOT NULL,
   `course_unique` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -45,9 +45,9 @@ CREATE TABLE `courses_continue` (
 --
 
 INSERT INTO `courses_continue` (`course_id`, `course_rating`, `course_total_time`, `course_reading`, `course_award`, `course_material`, `course_age_group`, `course_pre_requisite`, `course_unique`) VALUES
-(16, 'ehh', 'gee', 'efe', 0x3c756c3e3c6c693e6461736473613c2f6c693e3c6c693e6473613c2f6c693e3c2f756c3e, 0x3c703e64736164733c2f703e3c756c3e3c2f756c3e, 0x3c756c3e3c6c693e7364613c2f6c693e3c6c693e643c2f6c693e3c2f756c3e, 0x3c756c3e3c6c693e647361643c2f6c693e3c6c693e647361643c2f6c693e3c2f756c3e, 'hi62jwuj1y'),
-(17, 'ds', 'ds', 'ds', 0x3c703e647364733c2f703e3c703e266e6273703b3c2f703e, 0x3c703e64733c2f703e, 0x3c703e64733c2f703e, 0x3c703e61613c2f703e, 'q68a43iy3j'),
-(18, 'das', 'dsa', 'das', 0x3c703e6473613c2f703e3c703e6473613c2f703e, 0x3c703e647361643c2f703e, 0x3c703e647361643c2f703e, 0x3c703e647361643c2f703e, 'dwa0s3wwpe');
+(22, 5, '12 hrs', '24 min', 0x3c756c3e3c6c693e47657420746869733c2f6c693e3c6c693e47657420746861743c2f6c693e3c2f756c3e, 0x3c756c3e3c6c693e686173207468697320616e6420746861743c2f6c693e3c6c693e736f6d657468696e673c2f6c693e3c2f756c3e, '18 and above', 0x3c756c3e3c6c693e54686973206e65656465643c2f6c693e3c2f756c3e, '9a31ysd93e'),
+(23, 4, '12 hrs', '24 min', 0x3c756c3e3c6c693e47657420746869733c2f6c693e3c6c693e47657420746861743c2f6c693e3c6c693e416e6420746861743c2f6c693e3c6c693e436f6f6c3c2f6c693e3c2f756c3e, 0x3c756c3e3c6c693e4e65656420746869733c2f6c693e3c6c693e4e65656420746861743c2f6c693e3c6c693e266e6273703b3c2f6c693e3c2f756c3e, '12 and above', 0x3c756c3e3c6c693e546861743c2f6c693e3c6c693e266e6273703b3c2f6c693e3c2f756c3e, 'akjiwyau12'),
+(24, 5, '12 hrs', '242 min', 0x3c756c3e3c6c693e736f3c2f6c693e3c6c693e733c2f6c693e3c6c693e733c2f6c693e3c6c693e733c2f6c693e3c6c693e266e6273703b3c2f6c693e3c2f756c3e, 0x3c756c3e3c6c693e64733c2f6c693e3c6c693e643c2f6c693e3c6c693e643c2f6c693e3c6c693e643c2f6c693e3c2f756c3e, '12 and above', 0x3c756c3e3c6c693e536f6d657468696e673c2f6c693e3c6c693e733c2f6c693e3c6c693e613c2f6c693e3c6c693e663c2f6c693e3c6c693e266e6273703b3c2f6c693e3c2f756c3e, 'lsjld122p3');
 
 --
 -- Indexes for dumped tables
@@ -67,7 +67,7 @@ ALTER TABLE `courses_continue`
 -- AUTO_INCREMENT for table `courses_continue`
 --
 ALTER TABLE `courses_continue`
-  MODIFY `course_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `course_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
