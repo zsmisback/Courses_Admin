@@ -202,7 +202,8 @@
                   <img src='Profilepics/Courses/fullsize/$courses->course_id$courses->course_image' alt='Image' class='img-fluid'>
                 </figure>
                 <div class='text'>
-                  <h2 class='heading'><a href='.?action=lessons&course_id=$courses->course_id'>$courses->course_name</a></h2>
+                  <h2 class='heading'><a href='.?action=lessons&course_id=$courses->course_id'>$courses->course_code</a></h2>
+				  <a href='.?action=lessons&course_id=$courses->course_id' style='color:#80878a; font-size: 15px;'>$courses->course_name</a></h2>
                   <p class='mb-4'>$courses->course_summary</p>
                   <div class='meta d-flex align-items-center'>
                     <div class='number'>
