@@ -14,6 +14,11 @@ class Comments{
 	public $user_contact=null;
 	public $user_email_address=null;
 	public $user_image="";
+	public $ids=null;
+	public $lesson=null;
+	public $lesson_rating=null;
+	public $lesson_rating_by=null;
+	public $lesson_rating_unique=null;
 	
 	public function __construct($data=array())
 	{
@@ -64,6 +69,26 @@ class Comments{
 		if(isset($data['user_image']))
 		{
 			$this->user_image = $data['user_image'];
+		}
+		if(isset($data['ids']))
+		{
+			$this->ids = $data['ids'];
+		}
+		if(isset($data['lesson']))
+		{
+			$this->lesson = $data['lesson'];
+		}
+		if(isset($data['lesson_rating']))
+		{
+			$this->lesson_rating = $data['lesson_rating'];
+		}
+		if(isset($data['lesson_rating_by']))
+		{
+			$this->lesson_rating_by = $data['lesson_rating_by'];
+		}
+		if(isset($data['lesson_rating_unique']))
+		{
+			$this->lesson_rating_unique = $data['lesson_rating_unique'];
 		}
 		
 		
@@ -146,6 +171,8 @@ class Comments{
 		$this->comment_id = $conn->lastInsertId();
 		$conn = null;
 	}
+
+//Insert a comment in a lesson
 	
 	public function insert_new(){
 		
@@ -163,7 +190,25 @@ class Comments{
 		$this->comment_id = $conn->lastInsertId();
 		$conn = null;
 	}
-	
+
+//Insert the ratings for a lesson
+  	
+	public function insert_rating(){
+		
+		$token = 'sadkjeawhijwajdilhasilfjaehioryweapirjpway9uprpjrpewahjrej23136513123q08192383431';
+		$token = str_shuffle($token);
+		$token= substr($token,0,10);
+		$conn = new PDO(DB_DSN,DB_USERNAME,DB_PASSWORD);
+		$sql = "INSERT INTO lessons_rating(lesson,lesson_rating,lesson_rating_by,lesson_rating_unique)VALUES(:lesson,:lesson_rating,:lesson_rating_by,:lesson_rating_unique)";
+		$stmt = $conn->prepare($sql);
+		$stmt->bindValue(":lesson",$_GET['lesson_id'],PDO::PARAM_INT);
+		$stmt->bindValue(":lesson_rating",$this->lesson_rating,PDO::PARAM_INT);
+		$stmt->bindValue(":lesson_rating_by",$_SESSION['user_id'],PDO::PARAM_INT);
+		$stmt->bindValue(":lesson_rating_unique",$token,PDO::PARAM_STR);
+		$stmt->execute();
+		$this->ids = $conn->lastInsertId();
+		$conn = null;
+	}
 	
 //Edit the comment	
 	public function edit(){

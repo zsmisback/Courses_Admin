@@ -145,6 +145,15 @@ function content(){
 		$comments->insert_new();
 		header("Location:?action=content&course_id=$_GET[course_id]&lesson_id=$_GET[lesson_id]");
 	  }
+	  if(isset($_POST['lesson_rating']))
+	  {
+		  $comments = new Comments;
+		  $comments->storeFormValues($_POST);
+		  $comments->insert_rating();
+		  header("Location:?action=content&course_id=$_GET[course_id]&lesson_id=$_GET[lesson_id]");
+	  }
+		  
+	  
 	  
 	  
 		

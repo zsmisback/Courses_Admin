@@ -85,30 +85,30 @@
                     <div class="comment-form-wrap p-5">
                       <h3 class="mb-5">Review</h3>
                       <form method="post">
-                        <label for="message">Rate this Course</label> <br>
+                        <label for="message">Rate this Lesson</label> <br>
                         <div class="form-check-inline">
                           <label class="form-check-label">
-                            <input type="radio" class="form-check-input" name="optradio">1
+                            <input type="radio" class="form-check-input" value='1' name="lesson_rating">1
                           </label>
                         </div>
                         <div class="form-check-inline">
                           <label class="form-check-label">
-                            <input type="radio" class="form-check-input" name="optradio">2
+                            <input type="radio" class="form-check-input" value='2' name="lesson_rating">2
                           </label>
                         </div>
                         <div class="form-check-inline disabled">
                           <label class="form-check-label">
-                            <input type="radio" class="form-check-input" name="optradio"> 3
+                            <input type="radio" class="form-check-input" value='3' name="lesson_rating"> 3
                           </label>
                         </div>
                         <div class="form-check-inline disabled">
                           <label class="form-check-label">
-                            <input type="radio" class="form-check-input" name="optradio" > 4
+                            <input type="radio" class="form-check-input" value='4' name="lesson_rating" > 4
                           </label>
                         </div>
                         <div class="form-check-inline disabled">
                           <label class="form-check-label">
-                            <input type="radio" class="form-check-input" name="optradio" > 5
+                            <input type="radio" class="form-check-input" value='5' name="lesson_rating" > 5
                           </label>
                         </div>
                         <br><br>
