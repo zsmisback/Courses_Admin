@@ -38,19 +38,31 @@
                   <div class="pt-5">
                     <h3 class="mb-5">Comments</h3>
                     <ul class="comment-list">
-                     
-                      
-                      <li class="comment">
-                        <div class="vcard bio">
-                          <img src="images/teacher2.jpg" alt="Image placeholder">
+                    <?php  
+                    
+					foreach($results['comments'] as $comments)
+					{
+                      echo"<li class='comment'>
+                        <div class='vcard bio'>";
+						if(empty($comments->user_image))
+						{
+                          echo"<img src='images/default.jpg' alt='Image placeholder'>";
+						}
+						else
+						{
+							echo"<img src='Profilepics/Users/thumb/$comments->user_id$comments->user_image' alt='Image placeholder'>";
+						}
+                     echo"</div>
+                        <div class='comment-body'>
+                          <h3>$comments->user_name</h3>
+                          <div class='meta'>$comments->comment_create</div>
+                          <p>$comments->comment_summary</p>
+                          <p><a href='#' class='reply'>Reply</a></p>
                         </div>
-                        <div class="comment-body">
-                          <h3>Jean Doe</h3>
-                          <div class="meta">January 9, 2018 at 2:21pm</div>
-                          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente, nemo!</p>
-                          <p><a href="#" class="reply">Reply</a></p>
-                        </div>
-                      </li>
+                      </li>";
+					}
+					  
+					  ?>
 
                    <!--  <li class="children">
                         <div class="vcard bio">
@@ -64,17 +76,7 @@
                         </div>
                       </li>--> 
 
-                      <li class="comment">
-                        <div class="vcard bio">
-                          <img src="images/teacher2.jpg" alt="Image placeholder">
-                        </div>
-                        <div class="comment-body">
-                          <h3>Jean Doe</h3>
-                          <div class="meta">January 9, 2018 at 2:21pm</div>
-                          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente, nemo!</p>
-                          <p><a href="#" class="reply">Reply</a></p>
-                        </div>
-                      </li>
+                      
 
                      
                     </ul>
@@ -82,7 +84,7 @@
                     
                     <div class="comment-form-wrap p-5">
                       <h3 class="mb-5">Review</h3>
-                      <form action="#" class="">
+                      <form method="post">
                         <label for="message">Rate this Course</label> <br>
                         <div class="form-check-inline">
                           <label class="form-check-label">
@@ -112,8 +114,9 @@
                         <br><br>
                         <div class="form-group">
                           <label for="message">Comment</label>
-                          <textarea name="" id="message" cols="10" rows="5" class="form-control"></textarea>
+                          <textarea name="comment_summary" id="message" cols="10" rows="5" class="form-control"></textarea>
                         </div>
+						<p><?php echo $error; ?></p>
 
                         <div class="form-group">
                           <input type="submit" value="Post Your Review" class="btn btn-primary">

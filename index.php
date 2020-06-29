@@ -123,10 +123,32 @@ function content(){
 	$results = array();
 	$data = Courses::getLimitedCourses(8);
 	$data2 = Lessons::getPagination((int)$_GET['course_id']);
+	$data3 = Comments::getCommentsInLessons((int)$_GET['lesson_id']);
 	$results['courses'] = $data['results'];
 	$results['lessons'] = Lessons::getLessonsById((int)$_GET['lesson_id']);
 	$results['totalpages'] = $data2['totalPages'];
 	$results['paginations'] = $data2['results'];
+	$results['comments'] = $data3['results'];
+	
+	$error = '';
+	
+	if($_SERVER["REQUEST_METHOD"] == "POST")
+	{
+	  if(empty($_POST['comment_summary']))
+	  {
+		  $error = "Please type in your comment";
+	  }
+	  else
+	  {
+		$comments = new Comments;
+		$comments->storeFormValues($_POST);
+		$comments->insert_new();
+		header("Location:?action=content&course_id=$_GET[course_id]&lesson_id=$_GET[lesson_id]");
+	  }
+	  
+	  
+		
+	}
 	
 	require(TEMPLATE_PATH_INDEX."/content.php");
 	
@@ -313,47 +335,7 @@ function addcomments(){
 	require(TEMPLATE_PATH."/addcomments.php");
 }
 
-//Edit comments
-function editcomments(){
-	
-	if(!isset($_GET['comment_id']) || !$_GET['comment_id'])
-	{
-		viewcomments();
-		return;
-	}
-	
-	if(isset($_POST['submit']))
-	{
-		$comments = new Comments;
-		$comments->storeFormValues($_POST);
-		$comments->edit();
-		viewcomments();
-		return;
-	}
-	
-	$data = Lessons::getLessonsList();
-	$results['lessons'] = $data['results'];
-	$results['comments'] = Comments::getCommentsById((int)$_GET['comment_id']);
-	require(TEMPLATE_PATH."/editcomments.php");
-}
 
-//Delete Comments
-
-function deletecomments(){
-	
-	if(!isset($_GET['comment_id']) || !$_GET['comment_id'])
-	{
-		viewcomments();
-		return;
-	}
-	
-	     $comments = Comments::getCommentsById((int)$_GET['comment_id']);
-	      $comments->deletes();
-	      viewcomments();
-		  return;
-	
-	
-}
 
 function viewcomments(){
 	
