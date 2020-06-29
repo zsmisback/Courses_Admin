@@ -502,17 +502,18 @@ class Admins{
 	public function login(){
 		
 		$conn = new PDO(DB_DSN,DB_USERNAME,DB_PASSWORD);
-		$sql = "SELECT user_id,user_email_address,user_password FROM users WHERE user_email_address = :user_email_address and user_lvl = 0";
+		$sql = "SELECT user_id,user_email_address,user_password,user_ban FROM users WHERE user_email_address = :user_email_address and user_lvl = 0";
 		$stmt = $conn->prepare($sql);
 		$stmt->bindValue(":user_email_address",$this->user_email_address,PDO::PARAM_STR);
 		$stmt->execute();
 		$stmt->bindColumn("user_id",$id);
 		$stmt->bindColumn("user_password",$pass);
+		$stmt->bindColumn("user_ban",$ban);
 		$exists = $stmt->fetch();
 	    $conn = null;
 		
 		
-		return(array("exists"=>$exists,"pass"=>$pass,"id"=>$id));
+		return(array("exists"=>$exists,"pass"=>$pass,"ban"=>$ban,"id"=>$id));
 		
 	}
 	
@@ -537,17 +538,18 @@ class Admins{
 	public function login_admin(){
 		
 		$conn = new PDO(DB_DSN,DB_USERNAME,DB_PASSWORD);
-		$sql = "SELECT user_id,user_email_address,user_password FROM users WHERE user_email_address = :user_email_address and user_lvl = 1";
+		$sql = "SELECT user_id,user_email_address,user_password,user_ban FROM users WHERE user_email_address = :user_email_address and user_lvl = 1";
 		$stmt = $conn->prepare($sql);
 		$stmt->bindValue(":user_email_address",$this->user_email_address,PDO::PARAM_STR);
 		$stmt->execute();
 		$stmt->bindColumn("user_id",$id);
 		$stmt->bindColumn("user_password",$pass);
+		$stmt->bindColumn("user_ban",$ban);
 		$exists = $stmt->fetch();
 	    $conn = null;
 		
 		
-		return(array("exists"=>$exists,"pass"=>$pass,"id"=>$id));
+		return(array("exists"=>$exists,"pass"=>$pass,"ban"=>$ban,"id"=>$id));
 		
 	}
 	

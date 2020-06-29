@@ -634,6 +634,8 @@ function login(){
 		$userinfo = $users->login_admin();
 		if($userinfo['exists'] > 0)
 		{
+		   if($userinfo['ban'] == 0)
+		  {
 			if(password_verify($_POST['user_password'],$userinfo['pass']))
 			{
 				$_SESSION["loggedin"] = true;
@@ -645,6 +647,11 @@ function login(){
 			{
 				$error = "The Email or Password does not exist";
 			}
+		  }
+		  else
+		  {
+			  $error = "You have been banned.Please contact an admin to resolve this issue";
+		  }
 		}
 		else
 		{
