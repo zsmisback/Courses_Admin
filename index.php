@@ -144,6 +144,7 @@ function content(){
 		$comments->storeFormValues($_POST);
 		$comments->insert_new();
 		header("Location:?action=content&course_id=$_GET[course_id]&lesson_id=$_GET[lesson_id]");
+		exit;
 	  }
 	  if(isset($_POST['lesson_rating']))
 	  {
@@ -151,6 +152,7 @@ function content(){
 		  $comments->storeFormValues($_POST);
 		  $comments->insert_rating();
 		  header("Location:?action=content&course_id=$_GET[course_id]&lesson_id=$_GET[lesson_id]");
+		  exit;
 	  }
 		  
 	  
@@ -186,6 +188,7 @@ function signup(){
 	    $users->storeFormValues($_POST);
 	    $users->insert();
 		header("Location:index.php?action=login");
+		exit;
 		
 	  
 	}
@@ -258,6 +261,7 @@ function userpass(){
 		 $users->edit_password();
 		 
 		 header("Location:index.php?action=profile");
+		 exit;
 		}
 		
 	}

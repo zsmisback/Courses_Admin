@@ -519,7 +519,7 @@ class Admins{
 	
 //Check if the user is an admin	
 
-    public function checkIfAdmin(){
+    public static function checkIfAdmin(){
 		
 		$conn = new PDO(DB_DSN,DB_USERNAME,DB_PASSWORD);
 		$sql = "SELECT * FROM users WHERE user_id = :user_id and user_lvl = 1";

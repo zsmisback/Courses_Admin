@@ -506,6 +506,7 @@ function edituserspass(){
 		 $users->storeFormValues($_POST);
 		 $users->edit_password_admin();
 		 header("Location:admin.php?action=viewadmins");
+		 exit;
 		
 		}
 		
@@ -623,6 +624,7 @@ function login(){
 		else
 		{
 			header("Location:index.php");
+			exit;
 		}
 	}
 	if($_SERVER["REQUEST_METHOD"] == "POST")
