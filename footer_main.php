@@ -22,20 +22,23 @@
                 <li><a href='index.php?action=login'>Login</a></li>
                 <li><a href='index.php?action=signup'>SignUp</a></li>
                 <li><a href='#'>CheckValidate
-                  <br>Certificate</li>";
+                  <br>Certificate</li>
+				  <li><a href='admin.php'>Admin</li>";
 			}
 			else
 			{
 				echo"<li><a href='index.php?action=home'>Home</a></li>
                     <li><a href='index.php?action=yourcourses'>YourCourses</a></li>
                     <li><a href='index.php?action=query'>Support</a></li>
-                  
+                    <li><a href='index.php?action=logout'>Logout</a></li>
                     <li><a href='index.php?action=profile'>Profile</a></li>
                     <li><a href='index.php?action=courses'>Explore</a></li>
                     <li><a href='#'>Certificate</a></li>
 
                     <li><a href='#'>CheckValidate
-                      <br>Certificate</li>";
+                      <br>Certificate</li>
+					  <li><a href='admin.php'>Dashboard</li>
+					  ";
 			}
 				?>
     

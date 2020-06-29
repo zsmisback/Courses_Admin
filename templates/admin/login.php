@@ -23,27 +23,20 @@
                                         <form name="log" id="logpass" method="post">
                                             <div class="form-group">
                                                 <label class="small mb-1" for="inputEmailAddress">Email</label>
-                                                <input class="form-control py-4" id="inputEmailAddress" type="email" name="email" placeholder="Enter email address" />
+                                                <input class="form-control py-4" id="inputEmailAddress" type="email" name="user_email_address" placeholder="Enter email address" />
                                             </div>
                                             <div class="form-group">
                                                 <label class="small mb-1" for="inputPassword">Password</label>
-                                                <input class="form-control py-4" id="inputPassword" type="password" placeholder="Enter password" />
+                                                <input class="form-control py-4" id="inputPassword" type="password" placeholder="Enter password" name="user_password"/>
                                             </div>
-                                            <div class="form-group">
-                                                <div class="custom-control custom-checkbox">
-                                                    <input class="custom-control-input" id="rememberPasswordCheck" type="checkbox" />
-                                                    <label class="custom-control-label" for="rememberPasswordCheck">Remember password</label>
-                                                </div>
-                                            </div>
+                                            <p><?php echo $error; ?></p>
                                             <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
-                                                <a class="small" href="password.html">Forgot Password?</a>
+                                                <a class="small" href="index.php">Main Website</a>
                                                 <button type='btn btn-primary' name='login' >Login</a>
                                             </div>
                                         </form>
                                     </div>
-                                    <div class="card-footer text-center">
-                                        <div class="small"><a href="register.html">Need an account? Sign up!</a></div>
-                                    </div>
+                                    
                                 </div>
                             </div>
                         </div>

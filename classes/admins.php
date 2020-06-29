@@ -497,12 +497,47 @@ class Admins{
 		$conn = null;
 	}
 	
-//User/Admin Login
+//User Login
 
 	public function login(){
 		
 		$conn = new PDO(DB_DSN,DB_USERNAME,DB_PASSWORD);
-		$sql = "SELECT user_id,user_email_address,user_password FROM users WHERE user_email_address = :user_email_address";
+		$sql = "SELECT user_id,user_email_address,user_password FROM users WHERE user_email_address = :user_email_address and user_lvl = 0";
+		$stmt = $conn->prepare($sql);
+		$stmt->bindValue(":user_email_address",$this->user_email_address,PDO::PARAM_STR);
+		$stmt->execute();
+		$stmt->bindColumn("user_id",$id);
+		$stmt->bindColumn("user_password",$pass);
+		$exists = $stmt->fetch();
+	    $conn = null;
+		
+		
+		return(array("exists"=>$exists,"pass"=>$pass,"id"=>$id));
+		
+	}
+	
+//Check if the user is an admin	
+
+    public function checkIfAdmin(){
+		
+		$conn = new PDO(DB_DSN,DB_USERNAME,DB_PASSWORD);
+		$sql = "SELECT * FROM users WHERE user_id = :user_id and user_lvl = 1";
+		$stmt = $conn->prepare($sql);
+		$stmt->bindValue(":user_id",$_SESSION['user_id'],PDO::PARAM_INT);
+		$stmt->execute();
+		$exists = $stmt->fetch();
+	    $conn = null;
+		
+		
+		return(array("exists"=>$exists));
+		
+	}
+	
+//Admin Login	
+	public function login_admin(){
+		
+		$conn = new PDO(DB_DSN,DB_USERNAME,DB_PASSWORD);
+		$sql = "SELECT user_id,user_email_address,user_password FROM users WHERE user_email_address = :user_email_address and user_lvl = 1";
 		$stmt = $conn->prepare($sql);
 		$stmt->bindValue(":user_email_address",$this->user_email_address,PDO::PARAM_STR);
 		$stmt->execute();

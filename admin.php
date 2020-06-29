@@ -606,19 +606,50 @@ function login(){
 	
 	$error = '';
 	
-	if(isset($_SESSION["loggedin"]))
+	if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true)
 	{
-		dashboard();
-		return;
+		
 	}
-	if(isset($_POST['login']))
+	else
+	{
+		$results = array();
+		$data = Admins::checkIfAdmin();
+		$results['check'] = $data['exists'];
+		if($results['check'] > 0)
+		{
+			dashboard();
+			return;
+		}
+		else
+		{
+			header("Location:index.php");
+		}
+	}
+	if($_SERVER["REQUEST_METHOD"] == "POST")
 	{
 		
 		
-			$_SESSION["loggedin"] = true;
-			$_SESSION["username"] = $_POST['email'];
-			header("Location:admin.php?action=dashboard");
-			exit;
+		$users = new Admins;
+		$users->storeFormValues($_POST);
+		$userinfo = $users->login_admin();
+		if($userinfo['exists'] > 0)
+		{
+			if(password_verify($_POST['user_password'],$userinfo['pass']))
+			{
+				$_SESSION["loggedin"] = true;
+				$_SESSION["user_id"] = $userinfo["id"];
+				dashboard();
+				return;
+			}
+			else
+			{
+				$error = "The Email or Password does not exist";
+			}
+		}
+		else
+		{
+			$error = "The Email or Password does not exist";
+		}
 		
 	}
 	require(TEMPLATE_PATH."/login.php");
