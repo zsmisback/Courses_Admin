@@ -1,7 +1,7 @@
 <?php
 
 require( "config.php" );
-
+require("checkauthentication.php");
 session_start();
 $action = isset( $_GET['action'] ) ? $_GET['action'] : "";
 
@@ -185,11 +185,26 @@ function signup(){
 	
 	if($_SERVER['REQUEST_METHOD'] == 'POST')
 	{
+		$user_name = $_POST['user_name'];
+		$user_contact = $_POST['user_contact'];
+		$user_email_address = $_POST['user_email_address'];
+		
+		$authenticate = checkauthentication($_POST);
+		
+		if($authenticate !== "cool")
+		{
+			$error = $authenticate;
+		
+		}
+		else
+		{
+		
 		$users = new Admins;
 	    $users->storeFormValues($_POST);
 	    $users->insert();
 		header("Location:index.php?action=login");
 		exit;
+		}
 		
 	  
 	}
@@ -204,8 +219,18 @@ function profile(){
 		return;
 	}
 	
+	$error = '';
+	
 	if($_SERVER["REQUEST_METHOD"] == "POST")
 	{
+		$authenticate = checkauthentication($_POST);
+	   if($authenticate !== "cool")
+		{
+			$error = $authenticate;
+		
+		}
+	   else
+	   {
 		if (empty($_FILES['image']['name']))
 		{
 			$users = new Admins;
@@ -220,6 +245,7 @@ function profile(){
 		    $users->edit_with_image();
 		  $users->storeUploadedImage($_FILES['image']);
 		}
+	   }
 	}
 	$results = array();
 	$results['user'] = Admins::getUsersById((int)$_SESSION['user_id']);

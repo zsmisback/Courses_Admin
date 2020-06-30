@@ -1,6 +1,7 @@
 <?php
 
 require( "config.php" );
+require("checkauthentication.php");
 session_start();
 $action = isset( $_GET['action'] ) ? $_GET['action'] : "";
 $loggedin = isset( $_SESSION['loggedin'] ) ? $_SESSION['loggedin'] : "";
@@ -119,12 +120,44 @@ function dashboard(){
 function addcourses(){
 	
 	$error = '';
-	$cat_name = '';
-	$cat_desc = '';
-	$vpc = '';
+	$course_name = '';
+	$course_code = '';
+	$course_summary = '';
+	$course_tags = '';
+	$course_by = '';
+	$course_price = '';
+	$course_total_time = '';
+	$course_reading = '';
+	$course_award = '';
+	$course_material = '';
+	$course_pre_requisite = '';
 	
-	if(isset($_POST['submit']))
+	
+	if($_SERVER["REQUEST_METHOD"] == "POST")
 	{
+		$course_name = $_POST['course_name'];
+	    $course_code = $_POST['course_code'];
+	    $course_summary = $_POST['course_summary'];
+ 	    $course_tags = $_POST['course_tags'];
+	    $course_by = $_POST['course_by'];
+	    $course_price = $_POST['course_price'];
+	    $course_total_time = $_POST['course_total_time'];
+	    $course_reading = $_POST['course_reading'];
+	    $course_award = $_POST['course_award'];
+	    $course_material = $_POST['course_material'];
+	    $course_pre_requisite = $_POST['course_pre_requisite'];
+		
+	  $authenticate = checkauthentication($_POST);
+	  if($authenticate !== "cool")
+	  {
+		  $error = $authenticate;
+	  }
+	  elseif(empty($_FILES['image']['name']))
+	  {
+		  $error = "Please include an image";
+	  }
+	  else
+	  {
 		
 	   $courses = new Courses;
 	   $courses->storeFormValues($_POST);
@@ -132,6 +165,7 @@ function addcourses(){
        $courses->storeUploadedImage($_FILES['image']);
 	   viewcourses();
 	   return;
+	  }
 
 	
 	}

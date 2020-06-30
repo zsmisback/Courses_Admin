@@ -70,6 +70,7 @@
                         <label for="exampleFormControlFile1">Upload Profile Picture</label>
                         <input type="file" class="form-control-file" id="image" name="image">
                       </div>
+					  <p><?php echo $error; ?></p>
                       <div class="row mt-5">
                         <div class="col-md-6 form-group float-md-left">
                           <input type="submit" value="Update Profile" class="btn btn-primary px-4 py-2">
