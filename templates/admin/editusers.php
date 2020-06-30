@@ -47,7 +47,7 @@
 											<input type="file" class="form-control-file" id="image" name="image">
 											<br>
 											<label for="vpcodes">Enter the Vpcode:</label>
-											<input class="form-control py-4" id="vpcodes" type="password" placeholder="Enter the vpcode" name="vpcode"/>
+											<input class="form-control py-4" id="vpcodes" type="password" placeholder="Enter the vpcode" name="admin_edit_vpcode"/>
 											<br>
 											<p><?php echo $error; ?></p>
                                            

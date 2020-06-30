@@ -485,25 +485,29 @@ function viewcomments(){
 function addadmins(){
 	
 	$error = '';
-	if(isset($_POST['submit']))
+	$user_name = '';
+	$user_contact = '';
+	$user_email_address = '';
+	
+	if($_SERVER["REQUEST_METHOD"] == "POST")
 	{
-		$vpcode = $_POST['vpcode'];
-		if(empty($vpcode))
-		{
-			$error = "Please enter the vpcode";
-		}
-		elseif($vpcode !== ADD_ADMIN)
-		{
-			$error = "Invalid vpcode";
-		}
-		else
-		{
+		$user_name = $_POST['user_name'];
+		$user_contact = $_POST['user_contact'];
+		$user_email_address = $_POST['user_email_address'];
+		
+		$authenticate = checkauthentication($_POST);
+	  if($authenticate !== "cool")
+	  {
+		  $error = $authenticate;
+	  }
+	  else
+	 {
 		$admins = new Admins;
 		$admins->storeFormValues($_POST);
 		$admins->insert();
 		viewadmins();
 		return;
-		}
+	 }
 	}
 	require(TEMPLATE_PATH."/addadmins.php");
 }
@@ -519,18 +523,18 @@ function editusers(){
 	}
 	
 	$error = '';
-	if(isset($_POST['submit']))
+	if($_SERVER["REQUEST_METHOD"] == "POST")
 	{
-		$vpcode = $_POST['vpcode'];
-		if(empty($vpcode))
-		{
-			$error = "Please enter the vpcode";
-		}
-		elseif($vpcode !== EDIT_USER)
-		{
-			$error = "Invalid vpcode";
-		}
-		elseif(empty($_FILES['image']['name']))
+		
+		
+		$authenticate = checkauthentication($_POST);
+	  if($authenticate !== "cool")
+	  {
+		  $error = $authenticate;
+	  }
+	  else
+	 {
+		if(empty($_FILES['image']['name']))
 		{
 			$users = new Admins;
 		    $users->storeFormValues($_POST);
@@ -549,6 +553,7 @@ function editusers(){
 		  viewadmins();
 		  return;
 		}
+	 }
 	}
 	
 	$results['users'] = Admins::getUsersById((int)($_GET['user_id']));
@@ -616,19 +621,15 @@ function banusers(){
 	}
 	$error = '';
 	
-	if(isset($_POST['submit']))
+	if($_SERVER["REQUEST_METHOD"] == "POST")
 	{
-		$vpcode = $_POST['vpcode'];
-		if(empty($vpcode))
-		{
-			$error = "Please enter the vpcode";
-		}
-		elseif($vpcode !== BAN_USER)
-		{
-			$error = "Invalid vpcode";
-		}
-		else
-		{
+		$authenticate = checkauthentication($_POST);
+	    if($authenticate !== "cool")
+	    {
+		  $error = $authenticate;
+	    }
+	     else
+	    {
 			$users = new Admins;
 			$users->storeFormValues($_POST);
 			$users->ban();
@@ -651,19 +652,15 @@ function deleteusers(){
 	}
 	$error = '';
 	
-	if(isset($_POST['submit']))
+	if($_SERVER["REQUEST_METHOD"] == "POST")
 	{
-		$vpcode = $_POST['vpcode'];
-		if(empty($vpcode))
-		{
-			$error = "Please enter the vpcode";
-		}
-		elseif($vpcode !== DELETE_USER)
-		{
-			$error = "Invalid vpcode";
-		}
-		else
-		{
+		$authenticate = checkauthentication($_POST);
+	    if($authenticate !== "cool")
+	    {
+		  $error = $authenticate;
+	    }
+	     else
+	    {
 			$users = new Admins;
 			$users->storeFormValues($_POST);
 			$users->deletes();

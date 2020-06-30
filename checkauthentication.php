@@ -2,7 +2,7 @@
 
 function checkauthentication($form)
 {
-	//Users----------------------------------------------------------
+	//Users/Admins----------------------------------------------------------
 		if(isset($form['user_name']))
 		{
 			 if(empty($form['user_name']))
@@ -51,6 +51,50 @@ function checkauthentication($form)
 			elseif($form['re_pass'] !== $form['user_password'])
 			{
 				return "The password does not match";
+			}
+		}
+		if(isset($form['admin_add_vpcode']))
+		{
+			if(empty($form['admin_add_vpcode']))
+			{
+				return "Please enter the vpcode";
+			}
+			elseif($form['admin_add_vpcode'] !== ADD_ADMIN)
+			{
+				return "Invalid vpcode";
+			}
+		}
+		if(isset($form['admin_edit_vpcode']))
+		{
+			if(empty($form['admin_edit_vpcode']))
+			{
+				return "Please enter the vpcode";
+			}
+			elseif($form['admin_edit_vpcode'] !== EDIT_USER)
+			{
+				return "Invalid vpcode";
+			}
+		}
+		if(isset($form['admin_ban_vpcode']))
+		{
+			if(empty($form['admin_ban_vpcode']))
+			{
+				return "Please enter the vpcode";
+			}
+			elseif($form['admin_ban_vpcode'] !== BAN_USER)
+			{
+				return "Invalid vpcode";
+			}
+		}
+		if(isset($form['admin_del_vpcode']))
+		{
+			if(empty($form['admin_del_vpcode']))
+			{
+				return "Please enter the vpcode";
+			}
+			elseif($form['admin_del_vpcode'] !== DELETE_USER)
+			{
+				return "Invalid vpcode";
 			}
 		}
 	//Courses--------------------------------------------------------
