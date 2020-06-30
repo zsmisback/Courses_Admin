@@ -200,7 +200,7 @@ function deletecourses(){
 		{
 			$error = "Please enter the vpcode";
 		}
-		elseif($vpcode !== "deletethiscourse")
+		elseif($vpcode !== DELETE_COURSE)
 		{
 			$error = "Invalid vpcode";
 		}
@@ -295,7 +295,7 @@ function deletelessons(){
 		{
 			$error = "Please enter the vpcode";
 		}
-		elseif($vpcode !== "deletethislesson")
+		elseif($vpcode !== DELETE_LESSON)
 		{
 			$error = "Invalid vpcode";
 		}
@@ -401,7 +401,7 @@ function addadmins(){
 		{
 			$error = "Please enter the vpcode";
 		}
-		elseif($vpcode !== 'addanadmin')
+		elseif($vpcode !== ADD_ADMIN)
 		{
 			$error = "Invalid vpcode";
 		}
@@ -435,7 +435,7 @@ function editusers(){
 		{
 			$error = "Please enter the vpcode";
 		}
-		elseif($vpcode !== 'edittheuser')
+		elseif($vpcode !== EDIT_USER)
 		{
 			$error = "Invalid vpcode";
 		}
@@ -496,7 +496,7 @@ function edituserspass(){
 		{
 			$error = "This password does not match your new password";
 		}
-		elseif($_POST['vpcode'] !== "editthepassword")
+		elseif($_POST['vpcode'] !== EDIT_USER_PASSWORD)
 		{
 			$error = "Invalid Vpcode";
 		}
@@ -532,7 +532,7 @@ function banusers(){
 		{
 			$error = "Please enter the vpcode";
 		}
-		elseif($vpcode !== 'bantheuser')
+		elseif($vpcode !== BAN_USER)
 		{
 			$error = "Invalid vpcode";
 		}
@@ -567,7 +567,7 @@ function deleteusers(){
 		{
 			$error = "Please enter the vpcode";
 		}
-		elseif($vpcode !== 'deletetheuser')
+		elseif($vpcode !== DELETE_USER)
 		{
 			$error = "Invalid vpcode";
 		}

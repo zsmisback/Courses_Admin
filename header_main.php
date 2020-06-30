@@ -5,7 +5,7 @@
     <title>Free Education Template by Colorlib</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500" rel="stylesheet">
 
     <link rel="stylesheet" href="css/bootstrap.css">
@@ -53,6 +53,7 @@
 			    <li class='nav-item'>
                 <a class='nav-link' href='contact.html'>Contact</a>
               </li>
+			  
               
             </ul>
            
@@ -114,6 +115,7 @@
 			    <li class='nav-item'>
                 <a class='nav-link' href='notification.html'>Notification</a>
               </li>
+			  
               
             </ul>
            
@@ -125,3 +127,4 @@
         </div>
       </nav>
     </header>
+	<div id="google_translate_element"></div>
