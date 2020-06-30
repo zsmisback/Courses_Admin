@@ -390,13 +390,27 @@ function viewlessons(){
 //Add comments
 function addcomments(){
 	
-	if(isset($_POST['submit']))
+	$error = '';
+	$comment_summary = '';
+	
+	if($_SERVER["REQUEST_METHOD"] == "POST")
 	{
+		$comment_summary = $_POST['comment_summary'];
+		
+		$authenticate = checkauthentication($_POST);
+	  if($authenticate !== "cool")
+	  {
+		  $error = $authenticate;
+	  }
+	  else
+	 {
 		$comments = new Comments;
 		$comments->storeFormValues($_POST);
 		$comments->insert();
 		viewcomments();
 		return;
+	 }
+	 
 	}
 	$data = Lessons::getLessonsList();
 	$results['lessons'] = $data['results'];
@@ -412,13 +426,25 @@ function editcomments(){
 		return;
 	}
 	
-	if(isset($_POST['submit']))
+	$error = '';
+	
+	if($_SERVER["REQUEST_METHOD"] == "POST")
 	{
+		
+		
+		$authenticate = checkauthentication($_POST);
+	  if($authenticate !== "cool")
+	  {
+		  $error = $authenticate;
+	  }
+	  else
+	 {
 		$comments = new Comments;
 		$comments->storeFormValues($_POST);
 		$comments->edit();
 		viewcomments();
 		return;
+	 }
 	}
 	
 	$data = Lessons::getLessonsList();

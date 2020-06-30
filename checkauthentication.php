@@ -221,6 +221,20 @@ function checkauthentication($form)
 			}
 		}
 		
+	//Comments------------------------------------------------------------
+
+         if(isset($form['comment_summary']))
+		 {
+			 if(empty($form['comment_summary']))
+			 {
+				 return "Please enter your comment";
+			 }
+			 elseif(strlen($form['comment_summary']) > 300)
+			 {
+				 return "The comment that you've entered is too long";
+			 }
+		 }			 
+		
 		
 		
 	
