@@ -180,9 +180,17 @@ function editcourses(){
 		return;
 	}
 	
-	if(isset($_POST['submit']))
+	$error = '';
+	
+	if($_SERVER["REQUEST_METHOD"] == "POST")
 	{
-		
+		$authenticate = checkauthentication($_POST);
+	  if($authenticate !== "cool")
+	  {
+		  $error = $authenticate;
+	  }
+	  else
+	  {
 		
 		if (empty($_FILES['image']['name']))
         {			
@@ -204,6 +212,7 @@ function editcourses(){
 			viewcourses();
 		       return;
 		}
+	  }
 		
 		
 	   
@@ -227,19 +236,15 @@ function deletecourses(){
 	
 	$error = '';
 	
-	if(isset($_POST['submit']))
+	if($_SERVER["REQUEST_METHOD"] == "POST")
 	{
-		$vpcode = $_POST['vpcode'];
-		if(empty($vpcode))
-		{
-			$error = "Please enter the vpcode";
-		}
-		elseif($vpcode !== DELETE_COURSE)
-		{
-			$error = "Invalid vpcode";
-		}
-		else
-		{
+		$authenticate = checkauthentication($_POST);
+	  if($authenticate !== "cool")
+	  {
+		  $error = $authenticate;
+	  }
+	  else
+	  {
 			$courses = new Courses;
 			$courses->storeFormValues($_POST);
 			$courses->deletes();

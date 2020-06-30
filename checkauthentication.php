@@ -149,6 +149,17 @@ function checkauthentication($form)
 			}
 			
 		}
+		if(isset($form['course_del_vpcode']))
+		{
+			if(empty($form['course_del_vpcode']))
+			{
+				return "Please enter the vpcode";
+			}
+			elseif($form['course_del_vpcode'] !== DELETE_COURSE)
+			{
+				return "Invalid vpcode";
+			}
+		}
 		
 		
 	
