@@ -135,6 +135,12 @@ function content(){
 	
 	if($_SERVER["REQUEST_METHOD"] == "POST")
 	{
+      if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true)
+	 {
+		
+	 }
+	 else
+	 {
 	  if(empty($_POST['comment_summary']))
 	  {
 		  $error = "Please type in your comment";
@@ -156,6 +162,7 @@ function content(){
 		  exit;
 	  }
 		  
+	 }	  
 	  
 	  
 	  
@@ -357,33 +364,7 @@ function yourcourses(){
 	$results['totalpages'] = $data3['totalPages'];
 	require(TEMPLATE_PATH_INDEX."/yourcourses.php");
 }
-//Comments---------------------------
 
-//Add comments
-function addcomments(){
-	
-	if(isset($_POST['submit']))
-	{
-		$comments = new Comments;
-		$comments->storeFormValues($_POST);
-		$comments->insert();
-		viewcomments();
-		return;
-	}
-	$data = Lessons::getLessonsList();
-	$results['lessons'] = $data['results'];
-	require(TEMPLATE_PATH."/addcomments.php");
-}
-
-
-
-function viewcomments(){
-	
-	
-	$data = Comments::getCommentsList();
-	$results['comments'] = $data['results'];
-	require(TEMPLATE_PATH."/listcomments.php");
-}
 
 //Users--------------------------
 
