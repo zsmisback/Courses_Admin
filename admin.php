@@ -275,13 +275,34 @@ function viewcourses(){
 //Add lessons
 function addlessons(){
 	
-  if(isset($_POST['submit']))
+	$error = '';
+	$lesson_name = '';
+	$lesson_no = '';
+	$lesson_content = '';
+	$lesson_by = '';
+	$lesson_vid_url = '';
+	
+  if($_SERVER["REQUEST_METHOD"] == "POST")
   {
+	  $lesson_name = $_POST['lesson_name'];
+	  $lesson_no = $_POST['lesson_no'];
+	  $lesson_content = $_POST['lesson_content'];
+	  $lesson_by = $_POST['lesson_by'];
+	  $lesson_vid_url = $_POST['lesson_vid_url'];
+	
+	$authenticate = checkauthentication($_POST);
+	  if($authenticate !== "cool")
+	  {
+		  $error = $authenticate;
+	  }
+	  else
+	 {
 	  $lessons = new Lessons;
 	  $lessons->storeFormValues($_POST);
 	  $lessons->insert();
 	  viewlessons();
 	  return;
+	 }
   }
   
   
@@ -300,13 +321,22 @@ function editlessons(){
 		
 	}
 	
-	if(isset($_POST['submit']))
+	$error = '';
+	if($_SERVER["REQUEST_METHOD"] == "POST")
 	{
+		$authenticate = checkauthentication($_POST);
+	  if($authenticate !== "cool")
+	  {
+		  $error = $authenticate;
+	  }
+	  else
+	 {
 		$lessons = new Lessons;
 		$lessons->storeFormValues($_POST);
 		$lessons->edit();
 		viewlessons();
 		return;
+	 }
 	}
 	$results = array();
 	$data = Courses::getCoursesList();
@@ -327,19 +357,15 @@ function deletelessons(){
 	
 	$error = '';
 	
-	if(isset($_POST['submit']))
+	if($_SERVER["REQUEST_METHOD"] == "POST")
 	{
-		$vpcode = $_POST['vpcode'];
-		if(empty($vpcode))
-		{
-			$error = "Please enter the vpcode";
-		}
-		elseif($vpcode !== DELETE_LESSON)
-		{
-			$error = "Invalid vpcode";
-		}
-		else
-		{
+		$authenticate = checkauthentication($_POST);
+	  if($authenticate !== "cool")
+	  {
+		  $error = $authenticate;
+	  }
+	  else
+	 {
 			$lessons = new Lessons;
 			$lessons->storeFormValues($_POST);
 			$lessons->deletes();

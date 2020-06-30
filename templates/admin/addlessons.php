@@ -10,13 +10,13 @@
                                                 <div class="col-md-8">
                                                     <div class="form-group">
                                                         <label for="lesson_names">Lesson Name:</label>
-                                                        <input class="form-control py-4" id="lesson_names" type="text" placeholder="Enter lesson name" name="lesson_name" />
+                                                        <input class="form-control py-4" id="lesson_names" type="text" placeholder="Enter lesson name" name="lesson_name" value="<?php echo $lesson_name; ?>"/>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-4">
                                                     <div class="form-group">
                                                         <label for="lesson_no">Lesson No:</label>
-                                                        <input class="form-control py-4" id="lesson_nos" type="number" placeholder="Enter lesson No" name="lesson_no"/>
+                                                        <input class="form-control py-4" id="lesson_nos" type="number" placeholder="Enter lesson No" name="lesson_no" value="<?php echo $lesson_no; ?>"/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -39,13 +39,13 @@
                                             </div>
                                             <div class="form-group">
                                               Lesson Content:  
-                                             <textarea class="form-control py-4 ckeditor" id="inputEmailAddress" type="text" name="lesson_content" placeholder="Enter lesson content"></textarea>
+                                             <textarea class="form-control py-4 ckeditor" id="inputEmailAddress" type="text" name="lesson_content" placeholder="Enter lesson content"><?php echo $lesson_content; ?></textarea>
                                             </div>
 											<label for="lesson_bys">Lesson By:</label>
-											<input class="form-control py-4" id="lesson_bys" type="text" placeholder="Lesson By" name="lesson_by"/>
+											<input class="form-control py-4" id="lesson_bys" type="text" placeholder="Lesson By" name="lesson_by" value="<?php echo $lesson_by; ?>"/>
 											<br>
-											<label for="lesson_vid_urls">Lesson Video Url:</label>
-											<input class="form-control py-4" id="lesson_vid_urls" type="text" placeholder="Lesson Vid Url" name="lesson_vid_url"/>
+											<label for="lesson_vid_urls">Lesson Video Url (Please Upload the source link from the embed link):</label>
+											<input class="form-control py-4" id="lesson_vid_urls" type="text" placeholder="Lesson Vid Url" name="lesson_vid_url" value="<?php echo $lesson_vid_url; ?>"/>
 											<br>
 											<div class="form-group">
                                             <label for="sel2">Lesson Status:</label>
@@ -55,7 +55,7 @@
 											
                                             </select>
                                             </div>
-                                           
+                                           <p><?php echo $error; ?></p>
                                             <div class="form-group mt-4 mb-0"><button type='btn btn-primary' name='submit'>Submit</button></div>
                                         </form>
                        

@@ -161,6 +161,67 @@ function checkauthentication($form)
 			}
 		}
 		
+   //Lessons------------------------------------------------------------------
+
+        if(isset($form['lesson_name']))
+		{
+			if(empty($form['lesson_name']))
+			{
+				return "Please enter the lesson name";
+			}
+		}
+		if(isset($form['lesson_no']))
+		{
+			if(empty($form['lesson_no']))
+			{
+				return "Please enter the lesson no";
+			}
+			elseif(!filter_var($form['lesson_no'],FILTER_VALIDATE_INT))
+			{
+				return "Please only input numbers";
+			}
+		}
+		if(isset($form['lesson_content']))
+		{
+			if(empty($form['lesson_content']))
+			{
+				return "Please enter the lesson content";
+			}
+		}
+		if(isset($form['lesson_by']))
+		{
+			if(empty($form['lesson_by']))
+			{
+				return "Please enter the lesson instructors name";
+			}
+		}
+		if(isset($form['lesson_vid_url']))
+		{
+			$url = filter_var($form['lesson_vid_url'], FILTER_SANITIZE_URL);
+
+           if(empty($form['lesson_vid_url']))
+			{
+				return "Please place in an embedded url";
+			}
+		   elseif(!filter_var($url, FILTER_VALIDATE_URL))
+		   {
+			   return "This url is not valid";
+		   }
+  
+		}
+		if(isset($form['lesson_del_vpcode']))
+		{
+			if(empty($form['lesson_del_vpcode']))
+			{
+				return "Please enter the vpcode";
+			}
+			elseif($form['lesson_del_vpcode'] !== DELETE_LESSON)
+			{
+				return "Invalid vpcode";
+			}
+		}
+		
+		
 		
 	
 		return "cool";

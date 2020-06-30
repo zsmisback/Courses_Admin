@@ -24,7 +24,7 @@
                                                 <label for="inputEmailAddress">Course Summary:</label>
                                                 <textarea class="form-control py-4" id="inputEmailAddress" type="text" name="course_summary" placeholder="Enter course summary"><?php echo $course_summary; ?></textarea>
                                             </div>
-											<label for="course_tagss">Course Tags(Please seperate them by commas.Example:Bcom,Bachelors of commerce):</label>
+											<label for="course_tagss">Course Tags (Please seperate them by commas.Example:Bcom,Bachelors of commerce):</label>
 											<input class="form-control py-4" id="course_tagss" type="text" placeholder="Enter course tags" name="course_tags" value="<?php echo $course_tags; ?>"/>
 											<br>
 											<label for="course_bys">Course By:</label>

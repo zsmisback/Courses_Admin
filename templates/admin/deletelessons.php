@@ -8,7 +8,7 @@
                         <form method = "post" enctype="multipart/form-data">
 										<input type='hidden' name='lesson_id' value='<?php echo $_GET['lesson_id']; ?>' />
 										Enter the Vpcode:
-										<input class='form-control' type='password' name='vpcode' placeholder='Please enter your vpcode'/>
+										<input class='form-control' type='password' name='lesson_del_vpcode' placeholder='Please enter your vpcode'/>
 										<p><?php echo $error; ?></p>
 										<div class="form-group mt-4 mb-0"><button type='btn btn-primary' name='submit'>Submit</button></div>
                                         </form>
