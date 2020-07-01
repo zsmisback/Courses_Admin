@@ -582,15 +582,15 @@ function edituserspass(){
 		
 		if(!password_verify($_POST['curr_pass'],$results['password']))
 		{
-			$error = "This password does not match your current password";
+			$error = "This password does not match the current password";
 		}
 		elseif(empty($_POST['user_password']))
 		{
-			$error = "Please type in your new password";
+			$error = "Please type in the new password";
 		}
 		elseif($_POST['re_pass'] !== $_POST['user_password'])
 		{
-			$error = "This password does not match your new password";
+			$error = "This password does not match the new password";
 		}
 		elseif($_POST['vpcode'] !== EDIT_USER_PASSWORD)
 		{

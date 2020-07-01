@@ -6,6 +6,7 @@
                         </ol>
             
                         <form method = "post" enctype="multipart/form-data">
+						<p class='error'><?php echo $error; ?></p>
 										<input type='hidden' name='course_id' value='<?php echo $_GET['course_id']; ?>' />
                                             <div class="form-row">
                                                 <div class="col-md-6">
@@ -84,7 +85,7 @@
                                             <br>
 											Course Price in Rs.(Leave empty if its free):
 											<input class="form-control py-4" id="inputLastName" type="number" placeholder="Rs." name="course_price" value="<?php echo $results['courses']->course_price; ?>"/>
-                                           <p><?php echo $error; ?></p>
+                                           
                                             <div class="form-group mt-4 mb-0"><button type='btn btn-primary' name='submit'>Submit</button></div>
                                         </form>
                        

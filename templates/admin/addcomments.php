@@ -6,6 +6,7 @@
                         </ol>
             
                         <form method = "post" enctype="multipart/form-data">
+						<p class='error'><?php echo $error; ?></p>
 						<input type="hidden" name="comment_by" value="<?php echo $_SESSION['user_id']; ?>"/>
 						
                          Comment Summary:                   
@@ -25,7 +26,7 @@
                          </div>
 											
 											
-                        <p><?php echo $error; ?></p>                   
+                                           
                         <div class="form-group mt-4 mb-0"><button type='btn btn-primary' name='submit'>Submit</button></div>
                         </form>
                        

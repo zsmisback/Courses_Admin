@@ -6,6 +6,7 @@
                         </ol>
             
                         <form method = "post" enctype="multipart/form-data">
+						<p class='error'><?php echo $error; ?></p>
 						<input type="hidden" name="user_lvl" value="1"/>
 						
                                             <div class="form-row">
@@ -34,7 +35,7 @@
 											<label for="vpcodes">Enter the Vpcode:</label>
 											<input class="form-control py-4" id="vpcodes" type="password" placeholder="Enter the vpcode" name="admin_add_vpcode"/>
 											<br>
-											<p><?php echo $error; ?></p>
+											
 											
 											
                                            

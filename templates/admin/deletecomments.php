@@ -9,7 +9,7 @@
 										<input type='hidden' name='comment_id' value='<?php echo $_GET['comment_id']; ?>' />
 										
 										<input class='form-control' type='password' name='vpcode' placeholder='Please enter your vpcode'/>
-										<p><?php echo $error; ?></p>
+										
 										<div class="form-group mt-4 mb-0"><button type='btn btn-primary' name='submit'>Submit</button></div>
                                         </form>
                        

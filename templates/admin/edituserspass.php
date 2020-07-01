@@ -6,6 +6,7 @@
                         </ol>
             
                         <form method = "post" enctype="multipart/form-data">
+						<p class='error'><?php echo $error; ?></p>
 						<input type="hidden" name="user_id" value="<?php echo $_GET['user_id']; ?>"/>
 						
                                             
@@ -27,7 +28,7 @@
 											<label for="vpcodes">Enter the Vpcode:</label>
 											<input class="form-control py-4" id="vpcodes" type="password" placeholder="Enter the vpcode" name="vpcode"/>
 											<br>
-											<p><?php echo $error; ?></p>
+											
 											<div class="form-group mt-4 mb-0"><button type='btn btn-primary' name='submit'>Submit</button>
 											</div>
 											

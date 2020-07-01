@@ -6,6 +6,7 @@
                         </ol>
             
                         <form method = "post" enctype="multipart/form-data">
+						<p class='error'><?php echo $error; ?></p>
                                             <div class="form-row">
                                                 <div class="col-md-8">
                                                     <div class="form-group">
@@ -55,7 +56,7 @@
 											
                                             </select>
                                             </div>
-                                           <p><?php echo $error; ?></p>
+                                           
                                             <div class="form-group mt-4 mb-0"><button type='btn btn-primary' name='submit'>Submit</button></div>
                                         </form>
                        
