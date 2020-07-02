@@ -57,7 +57,7 @@
                           <h3>$comments->user_name</h3>
                           <div class='meta'>$comments->comment_create</div>
                           <p>$comments->comment_summary</p>
-                          <p><a href='#' class='reply'>Reply</a></p>
+                          
                         </div>
                       </li>";
 					}
