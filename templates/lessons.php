@@ -93,12 +93,11 @@
 				else
 				{
 				echo"
-                <li><span class='text-1'>Price - Rs.</span> <span class='text-2'>";
-				foreach($results['lessons'] as $price)
-				{
-				echo"$price->course_price";
-				}
-				echo"</span></li>";
+                <li><span class='text-1'>Price - Rs.</span> <span class='text-2'>".$results['courses']->course_price."</span></li>";
+				
+				
+				
+				
 				}
 				?>
                 </ul>

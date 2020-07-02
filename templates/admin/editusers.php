@@ -52,7 +52,7 @@
 											<br>
 											
                                            
-                                            <div class="form-group mt-4 mb-0"><button type='btn btn-primary' name='submit'>Submit</button>
+                                            <div class="form-group mt-4 mb-0"><button class='btn btn-primary' name='submit'>Submit</button>
 											<a class="btn btn-primary" href="admin.php?action=edituserspass&user_id=<?php echo $_GET['user_id']; ?>" role="button">Change Password</a>
 											</div>
 											
