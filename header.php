@@ -34,8 +34,8 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-                        <a class="dropdown-item" href="#">Settings</a>
-                        <a class="dropdown-item" href="#">Activity Log</a>
+                     <!--   <a class="dropdown-item" href="#">Settings</a>
+                        <a class="dropdown-item" href="#">Activity Log</a>-->
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="admin.php?action=logout">Logout</a>
                     </div>
@@ -120,7 +120,7 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Notifications
                             </a>
-                            <div class="sb-sidenav-menu-heading">Addons</div>
+                         <!--   <div class="sb-sidenav-menu-heading">Addons</div>
                             <a class="nav-link" href="charts.html">
                                 <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                                 Charts
@@ -128,8 +128,8 @@
                             <a class="nav-link" href="tables.html">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Tables
-                            </a>
-                        </div>
+                            </a>-->
+                        </div> 
                     </div>
                     <div class="sb-sidenav-footer">
                         <div class="small">Logged in as:</div>
