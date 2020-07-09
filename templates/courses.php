@@ -24,6 +24,54 @@
           <div class="col-md-6 col-lg-8 order-md-2">
             <div class="row">
 			<?php
+			
+			if(isset($_GET['tags']) || isset($_GET['type']) || isset($_GET['language']))
+			{
+				if(empty($results['search_courses']))
+				{
+					echo "<h3>No $_GET[tags] Available in $_GET[type] where language is $_GET[language]</h3>";
+				}
+				foreach($results['search_courses'] as $courses)
+		{		
+        echo"<div class='col-md-12 col-lg-6 mb-5'>
+                <div class='block-19'>
+                  <figure>
+                    <a href='.?action=lessons&course_id=$courses->course_id'><img src='Profilepics/Courses/fullsize/$courses->course_id$courses->course_image' alt='Image' class='img-fluid'></a>
+                  </figure>
+                    <div class='text'>
+                      <h2 class='heading'><a href='.?action=lessons&course_id=$courses->course_id'>$courses->course_code</a></h2>
+					  <a href='.?action=lessons&course_id=$courses->course_id' style='color:#80878a; font-size: 15px;'>$courses->course_name</a></h2>
+                      <p class='mb-4'>$courses->course_summary</p>
+                      <div class='meta d-flex align-items-center'>
+                        <div class='number'>
+                          <span>$courses->course_language</span>
+                        </div>";
+					if(empty($courses->course_price))
+					{						
+                      echo"<div class='price text-right'><span>Free</span></div>";
+					  
+					  
+					  
+					  echo"";
+					}
+					else
+					{
+						
+						echo"<div class='price text-right'><span>Rs.$courses->course_price</span></div>";
+						
+						
+						
+						
+					}
+           echo"     </div>
+                    </div>
+                  </div>
+                
+              </div>";
+		}
+			}
+		 else
+		 {
 			if(empty($results['courses']))
 			{
 				echo "<h3>No Courses</h3>";
@@ -67,6 +115,7 @@
                 
               </div>";
 		}
+		 }
               ?>
 
             </div>

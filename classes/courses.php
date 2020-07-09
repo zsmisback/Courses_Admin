@@ -23,13 +23,6 @@ class Courses{
 	public $course_age_group=null;
 	public $course_pre_requisite=null;
 	public $course_unique=null;
-//Purchases----------------------
-    public $purchase_id=null;
-	public $purchase_type=null;
-	public $purchase_for=null;
-	public $purchase_amount=null;
-	public $purchase_at=null;
-	public $purchase_status=null;
 
 //Store data when object is called
 	
@@ -110,30 +103,6 @@ class Courses{
 		if(isset($data['course_unique']))
 		{
 			$this->course_unique = $data['course_unique'];
-		}
-		if(isset($data['purchase_id']))
-		{
-			$this->purchase_id = $data['purchase_id'];
-		}
-		if(isset($data['purchase_type']))
-		{
-			$this->purchase_type = $data['purchase_type'];
-		}
-		if(isset($data['purchase_for']))
-		{
-			$this->purchase_for = $data['purchase_for'];
-		}
-		if(isset($data['purchase_amount']))
-		{
-			$this->purchase_amount = $data['purchase_amount'];
-		}
-		if(isset($data['purchase_at']))
-		{
-			$this->purchase_at = $data['purchase_at'];
-		}
-		if(isset($data['purchase_status']))
-		{
-			$this->purchase_status = $data['purchase_status'];
 		}
 	}
 	
@@ -237,6 +206,73 @@ class Courses{
 		$conn = null;
 		if($row) return new Courses($row);
 	}
+	
+//Get the distinct languages from the courses table
+
+	public static function getAllCourseLanguages(){
+		$conn = new PDO(DB_DSN,DB_USERNAME,DB_PASSWORD);
+		$sql = "SELECT DISTINCT course_language FROM courses";
+		$result = $conn->query($sql);
+		$list = array();
+		while($row = $result->fetch())
+		{
+			$courses = new Courses($row);
+			$list[] = $courses;
+		}
+		$conn = null;
+		return(array("results"=>$list));
+	}
+	
+//Get All Courses Using The Search Option	
+	public static function getAllCoursesBySpecifics($tags,$type,$language,$numRows = 12){
+		$page = isset($_GET['page']) ? $_GET['page'] : 1;
+        $start = ($page - 1) * $numRows;
+		$conn = new PDO(DB_DSN,DB_USERNAME,DB_PASSWORD);
+		if($type == "")
+		{
+		$sql = "SELECT * FROM courses WHERE course_tags LIKE '%".$tags."%' AND course_language = '".$language."' AND course_price = '".$type."' LIMIT $start,$numRows";
+		}
+		else
+		{
+			$sql = "SELECT * FROM courses WHERE course_tags LIKE '%".$tags."%' AND course_language = '".$language."' AND course_price > 0 LIMIT $start,$numRows";
+		}
+		$result = $conn->query($sql);
+		$list = array();
+		while($row = $result->fetch())
+		{
+			$courses = new Courses($row);
+			$list[] = $courses;
+		}
+		$conn = null;
+		return(array("results"=>$list));
+	}
+
+//Get Courses Search Pagination
+    public static function getSearchPagination($tags,$type,$language,$numRows = 12){
+		
+		
+		$conn = new PDO(DB_DSN,DB_USERNAME,DB_PASSWORD);
+		$sql = "SELECT SQL_CALC_FOUND_ROWS * FROM courses WHERE course_tags LIKE '%".$tags."%' AND course_language = '".$language."' AND course_price = '".$type."'";
+		$result = $conn->query($sql);
+		$list = array();
+		
+		while($row = $result->fetch())
+		{
+			$courses = new Courses($row);
+			$list[] = $courses;
+		}
+		
+		
+        $page = isset($_GET['page']) ? $_GET['page'] : 1;
+        $start = 1;
+		$prev = $page - 1;
+        $next = $page + 1;
+		$sql = "SELECT FOUND_ROWS() AS totalRows";
+		$totalRows = $conn->query($sql)->fetch();
+		$total_pages = ceil($totalRows[0]/$numRows);
+		$conn = null;
+		return(array("results" => $list,"page" => $page,"prev" => $prev,"next" => $next,"totalPages" => $total_pages,"totalRows" => $totalRows[0]));
+	}	
 	
 //Store a forms value
 	
@@ -485,35 +521,28 @@ class Courses{
 		
 	}
 
-//Adds a course to the payment table if its free
+//Adds a course to the addcourse_test table
 
     public static function addaCourse($id){
-		$txnid = substr(hash('sha256', mt_rand() . microtime()), 0, 20);
 		$conn = new PDO(DB_DSN,DB_USERNAME,DB_PASSWORD);
-		$sql = "INSERT INTO purchases(user_id,purchase_for,purchase_amount,purchase_at,purchase_status,t_id)VALUES(:user_id,:purchase_for,:purchase_amount,NOW(),:purchase_status,:t_id)";
 		$stmt= $conn->prepare($sql);
 		$stmt->bindValue(":user_id",$_SESSION['user_id'],PDO::PARAM_INT);
-		$stmt->bindValue(":purchase_for",$id,PDO::PARAM_INT);
-		$stmt->bindValue(":purchase_amount","Free",PDO::PARAM_STR);
-		$stmt->bindValue(":purchase_status","success",PDO::PARAM_STR);
-		$stmt->bindValue(":t_id",$txnid,PDO::PARAM_STR);
+		$stmt->bindValue(":courses_added",$id,PDO::PARAM_INT);
 		$stmt->execute();
+		
 		$conn = null;
 	}
 	
-
+//List all the courses owned by the user
 	
-//List all the courses owned by the user through payment
-
-	public static function listYourPaidCourses($id,$numRows = 12){
-		
+	public static function listYourCourses($numRows = 12){
 		
 		$page = isset($_GET['page']) ? $_GET['page'] : 1;
         $start = ($page - 1) * $numRows;
 		$conn = new PDO(DB_DSN,DB_USERNAME,DB_PASSWORD);
-		$sql = "SELECT SQL_CALC_FOUND_ROWS * FROM purchases LEFT JOIN courses ON course_id = purchase_for WHERE user_id = :user_id AND purchase_status = 'success' ORDER BY purchase_at DESC LIMIT :start,:numRows";
-		$stmt = $conn->prepare($sql);
-		$stmt->bindValue(":user_id",$id,PDO::PARAM_INT);
+		$sql = "SELECT SQL_CALC_FOUND_ROWS * FROM addcourses_test LEFT JOIN courses ON course_id = courses_added WHERE user_id = :user_id ORDER BY courses_id DESC LIMIT :start,:numRows";
+		$stmt= $conn->prepare($sql);
+		$stmt->bindValue(":user_id",$_SESSION['user_id'],PDO::PARAM_INT);
 		$stmt->bindValue(":start",$start,PDO::PARAM_INT);
 		$stmt->bindValue(":numRows",$numRows,PDO::PARAM_INT);
 		$stmt->execute();
@@ -525,25 +554,7 @@ class Courses{
 		}
 		$conn = null;
 		return(array("results"=>$list));
-		
 	}
-	
-//Check if the user owns the course
-
-	public static function checkOwnedCourse($id){
-		
-		
-		
-		$conn = new PDO(DB_DSN,DB_USERNAME,DB_PASSWORD);
-		$sql = "SELECT SQL_CALC_FOUND_ROWS * FROM purchases WHERE user_id = :user_id AND purchase_status = 'success' AND purchase_for = :purchase_for";
-		$stmt = $conn->prepare($sql);
-		$stmt->bindValue(":user_id",$_SESSION['user_id'],PDO::PARAM_INT);
-		$stmt->bindValue(":purchase_for",$id,PDO::PARAM_INT);
-		$stmt->execute();
-		$row = $stmt->fetch();
-		if($row)return new Courses($row);
-		
-	}	
 	
 //Get the pagination for Your Courses
 
@@ -551,7 +562,7 @@ class Courses{
 		
 		
 		$conn = new PDO(DB_DSN,DB_USERNAME,DB_PASSWORD);
-		$sql = "SELECT SQL_CALC_FOUND_ROWS * FROM purchases LEFT JOIN courses ON course_id = purchase_for WHERE user_id = :user_id AND purchase_status = 'success' ORDER BY purchase_at DESC";
+		$sql = "SELECT SQL_CALC_FOUND_ROWS * FROM addcourses_test LEFT JOIN courses ON course_id = courses_added WHERE user_id = :user_id ORDER BY courses_id DESC";
 		$stmt = $conn->prepare($sql);
 		$stmt->bindValue(":user_id",$_SESSION['user_id'],PDO::PARAM_INT);
         $stmt->execute();		

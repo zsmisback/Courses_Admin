@@ -10,26 +10,29 @@
             <div class="element-animate mt-4">
               <div class="block-17">
                 <h2 class="heading text-center mb-4">Find Oneline Courses That Suits You</h2>
-                <form action="" method="post" class="d-block d-lg-flex mb-4">
+                <form action="index.php" method="get" class="d-block d-lg-flex mb-4">
+				 <input type="hidden" name="action" value="courses"/>
                   <div class="fields d-block d-lg-flex">
-                    <div class="textfield-search one-third"><input type="text" class="form-control" placeholder="Keyword search..."></div>
+                    <div class="textfield-search one-third"><input type="text" name="tags" class="form-control" placeholder="Keyword search..."></div>
                     <div class="select-wrap one-third">
                       <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-                      <select name="" id="" class="form-control">
-                        <option value="">Category Course</option>
-                        <option value="">Laravel</option>
-                        <option value="">PHP</option>
-                        <option value="">JavaScript</option>
-                        <option value="">Python</option>
+                      <select name="type" class="form-control">
+                        <option value="type">Type</option>
+						<option value="">Free</option>
+						<option value="paid">Paid</option>
                       </select>
                     </div>
                     <div class="select-wrap one-third">
                       <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-                      <select name="" id="" class="form-control">
-                        <option value="">Difficulty</option>
-                        <option value="">Beginner</option>
-                        <option value="">Intermediate</option>
-                        <option value="">Advance</option>
+                      <select name="language" class="form-control">
+                        <option value="language">Languages</option>
+                        <?php
+						foreach($results['languages'] as $languages)
+						{
+							echo"<option value='$languages->course_language'>$languages->course_language</option>";
+						}
+						
+						?>
                       </select>
                     </div>
                   </div>

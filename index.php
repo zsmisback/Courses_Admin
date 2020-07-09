@@ -97,7 +97,9 @@ function home(){
 	
 	$results = array();
 	$data = Courses::getLimitedCourses();
+	$data2 = Courses::getAllCourseLanguages();
 	$results['courses'] = $data['results'];
+	$results['languages'] = $data2['results'];
 	if(!isset($_SESSION['user_id']))
 	{
 	}
@@ -119,6 +121,24 @@ function courses(){
 	$data = Courses::getLimitedCourses();
 	$data2 = Courses::getPagination();
 	$data3 = Courses::getLimitedCourses(8);
+	if(isset($_GET['tags']) || isset($_GET['language']))
+	{
+		if($_GET['language'] == 'language')
+		{
+			header("Location:index.php");
+			exit;
+		}
+		
+		$data4 = Courses::getAllCoursesBySpecifics($_GET['tags'],$_GET['type'],$_GET['language']);
+		$data5 = Courses::getSearchPagination($_GET['tags'],$_GET['type'],$_GET['language']);
+		$results['search_courses'] = $data4['results'];
+		$results['page'] = $data5['page'];
+	    $results['prev'] = $data5['prev'];
+	    $results['next'] = $data5['next'];
+	    $results['totalpages'] = $data5['totalPages'];
+		$results['totalRows'] = $data5['totalRows'];
+		
+	}
 	$results['courses'] = $data['results'];
 	$results['page'] = $data2['page'];
 	$results['prev'] = $data2['prev'];
