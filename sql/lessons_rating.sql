@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 29, 2020 at 07:57 PM
+-- Generation Time: Jul 09, 2020 at 01:34 PM
 -- Server version: 10.4.10-MariaDB
 -- PHP Version: 7.3.12
 
@@ -37,14 +37,6 @@ CREATE TABLE `lessons_rating` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `lessons_rating`
---
-
-INSERT INTO `lessons_rating` (`ids`, `lesson`, `lesson_rating`, `lesson_rating_by`, `lesson_rating_unique`) VALUES
-(1, 7, 2, 13, 'eep3ppuwik'),
-(2, 7, 5, 13, 'hhr3jyliiy');
-
---
 -- Indexes for dumped tables
 --
 
@@ -62,7 +54,7 @@ ALTER TABLE `lessons_rating`
 -- AUTO_INCREMENT for table `lessons_rating`
 --
 ALTER TABLE `lessons_rating`
-  MODIFY `ids` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `ids` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

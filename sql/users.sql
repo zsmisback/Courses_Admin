@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 29, 2020 at 07:57 PM
+-- Generation Time: Jul 09, 2020 at 01:35 PM
 -- Server version: 10.4.10-MariaDB
 -- PHP Version: 7.3.12
 
@@ -48,7 +48,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `user_name`, `user_contact`, `user_email_address`, `user_password`, `user_courses`, `user_certificates`, `user_about`, `user_image`, `user_lvl`, `user_ban`, `user_unique`) VALUES
-(20, 'Zee', '123456', 'resheil@gmail.com', '$2y$10$5qZeNAHEc0NOkd9BXFl9Betk/sumcmKULCUPu4o7T.2ptsfy6SQ8u', '', '', '', '', 1, 0, 'wiek3rjjps');
+(20, 'Zee', '1234566786', 'resheil@gmail.com', '$2y$10$5qZeNAHEc0NOkd9BXFl9Betk/sumcmKULCUPu4o7T.2ptsfy6SQ8u', '', '', 'heyys', '.jpg', 1, 0, 'wiek3rjjps');
 
 --
 -- Indexes for dumped tables
@@ -58,7 +58,8 @@ INSERT INTO `users` (`user_id`, `user_name`, `user_contact`, `user_email_address
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`user_id`);
+  ADD PRIMARY KEY (`user_id`),
+  ADD UNIQUE KEY `user_email_address` (`user_email_address`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -68,7 +69,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
