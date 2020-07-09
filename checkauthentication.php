@@ -277,7 +277,76 @@ function checkauthentication($form)
 			 {
 				 return "The comment that you've entered is too long";
 			 }
-		 }			 
+		 }
+
+    //Orders---------------------------------------------------------------------
+
+          if(isset($form['user_id']))
+		  {
+			  if(empty($form['user_id']))
+			  {
+				  return "Please enter the user id";
+			  }
+			  elseif(!filter_var($form['user_id'], FILTER_VALIDATE_INT))
+			{
+				return "Please only input numbers";
+			}
+			  
+		  }		  
+		  if(isset($form['purchase_for']))
+		  {
+			  if(empty($form['purchase_for']))
+			  {
+				  return "Please enter the user id";
+			  }
+			  elseif(!filter_var($form['purchase_for'], FILTER_VALIDATE_INT))
+			{
+				return "Please only input numbers";
+			}
+			  
+		  }
+          if(!empty($form['purchase_amount']))
+		{
+			
+			if(!filter_var($form['purchase_amount'], FILTER_VALIDATE_INT))
+			{
+				return "Please only input numbers";
+			}
+			
+		}	
+          if(isset($form['order_add_vpcode']))
+		{
+			if(empty($form['order_add_vpcode']))
+			{
+				return "Please enter the vpcode";
+			}
+			elseif($form['order_add_vpcode'] !== ADD_ORDER)
+			{
+				return "Invalid vpcode";
+			}
+		}
+        if(isset($form['order_edit_vpcode']))
+		{
+			if(empty($form['order_edit_vpcode']))
+			{
+				return "Please enter the vpcode";
+			}
+			elseif($form['order_edit_vpcode'] !== EDIT_ORDER)
+			{
+				return "Invalid vpcode";
+			}
+		}
+        if(isset($form['order_del_vpcode']))
+		{
+			if(empty($form['order_del_vpcode']))
+			{
+				return "Please enter the vpcode";
+			}
+			elseif($form['order_del_vpcode'] !== DELETE_ORDER)
+			{
+				return "Invalid vpcode";
+			}
+		}		
 		
 		
 		

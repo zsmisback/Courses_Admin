@@ -97,6 +97,22 @@ switch ( $action ) {
   viewusers();
   break;
   
+  case 'addorders':
+  addorders();
+  break;
+  
+  case 'editorders':
+  editorders();
+  break;
+  
+  case 'deleteorders':
+  deleteorders();
+  break;
+  
+  case 'listorders':
+  listorders();
+  break;
+  
   case 'logout':
   logout();
   break;
@@ -688,6 +704,134 @@ function viewusers(){
 	$data = Admins::getUsersList();
 	$results['users'] = $data['results'];
 	require(TEMPLATE_PATH."/listusers.php");
+}
+
+//Orders--------------------------------------------------------------------
+
+//Add Orders
+
+function addorders(){
+	
+	$error = '';
+	$user_id = '';
+	$purchase_for = '';
+	$purchase_amount = '';
+	
+	$results = array();
+	
+	if($_SERVER["REQUEST_METHOD"] == "POST")
+	{
+		
+	    $user_id = $_POST['user_id'];
+	    $purchase_for = $_POST['purchase_for'];
+	    $purchase_amount = $_POST['purchase_amount'];
+		
+		$authenticate = checkauthentication($_POST);
+	    if($authenticate !== "cool")
+	    {
+		  $error = $authenticate;
+	    }
+		elseif($authenticate == "cool")
+		{
+			$orders = new Orders;
+			$orders->storeFormValues($_POST);
+			$results['check'] = $orders->checkOrderById();
+			
+			if($results['check']['totalRows'] > 0)
+			{
+				$error = "This user already owns this course";
+			}
+			else
+	        {
+			$orders = new Orders;
+			$orders->storeFormValues($_POST);
+			$orders->insert();
+			listorders();
+			return;
+		    }
+		}
+	     
+		
+	}
+	require(TEMPLATE_PATH."/addorders.php");
+}
+
+//Edit Orders
+function editorders(){
+	
+	if(!isset($_GET['purchase_id']) || !$_GET['purchase_id'])
+	{
+		listorders();
+		return;
+	}
+	
+	$error = '';
+	$user_id = '';
+	$purchase_for = '';
+	$purchase_amount = '';
+	
+	if($_SERVER["REQUEST_METHOD"] == "POST")
+	{
+		
+	    
+		
+		$authenticate = checkauthentication($_POST);
+	    if($authenticate !== "cool")
+	    {
+		  $error = $authenticate;
+	    }
+	     else
+	    {
+			$orders = new Orders;
+			$orders->storeFormValues($_POST);
+			$orders->edit();
+			listorders();
+			return;
+		}
+		
+	}
+	$results = array();
+	$results['orders'] = Orders::getOrderById((int)$_GET['purchase_id']);
+	require(TEMPLATE_PATH."/editorders.php");
+}
+
+//Delete Orders
+function deleteorders(){
+	
+	if(!isset($_GET['purchase_id']) || !$_GET['purchase_id'])
+	{
+		listorders();
+		return;
+	}
+	$error = '';
+	
+	if($_SERVER["REQUEST_METHOD"] == "POST")
+	{
+		$authenticate = checkauthentication($_POST);
+	    if($authenticate !== "cool")
+	    {
+		  $error = $authenticate;
+	    }
+	     else
+	    {
+			$orders = new Orders;
+			$orders->storeFormValues($_POST);
+			$orders->deletes();
+			listorders();
+			return;
+		}
+	}
+	require(TEMPLATE_PATH."/deleteorders.php");
+	
+}
+
+//View Orders
+function listorders(){
+	
+	$results = array();
+	$data = Orders::getOrdersList();
+	$results['orders'] = $data['results'];
+	require(TEMPLATE_PATH."/listorders.php");
 }
 
 //Login

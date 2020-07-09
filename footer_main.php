@@ -15,29 +15,30 @@
                 
 			if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true)
 			{				
-		echo  "<li><a href='index.php?action=home'>Home</a></li>
-                <li><a href='about.html'>About Us</a></li>
-                <li><a href='courses.html'>Courses</a></li>
+		echo  "<li><a href='index.php?action=home'>Home</a></li>";
+                //<li><a href='about.html'>About Us</a></li>
+            echo"<li><a href='courses.html'>Courses</a></li>
               
                 <li><a href='index.php?action=login'>Login</a></li>
-                <li><a href='index.php?action=signup'>SignUp</a></li>
-                <li><a href='#'>CheckValidate
-                  <br>Certificate</li>
-				  <li><a href='admin.php'>Admin</li>";
+                <li><a href='index.php?action=signup'>SignUp</a></li>";
+                /*<li><a href='#'>CheckValidate
+                  <br>Certificate</li>*/
+				echo"<li><a href='admin.php'>Admin</li>";
 			}
 			else
 			{
 				echo"<li><a href='index.php?action=home'>Home</a></li>
                     <li><a href='index.php?action=yourcourses'>YourCourses</a></li>
-                    <li><a href='index.php?action=query'>Support</a></li>
-                    <li><a href='index.php?action=logout'>Logout</a></li>
-                    <li><a href='index.php?action=profile'>Profile</a></li>
+					<li><a href='index.php?action=yourpurchases'>YourPurchases</a></li>";
+                    //<li><a href='index.php?action=query'>Support</a></li>
+                echo"<li><a href='index.php?action=logout'>Logout</a></li>";
+                    /*<li><a href='index.php?action=profile'>Profile</a></li>
                     <li><a href='index.php?action=courses'>Explore</a></li>
                     <li><a href='#'>Certificate</a></li>
 
                     <li><a href='#'>CheckValidate
-                      <br>Certificate</li>
-					  <li><a href='admin.php'>Dashboard</li>
+                      <br>Certificate</li>*/
+				echo"<li><a href='admin.php'>Dashboard</li>
 					  ";
 			}
 				?>
@@ -83,7 +84,7 @@
         <div class="col-md-12 text-center copyright">
           
           <p class="float-md-center headd"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Munshiji</a>
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | MUNSHIJI</a>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
           
         </div>

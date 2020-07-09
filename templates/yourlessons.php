@@ -44,11 +44,11 @@
           <div class='row bg-light align-items-center p-4 episode'>
             <div class='col-md-9'>
               <p class='meta'>Lesson $lessons->lesson_no</p>
-              <h2><a href='.?action=content&course_id=$_GET[course_id]&lesson_id=$lessons->lesson_id'>$lessons->lesson_name</a></h2>
+              <h2><a href='.?action=yourcontent&course_id=$_GET[course_id]&lesson_id=$lessons->lesson_id'>$lessons->lesson_name</a></h2>
               <p>$lessons->lesson_content</p>
             </div>
             <div class='col-md-3 text-center'>
-                <a class='btn btn-primary px-3 py-2' href='.?action=content&course_id=$_GET[course_id]&lesson_id=$lessons->lesson_id' role='button'>Watch Video</a>
+                <a class='btn btn-primary px-3 py-2' href='.?action=yourcontent&course_id=$_GET[course_id]&lesson_id=$lessons->lesson_id' role='button'>Watch Video</a>
 
             </div>
           </div>";
@@ -60,77 +60,7 @@
             </div>
             <!-- END content -->
             <div class="col-md-6 col-lg-4 order-md-2">
-              <div class="block-28 mb-5">
-                <h2 class="heading">Get this course</h2>
-                <ul>
-				<?php
-				if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true)
-				{
-					echo"<a href='.?action=login'><button type='button' class='btn btn-primary px-5 py-2 ml-5 mt-4' style='background-color:#C03F53;'>Add Course</button></a>";
-				}
-				elseif($results['owned'] > 0)
-				{
-					echo"<button type='button' class='btn btn-primary px-5 py-2 ml-5 mt-4' style='background-color:#C03F53;'>Owned!</button>";
-				}
-				elseif(empty($results['courses']->course_price))
-				{
-					echo"<a href='index.php?action=addcourses&course_id=".$results['courses']->course_id."'><button type='button' class='btn btn-primary px-5 py-2 ml-5 mt-4' style='background-color:#C03F53;'>Add Course</button></a>";
-				}
-				else
-				{
-				echo"
-                  <form action='$action' method='post' name='payuForm'>
-      <input type='hidden' name='key' value='$MERCHANT_KEY' />
-      <input type='hidden' name='hash' value='$hash'/>
-      <input type='hidden' name='txnid' value='$txnid' />
-      <table>
-        
-        <tr>
-          
-          <td><input type='hidden' name='amount' value='".$results['courses']->course_price."' /></td>
-          
-          <td><input type='hidden' name='firstname' id='firstname' value='".$results['users']->user_id."' /></td>
-        </tr>
-        <tr>
-          
-          <td><input type='hidden' name='email' id='email' value='".$results['users']->user_email_address."' /></td>
-          
-          <td><input type='hidden' name='phone' value='".$results['users']->user_contact."' /></td>
-        </tr>
-        <tr>
-          
-          <td colspan='3'><input type='hidden' name='productinfo' value='".$results['courses']->course_id."' /></td>
-        </tr>
-		
-        <tr>
-          
-          <td colspan='3'><input type='hidden' name='surl' value='http://localhost/Courses_Admin_Backup/index.php?action=successpayment' size='64' /></td>
-        </tr>
-        <tr>
-          
-          <td colspan='3'><input type='hidden' name='furl' value='http://localhost/Courses_Admin_Backup/index.php?action=failurepayment' size='64' /></td>
-        </tr>
-
-        <tr>
-          <td colspan='3'><input type='hidden' name='service_provider' value='payu_paisa' size='64' /></td>
-        </tr>
-
-        
-        <tr>
-          
-            <div class='col-md-6 form-group d-flex align-items-center'>
-                    <button type='submit' class='btn btn-primary px-5 py-2 ml-5 mt-4' style='background-color:#C03F53;'>Add Course</button>
-
-                  </div>
-            
-    </tr>
-      </table>
-    </form>";
-				}
-				?>
-                </ul>
-              </div>
-			  
+              
 			  <div class="block-28 text-center mb-5">
                 <figure>
                   <img src="images/teacher2.jpg" alt="" class="img-fluid">
@@ -165,6 +95,7 @@
 				echo"
                 <li><span class='text-1'>Price - Rs.</span> <span class='text-2'>".$results['courses']->course_price."</span></li>";
 				}
+				
 				?>
                 </ul>
               </div>
@@ -343,16 +274,7 @@
       </div>
     </div>
 
-<script>
-    var hash = '<?php echo $hash ?>';
-    function submitPayuForm() {
-      if(hash == '') {
-        return;
-      }
-      var payuForm = document.forms.payuForm;
-      payuForm.submit();
-    }
-  </script>
+
 
 
 

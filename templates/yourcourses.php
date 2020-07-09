@@ -34,11 +34,11 @@
               echo"<div class='col-md-12 col-lg-6 mb-5'>
                 <div class='block-19'>
                   <figure>
-                    <a href='.?action=lessons&course_id=$your_courses->course_id'><img src='Profilepics/Courses/fullsize/$your_courses->course_id$your_courses->course_image' alt='Image' class='img-fluid'></a>
+                    <a href='.?action=yourlessons&course_id=$your_courses->course_id'><img src='Profilepics/Courses/fullsize/$your_courses->course_id$your_courses->course_image' alt='Image' class='img-fluid'></a>
                   </figure>
                     <div class='text'>
-                      <h2 class='heading'><a href='.?action=lessons&course_id=$your_courses->course_id'>$your_courses->course_code</a></h2>
-                      <a href='.?action=lessons&course_id=$your_courses->course_id' style='color:#80878a; font-size: 15px;'>$your_courses->course_name</a></h2>
+                      <h2 class='heading'><a href='.?action=yourlessons&course_id=$your_courses->course_id'>$your_courses->course_code</a></h2>
+                      <a href='.?action=yourlessons&course_id=$your_courses->course_id' style='color:#80878a; font-size: 15px;'>$your_courses->course_name</a></h2>
                       <p class='mb-4'>$your_courses->course_summary</p>
                       <div class='meta d-flex align-items-center'>
                         <div class='number'>

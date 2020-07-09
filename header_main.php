@@ -18,14 +18,31 @@
 
     <!-- Theme Style -->
     <link rel="stylesheet" href="css/style.css">
+	<style>
+	.invoice-title h2, .invoice-title h3 {
+    display: inline-block;
+}
+
+.table > tbody > tr > .no-line {
+    border-top: none;
+}
+
+.table > thead > tr > .no-line {
+    border-bottom: none;
+}
+
+.table > tbody > tr > .thick-line {
+    border-top: 2px solid;
+}
+	</style>
   </head>
-  <body>
+  <body onload='submitPayuForm()'>
     
     <header role="banner">
      
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
-          <a class="navbar-brand absolute" href="index.php?action=home">University</a>
+          <a class="navbar-brand absolute" href="index.php?action=home">MUNSHIJI</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -46,16 +63,16 @@
               </li>
 			    <li class='nav-item'>
                 <a class='nav-link' href='index.php?action=signup'>SignUp</a>
-              </li>
-			    <li class='nav-item'>
+              </li>";
+			  /*  <li class='nav-item'>
                 <a class='nav-link' href='about.html'>About</a>
               </li>
 			    <li class='nav-item'>
                 <a class='nav-link' href='contact.html'>Contact</a>
-              </li>
+              </li>*/
 			  
               
-            </ul>
+       echo"     </ul>
            
             
           </div>";
@@ -70,7 +87,10 @@
               <li class='nav-item'>
                 <a class='nav-link active' href='index.php?action=yourcourses'>YourCourses</a>
               </li>
-              <li class='nav-item dropdown'>
+			  <li class='nav-item'>
+                <a class='nav-link active' href='index.php?action=yourpurchases'>YourPurchases</a>
+              </li>";
+              /*<li class='nav-item dropdown'>
                 <a class='nav-link dropdown-toggle' href='#' id='dropdown05' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>Support</a>
                 <div class='dropdown-menu' aria-labelledby='dropdown05'>
                   <a class='dropdown-item' href='index.php?action=query'>Place a query</a>
@@ -80,7 +100,7 @@
                  
                 </div>
 
-              </li>";
+              </li>";*/
 			  
              $exists = array();
 			 $data = Admins::checkIfAdmin();
@@ -105,19 +125,19 @@
 			 
             echo"<li class='nav-item'>
                 <a class='nav-link' href='index.php?action=courses'>Explore</a>
-              </li>
+              </li>";
 
-              <li class='nav-item'>
+           /*   <li class='nav-item'>
                 <a class='nav-link active' href='certificate.html'>Certificate</a>
               </li>
 			   
             
-			    <li class='nav-item'>
+			   <li class='nav-item'>
                 <a class='nav-link' href='notification.html'>Notification</a>
-              </li>
+              </li>*/
 			  
               
-            </ul>
+         echo"   </ul>
            
             
           </div>";

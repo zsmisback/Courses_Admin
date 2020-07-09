@@ -20,10 +20,14 @@ define("EDIT_USER","edittheuser");
 define("EDIT_USER_PASSWORD","editthepassword");
 define("BAN_USER","bantheuser");
 define("DELETE_USER","deletetheuser");
+define("ADD_ORDER","addanorder");
+define("EDIT_ORDER","editanorder");
+define("DELETE_ORDER","deleteanorder");
 require( CLASS_PATH . "/courses.php" );
 require( CLASS_PATH . "/lessons.php" );
 require( CLASS_PATH . "/comments.php" );
 require( CLASS_PATH . "/admins.php" );
+require( CLASS_PATH . "/orders.php" );
 function handleException( $exception ) {
   echo "Sorry, a problem occurred. Please try later.";
   error_log( $exception->getMessage() );

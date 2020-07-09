@@ -187,6 +187,7 @@ class Lessons{
 		return(array("results"=>$list,"results_cont"=>$list2));
 	}
 
+
 //Get the Side pagination for all lessons in a course 
 
 	public static function getPagination($id){

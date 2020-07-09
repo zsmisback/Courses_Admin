@@ -57,6 +57,30 @@ switch ( $action ) {
   yourcourses();
   break;
   
+  case 'yourlessons':
+  yourlessons();
+  break;
+  
+  case 'yourpurchases':
+  yourpurchases();
+  break;
+  
+  case 'invoice':
+  invoice();
+  break;
+  
+  case 'yourcontent':
+  yourcontent();
+  break;
+  
+  case 'successpayment':
+  successpayment();
+  break;
+  
+  case 'failurepayment':
+  failurepayment();
+  break;
+  
   case 'logout':
   logout();
   break;
@@ -74,6 +98,17 @@ function home(){
 	$results = array();
 	$data = Courses::getLimitedCourses();
 	$results['courses'] = $data['results'];
+	if(!isset($_SESSION['user_id']))
+	{
+	}
+	else
+	{
+	$results['users'] = Admins::getUsersById((int)$_SESSION['user_id']);
+	}
+	
+
+
+    
 	require(TEMPLATE_PATH_INDEX."/home.php");
 	
 }
@@ -111,6 +146,79 @@ function lessons(){
 	$results['lessons_continue'] = $data['results_cont'];
 	$results['recent_courses'] = $data2['results'];
 	$results['recommended_courses'] = $data3['results'];
+	if(!isset($_SESSION['user_id']))
+	{
+	}
+	else
+	{
+		$data = Orders::checkOrderByIdStatic($_SESSION['user_id'],$_GET['course_id']);
+		$results['users'] = Admins::getUsersById((int)$_SESSION['user_id']);
+		$results['owned'] = $data['totalRows'];
+	}
+	
+		$MERCHANT_KEY = "2Rap5UWr";
+$SALT = "CxLo29EGTk";
+// Merchant Key and Salt as provided by Payu.
+
+$PAYU_BASE_URL = "https://sandboxsecure.payu.in";		// For Sandbox Mode
+//$PAYU_BASE_URL = "https://secure.payu.in";			// For Production Mode
+
+$action = '';
+
+$posted = array();
+
+if(!empty($_POST)) {
+    //print_r($_POST);
+  foreach($_POST as $key => $value) {    
+    $posted[$key] = $value; 
+	
+  }
+}
+
+$formError = 0;
+
+if(empty($posted['txnid'])) {
+  // Generate random transaction id
+  $txnid = substr(hash('sha256', mt_rand() . microtime()), 0, 20);
+} else {
+  $txnid = $posted['txnid'];
+}
+$hash = '';
+// Hash Sequence
+$hashSequence = "key|txnid|amount|productinfo|firstname|email|udf1|udf2|udf3|udf4|udf5|udf6|udf7|udf8|udf9|udf10";
+if(empty($posted['hash']) && sizeof($posted) > 0) {
+  if(
+          empty($posted['key'])
+          || empty($posted['txnid'])
+          || empty($posted['amount'])
+          || empty($posted['firstname'])
+          || empty($posted['email'])
+          || empty($posted['phone'])
+          || empty($posted['productinfo'])
+          || empty($posted['surl'])
+          || empty($posted['furl'])
+		  || empty($posted['service_provider'])
+  ) {
+    $formError = 1;
+  } else {
+    //$posted['productinfo'] = json_encode(json_decode('[{"name":"tutionfee","description":"","value":"500","isRequired":"false"},{"name":"developmentfee","description":"monthly tution fee","value":"1500","isRequired":"false"}]'));
+	$hashVarsSeq = explode('|', $hashSequence);
+    $hash_string = '';	
+	foreach($hashVarsSeq as $hash_var) {
+      $hash_string .= isset($posted[$hash_var]) ? $posted[$hash_var] : '';
+      $hash_string .= '|';
+    }
+
+    $hash_string .= $SALT;
+
+
+    $hash = strtolower(hash('sha512', $hash_string));
+    $action = $PAYU_BASE_URL . '/_payment';
+  }
+} elseif(!empty($posted['hash'])) {
+  $hash = $posted['hash'];
+  $action = $PAYU_BASE_URL . '/_payment';
+}
 	require(TEMPLATE_PATH_INDEX."/lessons.php");
 }
 
@@ -339,7 +447,7 @@ function addcourses(){
 	else
 	{
 	 Courses::addaCourse((int)$_GET['course_id']);
-	 home();
+	 successfree();
 	 return;
 	}
 }
@@ -354,9 +462,11 @@ function yourcourses(){
 	
 	$results = array();
 	$data = Courses::getLimitedCourses(8);
-	$data2 = Courses::listYourCourses();
+	//$data2 = Courses::listYourCourses();
+	$data2 = Courses::listYourPaidCourses((int)$_SESSION['user_id']);
 	$data3 = Courses::getYourCoursesPagination();
 	$results['recent_courses'] = $data['results'];
+	//$results['your_courses'] = $data2['results'];
 	$results['your_courses'] = $data2['results'];
 	$results['page'] = $data3['page'];
 	$results['prev'] = $data3['prev'];
@@ -365,6 +475,110 @@ function yourcourses(){
 	require(TEMPLATE_PATH_INDEX."/yourcourses.php");
 }
 
+function yourpurchases(){
+	
+	if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true)
+	{
+		home();
+		return;
+	}
+	
+	$results = array();
+	$data = Orders::getUsersOrders((int)$_SESSION['user_id']);
+	$results['orders'] = $data['results'];
+	require(TEMPLATE_PATH_INDEX."/yourpurchases.php");
+}
+
+function invoice(){
+	
+	if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true)
+	{
+		home();
+		return;
+	}
+	if(!isset($_GET['purchase_id']) || !$_GET['purchase_id'])
+	{
+		yourpurchases();
+		return;
+	}
+	$results = array();
+	$results['invoice'] = Orders::getInvoice((int)$_GET['purchase_id']);
+	require(TEMPLATE_PATH_INDEX."/invoice.php");
+}
+
+function yourlessons(){
+	
+	if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true)
+	{
+		home();
+		return;
+	}
+	
+	$results = array();
+	$data = Lessons::getLessonsByCourseId((int)$_GET['course_id']);
+	$data2 = Courses::getLimitedCourses(8);
+	$data3 = Courses::getLimitedCourses();
+	$results['checkowner'] = Courses::checkOwnedCourse((int)$_GET['course_id']);
+	if(empty($results['checkowner']))
+	{
+		home();
+		return;
+	}
+	$results['courses'] = Courses::getCoursesById((int)$_GET['course_id']);
+	$results['courses_continue'] = Courses::getCoursesById2((int)$_GET['course_id']);
+	$results['lessons'] = $data['results'];
+	$results['lessons_continue'] = $data['results_cont'];
+	$results['recent_courses'] = $data2['results'];
+	$results['recommended_courses'] = $data3['results'];
+	
+	require(TEMPLATE_PATH_INDEX."/yourlessons.php");
+}
+
+function yourcontent(){
+	
+	if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true)
+	{
+		home();
+		return;
+	}
+	elseif(!isset($_GET['lesson_id']) || !$_GET['lesson_id'])
+	{
+		home();
+		return;
+	}
+	$results = array();
+	$data = Courses::getLimitedCourses(8);
+	$data2 = Lessons::getPagination((int)$_GET['course_id']);
+	$data3 = Comments::getCommentsInLessons((int)$_GET['lesson_id']);
+	$results['checkowner'] = Courses::checkOwnedCourse((int)$_GET['course_id']);
+	if(empty($results['checkowner']))
+	{
+		home();
+		return;
+	}
+	$results['courses'] = $data['results'];
+	$results['lessons'] = Lessons::getLessonsById((int)$_GET['lesson_id']);
+	$results['totalpages'] = $data2['totalPages'];
+	$results['paginations'] = $data2['results'];
+	
+	
+	require(TEMPLATE_PATH_INDEX."/yourcontent.php");
+}
+
+function successpayment(){
+	
+	require(TEMPLATE_PATH_INDEX."/success.php");
+}
+
+function successfree(){
+	
+	require(TEMPLATE_PATH_INDEX."/successfree.php");
+}
+
+function failurepayment(){
+	
+	require(TEMPLATE_PATH_INDEX."/failure.php");
+}
 
 //Users--------------------------
 

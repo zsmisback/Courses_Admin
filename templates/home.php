@@ -9,7 +9,7 @@
   
             <div class="element-animate mt-4">
               <div class="block-17">
-                <h2 class="heading text-center mb-4">Find Online Courses That Suits You</h2>
+                <h2 class="heading text-center mb-4">Find Oneline Courses That Suits You</h2>
                 <form action="" method="post" class="d-block d-lg-flex mb-4">
                   <div class="fields d-block d-lg-flex">
                     <div class="textfield-search one-third"><input type="text" class="form-control" placeholder="Keyword search..."></div>
@@ -112,33 +112,16 @@
                     </div>";
 					if(empty($courses->course_price))
 					{
-                     echo"<div class='price text-right'>";
-					 if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true)
-					 {
-					   echo"<a href='index.php?action=login'>";
-					 }
-					 else
-					 {
-						 echo"<a href='index.php?action=addcourses&course_id=$courses->course_id'>";
-					 }
-				     echo"<span>Free</span>
-					 </a>
-                     </div>";
+                     echo"<div class='price text-right'><span>Free</span></div>";
+					
 					}
 					else
 					{
-						echo"<div class='price text-right'>";
-						if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true)
-					 {
-					   echo"<a href='index.php?action=login'>";
-					 }
-					 else
-					 {
-						 echo"<a href='index.php?action=addcourses&course_id=$courses->course_id'>";
-					 }
+						echo"<div class='price text-right'><span>Rs.$courses->course_price</span></div>";
 						
 						
-						echo"<span>Rs.$courses->course_price</span></a></div>";
+						
+						
 					}
              echo"</div>
                 </div>
@@ -478,6 +461,15 @@
         </div>
       </div>
     </div>
-
+<script>
+    var hash = '<?php echo $hash ?>';
+    function submitPayuForm() {
+      if(hash == '') {
+        return;
+      }
+      var payuForm = document.forms.payuForm;
+      payuForm.submit();
+    }
+  </script>
   <!-- Footer --->
     <?php include 'footer_main.php'; ?>

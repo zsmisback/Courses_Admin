@@ -14,6 +14,7 @@
                                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                         <thead>
                                             <tr>
+											    <th>User ID</th>
                                                 <th>User Name</th>
                                                 <th>User Contact</th>
                                                 <th>User Email</th>
@@ -24,6 +25,7 @@
                                         </thead>
                                         <tfoot>
                                             <tr>
+											    <th>User ID</th>
                                                 <th>User Name</th>
                                                 <th>User Contact</th>
                                                 <th>User Email</th>
@@ -39,6 +41,7 @@
 										{
 										echo"
                                             <tr>
+											    <td>$users->user_id</td>
                                                 <td>$users->user_name</td>
                                                 <td>$users->user_contact</td>
                                                 <td>$users->user_email_address</td>";
