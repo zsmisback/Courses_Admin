@@ -11,6 +11,7 @@ class Admins{
 	public $user_about=null;
 	public $user_image="";
 	public $user_lvl=null;
+	public $user_joined=null;
 	public $user_ban=null;
 	public $user_unique=null;
 	
@@ -51,6 +52,10 @@ class Admins{
 		if(isset($data['user_lvl']))
 		{
 			$this->user_lvl = $data['user_lvl'];
+		}
+		if(isset($data['user_joined']))
+		{
+			$this->user_joined = $data['user_joined'];
 		}
 		if(isset($data['user_ban']))
 		{
@@ -286,7 +291,7 @@ class Admins{
 		$token= substr($token,0,10);
 		$hash = password_hash($this->user_password,PASSWORD_DEFAULT);
 		$conn = new PDO(DB_DSN,DB_USERNAME,DB_PASSWORD);
-		$sql = "INSERT INTO users(users.user_name,users.user_contact,users.user_email_address,users.user_password,users.user_lvl,users.user_unique)VALUES(:user_name,:user_contact,:user_email_address,:user_password,:user_lvl,:user_unique)";
+		$sql = "INSERT INTO users(users.user_name,users.user_contact,users.user_email_address,users.user_password,users.user_lvl,users.user_joined,users.user_unique)VALUES(:user_name,:user_contact,:user_email_address,:user_password,:user_lvl,NOW(),:user_unique)";
 		$stmt = $conn->prepare($sql);
 		$stmt->bindValue(":user_name",$this->user_name,PDO::PARAM_STR);
 		$stmt->bindValue(":user_contact",$this->user_contact,PDO::PARAM_STR);

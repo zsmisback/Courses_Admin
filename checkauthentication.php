@@ -346,7 +346,36 @@ function checkauthentication($form)
 			{
 				return "Invalid vpcode";
 			}
-		}		
+		}
+
+//Support----------------------------------------------------------------------
+
+		if(isset($form['support_name']))
+		{
+			 if(empty($form['support_name']))
+			 {
+				 return "Please fill in your username";
+			 }
+		}
+		if(isset($form['support_email']))
+		{
+			if(empty($form['support_email']))
+			{
+				return "Please fill in your email address";
+			}
+			elseif(!filter_var($form['support_email'], FILTER_VALIDATE_EMAIL))
+			{
+				return "Please check your Email Format";
+			}
+				
+		}
+		if(isset($form['support_query']))
+		{
+			 if(empty($form['support_query']))
+			 {
+				 return "Please fill in the query that you have";
+			 }
+		}
 		
 		
 		

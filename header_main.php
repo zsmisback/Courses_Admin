@@ -89,18 +89,19 @@
               </li>
 			  <li class='nav-item'>
                 <a class='nav-link active' href='index.php?action=yourpurchases'>YourPurchases</a>
-              </li>";
-              /*<li class='nav-item dropdown'>
+              </li>
+			  <li class='nav-item dropdown'>
                 <a class='nav-link dropdown-toggle' href='#' id='dropdown05' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>Support</a>
                 <div class='dropdown-menu' aria-labelledby='dropdown05'>
-                  <a class='dropdown-item' href='index.php?action=query'>Place a query</a>
+                  <a class='dropdown-item' href='index.php?action=support'>Need Help?</a>
                   <a class='dropdown-item' href='index.php?action=listquery'>List of query</a>
                   <a class='dropdown-item' href='#'>Unique Code to speak on Phone
                 </a>
                  
                 </div>
+              
 
-              </li>";*/
+              </li>";
 			  
              $exists = array();
 			 $data = Admins::checkIfAdmin();

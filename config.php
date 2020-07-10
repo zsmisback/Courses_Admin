@@ -28,6 +28,7 @@ require( CLASS_PATH . "/lessons.php" );
 require( CLASS_PATH . "/comments.php" );
 require( CLASS_PATH . "/admins.php" );
 require( CLASS_PATH . "/orders.php" );
+require( CLASS_PATH . "/support.php" );
 function handleException( $exception ) {
   echo "Sorry, a problem occurred. Please try later.";
   error_log( $exception->getMessage() );

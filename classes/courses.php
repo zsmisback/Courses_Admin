@@ -525,6 +525,7 @@ class Courses{
 
     public static function addaCourse($id){
 		$conn = new PDO(DB_DSN,DB_USERNAME,DB_PASSWORD);
+		$sql = "INSERT INTO addcourses_test(user_id,courses_added)VALUES(:user_id,:courses_added)";
 		$stmt= $conn->prepare($sql);
 		$stmt->bindValue(":user_id",$_SESSION['user_id'],PDO::PARAM_INT);
 		$stmt->bindValue(":courses_added",$id,PDO::PARAM_INT);

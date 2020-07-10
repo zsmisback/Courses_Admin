@@ -73,6 +73,10 @@ switch ( $action ) {
   yourcontent();
   break;
   
+  case 'support':
+  support();
+  break;
+  
   case 'successpayment':
   successpayment();
   break;
@@ -583,6 +587,30 @@ function yourcontent(){
 	
 	
 	require(TEMPLATE_PATH_INDEX."/yourcontent.php");
+}
+
+function support(){
+	
+	$error = '';
+	
+	if($_SERVER["REQUEST_METHOD"] == "POST")
+	{
+		$authenticate = checkauthentication($_POST);
+	   if($authenticate !== "cool")
+		{
+			$error = $authenticate;
+		
+		}
+		else
+		{
+		$support = new Support;
+		$support->storeFormValues($_POST);
+		$support->insert();
+		}
+		
+	}
+	
+	require(TEMPLATE_PATH_INDEX."/support.php");
 }
 
 function successpayment(){
