@@ -37,6 +37,14 @@ switch ( $action ) {
   signup();
   break;
   
+  case 'about':
+  about();
+  break;
+  
+  case 'abouttheteam':
+  abouttheteam();
+  break;
+  
   case 'profile':
   profile();
   break;
@@ -119,6 +127,17 @@ function home(){
 	
 }
 
+function about(){
+	
+	require(TEMPLATE_PATH_INDEX."/about.php");
+
+}
+
+function abouttheteam(){
+	
+	require(TEMPLATE_PATH_INDEX."/abouttheteam.php");
+}
+
 function courses(){
 	
 	$results = array();
@@ -148,7 +167,9 @@ function courses(){
 	$results['prev'] = $data2['prev'];
 	$results['next'] = $data2['next'];
 	$results['totalpages'] = $data2['totalPages'];
+	$results['totalRows'] = $data2['totalRows'];
 	$results['recent_courses'] = $data3['results'];
+	
 	require(TEMPLATE_PATH_INDEX."/courses.php");
 }
 
@@ -496,6 +517,7 @@ function yourcourses(){
 	$results['prev'] = $data3['prev'];
 	$results['next'] = $data3['next'];
 	$results['totalpages'] = $data3['totalPages'];
+	$results['totalRows'] = $data3['totalRows'];
 	require(TEMPLATE_PATH_INDEX."/yourcourses.php");
 }
 

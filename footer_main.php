@@ -2,8 +2,8 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
-          <h3 class="heading">University</h3>
-          <p class="headd mb-5">Perferendis eum illum voluptatibus dolore tempora consequatur minus asperiores temporibus.</p>
+          <h3 class="heading">MUNSHIJI</h3>
+          <p class="headd mb-5">Empowering the youth to work and on their skills, upgrade themselves and make the world a better place to live in</p>
     
         </div>
         <div class="col-md-6 col-lg-2 mb-5 mb-lg-0">
@@ -16,7 +16,7 @@
 			if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true)
 			{				
 		echo  "<li><a href='index.php?action=home'>Home</a></li>";
-                //<li><a href='about.html'>About Us</a></li>
+                
             echo"<li><a href='courses.html'>Courses</a></li>
               
                 <li><a href='index.php?action=login'>Login</a></li>
@@ -43,7 +43,8 @@
 			}
 				?>
     
-         
+                <li><a href='?action=about'>About MUNSHIJI</a></li>
+				<li><a href='?action=abouttheteam'>About the Team</a></li>
               </ul>
             </div>
            

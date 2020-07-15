@@ -29,7 +29,7 @@
 			{
 				if(empty($results['search_courses']))
 				{
-					echo "<h3>No $_GET[tags] Available in $_GET[type] where language is $_GET[language]</h3>";
+					echo "<h3>$_GET[tags] is not available in $_GET[language]</h3>";
 				}
 				foreach($results['search_courses'] as $courses)
 		{		
@@ -126,6 +126,12 @@
                   <ul>
 				  <?php
                     
+				if($results['totalRows'] < 12)
+				{
+					echo "";
+				}
+			else
+			{		
 					
 		        if($results['page'] == 1)
 		       {
@@ -133,15 +139,41 @@
 		       }
 		        else
 		        {
-			     echo"<li><a href='.?action=courses&page=$results[prev]'>&lt;</a></li>";
+					if(isset($_GET['tags']) && isset($_GET['type']))
+                  { 
+			        echo"<li class='page-item'>
+                        <a href='.?action=courses&tags=$_GET[tags]&type=$_GET[type]&language=$_GET[language]&page=$results[prev]'>&lt;</a>
+                      </li>";
+				  }
+				   else
+				   {
+					echo"<li><a href='.?action=courses&page=$results[prev]'>&lt;</a></li>";
+				   }
                 
 				}
 				for($pageNumbers=1;$pageNumbers<=$results['totalpages'];$pageNumbers++) :
-		      echo"
-				    <li><a href='.?action=courses&page=$pageNumbers'>$pageNumbers</a></li>&nbsp;";
+				if(isset($_GET['tags']) && isset($_GET['type']))
+                   { 
+			          echo"
+                      <li><a href='.?action=courses&tags=$_GET[tags]&type=$_GET[type]&language=$_GET[language]&page=$pageNumbers'>$pageNumbers</a></li>&nbsp;";
+			   
+			       }
+				   else
+				   {
+						echo"
+						<li><a href='.?action=courses&page=$pageNumbers'>$pageNumbers</a></li>&nbsp;";
+				   }
 					endfor;
-					
-                echo"<li><a href='.?action=courses&page=$results[next]'>&gt;</a></li>";
+					if(isset($_GET['tags']) && isset($_GET['type']))
+                   { 
+			        echo"<li><a href='.?action=courses&tags=$_GET[tags]&type=$_GET[type]&language=$_GET[language]&page=$results[next]'>&gt;</a></li>";
+				   }
+				   else
+				   {
+					echo"<li><a href='.?action=courses&page=$results[next]'>&gt;</a></li>";
+				   }
+				  
+				}
 					?>
                   </ul>
                 </div>
@@ -151,7 +183,7 @@
           <!-- END content -->
           <div class="col-md-6 col-lg-4 order-md-1">
 
-            <div class="block-24 mb-5">
+        <!--    <div class="block-24 mb-5">
               <h3 class="heading">Categories</h3>
               <ul>
                 <li><a href="#">Laravel <span>10</span></a></li>
@@ -162,7 +194,7 @@
                 <li><a href="#">Android <span>45</span></a></li>
                 <li><a href="#">Swift <span>22</span></a></li>
               </ul>
-            </div>
+            </div> -->
 
             <div class="block-25 mb-5">
               <div class="heading">Recent Courses</div>

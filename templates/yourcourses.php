@@ -70,6 +70,12 @@
                   <ul>
                     <?php
                     
+				if($results['totalRows'] < 12)
+				{
+					echo "";
+				}
+			else
+			{		
 					
 		        if($results['page'] == 1)
 		       {
@@ -77,15 +83,22 @@
 		       }
 		        else
 		        {
-			     echo"<li><a href='.?action=yourcourses&page=$results[prev]'>&lt;</a></li>";
+					
+					echo"<li><a href='.?action=yourcourses&page=$results[prev]'>&lt;</a></li>";
+				   
                 
 				}
 				for($pageNumbers=1;$pageNumbers<=$results['totalpages'];$pageNumbers++) :
-		      echo"
-				    <li><a href='.?action=yourcourses&page=$pageNumbers'>$pageNumbers</a></li>&nbsp;";
+				
+						echo"
+						<li><a href='.?action=yourcourses&page=$pageNumbers'>$pageNumbers</a></li>&nbsp;";
+				   
 					endfor;
 					
-                echo"<li><a href='.?action=yourcourses&page=$results[next]'>&gt;</a></li>";
+					echo"<li><a href='.?action=yourcourses&page=$results[next]'>&gt;</a></li>";
+				   
+				  
+				}
 					?>
                   </ul>
                 </div>
@@ -95,7 +108,7 @@
           <!-- END content -->
           <div class="col-md-6 col-lg-4 order-md-1">
 
-            <div class="block-24 mb-5">
+        <!--    <div class="block-24 mb-5">
               <h3 class="heading">Categories</h3>
               <ul>
                 <li><a href="#">Laravel <span>10</span></a></li>
@@ -106,7 +119,7 @@
                 <li><a href="#">Android <span>45</span></a></li>
                 <li><a href="#">Swift <span>22</span></a></li>
               </ul>
-            </div>
+            </div> -->
 
             <div class="block-25 mb-5">
               <div class="heading">Recent Courses</div>

@@ -126,9 +126,7 @@ switch ( $action ) {
 
 function dashboard(){
 	
-	$results = array();
-	$data = Admins::getUsersList();
-	$results['users'] = $data['results'];
+	
 	require(TEMPLATE_PATH."/index.php");
 	
 }

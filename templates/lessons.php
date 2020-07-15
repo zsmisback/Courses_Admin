@@ -104,11 +104,11 @@
 		
         <tr>
           
-          <td colspan='3'><input type='hidden' name='surl' value='http://localhost/Courses_Admin_Backup/index.php?action=successpayment' size='64' /></td>
+          <td colspan='3'><input type='hidden' name='surl' value='http://webportal.in/munshiji/index.php?action=successpayment' size='64' /></td>
         </tr>
         <tr>
           
-          <td colspan='3'><input type='hidden' name='furl' value='http://localhost/Courses_Admin_Backup/index.php?action=failurepayment' size='64' /></td>
+          <td colspan='3'><input type='hidden' name='furl' value='http://webportal.in/munshiji/index.php?action=failurepayment' size='64' /></td>
         </tr>
 
         <tr>

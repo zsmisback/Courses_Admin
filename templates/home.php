@@ -1,15 +1,16 @@
 <?php include 'header_main.php'; ?>
     <!-- END header -->
 
-    <section class="site-hero" data-stellar-background-ratio="0.5" style="background-image: url(images/index.jpg); background-position:center center; 
+    <section class="site-hero" data-stellar-background-ratio="0.5" style="background-image: url(images/index_1.jpg); background-position:center center; 
     background-attachment:fixed; background-size:cover; background-repeat: no-repeat;">
+
       <div class="container">
         <div class="row align-items-center justify-content-center site-hero-inner">
           <div class="col-md-10">
   
             <div class="element-animate mt-4">
               <div class="block-17">
-                <h2 class="heading text-center mb-4">Find Oneline Courses That Suits You</h2>
+                <h2 class="heading text-center mb-4">Find Online Courses That Suits You</h2>
                 <form action="index.php" method="get" class="d-block d-lg-flex mb-4">
 				 <input type="hidden" name="action" value="courses"/>
                   <div class="fields d-block d-lg-flex">
@@ -66,12 +67,12 @@
 
             <div class="block-15">
               <div class="heading">
-                <h2>Welcome to University</h2>
+                <h2>About Munshiji</h2>
               </div>
               <div class="text mb-5">
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A quibusdam nisi eos accusantium eligendi velit deleniti nihil ad deserunt rerum incidunt nulla nemo eius molestiae architecto beatae asperiores doloribus animi.</p>
+              <p>Munshiji is an Integrated and Holistic program to provide “End-to-end” solutions to the youth by spreading awareness within them about the importance of having a stable future.</p>
               </div>
-              <p><a href="#" class=" new btn btn-primary reverse py-2 px-4">Read More</a></p>
+              <p><a href="?action=about" class=" new btn btn-primary reverse py-2 px-4">Read More</a></p>
               
             </div>
 
@@ -89,7 +90,7 @@
         <div class="row justify-content-center mb-5 element-animate">
           <div class="col-md-7 text-center section-heading">
             <h2 class="text-danger heading">Popular Courses</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit qui neque sint eveniet tempore sapiente.</p>
+          <!--  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit qui neque sint eveniet tempore sapiente.</p> -->
             <p><a href=".?action=signup" class="new btn btn-primary mt-4 py-2 px-4"><span class="ion-ios-book mr-2"></span>Enroll Now</a></p>
           </div>
         </div>
@@ -142,47 +143,81 @@
     <!-- END section -->
 	
 
-    <section class="site-section pt-5 mt-5 element-animate">
+  <section class="site-section pt-3 element-animate" style="background: url('images/body.jpg'); background-repeat: no-repeat; background-size: cover;">
       <div class="container">
         <div class="row justify-content-center mb-5 element-animate">
           <div class="col-md-7 text-center section-heading">
             <h2 class="text-primary heading">Services</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit qui neque sint eveniet tempore sapiente.</p>
+            <p>We aim to deliver to you these services from our end</p>
           </div>
         </div>
         <div class="row">
-          <div class="col-md-6 col-lg-3">
+          <div class="col-md-6 col-lg-4">
             <div class="media block-6 d-block">
               <div class="icon mb-3"><span class="flaticon-book"></span></div>
               <div class="media-body">
-                <h3 class="heading">Knowledge is power</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit mess.</p>
-                <p><a href="#" class="more">Read More <span class="ion-arrow-right-c"></span></a></p>
+                <h3 class="heading">Guest Lectures</h3>
+                <p>Munshiji will look on to inviting eminent personalities from varied industries such as sports, entertainment, business, etc. to interact with the people enrolled and share their experiences in shaping up their life</p>
+             <!--   <p><a href="#" class="more">Read More <span class="ion-arrow-right-c"></span></a></p>-->
               </div>
             </div> 
           </div>
-          <div class="col-md-6 col-lg-3">
+          <div class="col-md-6 col-lg-4">
             <div class="media block-6 d-block">
               <div class="icon mb-3"><span class="flaticon-student"></span></div>
               <div class="media-body">
-                <h3 class="heading">Senior High School</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit mess.</p>
-                <p><a href="#" class="more">Read More <span class="ion-arrow-right-c"></span></a></p>
+                <h3 class="heading">Individual Progress</h3>
+                <p>With the help of this program, we aim to restore the pride and self-esteem of those who have had the stigma of ‘dropping out’ from the race of life because of whatsoever reasons. This shall be done with the help of psychological analysis and boosting exercises</p>
+             <!--   <p><a href="#" class="more">Read More <span class="ion-arrow-right-c"></span></a></p> -->
               </div>
             </div> 
           </div>
           
-          <div class="col-md-6 col-lg-3">
+          <div class="col-md-6 col-lg-4">
             <div class="media block-6 d-block">
               <div class="icon mb-3"><span class="flaticon-diploma"></span></div>
               <div class="media-body">
-                <h3 class="heading">College of Arts &amp; Sciences</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit mess.</p>
-                <p><a href="#" class="more">Read More <span class="ion-arrow-right-c"></span></a></p>
+                <h3 class="heading">Basic Management Skills</h3>
+                <p>Munshiji will concentrate on teaching "Basic Management Skills"
+ to manage their life tactfully when the need arises</p>
+             <!--   <p><a href="#" class="more">Read More <span class="ion-arrow-right-c"></span></a></p> -->
               </div>
             </div> 
           </div>
-          <div class="col-md-6 col-lg-3">
+		  </div>
+		  <div class="row">
+		            <div class="col-md-6 col-lg-4">
+            <div class="media block-6 d-block">
+              <div class="icon mb-3"><span class="flaticon-book"></span></div>
+              <div class="media-body">
+                <h3 class="heading">Identify your Goals</h3>
+                <p>Munshiji will help everyone who is a part of their program, to identify their goals in life for a better living</p>
+           <!--     <p><a href="#" class="more">Read More <span class="ion-arrow-right-c"></span></a></p> -->
+              </div>
+            </div> 
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="media block-6 d-block">
+              <div class="icon mb-3"><span class="flaticon-student"></span></div>
+              <div class="media-body">
+                <h3 class="heading">Career Assistance</h3>
+                <p>Munshiji will assist every youth to find a suitable opening to showcase his/her talent by way of the job, business, or skill full activities.</p>
+           <!--     <p><a href="#" class="more">Read More <span class="ion-arrow-right-c"></span></a></p> -->
+              </div>
+            </div> 
+          </div>
+          
+          <div class="col-md-6 col-lg-4">
+            <div class="media block-6 d-block">
+              <div class="icon mb-3"><span class="flaticon-diploma"></span></div>
+              <div class="media-body">
+                <h3 class="heading">Lead A Purposeful Life</h3>
+                <p>Every enrolled person shall be made aware of their caliber of doing well and be motivated to lead a purposeful life</p>
+         <!--    <p><a href="#" class="more">Read More <span class="ion-arrow-right-c"></span></a></p> -->
+              </div>
+            </div> 
+          </div>
+    <!--      <div class="col-md-6 col-lg-3">
             <div class="media block-6 d-block">
               <div class="icon mb-3"><span class="flaticon-professor"></span></div>
               <div class="media-body">
@@ -191,12 +226,30 @@
                 <p><a href="#" class="more">Read More <span class="ion-arrow-right-c"></span></a></p>
               </div>
             </div> 
-          </div>
+          </div> -->
         </div>
       </div>
     </section>
     <!-- END section -->
+ <section class="site-section pt-3 element-animate" style="background: url('images/body.jpg'); background-repeat: no-repeat; background-size: cover;">
+	   <div class="container">
+	   <h2 class="text-danger text-center heading">Our method of training</h2>
+	   <br><br>
+	   <ol>
+	   <li>Our primary method of training is online so that it is easily accessible to everyone</li>
+	   <li>Live face to face classes via Zoom meeting</li>
+	   <li>Extra dedicated hours on Weekends and during non-business hours</li>
+	   <li>Practical exposure and projects</li>
+	   <li>Counselling and mentoring sessions </li>
+	   <li>Campus visit </li>
+	   </ol>
+	   
 
+            </div>
+	   
+	   
+	 
+	  </section>
 
     <section class="site-section bg-light element-animate" id="section-counter">
       <div class="container">
@@ -207,59 +260,17 @@
           <div class="col-lg-5 ml-auto">
             <div class="block-15">
               <div class="heading">
-                <h2>Education is Life</h2>
+             <!--   <h2>Our method of training</h2> -->
               </div>
-              <div class="text mb-5">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A quibusdam nisi eos accusantium eligendi velit deleniti nihil ad deserunt rerum incidunt.</p>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-md-6">
-                <div class="block-18 d-flex align-items-center">
-                  <div class="icon mr-4">
-                    <span class="flaticon-student"></span>
-                  </div>
-                  <div class="text">
-                    <strong class="number" data-number="12921">0</strong>
-                    <span>Students</span>
-                  </div>
-                </div>
-
-                <div class="block-18 d-flex align-items-center">
-                  <div class="icon mr-4">
-                    <span class="flaticon-university"></span>
-                  </div>
-                  <div class="text">
-                    <strong class="number" data-number="51">0</strong>
-                    <span>Schools</span>
-                  </div>
-                </div>
-
-              </div>
-              <div class="col-md-6">
-                <div class="block-18 d-flex align-items-center">
-                  <div class="icon mr-4">
-                    <span class="flaticon-books"></span>
-                  </div>
-                  <div class="text">
-                    <strong class="number" data-number="3902">0</strong>
-                    <span>Books</span>
-                  </div>
-                </div>
-
-                <div class="block-18 d-flex align-items-center">
-                  <div class="icon mr-4">
-                    <span class="flaticon-mortarboard"></span>
-                  </div>
-                  <div class="text">
-                    <strong class="number" data-number="1921">0</strong>
-                    <span>Graduates</span>
-                  </div>
-                </div>
-                
+              <div class="text-center mb-5">
+                <p>श्रद्धावाँल्लभते ज्ञानं तत्परः संयतेन्द्रियः ।
+                                                       ज्ञानं लब्धवा परां शान्तिमचिरेणाधिगच्छति ॥4.39॥<br><br>A person full of devotion with subdued senses attains
+knowledge and achieves eternal peace instantly thereafter
+</p>
               </div>
             </div>
+
+           
 
           </div>
         </div>
@@ -269,7 +280,7 @@
 
    
 
-    <div class="container site-section element-animate">
+   <!-- <div class="container site-section element-animate">
       <div class="row justify-content-center mb-5">
           <div class="col-md-7 text-center section-heading">
             <h2 class="text-primary heading">Teachers</h2>
@@ -287,7 +298,7 @@
                 </div>
               </div>
               <div class="back">
-                <!-- back content -->
+                
                 <blockquote>
                   <p>&ldquo;Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.&rdquo;</p>
                 </blockquote>
@@ -299,7 +310,7 @@
                 </div>
               </div>
             </div>
-          </div> <!-- .flip-container -->
+          </div> 
         </div>
 
         <div class="col-md-6 col-lg-4">
@@ -312,7 +323,7 @@
                 </div>
               </div>
               <div class="back">
-                <!-- back content -->
+               
                 <blockquote>
                   <p>&ldquo;Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.&rdquo;</p>
                 </blockquote>
@@ -324,7 +335,7 @@
                 </div>
               </div>
             </div>
-          </div> <!-- .flip-container -->
+          </div> 
         </div>
 
         <div class="col-md-6 col-lg-4">
@@ -337,7 +348,7 @@
                 </div>
               </div>
               <div class="back">
-                <!-- back content -->
+                
                 <blockquote>
                   <p>&ldquo;Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.&rdquo;</p>
                 </blockquote>
@@ -349,11 +360,11 @@
                 </div>
               </div>
             </div>
-          </div> <!-- .flip-container -->
+          </div> 
         </div>
       </div>
-    </div>
-    <!-- END .block-2 -->
+    </div> -->
+    
 
 <!--blog
     <div class="site-section bg-light">
@@ -446,7 +457,7 @@
       </div>
     </div>
 	-->
-    <div class="py-5 block-22">
+  <!--  <div class="py-5 block-22">
       <div class="container">
         <div class="row align-items-center">
           <div class="col-md-6 mb-4 mb-md-0 pr-md-5">
@@ -463,7 +474,12 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
+		<audio autoplay>
+
+  <source src="munshiji.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+  </audio>
 <script>
     var hash = '<?php echo $hash ?>';
     function submitPayuForm() {
@@ -473,6 +489,7 @@
       var payuForm = document.forms.payuForm;
       payuForm.submit();
     }
+
   </script>
   <!-- Footer --->
     <?php include 'footer_main.php'; ?>

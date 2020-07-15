@@ -2,7 +2,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Free Education Template by Colorlib</title>
+    <title>Munshiji.org</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
      <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
@@ -18,6 +18,7 @@
 
     <!-- Theme Style -->
     <link rel="stylesheet" href="css/style.css">
+	<link href="css/aboutus.css" rel="stylesheet">
 	<style>
 	.invoice-title h2, .invoice-title h3 {
     display: inline-block;
@@ -64,15 +65,24 @@
 			    <li class='nav-item'>
                 <a class='nav-link' href='index.php?action=signup'>SignUp</a>
               </li>";
-			  /*  <li class='nav-item'>
-                <a class='nav-link' href='about.html'>About</a>
-              </li>
-			    <li class='nav-item'>
+			    
+			   /* <li class='nav-item'>
                 <a class='nav-link' href='contact.html'>Contact</a>
               </li>*/
 			  
               
-       echo"     </ul>
+       echo" 
+  
+	          <li class='nav-item dropdown'>
+                <a class='nav-link dropdown-toggle' href='#' id='dropdown05' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>About</a>
+                <div class='dropdown-menu' aria-labelledby='dropdown05'>
+                  <a class='dropdown-item' href='?action=about'>About MUNSHIJI</a>
+                  <a class='dropdown-item' href='?action=abouttheteam'>About the Team</a>
+                 
+                </div>
+
+              </li>
+	       </ul>
            
             
           </div>";
@@ -138,7 +148,18 @@
               </li>*/
 			  
               
-         echo"   </ul>
+         echo"
+			<li class='nav-item dropdown'>
+                <a class='nav-link dropdown-toggle' href='#' id='dropdown05' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>About</a>
+                <div class='dropdown-menu' aria-labelledby='dropdown05'>
+                  <a class='dropdown-item' href='?action=about'>About MUNSHIJI</a>
+                  <a class='dropdown-item' href='?action=abouttheteam'>About the Team</a>
+                 
+                </div>
+
+              </li>
+		 
+		   </ul>
            
             
           </div>";
