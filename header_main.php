@@ -35,6 +35,8 @@
 .table > tbody > tr > .thick-line {
     border-top: 2px solid;
 }
+
+.quick:hover{color:#00e6e6!important;}
 	</style>
   </head>
   <body onload='submitPayuForm()'>
@@ -105,7 +107,7 @@
                 <div class='dropdown-menu' aria-labelledby='dropdown05'>
                   <a class='dropdown-item' href='index.php?action=support'>Need Help?</a>
                   <a class='dropdown-item' href='index.php?action=listquery'>List of query</a>
-                  <a class='dropdown-item' href='#'>Unique Code to speak on Phone
+
                 </a>
                  
                 </div>
