@@ -205,7 +205,7 @@
 
     
     
-    <div class="py-5 block-22">
+ <!--   <div class="py-5 block-22">
       <div class="container">
         <div class="row align-items-center">
           <div class="col-md-6 mb-4 mb-md-0 pr-md-5">
@@ -222,7 +222,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
 
 

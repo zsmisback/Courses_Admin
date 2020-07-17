@@ -17,7 +17,7 @@
 			{				
 		echo  "<li><a href='index.php?action=home'>Home</a></li>";
                 
-            echo"<li><a href='courses.html'>Courses</a></li>
+            echo"<li><a href='index.php?action=courses'>Courses</a></li>
               
                 <li><a href='index.php?action=login'>Login</a></li>
                 <li><a href='index.php?action=signup'>SignUp</a></li>";
@@ -55,11 +55,11 @@
           <h3 class="heading">Contact Information</h3>
           <div class="block-23">
             <ul>
-              <li><span class="icon ion-android-pin"></span><span class="headnd">203 Fake St. Mountain View, San Francisco, California, USA</span></li>
-              <li><a href="#"><span class="icon ion-ios-telephone"></span><span class="headnd">+2 392 3929 210</span></a>
+              <li><span class="icon ion-android-pin"></span><span class="headnd">BMS Talent Management PVT LTD.A 2905 Vishnu Shivan Towers,Dattani Park,Thakur Village Kandivali East,Mumbai - 400101</span></li>
+              <li><a href="#"><span class="icon ion-ios-telephone"></span><span class="headnd">+91-98197 28197</span></a>
       </li>
-              <li><a href="#"><span class="icon ion-android-mail"></span><span class="headnd">info@yourdomain.com</span></a></li>
-              <li><span class="icon ion-android-time"></span><span class="headnd">Monday &mdash; Friday 8:00am - 5:00pm</span></li>
+              <li><a href="#"><span class="icon ion-android-mail"></span><span class="headnd">bms4munshiji@gmail.com</span></a></li>
+            <!--  <li><span class="icon ion-android-time"></span><span class="headnd">Monday &mdash; Friday 8:00am - 5:00pm</span></li> -->
             </ul>
           </div>
         </div>
@@ -67,10 +67,10 @@
         <div class="col-md-4 col-lg-2 mb-5 mb-lg-0">
           <h3 class="heading">Social Links</h3>
           <p class="float-md-left">
-                  <a href="#" class="fa fa-facebook p-2"></a>
-                  <a href="#" class="fa fa-twitter p-2"></a>
-                  <a href="#" class="fa fa-linkedin p-2"></a>
-                  <a href="#" class="fa fa-instagram p-2"></a>
+                  <a href="http://www.facebook.com/brijmohan.sharma.9400" class="fa fa-facebook p-2"></a>
+                  <a href="http://www.twitter.com/bms4brijmohan" class="fa fa-twitter p-2"></a>
+                 <!-- <a href="#" class="fa fa-linkedin p-2"></a> -->
+                  <a href="http://www.instagram.com/bms.brijmohan/" class="fa fa-instagram p-2"></a>
     
                 </p>
         </div>

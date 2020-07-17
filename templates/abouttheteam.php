@@ -17,7 +17,7 @@
                         <div class="frontside">
                             <div class="card">
                                 <div class="card-body text-center">
-                                    <p><img class=" img-fluid" src="https://sunlimetech.com/portfolio/boot4menu/assets/imgs/team/img_01.png" alt="card image"></p>
+                                    <p><img class=" img-fluid" src="images/person_3.jpg" alt="card image"></p>
                                     <h4 class="card-title">CA Shashikant Khemani</h4>
                                     <p class="card-text">This is basic card with image on top, title, description and button.</p>
                                 <!--    <a href="https://www.fiverr.com/share/qb8D02" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a> -->
@@ -113,7 +113,7 @@
                         <div class="frontside">
                             <div class="card">
                                 <div class="card-body text-center">
-                                    <p><img class=" img-fluid" src="https://sunlimetech.com/portfolio/boot4menu/assets/imgs/team/img_03.png" alt="card image"></p>
+                                    <p><img class=" img-fluid" src="images/person_2.jpg" alt="card image"></p>
                                     <h4 class="card-title">CA Vivek Agarwal</h4>
                                     <p class="card-text">This is basic card with image on top, title, description and button.</p>
                                  <!--   <a href="https://www.fiverr.com/share/qb8D02" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a> -->
@@ -190,10 +190,16 @@ Our key objectives are as follows:
 	   <p>Empowering the youth to work and on their skills, upgrade themselves and make the world a better place to live in</p>
 	   </div>
 	   <div class="col-md-6">
-	   <h2 class="text-danger">Motto</h2>
+	   <h2 class="text-danger">Mission</h2>
 	   <p>To be a Pioneer and a Leader in providing Basic Management Education</p>
 	   </div>
 	   </div>
+	   
+	   <br><br>
+	   <h2 class="text-danger text-center">Motto</h2>
+	   <p class="text-center">Every youth can be a Basic Manager (BMBA) and every business can get affordable Managerial skills</p>
+	  
+	   
 	   </div>
 
 	   </section>

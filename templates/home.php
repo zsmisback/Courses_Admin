@@ -39,7 +39,7 @@
                   </div>
                   <input type="submit" class="search-submit btn btn-primary" value="Search">  
                 </form>
-                <p class="text-center mb-5">We have more than 500 courses to improve your skills</p>
+                <p class="text-center mb-5">We believe in you</p>
                 <p class="text-center "><a href=".?action=signup" class="btn py-3 px-5">SignUp</a></p>
               </div>
             </div>
@@ -188,7 +188,7 @@
 		  <div class="row">
 		            <div class="col-md-6 col-lg-4">
             <div class="media block-6 d-block">
-              <div class="icon mb-3"><span class="flaticon-book"></span></div>
+              <div class="icon mb-3"><img src="images/empty_flag.png" class="img-fluid"/></div>
               <div class="media-body">
                 <h3 class="heading">Identify your Goals</h3>
                 <p>Munshiji will help everyone who is a part of their program, to identify their goals in life for a better living</p>
@@ -196,9 +196,11 @@
               </div>
             </div> 
           </div>
+		  
           <div class="col-md-6 col-lg-4">
-            <div class="media block-6 d-block">
-              <div class="icon mb-3"><span class="flaticon-student"></span></div>
+            <div class="media block-6 d-block mb-2">
+			
+              <div class="icon mb-3"><img src="images/helping.png" class="img-fluid"/></div>
               <div class="media-body">
                 <h3 class="heading">Career Assistance</h3>
                 <p>Munshiji will assist every youth to find a suitable opening to showcase his/her talent by way of the job, business, or skill full activities.</p>
@@ -209,7 +211,7 @@
           
           <div class="col-md-6 col-lg-4">
             <div class="media block-6 d-block">
-              <div class="icon mb-3"><span class="flaticon-diploma"></span></div>
+              <div class="icon mb-3"><img src="images/purposeful.png" class="img-fluid"/></div>
               <div class="media-body">
                 <h3 class="heading">Lead A Purposeful Life</h3>
                 <p>Every enrolled person shall be made aware of their caliber of doing well and be motivated to lead a purposeful life</p>
@@ -231,7 +233,7 @@
       </div>
     </section>
     <!-- END section -->
- <section class="site-section pt-3 element-animate" style="background: url('images/body.jpg'); background-repeat: no-repeat; background-size: cover;">
+<!-- <section class="site-section pt-3 element-animate" style="background: url('images/body.jpg'); background-repeat: no-repeat; background-size: cover;">
 	   <div class="container">
 	   <h2 class="text-danger text-center heading">Our method of training</h2>
 	   <br><br>
@@ -249,13 +251,13 @@
 	   
 	   
 	 
-	  </section>
+	  </section> -->
 
     <section class="site-section bg-light element-animate" id="section-counter">
       <div class="container">
         <div class="row">
           <div class="col-lg-6">
-            <figure><img src="images/img_2_b.jpg" alt="Image placeholder" class="img-fluid"></figure>
+            <figure><img src="images/img_2_b.png" width="90%" alt="Image placeholder" class="img-fluid"></figure>
           </div>
           <div class="col-lg-5 ml-auto">
             <div class="block-15">

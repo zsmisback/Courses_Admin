@@ -45,6 +45,14 @@ switch ( $action ) {
   abouttheteam();
   break;
   
+  case 'terms':
+  terms();
+  break;
+  
+  case 'privacy':
+  privacy();
+  break;
+  
   case 'profile':
   profile();
   break;
@@ -136,6 +144,18 @@ function about(){
 function abouttheteam(){
 	
 	require(TEMPLATE_PATH_INDEX."/abouttheteam.php");
+}
+
+function terms(){
+	
+	require(TEMPLATE_PATH_INDEX."/terms.php");
+
+}
+
+function privacy(){
+	
+	require(TEMPLATE_PATH_INDEX."/privacy.php");
+
 }
 
 function courses(){
