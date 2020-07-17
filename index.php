@@ -166,7 +166,7 @@ function courses(){
 	$data3 = Courses::getLimitedCourses(8);
 	if(isset($_GET['tags']) || isset($_GET['language']))
 	{
-		if($_GET['language'] == 'language')
+		if($_GET['language'] == 'language' || empty($_GET['tags']) || $_GET['type'] == 'type')
 		{
 			header("Location:index.php");
 			exit;

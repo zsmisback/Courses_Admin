@@ -131,11 +131,11 @@
                 </ul>
               </div>
 			  
-			  <div class="block-28 text-center mb-5">
+			 <!-- <div class="block-28 text-center mb-5">
                 <figure>
                   <img src="images/teacher2.jpg" alt="" class="img-fluid">
                 </figure>
-                <h2 class="heading"><?php echo $results['courses']->course_by; ?></h2>
+                <h2 class="heading"></h2>
                 <h3 class="subheading">JavaScript </h3>
                 <p>
                   <a href="#" class="fa fa-twitter p-2"></a>
@@ -144,11 +144,13 @@
                 </p>
                 <p>Hi I'm Pooja Joshi, consectetur adipisicing elit. Quibusdam nulla beatae modi itaque nemo magni molestiae explicabo sint dolorum cum</p>
                 
-              </div>
+              </div> -->
 			  
               <div class="block-28 mb-5">
                 <h2 class="heading">Course Details</h2>
+				<br>
                 <ul>
+				  <li><span class="text-1">Course By - <span class="text-2"><?php echo $results['courses']->course_by; ?></span>
                   <li><span class="text-1">Duration - <span class="text-2"><?php echo $results['courses_continue']->course_reading; ?></span></li>
            
                   <li><span class="text-1">Subject - </span> <span class="text-2"><?php echo $results['courses']->course_name; ?></span></li>
@@ -225,7 +227,7 @@
               </div>
   
   
-              <div class="block-24 mb-5">
+       <!--       <div class="block-24 mb-5">
                 <h3 class="heading">Categories</h3>
                 <ul>
                   <li><a href="#">Laravel <span>10</span></a></li>
@@ -236,7 +238,7 @@
                   <li><a href="#">Android <span>45</span></a></li>
                   <li><a href="#">Swift <span>22</span></a></li>
                 </ul>
-              </div>
+              </div> -->
   
               
               

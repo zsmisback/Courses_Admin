@@ -61,11 +61,11 @@
             <!-- END content -->
             <div class="col-md-6 col-lg-4 order-md-2">
               
-			  <div class="block-28 text-center mb-5">
+			<!--  <div class="block-28 text-center mb-5">
                 <figure>
                   <img src="images/teacher2.jpg" alt="" class="img-fluid">
                 </figure>
-                <h2 class="heading"><?php echo $results['courses']->course_by; ?></h2>
+                <h2 class="heading"></h2>
                 <h3 class="subheading">JavaScript </h3>
                 <p>
                   <a href="#" class="fa fa-twitter p-2"></a>
@@ -74,11 +74,12 @@
                 </p>
                 <p>Hi I'm Pooja Joshi, consectetur adipisicing elit. Quibusdam nulla beatae modi itaque nemo magni molestiae explicabo sint dolorum cum</p>
                 
-              </div>
+              </div> -->
 			  
               <div class="block-28 mb-5">
                 <h2 class="heading">Course Details</h2>
                 <ul>
+				  <li><span class="text-1">Course By - <span class="text-2"><?php echo $results['courses']->course_by; ?></span></li>
                   <li><span class="text-1">Duration - <span class="text-2"><?php echo $results['courses_continue']->course_reading; ?></span></li>
            
                   <li><span class="text-1">Subject - </span> <span class="text-2"><?php echo $results['courses']->course_name; ?></span></li>
