@@ -255,18 +255,12 @@ class Courses{
 	}
 	
 //Get All Courses Using The Search Option	
-	public static function getAllCoursesBySpecifics($tags,$type,$language,$numRows = 12){
+	public static function getAllCoursesBySpecifics($tags,$language,$numRows = 12){
 		$page = isset($_GET['page']) ? $_GET['page'] : 1;
         $start = ($page - 1) * $numRows;
 		$conn = new PDO(DB_DSN,DB_USERNAME,DB_PASSWORD);
-		if($type == "")
-		{
-		$sql = "SELECT * FROM courses WHERE course_tags LIKE '%".$tags."%' AND course_language = '".$language."' AND course_price = '".$type."' LIMIT $start,$numRows";
-		}
-		else
-		{
-			$sql = "SELECT * FROM courses WHERE course_tags LIKE '%".$tags."%' AND course_language = '".$language."' AND course_price > 0 LIMIT $start,$numRows";
-		}
+		$sql = "SELECT * FROM courses WHERE course_tags LIKE '%".$tags."%' AND course_language = '".$language."' LIMIT $start,$numRows";
+
 		$result = $conn->query($sql);
 		$list = array();
 		while($row = $result->fetch())
@@ -279,11 +273,11 @@ class Courses{
 	}
 
 //Get Courses Search Pagination
-    public static function getSearchPagination($tags,$type,$language,$numRows = 12){
+    public static function getSearchPagination($tags,$language,$numRows = 12){
 		
 		
 		$conn = new PDO(DB_DSN,DB_USERNAME,DB_PASSWORD);
-		$sql = "SELECT SQL_CALC_FOUND_ROWS * FROM courses WHERE course_tags LIKE '%".$tags."%' AND course_language = '".$language."' AND course_price = '".$type."'";
+		$sql = "SELECT SQL_CALC_FOUND_ROWS * FROM courses WHERE course_tags LIKE '%".$tags."%' AND course_language = '".$language."'";
 		$result = $conn->query($sql);
 		$list = array();
 		

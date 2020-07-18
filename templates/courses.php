@@ -25,7 +25,7 @@
             <div class="row">
 			<?php
 			
-			if(isset($_GET['tags']) || isset($_GET['type']) || isset($_GET['language']))
+			if(isset($_GET['tags']) || isset($_GET['language']))
 			{
 				if(empty($results['search_courses']))
 				{
@@ -139,10 +139,10 @@
 		       }
 		        else
 		        {
-					if(isset($_GET['tags']) && isset($_GET['type']))
+					if(isset($_GET['tags']) && isset($_GET['language']))
                   { 
 			        echo"<li class='page-item'>
-                        <a href='.?action=courses&tags=$_GET[tags]&type=$_GET[type]&language=$_GET[language]&page=$results[prev]'>&lt;</a>
+                        <a href='.?action=courses&tags=$_GET[tags]&language=$_GET[language]&page=$results[prev]'>&lt;</a>
                       </li>";
 				  }
 				   else
@@ -152,10 +152,10 @@
                 
 				}
 				for($pageNumbers=1;$pageNumbers<=$results['totalpages'];$pageNumbers++) :
-				if(isset($_GET['tags']) && isset($_GET['type']))
+				if(isset($_GET['tags']) && isset($_GET['language']))
                    { 
 			          echo"
-                      <li><a href='.?action=courses&tags=$_GET[tags]&type=$_GET[type]&language=$_GET[language]&page=$pageNumbers'>$pageNumbers</a></li>&nbsp;";
+                      <li><a href='.?action=courses&tags=$_GET[tags]&language=$_GET[language]&page=$pageNumbers'>$pageNumbers</a></li>&nbsp;";
 			   
 			       }
 				   else
@@ -164,9 +164,9 @@
 						<li><a href='.?action=courses&page=$pageNumbers'>$pageNumbers</a></li>&nbsp;";
 				   }
 					endfor;
-					if(isset($_GET['tags']) && isset($_GET['type']))
+					if(isset($_GET['tags']) && isset($_GET['language']))
                    { 
-			        echo"<li><a href='.?action=courses&tags=$_GET[tags]&type=$_GET[type]&language=$_GET[language]&page=$results[next]'>&gt;</a></li>";
+			        echo"<li><a href='.?action=courses&tags=$_GET[tags]&language=$_GET[language]&page=$results[next]'>&gt;</a></li>";
 				   }
 				   else
 				   {

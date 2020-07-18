@@ -166,14 +166,14 @@ function courses(){
 	$data3 = Courses::getLimitedCourses(8);
 	if(isset($_GET['tags']) || isset($_GET['language']))
 	{
-		if($_GET['language'] == 'language' || empty($_GET['tags']) || $_GET['type'] == 'type')
+		if($_GET['language'] == 'language' || empty($_GET['tags']))
 		{
 			header("Location:index.php");
 			exit;
 		}
 		
-		$data4 = Courses::getAllCoursesBySpecifics($_GET['tags'],$_GET['type'],$_GET['language']);
-		$data5 = Courses::getSearchPagination($_GET['tags'],$_GET['type'],$_GET['language']);
+		$data4 = Courses::getAllCoursesBySpecifics($_GET['tags'],$_GET['language']);
+		$data5 = Courses::getSearchPagination($_GET['tags'],$_GET['language']);
 		$results['search_courses'] = $data4['results'];
 		$results['page'] = $data5['page'];
 	    $results['prev'] = $data5['prev'];

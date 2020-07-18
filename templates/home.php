@@ -14,16 +14,7 @@
                 <form action="index.php" method="get" class="d-block d-lg-flex mb-4">
 				 <input type="hidden" name="action" value="courses"/>
                   <div class="fields d-block d-lg-flex">
-                    <div class="textfield-search one-third"><input type="text" name="tags" class="form-control" placeholder="Keyword search..."></div>
-                    <div class="select-wrap one-third">
-                      <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-                      <select name="type" class="form-control">
-                        <option value="type">Type</option>
-						<option value="">Free</option>
-						<option value="paid">Paid</option>
-                      </select>
-                    </div>
-                    <div class="select-wrap one-third">
+				    <div class="select-wrap" style="width:50%;">
                       <div class="icon"><span class="ion-ios-arrow-down"></span></div>
                       <select name="language" class="form-control">
                         <option value="language">Languages</option>
@@ -36,6 +27,16 @@
 						?>
                       </select>
                     </div>
+                    <div class="textfield-search" style="width:50%;"><input type="text" name="tags" class="form-control" placeholder="Keyword search..."></div>
+             <!--    <div class="select-wrap one-third">
+                      <div class="icon"><span class="ion-ios-arrow-down"></span></div>
+                      <select name="type" class="form-control">
+                        <option value="type">Type</option>
+						<option value="">Free</option>
+						<option value="paid">Paid</option>
+                      </select>
+                    </div> -->
+
                   </div>
                   <input type="submit" class="search-submit btn btn-primary" value="Search">  
                 </form>

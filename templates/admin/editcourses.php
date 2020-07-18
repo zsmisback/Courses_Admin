@@ -23,8 +23,8 @@
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label for="inputEmailAddress">Course Summary:</label>
-                                                <textarea class="form-control py-4" id="inputEmailAddress" type="text" name="course_summary" placeholder="Enter course summary"><?php echo $results['courses']->course_summary; ?></textarea>
+                                                <label for="inputEmailAddress">Course Summary (Minimum letter requirement = 100 - 110):</label>
+                                                <textarea class="form-control py-4" id="inputEmailAddress" type="text" name="course_summary" maxlength="110" placeholder="Enter course summary"><?php echo $results['courses']->course_summary; ?></textarea>
                                             </div>
 											<label for="course_tagss">Course Tags:</label>
 											<input class="form-control py-4" id="course_tagss" type="text" placeholder="Enter course tags" name="course_tags" value="<?php echo $results['courses']->course_tags; ?>"/>

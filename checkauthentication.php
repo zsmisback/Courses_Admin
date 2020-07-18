@@ -129,7 +129,11 @@ function checkauthentication($form)
 			{
 				return "Please enter the course summary";
 			}
-			elseif(strlen($form['course_summary']) > 200)
+			elseif(strlen($form['course_summary']) < 100)
+			{
+				return "The course summary is too short";
+			}
+			elseif(strlen($form['course_summary']) > 110)
 			{
 				return "The course summary is too long";
 			}
