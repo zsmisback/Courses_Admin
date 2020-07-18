@@ -9,7 +9,7 @@ background-position: center center; background-size:cover;">
     <div class="form-wrap">
       <h2 class="mb-5">Any Query  &nbsp; <i class="fa fa-question" style="font-size:36px"></i></h2>
       <form method="post">
-	  <p><?php echo $error; ?></p>
+	  <p class="error"><?php echo $error; ?></p>
 	  <input type="hidden" name="support_for" value="<?php echo $_SESSION['user_id']; ?>"/>
             <div class="row">
             <div class="col-md-12 form-group">

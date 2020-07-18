@@ -105,13 +105,21 @@ function checkauthentication($form)
 			{
 				return "Please enter the course name";
 			}
+			elseif(strlen($form['course_name']) > 30)
+			{
+				return "The course name is too long";
+			}
 			
 		}
 		if(isset($form['course_code']))
 		{
 			if(empty($form['course_code']))
 			{
-				return "Please enter the course code";
+				return "Please enter the course short name";
+			}
+			elseif(strlen($form['course_code']) > 15)
+			{
+				return "The course short name is too long";
 			}
 			
 		}
@@ -121,6 +129,10 @@ function checkauthentication($form)
 			{
 				return "Please enter the course summary";
 			}
+			elseif(strlen($form['course_summary']) > 200)
+			{
+				return "The course summary is too long";
+			}
 			
 		}
 		if(isset($form['course_tags']))
@@ -129,6 +141,10 @@ function checkauthentication($form)
 			{
 				return "Please enter the course tags";
 			}
+			elseif(strlen($form['course_tags']) > 200)
+			{
+				return "The course tags are too long";
+			}
 			
 		}
 		if(isset($form['course_by']))
@@ -136,6 +152,10 @@ function checkauthentication($form)
 			if(empty($form['course_by']))
 			{
 				return "Please enter the course by";
+			}
+			elseif(strlen($form['course_by']) > 200)
+			{
+				return "The course by is too long";
 			}
 			
 		}
@@ -146,6 +166,10 @@ function checkauthentication($form)
 			{
 				return "Please fill in the total time";
 			}
+			elseif(strlen($form['course_total_time']) > 200)
+			{
+				return "The course total time is too long";
+			}
 			
 		}
 		if(isset($form['course_reading']))
@@ -154,6 +178,10 @@ function checkauthentication($form)
 			if(empty($form['course_reading']))
 			{
 				return "Please fill in the completion time for the course";
+			}
+			elseif(strlen($form['course_reading']) > 200)
+			{
+				return "The course completion time is too long";
 			}
 			
 		}
@@ -164,6 +192,7 @@ function checkauthentication($form)
 			{
 				return "Please fill in the course awards";
 			}
+
 			
 		}
 		if(isset($form['course_material']))
@@ -190,6 +219,10 @@ function checkauthentication($form)
 			if(!filter_var($form['course_price'], FILTER_VALIDATE_INT))
 			{
 				return "Please only input numbers";
+			}
+			elseif(strlen($form['course_price']) > 15)
+			{
+				return "The course price is too long";
 			}
 			
 		}
@@ -356,6 +389,10 @@ function checkauthentication($form)
 			 {
 				 return "Please fill in your username";
 			 }
+			 elseif(strlen($form['support_name']) > 200)
+			 {
+				 return "The username is too long";
+			 }
 		}
 		if(isset($form['support_email']))
 		{
@@ -374,6 +411,10 @@ function checkauthentication($form)
 			 if(empty($form['support_query']))
 			 {
 				 return "Please fill in the query that you have";
+			 }
+			 elseif(strlen($form['support_name']) > 200)
+			 {
+				 return "The query is too long";
 			 }
 		}
 		

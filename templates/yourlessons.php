@@ -157,7 +157,7 @@
               </div>
   
   
-              <div class="block-24 mb-5">
+      <!--        <div class="block-24 mb-5">
                 <h3 class="heading">Categories</h3>
                 <ul>
                   <li><a href="#">Laravel <span>10</span></a></li>
@@ -168,7 +168,7 @@
                   <li><a href="#">Android <span>45</span></a></li>
                   <li><a href="#">Swift <span>22</span></a></li>
                 </ul>
-              </div>
+              </div> -->
   
               
               
@@ -184,7 +184,7 @@
           <div class="row justify-content-center mb-5 element-animate">
             <div class="col-md-7 text-left section-heading">
               <h2 class="text-primary heading">You May Also Like</h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit qui neque sint eveniet tempore sapiente.</p>
+           <!--   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit qui neque sint eveniet tempore sapiente.</p> -->
             </div>
           </div>
         </div>

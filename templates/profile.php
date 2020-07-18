@@ -40,6 +40,7 @@
                 <div class="new">
                   <h2 class="mb-5"><i class='fa fa-user' style='font-size:36px'></i> &nbsp; Change Profile</h2>
                   <form method="post" enctype="multipart/form-data">
+				  <p class="error"><?php echo $error; ?></p>
 				  <input type="hidden" name="user_id" value="<?php echo $_SESSION['user_id']; ?>"/>
                         <div class="row">
                         <div class="col-md-12 form-group">
@@ -70,7 +71,6 @@
                         <label for="exampleFormControlFile1">Upload Profile Picture</label>
                         <input type="file" class="form-control-file" id="image" name="image">
                       </div>
-					  <p><?php echo $error; ?></p>
                       <div class="row mt-5">
                         <div class="col-md-6 form-group float-md-left">
                           <input type="submit" value="Update Profile" class="btn btn-primary px-4 py-2">

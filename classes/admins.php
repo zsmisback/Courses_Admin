@@ -300,6 +300,10 @@ class Admins{
 		$stmt->bindValue(":user_lvl",$this->user_lvl,PDO::PARAM_INT);
 		$stmt->bindValue(":user_unique",$token,PDO::PARAM_STR);
 		$stmt->execute();
+		if(!$stmt->execute())
+		{
+			return "check";
+		}
 		$this->user_id = $conn->lastInsertId();
 		$conn = null;
 	}

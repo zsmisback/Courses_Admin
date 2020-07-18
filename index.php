@@ -300,6 +300,11 @@ function content(){
 	$data3 = Comments::getCommentsInLessons((int)$_GET['lesson_id']);
 	$results['courses'] = $data['results'];
 	$results['lessons'] = Lessons::getLessonsById((int)$_GET['lesson_id']);
+	if($results['lessons']->lesson_status == 1)
+	{
+		home();
+		return;
+	}
 	$results['totalpages'] = $data2['totalPages'];
 	$results['paginations'] = $data2['results'];
 	$results['comments'] = $data3['results'];
@@ -380,10 +385,19 @@ function signup(){
 		{
 		
 		$users = new Admins;
-	    $users->storeFormValues($_POST);
-	    $users->insert();
-		header("Location:index.php?action=login");
-		exit;
+		$users->storeFormValues($_POST);
+	    $userinfo = $users->login();
+		if($userinfo['exists'] > 0)
+		{
+			$error = "This Email Address Already Exist";
+		}
+		else
+		{
+			 $users->insert();
+		     header("Location:index.php?action=login");
+		     exit;
+		}
+
 		}
 		
 	  
@@ -614,7 +628,7 @@ function yourcontent(){
 	}
 	$results = array();
 	$data = Courses::getLimitedCourses(8);
-	$data2 = Lessons::getPagination((int)$_GET['course_id']);
+	$data2 = Lessons::getPaidPagination((int)$_GET['course_id']);
 	$data3 = Comments::getCommentsInLessons((int)$_GET['lesson_id']);
 	$results['checkowner'] = Courses::checkOwnedCourse((int)$_GET['course_id']);
 	if(empty($results['checkowner']))

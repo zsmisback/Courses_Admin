@@ -37,6 +37,9 @@
 }
 
 .quick:hover{color:#00e6e6!important;}
+
+		.error{color:red;
+		       font-weight:bold;}
 	</style>
   </head>
   <body onload='submitPayuForm()'>

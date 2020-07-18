@@ -16,7 +16,7 @@
 			
               <h2 class="mb-5"><i class="fa fa-lock" style="font-size:36px"></i> &nbsp; Change Password</h2>
               <form method="post">
-                
+                <p class="error"><?php echo $error; ?></p>
                 <div class="row	">
                   <div class="col-md-12 form-group">
                     <label for="name">Current Password</label>
@@ -35,7 +35,6 @@
                       <input type="password" id="name" class="form-control py-2" name="re_pass">
                     </div>
                   </div>
-               <p><?php echo $error; ?></p>
 			   
           
                 <div class="row mt-3">

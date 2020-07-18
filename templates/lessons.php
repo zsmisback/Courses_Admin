@@ -40,7 +40,9 @@
 		}
 		foreach($results['lessons'] as $lessons)
 		{
-       echo"		
+			if($lessons->lesson_status == 0)
+			{
+		echo"		
           <div class='row bg-light align-items-center p-4 episode'>
             <div class='col-md-9'>
               <p class='meta'>Lesson $lessons->lesson_no</p>
@@ -52,6 +54,22 @@
 
             </div>
           </div>";
+			}
+			else
+			{
+				echo"		
+          <div class='row bg-light align-items-center p-4 episode'>
+            <div class='col-md-9'>
+              <p class='meta'>Lesson $lessons->lesson_no</p>
+              <h2>$lessons->lesson_name</h2>
+              <p>$lessons->lesson_content</p>
+            </div>
+            <div class='col-md-3 text-center'>
+                <a class='btn btn-primary px-3 py-2' role='button' disabled>Paid</a>
+
+            </div>
+          </div>";
+			}
 		}
   
           ?>
@@ -104,11 +122,11 @@
 		
         <tr>
           
-          <td colspan='3'><input type='hidden' name='surl' value='http://webportal.in/munshiji/index.php?action=successpayment' size='64' /></td>
+          <td colspan='3'><input type='hidden' name='surl' value='http://localhost/Courses_Admin/index.php?action=successpayment' size='64' /></td>
         </tr>
         <tr>
           
-          <td colspan='3'><input type='hidden' name='furl' value='http://webportal.in/munshiji/index.php?action=failurepayment' size='64' /></td>
+          <td colspan='3'><input type='hidden' name='furl' value='http://localhost/Courses_Admin/index.php?action=failurepayment' size='64' /></td>
         </tr>
 
         <tr>
@@ -254,7 +272,7 @@
           <div class="row justify-content-center mb-5 element-animate">
             <div class="col-md-7 text-left section-heading">
               <h2 class="text-primary heading">You May Also Like</h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit qui neque sint eveniet tempore sapiente.</p>
+        <!--      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit qui neque sint eveniet tempore sapiente.</p> -->
             </div>
           </div>
         </div>

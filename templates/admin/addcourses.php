@@ -31,7 +31,7 @@
 											<label for="course_bys">Course By:</label>
 											<input class="form-control py-4" id="course_bys" type="text" placeholder="Course By" name="course_by" value="<?php echo $course_by; ?>"/>
 											<br>
-											<label for="sel1">Select list:</label>
+											<label for="sel1">Select Language:</label>
                                              <select class="form-control" id="sel1" name="course_language">
                                               <option value="English">English</option>
                                               <option value="Hindi">Hindi</option>
@@ -39,6 +39,8 @@
                                                
                                                  </select>
 												 <br>
+											<label for="sel1">Course Cover Image(Recommended Size = 400x400) :</label>
+											<br>
 											<input type="file" name="image" id="image"/>
 											<br><br>
 											<label for="sel3">Course Rating:</label>

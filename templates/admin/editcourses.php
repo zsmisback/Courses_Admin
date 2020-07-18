@@ -32,7 +32,7 @@
 											<label for="course_bys">Course By:</label>
 											<input class="form-control py-4" id="course_bys" type="text" placeholder="Course By" name="course_by" value="<?php echo $results['courses']->course_by; ?>"/>
 											<br>
-											<label for="sel1">Select list:</label>
+											<label for="sel1">Select Language:</label>
                                              <select class="form-control" id="sel1" name="course_language">
 											 <option value="<?php echo $results['courses']->course_language; ?>"><?php echo $results['courses']->course_language; ?></option>
                                               <option value="English">English</option>
@@ -45,6 +45,8 @@
 											<br>
 											<img src="<?php echo CATEGORY_IMAGE_PATH; ?>/fullsize/<?php echo $results['courses']->course_id.$results['courses']->course_image; ?>" style="width:200px">
 											<br><br>
+											<label for="sel1">Course Cover Image(Recommended Size = 400x400) :</label>
+											<br>
 											<input type="file" name="image" id="image"/>
 											<br><br>
 											<label for="sel3">Course Rating:</label>

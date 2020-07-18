@@ -188,9 +188,37 @@ class Lessons{
 	}
 
 
-//Get the Side pagination for all lessons in a course 
+//Get the Side pagination for all lessons in a course that are free
 
 	public static function getPagination($id){
+		
+		
+		$conn = new PDO(DB_DSN,DB_USERNAME,DB_PASSWORD);
+		$sql = "SELECT SQL_CALC_FOUND_ROWS * FROM lessons LEFT JOIN courses ON course_id = lesson_for WHERE lesson_for = :lesson_for AND lesson_status = '0'";
+		$stmt = $conn->prepare($sql);
+		$stmt->bindValue(":lesson_for",$id,PDO::PARAM_INT);
+		$stmt->execute();
+		$list = array();
+		
+		while($row = $stmt->fetch())
+		{
+			$lessons = new Lessons($row);
+			$list[] = $lessons;
+		}
+		
+		
+        $page = isset($_GET['page']) ? $_GET['page'] : 1;
+        $start = 1;
+		$sql = "SELECT FOUND_ROWS() AS totalRows";
+		$totalRows = $conn->query($sql)->fetch();
+		$total_pages = $totalRows[0];
+		$conn = null;
+		return(array("results" => $list,"page" => $page,"totalPages" => $total_pages));
+	}
+	
+	//Get the Side pagination for all lessons in a course 
+
+	public static function getPaidPagination($id){
 		
 		
 		$conn = new PDO(DB_DSN,DB_USERNAME,DB_PASSWORD);
@@ -215,7 +243,6 @@ class Lessons{
 		$conn = null;
 		return(array("results" => $list,"page" => $page,"totalPages" => $total_pages));
 	}
-	
 //Store a Forms Value	
 	public function storeFormValues($params){
 		$this->__construct($params);

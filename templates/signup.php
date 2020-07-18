@@ -14,6 +14,7 @@
             <div class="form-wrap">
               <h2 class="mb-5"><i style="font-size:30px" class="fa">&#xf02d;</i> &nbsp; SignUp New Account</h2>
               <form method="post">
+			  <p class="error"><?php echo $error; ?></p>
 			  <input type="hidden" name="user_lvl" value="0"/>
                     <div class="row">
                     <div class="col-md-12 form-group">
@@ -51,7 +52,7 @@
                        I’m in for emails with exciting discounts and personalized recommendations
                   </label>
                    </div>
-                  <p><?php echo $error; ?></p>
+                  
                   <div class="row">
                     <div class="col-md-6 form-group">
                       <input type="submit" value="Register" name="submit" class="btn btn-primary px-5 py-2">

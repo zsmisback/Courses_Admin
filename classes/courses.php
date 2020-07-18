@@ -353,7 +353,7 @@ class Courses{
                 trigger_error ( "Courses::storeUploadedImage(): Unhandled or unknown image type ($imageType)", E_USER_ERROR );
 			}
 			
-			$thumbHeight = intval($imageHeight/$imageWidth * CATEGORY_THUMB_WIDTH);
+			$thumbHeight = 400;
 			$thumbResource = imagecreatetruecolor(CATEGORY_THUMB_WIDTH,$thumbHeight);
 			imagecopyresampled($thumbResource,$imageResource,0,0,0,0,CATEGORY_THUMB_WIDTH, $thumbHeight, $imageWidth, $imageHeight );
 			
