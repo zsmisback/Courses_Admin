@@ -162,7 +162,7 @@
                 <li>
                   <a href='.?action=lessons&course_id=$courses->course_id' class='d-flex'>
                     <figure class='image mr-3'>
-                      <img src='Profilepics/Courses/fullsize/$courses->course_id$courses->course_image' alt='' class='img-fluid'>
+                      <img src='Profilepics/Courses/thumb_small/$courses->course_id$courses->course_image' alt='' class='img-fluid'>
                     </figure>
                     <div class='text'>
                       <h3 class='heading'>$courses->course_code</h3>";

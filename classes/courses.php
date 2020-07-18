@@ -357,6 +357,7 @@ class Courses{
 			$thumbResource = imagecreatetruecolor(CATEGORY_THUMB_WIDTH,$thumbHeight);
 			imagecopyresampled($thumbResource,$imageResource,0,0,0,0,CATEGORY_THUMB_WIDTH, $thumbHeight, $imageWidth, $imageHeight );
 			
+	  
 			// Save the thumbnail
       switch ( $imageType ) {
         case IMAGETYPE_GIF:
@@ -371,7 +372,26 @@ class Courses{
         default:
           trigger_error ( "Courses::storeUploadedImage(): Unhandled or unknown image type ($imageType)", E_USER_ERROR );
       }
+	  
+	  		$thumbHeight = 65;
+			$thumbResource = imagecreatetruecolor(CATEGORY_THUMB_WIDTH_SMALL,$thumbHeight);
+			imagecopyresampled($thumbResource,$imageResource,0,0,0,0,CATEGORY_THUMB_WIDTH_SMALL, $thumbHeight, $imageWidth, $imageHeight );
 			
+		// Save the small thumbnail
+      switch ( $imageType ) {
+        case IMAGETYPE_GIF:
+          imagegif ( $thumbResource, $this->getImagePath( IMG_TYPE_THUMB_SMALL ) );
+          break;
+        case IMAGETYPE_JPEG:
+          imagejpeg ( $thumbResource, $this->getImagePath( IMG_TYPE_THUMB_SMALL ), JPEG_QUALITY_SMALL );
+          break;
+        case IMAGETYPE_PNG:
+          imagepng ( $thumbResource, $this->getImagePath( IMG_TYPE_THUMB_SMALL ) );
+          break;
+        default:
+          trigger_error ( "Courses::storeUploadedImage(): Unhandled or unknown image type ($imageType)", E_USER_ERROR );
+      }
+	  
 		$this->edit();
 		}
 	}

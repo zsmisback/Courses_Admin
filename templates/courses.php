@@ -36,7 +36,7 @@
         echo"<div class='col-md-12 col-lg-6 mb-5'>
                 <div class='block-19'>
                   <figure>
-                    <a href='.?action=lessons&course_id=$courses->course_id'><img src='Profilepics/Courses/fullsize/$courses->course_id$courses->course_image' alt='Image' class='img-fluid'></a>
+                    <a href='.?action=lessons&course_id=$courses->course_id'><img src='Profilepics/Courses/thumb/$courses->course_id$courses->course_image' alt='Image' class='img-fluid'></a>
                   </figure>
                     <div class='text'>
                       <h2 class='heading'><a href='.?action=lessons&course_id=$courses->course_id'>$courses->course_code</a></h2>
@@ -82,7 +82,7 @@
         echo"<div class='col-md-12 col-lg-6 mb-5'>
                 <div class='block-19'>
                   <figure>
-                    <a href='.?action=lessons&course_id=$courses->course_id'><img src='Profilepics/Courses/fullsize/$courses->course_id$courses->course_image' alt='Image' class='img-fluid'></a>
+                    <a href='.?action=lessons&course_id=$courses->course_id'><img src='Profilepics/Courses/thumb/$courses->course_id$courses->course_image' alt='Image' class='img-fluid'></a>
                   </figure>
                     <div class='text'>
                       <h2 class='heading'><a href='.?action=lessons&course_id=$courses->course_id'>$courses->course_code</a></h2>
@@ -206,7 +206,7 @@
                 <li>
                   <a href='.?action=lessons&course_id=$recent_courses->course_id' class='d-flex'>
                     <figure class='image mr-3'>
-                      <img src='Profilepics/Courses/fullsize/$recent_courses->course_id$recent_courses->course_image' alt='' class='img-fluid'>
+                      <img src='Profilepics/Courses/thumb_small/$recent_courses->course_id$recent_courses->course_image' alt='' class='img-fluid'>
                     </figure>
                     <div class='text'>
                       <h3 class='heading'>$recent_courses->course_code</h3>";

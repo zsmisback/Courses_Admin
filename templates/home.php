@@ -104,7 +104,7 @@
 	echo" <div class='item'>
             <div class='block-19'>
                 <figure>
-                  <img src='Profilepics/Courses/fullsize/$courses->course_id$courses->course_image' alt='Image' class='img-fluid'>
+                  <img src='Profilepics/Courses/thumb/$courses->course_id$courses->course_image' alt='Image' class='img-fluid'>
                 </figure>
                 <div class='text'>
                   <h2 class='heading'><a href='.?action=lessons&course_id=$courses->course_id'>$courses->course_code</a></h2>
