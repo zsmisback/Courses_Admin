@@ -1,57 +1,47 @@
 <?php include 'header_main.php'; ?>
     <!-- END header -->
 
-    <section class="site-hero" data-stellar-background-ratio="0.5" style="background-image: url(images/index_1.jpg); background-position:center center; 
-    background-attachment:fixed; background-size:cover; background-repeat: no-repeat;">
-
-      <div class="container">
-        <div class="row align-items-center justify-content-center site-hero-inner">
-          <div class="col-md-10">
-  
-            <div class="element-animate mt-4">
-              <div class="block-17">
-                <h2 class="heading text-center mb-4">Find Online Courses That Suits You</h2>
-                <form action="index.php" method="get" class="d-block d-lg-flex mb-4">
-				 <input type="hidden" name="action" value="courses"/>
-                  <div class="fields d-block d-lg-flex">
-				    <div class="select-wrap" style="width:50%;">
-                      <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-                      <select name="language" class="form-control">
-                        <option value="language">Languages</option>
-                        <?php
-						foreach($results['languages'] as $languages)
-						{
-							echo"<option value='$languages->course_language'>$languages->course_language</option>";
-						}
-						
-						?>
-                      </select>
-                    </div>
-                    <div class="textfield-search" style="width:50%;"><input type="text" name="tags" class="form-control" placeholder="Keyword search..."></div>
-             <!--    <div class="select-wrap one-third">
-                      <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-                      <select name="type" class="form-control">
-                        <option value="type">Type</option>
-						<option value="">Free</option>
-						<option value="paid">Paid</option>
-                      </select>
-                    </div> -->
-
-                  </div>
-                  <input type="submit" class="search-submit btn btn-primary" value="Search">  
-                </form>
-                <p class="text-center mb-5">We believe in you</p>
-                <p class="text-center "><a href=".?action=signup" class="btn py-3 px-5">SignUp</a></p>
-              </div>
-            </div>
-            
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img class="d-block w-100" src="images/heropic.jpeg" alt="First slide">
+          <div class="carousel-caption">
+            <h3 style="margin-bottom: 100px; font-size: 45px;text-align:center;">Are you confused which path to choose???</h3>
+          
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="images/km.jpg" alt="Second slide">
+          <div class="carousel-caption">
+            <h3 style="margin-bottom: 280px; font-size: 45px;">Are you confused which path to choose???</h3>
+          
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="images/heropic.jpeg" alt="Third slide">
+          <div class="carousel-caption">
+            <h3 style="margin-bottom: 280px; font-size: 45px;">Are you confused which path to choose???</h3>
+          
           </div>
         </div>
       </div>
-    </section>
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
     <!-- END section -->
 
-    <section class="site-section element-animate mt-4">
+    <section class="site-section element-animate" style="background: url('images/body.jpg'); background-repeat: no-repeat; background-size: cover;">
       <div class="container">
         <div class="row ">
           <div class="col-md-6 col-sm-12 order-md-2">
@@ -86,7 +76,7 @@
     <!-- END section -->
 	
 	
-	 <div class="site-section bg-light">
+	 <div class="site-section bg-light" style="background: url('images/body.jpg'); background-repeat: no-repeat; background-size: cover;">
       <div class="container">
         <div class="row justify-content-center mb-5 element-animate">
           <div class="col-md-7 text-center section-heading">
@@ -153,73 +143,51 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-md-6 col-lg-4">
+          <div class="col-md-6 col-lg-6">
             <div class="media block-6 d-block">
               <div class="icon mb-3"><span class="flaticon-book"></span></div>
               <div class="media-body">
                 <h3 class="heading">Guest Lectures</h3>
-                <p>Munshiji will look on to inviting eminent personalities from varied industries such as sports, entertainment, business, etc. to interact with the people enrolled and share their experiences in shaping up their life</p>
+                <p>Munshiji aims to invite experts from varied fields such as music, education, sports, art, etc. to share their experience and knowledge and motivate the youth to decide what their future should look like</p>
              <!--   <p><a href="#" class="more">Read More <span class="ion-arrow-right-c"></span></a></p>-->
               </div>
             </div> 
           </div>
-          <div class="col-md-6 col-lg-4">
+          <div class="col-md-6 col-lg-6">
             <div class="media block-6 d-block">
               <div class="icon mb-3"><span class="flaticon-student"></span></div>
               <div class="media-body">
-                <h3 class="heading">Individual Progress</h3>
+                <h3 class="heading">Motivation therapy</h3>
                 <p>With the help of this program, we aim to restore the pride and self-esteem of those who have had the stigma of ‘dropping out’ from the race of life because of whatsoever reasons. This shall be done with the help of psychological analysis and boosting exercises</p>
-             <!--   <p><a href="#" class="more">Read More <span class="ion-arrow-right-c"></span></a></p> -->
-              </div>
-            </div> 
-          </div>
-          
-          <div class="col-md-6 col-lg-4">
-            <div class="media block-6 d-block">
-              <div class="icon mb-3"><span class="flaticon-diploma"></span></div>
-              <div class="media-body">
-                <h3 class="heading">Basic Management Skills</h3>
-                <p>Munshiji will concentrate on teaching "Basic Management Skills"
- to manage their life tactfully when the need arises</p>
              <!--   <p><a href="#" class="more">Read More <span class="ion-arrow-right-c"></span></a></p> -->
               </div>
             </div> 
           </div>
 		  </div>
 		  <div class="row">
-		            <div class="col-md-6 col-lg-4">
+		            <div class="col-md-6 col-lg-6">
             <div class="media block-6 d-block">
               <div class="icon mb-3"><img src="images/empty_flag.png" class="img-fluid"/></div>
               <div class="media-body">
-                <h3 class="heading">Identify your Goals</h3>
-                <p>Munshiji will help everyone who is a part of their program, to identify their goals in life for a better living</p>
+                <h3 class="heading">Self-awareness</h3>
+                <p>The program aims to motivate the youth to be self-aware about what they want to achieve and what they should be aiming at this point of time to lead a successful life ahead</p>
            <!--     <p><a href="#" class="more">Read More <span class="ion-arrow-right-c"></span></a></p> -->
               </div>
             </div> 
           </div>
 		  
-          <div class="col-md-6 col-lg-4">
+          <div class="col-md-6 col-lg-6">
             <div class="media block-6 d-block mb-2">
 			
               <div class="icon mb-3"><img src="images/helping.png" class="img-fluid"/></div>
               <div class="media-body">
-                <h3 class="heading">Career Assistance</h3>
-                <p>Munshiji will assist every youth to find a suitable opening to showcase his/her talent by way of the job, business, or skill full activities.</p>
+                <h3 class="heading">Job Assistance</h3>
+                <p>Munshiji will assist every youth to search for a suitable opening to showcase his/her talent in the field by working and excelling at what they do </p>
            <!--     <p><a href="#" class="more">Read More <span class="ion-arrow-right-c"></span></a></p> -->
               </div>
             </div> 
           </div>
-          
-          <div class="col-md-6 col-lg-4">
-            <div class="media block-6 d-block">
-              <div class="icon mb-3"><img src="images/purposeful.png" class="img-fluid"/></div>
-              <div class="media-body">
-                <h3 class="heading">Lead A Purposeful Life</h3>
-                <p>Every enrolled person shall be made aware of their caliber of doing well and be motivated to lead a purposeful life</p>
-         <!--    <p><a href="#" class="more">Read More <span class="ion-arrow-right-c"></span></a></p> -->
-              </div>
-            </div> 
-          </div>
+
     <!--      <div class="col-md-6 col-lg-3">
             <div class="media block-6 d-block">
               <div class="icon mb-3"><span class="flaticon-professor"></span></div>
@@ -254,7 +222,7 @@
 	 
 	  </section> -->
 
-    <section class="site-section bg-light element-animate" id="section-counter">
+    <section class="site-section bg-light element-animate" id="section-counter" style="background: url('images/body.jpg'); background-repeat: no-repeat; background-size: cover;">
       <div class="container">
         <div class="row">
           <div class="col-lg-6">
@@ -280,7 +248,13 @@ knowledge and achieves eternal peace instantly thereafter
       </div>
     </section>
     <!-- END section -->
-
+   <section class="site-section bg-light element-animate" id="section-counter" style="background: url('images/body.jpg'); background-repeat: no-repeat; background-size: cover;">
+      <div class="container text-center">
+       
+		<h2>Transform your life through education</h2>
+                   <p><a href=".?action=courses" class="new btn btn-primary mt-4 py-2 px-4">Explore</a></p>
+      </div>
+    </section>
    
 
    <!-- <div class="container site-section element-animate">

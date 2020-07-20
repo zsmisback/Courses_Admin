@@ -164,6 +164,8 @@ function courses(){
 	$data = Courses::getLimitedCourses();
 	$data2 = Courses::getPagination();
 	$data3 = Courses::getLimitedCourses(8);
+	$data4 = Courses::getAllCourseLanguages();
+	$results['languages'] = $data4['results'];
 	if(isset($_GET['tags']) || isset($_GET['language']))
 	{
 		if($_GET['language'] == 'language' || empty($_GET['tags']))

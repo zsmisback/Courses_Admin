@@ -6,9 +6,9 @@
 
     
 
-  <section id="team" class="pb-5 mt-5">
+  <section id="team" class="pb-5 " style="background: url('images/body.jpg'); background-repeat: no-repeat; background-size: cover;">
     <div class="container">
-        <h5 class="section-title h1 text-center">OUR TEAM</h5>
+        <h1 class="section-title text-center">OUR TEAM</h1>
         <div class="row">
             <!-- Team member -->
             <div class="col-xs-12 col-sm-6 col-md-4">
@@ -19,7 +19,7 @@
                                 <div class="card-body text-center">
                                     <p><img class=" img-fluid" src="images/person_3.jpg" alt="card image"></p>
                                     <h4 class="card-title">CA Shashikant Khemani</h4>
-                                    <p class="card-text">This is basic card with image on top, title, description and button.</p>
+                                    <p class="card-text">CFA</p>
                                 <!--    <a href="https://www.fiverr.com/share/qb8D02" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a> -->
                                 </div>
                             </div>
@@ -67,7 +67,7 @@
                                 <div class="card-body text-center">
                                     <p><img class=" img-fluid" src="images/munshiji.jpg" alt="card image"></p>
                                     <h4 class="card-title">Brij Mohan Sharma</h4>
-                                    <p class="card-text">This is basic card with image on top, title, description and button.</p>
+                                    <p class="card-text">President</p>
                                   <!--  <a href="https://www.fiverr.com/share/qb8D02" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a> -->
                                 </div>
                             </div>
@@ -76,7 +76,7 @@
                             <div class="card">
                                 <div class="card-body text-center mt-4">
                                     <h4 class="card-title">Brij Mohan Sharma</h4>
-                                    <p class="card-text">This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.</p>
+                                    <p class="card-text">He is a corporate leader, author, coach, visionary, a veteran Rashtrapati Scout, awarded in 1968 and devoted to the scouting spirit of Service.</p>
                                     <ul class="list-inline">
                                         <li class="list-inline-item">
                                             <a class="social-icon text-xs-center" target="_blank" href="https://www.fiverr.com/share/qb8D02">
@@ -115,7 +115,7 @@
                                 <div class="card-body text-center">
                                     <p><img class=" img-fluid" src="images/person_2.jpg" alt="card image"></p>
                                     <h4 class="card-title">CA Vivek Agarwal</h4>
-                                    <p class="card-text">This is basic card with image on top, title, description and button.</p>
+                                    <p class="card-text">CA</p>
                                  <!--   <a href="https://www.fiverr.com/share/qb8D02" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a> -->
                                 </div>
                             </div>
@@ -124,7 +124,8 @@
                             <div class="card">
                                 <div class="card-body text-center mt-4">
                                     <h4 class="card-title">CA Vivek Agarwal</h4>
-                                    <p class="card-text">This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.</p>
+                                    <p class="card-text">He has more than 20 years of experience in providing consultancy in the areas of Finance, Accounting, Analytics, FP&A as well as designing financial and accounting systems for large corporates in India as well as Abroad.
+</p>
                                     <ul class="list-inline">
                                         <li class="list-inline-item">
                                             <a class="social-icon text-xs-center" target="_blank" href="https://www.fiverr.com/share/qb8D02">
@@ -154,9 +155,11 @@
                 </div>
             </div>
 			</div>
+							<p>Besides this, we have the galaxy of educationists and corporate leaders who are devoted to the cause of youth empowerment through education and awareness in the field of Skill Development. </p>
 			</div>
-			
+
     </section>
+
 	  
 <!--	  	  <section class="site-section pt-3 element-animate" style="background: url('images/body.jpg'); background-repeat: no-repeat; background-size: cover;">
 	   <div class="container">
@@ -205,8 +208,8 @@ Our key objectives are as follows:
 	   </section>
 	  <section class="site-section pt-3 element-animate" style="background: url('images/body.jpg'); background-repeat: no-repeat; background-size: cover;">
 	   <div class="container">
-	   <h2 class="text-primary text-center heading">Idea behind Munshiji</h2>
-	   <p class="text-left">The youth constitutes nearly 40 percent of India’s population. Being the most vibrant and dynamic segment of our country, the youth is our most valuable human resource. To optimally tap their constructive and creative energies, it is essential to develop their personality and involve them in nation-building activities.<br><br>After an initial enrolment of 100 students, on average, only 70 of them manage to finish schooling in India. The number of College and School dropouts are very high, because of various reasons. This initiative aims towards providing the basic education and skills to those who missed on to that opportunity to build a career and future while they could.<br><br>This initiative is to let these people know that it is never too late to build a future and move ahead and be successful in life. Apart from just their education, their employment is also a big concern to be looked at. Few people who manage to graduate are also under the spell of unemployment due to various reasons. As per various surveys, the employability of graduates is less than 50%.<br><br>To make the youth employable for self and business, there is a need to plug the gaps in the education and skills of graduates to make them employable and motivate them to move further ahead with their life.</p>
+	   <h2 class="text-danger text-center heading">Idea behind Munshiji</h2>
+	   <p class="text-left">The population of our country mainly comprises of youth and the future of our nation depends on how educated and skilled the youth is. The education field has been expanding over the years and so is the need for educated people. The whole idea behind starting with Munshiji is to contribute to the development of the nation by educating the youth and providing them the training of the required skills to start a business or get oneself employed.<br><br>At first, out of an initial enrolment of 100 students, on average, only 70 could manage to finish up with their studies. The rest of them couldn’t make through it because of a varied number of reasons. Munshiji aims at educating these students, helping them build a career and make themselves worthy enough to be employable or start a business themselves.<br><br>The development of their personalities in terms of the business knowledge and skills required and help make themselves employable is the core objective of Munshiji.</p>
 	   </div>
 	  </section>
 

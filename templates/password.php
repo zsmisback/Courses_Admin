@@ -39,7 +39,7 @@
           
                 <div class="row mt-3">
                   <div class="col-md-6 form-group float-md-left ">
-				  <input type="submit" name="submit" value="Change Password" class="btn btn-primary px-4 py-2">
+				  <input type="submit" name="submit" style="background-color:#C03F53;" value="Change Password" class="btn btn-primary px-4 py-2">
                     
                  
             </div>

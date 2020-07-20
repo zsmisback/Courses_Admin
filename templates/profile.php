@@ -3,7 +3,7 @@
       
       
     <!--profile-->
-    <section class="site-sectionn" style="background-color:#E6EEFF">
+    <section class="site-sectionn" style="background: url('images/body.jpg'); background-repeat: no-repeat; background-size: cover;">
            <div class="container-fluid">
              <div class="row new4">
                <div class="col-md-3 new2 ">
@@ -73,10 +73,10 @@
                       </div>
                       <div class="row mt-5">
                         <div class="col-md-6 form-group float-md-left">
-                          <input type="submit" value="Update Profile" class="btn btn-primary px-4 py-2">
+                          <input type="submit" value="Update Profile" style="background-color:#C03F53;" class="btn btn-primary px-4 py-2">
                         </div>
                         <div class="col-md-6">
-                          <a class="btn btn-primary px-4 py-2" href="index.php?action=userpass" role="button">Change Password</a>
+                          <a class="btn btn-primary px-4 py-2" style="background-color:#C03F53;" href="index.php?action=userpass" role="button">Change Password</a>
                         </div>
                       </div>
                     </form>

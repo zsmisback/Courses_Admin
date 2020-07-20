@@ -30,11 +30,11 @@
                 </div>          
                 <div class="row">
                   <div class="col-md-6 form-group float-md-left ">
-                    <input type="submit" name="submit" value="Login" class="btn btn-primary px-4 py-2"> 
+                    <input type="submit" name="submit" style="background-color:#C03F53;" value="Login" class="btn btn-primary px-4 py-2"> 
                  
                   </div>
 				    <div class="col-md-6 form-group float-md-center ">
-                   <a class="btn btn-primary px-3 py-2" href="index.php?action=signup" role="button">SignUp</a>
+                   <a class="btn btn-primary px-3 py-2" style="background-color:#C03F53;" href="index.php?action=signup" role="button">SignUp</a>
                   </div>
                 </div>
 				 

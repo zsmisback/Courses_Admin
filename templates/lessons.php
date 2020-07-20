@@ -4,7 +4,7 @@
 
    
   
-      <div class="site-section bg-light element-animate">
+      <div class="site-section bg-light element-animate" style="background-image: url(images/body.jpg) !important ;">
         <div class="container-fluid">
           
           <div class="row">
@@ -50,7 +50,7 @@
               <p>$lessons->lesson_content</p>
             </div>
             <div class='col-md-3 text-center'>
-                <a class='btn btn-primary px-3 py-2' href='.?action=content&course_id=$_GET[course_id]&lesson_id=$lessons->lesson_id' role='button'>Watch Video</a>
+                <a class='btn btn-primary px-3 py-2' href='.?action=content&course_id=$_GET[course_id]&lesson_id=$lessons->lesson_id' style='background-color:#C03F53;' role='button'>Watch Video</a>
 
             </div>
           </div>";
@@ -65,7 +65,7 @@
               <p>$lessons->lesson_content</p>
             </div>
             <div class='col-md-3 text-center'>
-                <a class='btn btn-primary px-3 py-2' role='button' disabled>Paid</a>
+                <a class='btn btn-primary px-3 py-2' role='button' style='background-color:#C03F53;' disabled>Paid</a>
 
             </div>
           </div>";
@@ -267,11 +267,11 @@
         </div>
       </div>
   
-      <div class="site-section bg-light">
+      <div class="site-section bg-light" style="background-image: url(images/body.jpg) !important ;">
         <div class="container">
           <div class="row justify-content-center mb-5 element-animate">
             <div class="col-md-7 text-left section-heading">
-              <h2 class="text-primary heading">You May Also Like</h2>
+              <h2 class="text-primary heading text-center">You May Also Like</h2>
         <!--      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit qui neque sint eveniet tempore sapiente.</p> -->
             </div>
           </div>

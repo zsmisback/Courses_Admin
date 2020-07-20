@@ -12,7 +12,7 @@ define("USER_IMAGE_PATH" , "Profilepics/Users");
 define( "IMG_TYPE_FULLSIZE", "fullsize" );
 define( "IMG_TYPE_THUMB", "thumb" );
 define( "IMG_TYPE_THUMB_SMALL", "thumb_small" );
-define( "CATEGORY_THUMB_WIDTH", 400 );
+define( "CATEGORY_THUMB_WIDTH", 550 );
 define( "JPEG_QUALITY", 100 );
 define( "CATEGORY_THUMB_WIDTH_SMALL", 120 );
 define( "JPEG_QUALITY_SMALL", 85 );

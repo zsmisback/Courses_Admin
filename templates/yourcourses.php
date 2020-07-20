@@ -1,7 +1,7 @@
 <?php include 'header_main.php'; ?>
     <!-- END header -->
 
-    <section class="site-hero1 site-sm-hero overlay" data-stellar-background-ratio="0.5" style="background-color:royalblue">
+ <!--   <section class="site-hero1 site-sm-hero overlay" data-stellar-background-ratio="0.5" style="background-color:royalblue">
       <div class="container">
         <div class="row align-items-center justify-content-center site-hero-sm-inner">
           <div class="col-md-7 text-center">
@@ -14,10 +14,10 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
     <!-- END section -->
 
-    <div class="site-section bg-light">
+    <div class="site-section bg-light" style="background: url('images/body.jpg');">
       <div class="container">
         <div class="row">
           

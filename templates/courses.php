@@ -1,14 +1,48 @@
 <?php include 'header_main.php'; ?>
     <!-- END header -->
 
-    <section class="site-hero1 site-sm-hero overlay" data-stellar-background-ratio="0.5" style="background-color:royalblue">
+    <section class="site-hero pb-5"  style="background-image: url(images/body.jpg) !important ;">
+      <div class="container-fluid" >
       <div class="container">
-        <div class="row align-items-center justify-content-center site-hero-sm-inner">
-          <div class="col-md-7 text-center">
+        <div class="row align-items-center justify-content-center site-hero-inner">
+          <div class="col-md-10">
   
-            <div class="element-animate1">
-              <h1 class="mb-2 text-white">Courses</h1>
+            <div class="element-animate">
+              <div class="block-17">
+               
+                <form action="index.php" method="get" class="d-block d-lg-flex mt-5">
+				<input type="hidden" name="action" value="courses"/>
+                  <div class="fields d-block d-lg-flex">
+                    <div class="textfield-search one-third" style="width:50%"><input type="text" name="tags" class="form-control" placeholder="Keyword search..."></div>
+                <!--    <div class="select-wrap one-third">
+                      <div class="icon"><span class="ion-ios-arrow-down"></span></div>
+                      <select name="" id="" class="form-control">
+                        <option value="">Type</option>
+                        <option value="">Free</option>
+                        <option value="">Paid</option>
+                       
+                      </select>
+                    </div> -->
+                    <div class="select-wrap one-third" style="width:50%">
+                      <div class="icon"><span class="ion-ios-arrow-down"></span></div>
+                      <select name="language" id="" class="form-control">
+                        <option value="language">Languages</option>
+                        <?php
+						foreach($results['languages'] as $languages)
+						{
+							echo"<option value='$languages->course_language'>$languages->course_language</option>";
+						}
+						
+						?>
+                       
+                      </select>
+                    </div>
+                  </div>
+                  <input type="submit" class="search-submit btn " value="Search">  
+                </form>
+               
               
+              </div>
             </div>
             
           </div>
@@ -17,7 +51,7 @@
     </section>
     <!-- END section -->
 
-    <div class="site-section bg-light">
+    <div class="site-section1 bg-light" style="background-image: url(images/body.jpg) !important ;">
       <div class="container">
         <div class="row">
           

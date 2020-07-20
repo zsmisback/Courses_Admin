@@ -55,7 +55,7 @@
                   
                   <div class="row">
                     <div class="col-md-6 form-group">
-                      <input type="submit" value="Register" name="submit" class="btn btn-primary px-5 py-2">
+                      <input type="submit" value="Register" name="submit" style="background-color:#C03F53;" class="btn btn-primary px-5 py-2">
                     </div>
                   </div>
                 </form>
