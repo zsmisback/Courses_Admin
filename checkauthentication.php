@@ -385,6 +385,48 @@ function checkauthentication($form)
 			}
 		}
 
+//Blogs------------------------------------------------------------------------
+
+		if(isset($form['title']))
+		{
+			if(empty($form['title']))
+			{
+				return "Please enter the title";
+			}
+		}
+		if(isset($form['author']))
+		{
+			if(empty($form['author']))
+			{
+				return "Please enter the authors name";
+			}
+		}
+		if(isset($form['tags']))
+		{
+			if(empty($form['tags']))
+			{
+				return "Please enter the tags";
+			}
+		}
+		if(isset($form['content']))
+		{
+			if(empty($form['content']))
+			{
+				return "Please enter the content";
+			}
+		}
+		if(isset($form['blog_del_vpcode']))
+		{
+			if(empty($form['blog_del_vpcode']))
+			{
+				return "Please enter the vpcode";
+			}
+			elseif($form['blog_del_vpcode'] !== DELETE_BLOG)
+			{
+				return "Invalid vpcode";
+			}
+		}
+		
 //Support----------------------------------------------------------------------
 
 		if(isset($form['support_name']))

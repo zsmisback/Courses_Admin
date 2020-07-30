@@ -117,6 +117,10 @@ switch ( $action ) {
   editblogs();
   break;
   
+  case 'deleteblogs':
+  deleteblogs();
+  break;
+  
   case 'listorders':
   listorders();
   break;
@@ -871,7 +875,11 @@ function addblogs(){
 	    {
 		  $error = $authenticate;
 	    }
-	     else
+		elseif(empty($_FILES['image']['name']))
+		{
+			$error = "Please add in a cover image";
+		}
+	    else
 	    {
 			$blogs = new Blogs;
 			$blogs->storeFormValues($_POST);
@@ -893,29 +901,68 @@ function editblogs(){
 		return;
 	}
 	
+	$error = '';
 	if($_SERVER["REQUEST_METHOD"] == "POST")
 	{
-		$title = $_POST['title'];
-		$author = $_POST['author'];
-		$tags = $_POST['tags'];
-		$content = $_POST['content'];
-	
+		$_POST['id'] = $_GET['id'];
 		$authenticate = checkauthentication($_POST);
 	    if($authenticate !== "cool")
 	    {
 		  $error = $authenticate;
 	    }
-	     else
-	    {
+		elseif(empty($_FILES['image']['name']))
+		{
 			$blogs = new Blogs;
 			$blogs->storeFormValues($_POST);
-			$blogs->insert();
+			$blogs->edit();
+			listblogs();
+			return;
+		}
+		else
+		{
+			$blogs = new Blogs;
+			$blogs->storeFormValues($_POST);
+			$blogs->edit();
+			$blogs->storeUploadedImage($_FILES['image']);
 			listblogs();
 			return;
 		}
 		
 	}
+	$results = array();
+	$results['title'] = 'Edit Blogs';
+	$results['title_small'] = 'Edit a blog';
+	$results['blog'] = Blogs::getBlogsById((int)$_GET['id']);
 	require(TEMPLATE_PATH."/addblogs.php");
+}
+
+function deleteblogs(){
+	
+	if(!isset($_GET['id']) || !$_GET['id'])
+	{
+		listblogs();
+		return;
+	}
+	
+	$error = '';
+	if($_SERVER["REQUEST_METHOD"] == "POST")
+	{
+		$_POST['id'] = $_GET['id'];
+		$authenticate = checkauthentication($_POST);
+		if($authenticate !== "cool")
+	    {
+		  $error = $authenticate;
+	    }
+		else
+		{
+			$blogs = new Blogs;
+			$blogs->storeFormValues($_POST);
+			$blogs->deletes();
+			listblogs();
+			return;
+		}
+	}
+	require(TEMPLATE_PATH."/deleteblogs.php");
 }
 
 function listblogs(){

@@ -218,17 +218,40 @@ class Blogs{
 	public function edit(){
 		
 		$conn = new PDO(DB_DSN,DB_USERNAME,DB_PASSWORD);
+		if(empty($_FILES['image']['name']))
+		{
+			$sql = "UPDATE blogs SET title = :title,author = :author,tags = :tags,content = :content WHERE id = :id";
+		}
+		else
+		{
 		$sql = "UPDATE blogs SET title = :title,author = :author,tags = :tags,content = :content,image = :image WHERE id = :id";
+		}
 		$stmt = $conn->prepare($sql);
 		$stmt->bindValue(":title",$this->title,PDO::PARAM_STR);
 		$stmt->bindValue(":author",$this->author,PDO::PARAM_STR);
 		$stmt->bindValue(":tags",$this->tags,PDO::PARAM_STR);
 		$stmt->bindValue(":content",$this->content,PDO::PARAM_STR);
-		$stmt->bindValue(":image",$this->image,PDO::PARAM_STR);
+		if(!empty($_FILES['image']['name']))
+		{
+			$stmt->bindValue(":image",$this->image,PDO::PARAM_STR);
+		}
+		
 		$stmt->bindValue(":id",$this->id,PDO::PARAM_INT);
 		$stmt->execute();
 		$conn = null;
 	}
+	
+//Delete a Blog
+	
+	public function deletes(){
+		
+		$conn = new PDO(DB_DSN,DB_USERNAME,DB_PASSWORD);
+		$sql = "DELETE FROM blogs WHERE id = :id LIMIT 1";
+		$stmt = $conn->prepare($sql);
+		$stmt->bindValue(":id",$this->id,PDO::PARAM_INT);
+		$stmt->execute();
+		$conn = null;
+	}	
 	
 }
 
