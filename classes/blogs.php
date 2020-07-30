@@ -177,6 +177,59 @@ class Blogs{
 		
 	}
 
+	//Get Blogs List With a Limit
+
+    public static function getLimitedBlogs($numRows = 12){
+		
+		$page = isset($_GET['page']) ? $_GET['page'] : 1;
+        $start = ($page - 1) * $numRows;
+		$conn = new PDO(DB_DSN,DB_USERNAME,DB_PASSWORD);
+		$sql = "SELECT SQL_CALC_FOUND_ROWS * FROM blogs ORDER BY dates DESC LIMIT :start,:numRows";
+		$stmt = $conn->prepare($sql);
+		$stmt->bindValue(":start",$start,PDO::PARAM_INT);
+		$stmt->bindValue(":numRows",$numRows,PDO::PARAM_INT);
+		$stmt->execute();
+		$list = array();
+		
+		while($row = $stmt->fetch())
+		{
+			$blogs = new Blogs($row);
+			$list[] = $blogs;
+		}
+		
+		$conn = null;
+		return(array("results"=>$list));
+	}
+
+
+//Get Blogs Pagination That is limited
+
+    public static function getPagination($numRows = 12){
+		
+		
+		$conn = new PDO(DB_DSN,DB_USERNAME,DB_PASSWORD);
+		$sql = "SELECT SQL_CALC_FOUND_ROWS * FROM blogs ORDER BY dates DESC";
+		$result = $conn->query($sql);
+		$list = array();
+		
+		while($row = $result->fetch())
+		{
+			$blogs = new Blogs($row);
+			$list[] = $blogs;
+		}
+		
+		
+        $page = isset($_GET['page']) ? $_GET['page'] : 1;
+        $start = 1;
+		$prev = $page - 1;
+        $next = $page + 1;
+		$sql = "SELECT FOUND_ROWS() AS totalRows";
+		$totalRows = $conn->query($sql)->fetch();
+		$total_pages = ceil($totalRows[0]/$numRows);
+		$conn = null;
+		return(array("results" => $list,"page" => $page,"prev" => $prev,"next" => $next,"totalPages" => $total_pages,"totalRows" => $totalRows[0]));
+	}
+	
 //Get a single course row data by Id
 	
 	public static function getBlogsById($id){

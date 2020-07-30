@@ -64,6 +64,9 @@
               <li class='nav-item'>
                 <a class='nav-link active' href='index.php?action=courses'>Courses</a>
               </li>
+			  <li class='nav-item'>
+                <a class='nav-link active' href='index.php?action=blogs'>Blogs</a>
+              </li>
 			    <li class='nav-item'>
                 <a class='nav-link' href='index.php?action=login'>Login</a>
               </li>
@@ -104,6 +107,9 @@
               </li>
 			  <li class='nav-item'>
                 <a class='nav-link active' href='index.php?action=yourpurchases'>YourPurchases</a>
+              </li>
+			  <li class='nav-item'>
+                <a class='nav-link active' href='index.php?action=blogs'>Blogs</a>
               </li>
 			  <li class='nav-item dropdown'>
                 <a class='nav-link dropdown-toggle' href='#' id='dropdown05' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>Support</a>

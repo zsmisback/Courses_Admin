@@ -5,6 +5,7 @@ class Comments{
 	public $comment_id=null;
 	public $comment_summary=null;
 	public $comment_lesson=null;
+	public $comment_blog=null;
 	public $comment_create=null;
 	public $comment_by=null;
 	public $comment_unique=null;
@@ -33,6 +34,10 @@ class Comments{
 		if(isset($data['comment_lesson']))
 		{
 			$this->comment_lesson = $data['comment_lesson'];
+		}
+		if(isset($data['comment_blog']))
+		{
+			$this->comment_blog = $data['comment_blog'];
 		}
 		if(isset($data['comment_create']))
 		{
@@ -148,6 +153,23 @@ class Comments{
 		return(array("results"=>$list));
 	}
 	
+//Get Comments Inside a Blog
+
+	public static function getCommentsInBlogs($id){
+		
+		$conn = new PDO(DB_DSN,DB_USERNAME,DB_PASSWORD);
+		$sql = "SELECT * FROM comments LEFT JOIN users ON user_id = comment_by WHERE comment_blog = :comment_blog";
+		$stmt = $conn->prepare($sql);
+		$stmt->bindValue(":comment_blog",$id,PDO::PARAM_INT);
+		$stmt->execute();
+		$list = array();
+		while($row = $stmt->fetch())
+		{
+			$comments = new Comments($row);
+			$list[] = $comments;
+		}
+		return(array("results"=>$list));
+	}	
 	
 //StoreFormValues	
 	public function storeFormValues($params){
@@ -180,10 +202,24 @@ class Comments{
 		$token = str_shuffle($token);
 		$token= substr($token,0,10);
 		$conn = new PDO(DB_DSN,DB_USERNAME,DB_PASSWORD);
+		if($_GET['action'] == 'blogcontent')
+		{
+		$sql = "INSERT INTO comments(comment_summary,comment_blog,comment_create,comment_by,comment_unique)VALUES(:comment_summary,:comment_blog,NOW(),:comment_by,:comment_unique)";
+		}
+		else
+		{
 		$sql = "INSERT INTO comments(comment_summary,comment_lesson,comment_create,comment_by,comment_unique)VALUES(:comment_summary,:comment_lesson,NOW(),:comment_by,:comment_unique)";
+		}
 		$stmt = $conn->prepare($sql);
 		$stmt->bindValue(":comment_summary",$this->comment_summary,PDO::PARAM_STR);
+		if($_GET['action'] == 'blogcontent')
+		{
+		$stmt->bindValue(":comment_blog",$_GET['id'],PDO::PARAM_INT);	
+		}
+		else
+		{
 		$stmt->bindValue(":comment_lesson",$_GET['lesson_id'],PDO::PARAM_INT);
+		}
 		$stmt->bindValue(":comment_by",$_SESSION['user_id'],PDO::PARAM_INT);
 		$stmt->bindValue(":comment_unique",$token,PDO::PARAM_STR);
 		$stmt->execute();

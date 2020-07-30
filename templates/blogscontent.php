@@ -1,0 +1,196 @@
+<?php include 'header_main.php'; ?>
+    <!-- END header -->
+
+    <section class="site-hero site-sm-hero overlay" data-stellar-background-ratio="0.5" style="background-image: url(images/big_image_2.jpg);">
+      <div class="container">
+        <div class="row align-items-center justify-content-center site-hero-sm-inner">
+          <div class="col-md-12 text-center">
+  
+            <div class="mb-5 element-animate">
+              <h1 class="mb-2">Even the all-powerful Pointing has no control about the blind texts</h1>
+              <p class="bcrumb">by <a href="#">Johan Charles</a> on <a href="#">January 20, 2018</a></p>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- END section -->
+
+    <div class="site-section bg-light">
+      <div class="container">
+        <div class="row">
+          
+          <div class="col-md-6 col-lg-8 order-md-2 pl-lg-5">
+            <div class="row">
+              <div class="col-md-12 col-lg-12 mb-5">
+
+                  <p><?php echo $results['blogs']->content; ?></p>
+
+                  
+                  <div class="pt-5">
+                    <p>Tags: <?php foreach($tags as $tag){echo'<a href="#">#'.$tag.'</a> ';} ?></p>
+                  </div>
+
+
+                  <div class="pt-5">
+                    <h3 class="mb-5">Comments</h3>
+                    <ul class="comment-list">
+					<?php
+					
+					foreach($results['comments'] as $comments)
+					{
+                     echo'
+						<li class="comment">
+                        <div class="vcard bio">';
+						if(empty($comments->user_image))
+						{
+                          echo"<img src='images/default.jpg' alt='Image placeholder'>";
+						}
+						else
+						{
+                          echo'<img src="'.USER_IMAGE_PATH.'/'.IMG_TYPE_THUMB.'/'.$comments->user_id.$comments->user_image.'" alt="Image placeholder">';
+						}
+                     echo'</div>
+                        <div class="comment-body">
+                          <h3>'.$comments->user_name.'</h3>
+                          <div class="meta">January 9, 2018 at 2:21pm</div>
+                          <p>'.$comments->comment_summary.'</p>
+                         <!-- <p><a href="#" class="reply">Reply</a></p> -->
+                        </div>
+                      </li>';
+					}
+                      
+					  ?>
+                    </ul>
+                    <!-- END comment-list -->
+                    
+                    <div class="comment-form-wrap pt-5">
+                      <h3 class="mb-5">Leave a comment</h3>
+                      <form method="post" class="bg-light">
+                       <!-- <div class="form-group">
+                          <label for="name">Name *</label>
+                          <input type="text" class="form-control" id="name">
+                        </div>
+                        <div class="form-group">
+                          <label for="email">Email *</label>
+                          <input type="email" class="form-control" id="email">
+                        </div>
+                        <div class="form-group">
+                          <label for="website">Website</label>
+                          <input type="url" class="form-control" id="website">
+                        </div>-->
+						<p><?php echo $error; ?></p>
+                        <div class="form-group">
+                          <label for="message">Message</label>
+                          <textarea id="message" name="comment_summary" cols="30" rows="10" class="form-control"></textarea>
+                        </div>
+                        <div class="form-group">
+                          <input type="submit" value="Post Comment" class="btn btn-primary">
+                        </div>
+
+                      </form>
+                    </div>
+                  </div>
+
+              </div>
+            </div>
+
+            
+          </div>
+          <!-- END content -->
+          <div class="col-md-6 col-lg-4 order-md-1">
+
+            <div class="block-24 mb-5">
+              <h3 class="heading">Categories</h3>
+              <ul>
+                <li><a href="#">Laravel <span>10</span></a></li>
+                <li><a href="#">PHP <span>43</span></a></li>
+                <li><a href="#">JavaScript <span>21</span></a></li>
+                <li><a href="#">Python <span>65</span></a></li>
+                <li><a href="#">iOS <span>34</span></a></li>
+                <li><a href="#">Android <span>45</span></a></li>
+                <li><a href="#">Swift <span>22</span></a></li>
+              </ul>
+            </div>
+
+            <div class="block-25 mb-5">
+              <div class="heading">Recent Courses</div>
+              <ul>
+                <li>
+                  <a href="#" class="d-flex">
+                    <figure class="image mr-3">
+                      <img src="images/img_2_b.jpg" alt="" class="img-fluid">
+                    </figure>
+                    <div class="text">
+                      <h3 class="heading">Create cool websites using this template</h3>
+                      <span class="meta">$34</span>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="d-flex">
+                    <figure class="image mr-3">
+                      <img src="images/img_2_b.jpg" alt="" class="img-fluid">
+                    </figure>
+                    <div class="text">
+                      <h3 class="heading">Create cool websites using this template</h3>
+                      <span class="meta">$34</span>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="d-flex">
+                    <figure class="image mr-3">
+                      <img src="images/img_2_b.jpg" alt="" class="img-fluid">
+                    </figure>
+                    <div class="text">
+                      <h3 class="heading">Create cool websites using this template</h3>
+                      <span class="meta">$34</span>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="block-26">
+              <h3 class="heading">Tags</h3>
+              <ul>
+                <li><a href="#">code</a></li>
+                <li><a href="#">design</a></li>
+                <li><a href="#">typography</a></li>
+                <li><a href="#">development</a></li>
+                <li><a href="#">creative</a></li>
+                <li><a href="#">codehack</a></li>
+              </ul>
+            </div>
+
+
+          </div>
+          <!-- END Sidebar -->
+        </div>
+      </div>
+    </div>
+
+    
+    
+    <div class="py-5 block-22">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6 mb-4 mb-md-0 pr-md-5">
+            <h2 class="heading">Create cool websites</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi accusantium optio und.</p>
+          </div>
+          <div class="col-md-6">
+            <form action="#" class="subscribe">
+              <div class="form-group">
+                <input type="email" class="form-control email" placeholder="Enter email">
+                <input type="submit" class="btn btn-primary submit" value="Subscribe">
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <?php include 'footer_main.php'; ?>

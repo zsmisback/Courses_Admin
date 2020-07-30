@@ -89,6 +89,13 @@ switch ( $action ) {
   yourcontent();
   break;
   
+  case 'blogs':
+  blogs();
+  break;
+  
+  case 'blogcontent':
+  blogcontent();
+  break;
   case 'support':
   support();
   break;
@@ -156,6 +163,67 @@ function privacy(){
 	
 	require(TEMPLATE_PATH_INDEX."/privacy.php");
 
+}
+
+function blogs(){
+	
+	
+	$results = array();
+	$data = Blogs::getLimitedBlogs();
+	$data2 = Blogs::getPagination();
+	$results['totalRows'] = $data2['totalRows'];
+	$results['page'] = $data2['page'];
+	$results['prev'] = $data2['prev'];
+	$results['next'] = $data2['next'];
+	$results['blogs'] = $data['results'];
+	require(TEMPLATE_PATH_INDEX."/blogs.php");
+}
+
+function blogcontent(){
+	
+	if(!isset($_GET['id']) || !$_GET['id'])
+	{
+		home();
+		return;
+	}
+	
+	$data3 = Comments::getCommentsInBlogs((int)$_GET['id']);
+	$results = array();
+	$results['blogs'] = Blogs::getBlogsById((int)$_GET['id']);
+	$tags = explode(",",$results['blogs']->tags);
+	$results['comments'] = $data3['results'];
+	
+	$error = '';
+	
+	if($_SERVER["REQUEST_METHOD"] == "POST")
+	{
+      if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true)
+	 {
+		
+	 }
+	 else
+	 {
+	  if(empty($_POST['comment_summary']))
+	  {
+		  $error = "Please type in your comment";
+	  }
+	  else
+	  {
+		$comments = new Comments;
+		$comments->storeFormValues($_POST);
+		$comments->insert_new();
+		header("Location:?action=blogcontent&id=$_GET[id]");
+		exit;
+	  }
+	  
+		  
+	 }	  
+	  
+	  
+	  
+		
+	}
+	require(TEMPLATE_PATH_INDEX."/blogscontent.php");
 }
 
 function courses(){
