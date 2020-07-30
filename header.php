@@ -131,6 +131,17 @@
                                     <a class="nav-link" href="admin.php?action=listorders">List Orders</a>
                                 </nav>
 							</div>
+							<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBlogs" aria-expanded="false" aria-controls="collapseLayouts">
+                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                                Blogs
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseBlogs" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="admin.php?action=addblogs">Add Blogs</a>
+                                    <a class="nav-link" href="admin.php?action=listblogs">List Blogs</a>
+                                </nav>
+							</div>
                          <!--   <div class="sb-sidenav-menu-heading">Addons</div>
                             <a class="nav-link" href="charts.html">
                                 <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>

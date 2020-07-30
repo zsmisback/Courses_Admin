@@ -109,8 +109,20 @@ switch ( $action ) {
   deleteorders();
   break;
   
+  case 'addblogs':
+  addblogs();
+  break;
+  
+  case 'editblogs':
+  editblogs();
+  break;
+  
   case 'listorders':
   listorders();
+  break;
+  
+  case 'listblogs':
+  listblogs();
   break;
   
   case 'logout':
@@ -834,6 +846,84 @@ function listorders(){
 	$data = Orders::getOrdersList();
 	$results['orders'] = $data['results'];
 	require(TEMPLATE_PATH."/listorders.php");
+}
+
+//Blogs
+function addblogs(){
+	
+	
+	
+	$error = '';
+	$title = '';
+	$author = '';
+	$tags = '';
+	$content = '';
+	
+	if($_SERVER["REQUEST_METHOD"] == "POST")
+	{
+		$title = $_POST['title'];
+		$author = $_POST['author'];
+		$tags = $_POST['tags'];
+		$content = $_POST['content'];
+	
+		$authenticate = checkauthentication($_POST);
+	    if($authenticate !== "cool")
+	    {
+		  $error = $authenticate;
+	    }
+	     else
+	    {
+			$blogs = new Blogs;
+			$blogs->storeFormValues($_POST);
+			$blogs->insert();
+			$blogs->storeUploadedImage($_FILES['image']);
+			listblogs();
+			return;
+		}
+		
+	}
+	require(TEMPLATE_PATH."/addblogs.php");
+}
+
+function editblogs(){
+	
+	if(!isset($_GET['id']) || !$_GET['id'])
+	{
+		listblogs();
+		return;
+	}
+	
+	if($_SERVER["REQUEST_METHOD"] == "POST")
+	{
+		$title = $_POST['title'];
+		$author = $_POST['author'];
+		$tags = $_POST['tags'];
+		$content = $_POST['content'];
+	
+		$authenticate = checkauthentication($_POST);
+	    if($authenticate !== "cool")
+	    {
+		  $error = $authenticate;
+	    }
+	     else
+	    {
+			$blogs = new Blogs;
+			$blogs->storeFormValues($_POST);
+			$blogs->insert();
+			listblogs();
+			return;
+		}
+		
+	}
+	require(TEMPLATE_PATH."/addblogs.php");
+}
+
+function listblogs(){
+	
+	$results = array();
+	$data = Blogs::getBlogsList();
+	$results['blogs'] = $data['results'];
+	require(TEMPLATE_PATH."/listblogs.php");
 }
 
 //Login

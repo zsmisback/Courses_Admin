@@ -9,6 +9,7 @@ define( "TEMPLATE_PATH", "templates/admin" );
 define( "TEMPLATE_PATH_INDEX","templates");
 define("CATEGORY_IMAGE_PATH" , "Profilepics/Courses");
 define("USER_IMAGE_PATH" , "Profilepics/Users");
+define("BLOG_IMAGE_PATH" , "Profilepics/Blogs");
 define( "IMG_TYPE_FULLSIZE", "fullsize" );
 define( "IMG_TYPE_THUMB", "thumb" );
 define( "IMG_TYPE_THUMB_SMALL", "thumb_small" );
@@ -32,6 +33,7 @@ require( CLASS_PATH . "/comments.php" );
 require( CLASS_PATH . "/admins.php" );
 require( CLASS_PATH . "/orders.php" );
 require( CLASS_PATH . "/support.php" );
+require( CLASS_PATH . "/blogs.php" );
 function handleException( $exception ) {
   echo "Sorry, a problem occurred. Please try later.";
   error_log( $exception->getMessage() );
