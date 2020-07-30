@@ -24,10 +24,10 @@
           <div class="col-md-6 col-lg-8 order-md-2 pl-lg-5">
             <div class="row">
               <div class="col-md-12 col-lg-12 mb-5">
-
+				<h2 class="text-center"><?php echo $results['blogs']->title; ?></h2>
                   <p><?php echo $results['blogs']->content; ?></p>
 
-                  
+                  <p class="text-right">- <?php echo $results['blogs']->author; ?></p>
                   <div class="pt-5">
                     <p>Tags: <?php foreach($tags as $tag){echo'<a href="#">#'.$tag.'</a> ';} ?></p>
                   </div>
