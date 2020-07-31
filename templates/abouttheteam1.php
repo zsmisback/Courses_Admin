@@ -6,9 +6,9 @@
 
     
 
-  <section id="team" class="pb-5" style="background: url('images/body.jpg'); background-repeat: no-repeat; background-size: cover;">
-    <div class="container"><br>
-        <h2 class="text-danger text-center heading">Meet Our Munshi's</h2><br>
+  <section id="team" class="pb-5 " style="background: url('images/body.jpg'); background-repeat: no-repeat; background-size: cover;">
+    <div class="container">
+        <h1 class="section-title text-center">OUR TEAM</h1>
         <div class="row">
             <!-- Team member -->
             <div class="col-xs-12 col-sm-6 col-md-4">
@@ -18,7 +18,7 @@
                             <div class="card">
                                 <div class="card-body text-center">
                                     <p><img class=" img-fluid" src="images/person_3.jpg" alt="card image"></p>
-                                    <h4 class="card-title text-danger">CA Shashikant Khemani</h4>
+                                    <h4 class="card-title">CA Shashikant Khemani</h4>
                                     <p class="card-text">CFA</p>
                                 <!--    <a href="https://www.fiverr.com/share/qb8D02" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a> -->
                                 </div>
@@ -27,8 +27,8 @@
                         <div class="backside">
                             <div class="card">
                                 <div class="card-body text-center mt-4">
-                                    <h4 class="card-title text-danger">CA Shashikant Khemani</h4>
-                                    <p class="card-text">He has more than 20 years of experience in providing consultancy in the areas of Finance, Accounting, Analytics, FP&A as well as designing financial and accounting systems for large corporates in India as well as Abroad.</p>
+                                    <h4 class="card-title">CA Shashikant Khemani</h4>
+                                    <p class="card-text">This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.</p>
                                     <ul class="list-inline">
                                         <li class="list-inline-item">
                                             <a class="social-icon text-xs-center" target="_blank" href="https://www.fiverr.com/share/qb8D02">
@@ -185,13 +185,31 @@ Our key objectives are as follows:
 	   </div>
 
 	   </section> -->
+	    <section class="site-section pt-3 element-animate" style="background: url('images/body.jpg'); background-repeat: no-repeat; background-size: cover;">
+	   <div class="container">
+	   <div class="row">
+	   <div class="col-md-6">
+	   <h2 class="text-danger">Vision</h2>
+	   <p>Empowering the youth to work and on their skills, upgrade themselves and make the world a better place to live in</p>
+	   </div>
+	   <div class="col-md-6">
+	   <h2 class="text-danger">Mission</h2>
+	   <p>To be a Pioneer and a Leader in providing Basic Management Education</p>
+	   </div>
+	   </div>
+	   
+	   <br><br>
+	   <h2 class="text-danger text-center">Motto</h2>
+	   <p class="text-center">Every youth can be a Basic Manager (BMBA) and every business can get affordable Managerial skills</p>
+	  
+	   
+	   </div>
+
+	   </section>
 	  <section class="site-section pt-3 element-animate" style="background: url('images/body.jpg'); background-repeat: no-repeat; background-size: cover;">
 	   <div class="container">
-	   <h2 class="text-danger text-center heading">Idea behind Munshiji</h2><hr>
-	   <p class="text-left">Nelson Mandela once quoted that "The youth of today are the leaders of tomorrow". As he rightly described the development of the country depends upon its youth population. India mainly comprises of youth and they are the future of our nation. Education as a field has been expanding over the years and so is the need for educated people. The idea behind starting Munshiji is to contribute to the development of the nation by educating the youth and providing them the training of the required skills to start a business or get oneself employed.<br><br>It is been observed that out of an initial enrollment of 100 students, on average, only 70 could manage to finish up with their studies. The rest of them couldn’t make through it because of a varied number of reasons. Munshiji aims at educating these students, helping them build a career and make themselves worthy enough to be employable or start a business themselves.<br><br>
-		Despite being one of the biggest creators of jobs and GDP the MSMEs and Agricultural sectors have a serious challenge of hiring the right managerial and technical skills at affordable cost. This sector has a crucial role to play in the vision of “Make in India” and “Atmanirbhar Bharat” of our PM Hon Shri Narendra Modi.There is a need to empower our MSMEs with the affordable managerial and technical skills.
-		We will create Munshi's that will address this problems of the MSME's and help in the development of the country.
-.</p>
+	   <h2 class="text-danger text-center heading">Idea behind Munshiji</h2>
+	   <p class="text-left">The population of our country mainly comprises of youth and the future of our nation depends on how educated and skilled the youth is. The education field has been expanding over the years and so is the need for educated people. The whole idea behind starting with Munshiji is to contribute to the development of the nation by educating the youth and providing them the training of the required skills to start a business or get oneself employed.<br><br>At first, out of an initial enrolment of 100 students, on average, only 70 could manage to finish up with their studies. The rest of them couldn’t make through it because of a varied number of reasons. Munshiji aims at educating these students, helping them build a career and make themselves worthy enough to be employable or start a business themselves.<br><br>The development of their personalities in terms of the business knowledge and skills required and help make themselves employable is the core objective of Munshiji.</p>
 	   </div>
 	  </section>
 

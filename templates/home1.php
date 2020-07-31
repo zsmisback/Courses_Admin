@@ -1,38 +1,47 @@
 <?php include 'header_main.php'; ?>
-<!------ Include the above in your HEAD tag ---------->
-<style>
-.business-header {
-    height: 450px;
-    background: url('images/index_1.jpg') center center no-repeat scroll;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
-	z-index: -1;
-}
-</style>
-<div style="col-md-6 col-sm-12 ">
-<header class="business-header">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12  text-center">
-                    <br><br><br><br><br><br>
-                    <hr>
-                    <h1 class="tagline" style="color:white;">Shaping Career, Empowering Future</h1>
-                    <hr>
-                    <p style="color:white;">“Every youth can be a Basic Manager
-and every business can get affordable Managerial skills”</p>
-                    
-                    <br>
-                    
-                </div>
-            </div>
+    <!-- END header -->
+
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img class="d-block w-100" src="images/heropic.jpeg" alt="First slide">
+          <div class="carousel-caption">
+            <h3 style="margin-bottom: 100px; font-size: 45px;text-align:center;">Are you confused which path to choose???</h3>
+          
+          </div>
         </div>
- </header>		  
- </div>
-       
-	   <!-------------->
-	  <section class="site-section element-animate" style="background: url('images/body.jpg'); background-repeat: no-repeat; background-size: cover;">
+        <div class="carousel-item">
+          <img class="d-block w-100" src="images/km.jpg" alt="Second slide">
+          <div class="carousel-caption">
+            <h3 style="margin-bottom: 280px; font-size: 45px;">Are you confused which path to choose???</h3>
+          
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="images/heropic.jpeg" alt="Third slide">
+          <div class="carousel-caption">
+            <h3 style="margin-bottom: 280px; font-size: 45px;">Are you confused which path to choose???</h3>
+          
+          </div>
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+    <!-- END section -->
+
+    <section class="site-section element-animate" style="background: url('images/body.jpg'); background-repeat: no-repeat; background-size: cover;">
       <div class="container">
         <div class="row ">
           <div class="col-md-6 col-sm-12 order-md-2">
@@ -52,11 +61,7 @@ and every business can get affordable Managerial skills”</p>
                 <h2>About Munshiji</h2>
               </div>
               <div class="text mb-5">
-				<p> Munshiji is an program to provide ‘END TO END & BEYOND’ solutions to the youth. We empower the youth for starting up their economic activity through job or business by creating awareness and helping them develop required management skills. 
-				<p>	
-				Munshiji program starts with the self-awareness and progresses through the training on the core concepts of management such as Finance, Accounting, Banking, Taxation, Insurance, communication and IT.
-				</p>
-					
+              <p>Munshiji is an Integrated and Holistic program to provide “End-to-end” solutions to the youth by spreading awareness within them about the importance of having a stable future.</p>
               </div>
               <p><a href="?action=about" class=" new btn btn-primary reverse py-2 px-4">Read More</a></p>
               
@@ -69,14 +74,15 @@ and every business can get affordable Managerial skills”</p>
       </div>
     </section>
     <!-- END section -->
-	 
+	
 	
 	 <div class="site-section bg-light" style="background: url('images/body.jpg'); background-repeat: no-repeat; background-size: cover;">
       <div class="container">
-        <div class="row justify-content-center mb-1 element-animate">
+        <div class="row justify-content-center mb-5 element-animate">
           <div class="col-md-7 text-center section-heading">
-            <h2 class="text-danger heading">Our Courses</h2>
-          <!--  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit qui neque sint eveniet tempore sapiente.</p> -->            
+            <h2 class="text-danger heading">Popular Courses</h2>
+          <!--  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit qui neque sint eveniet tempore sapiente.</p> -->
+            <p><a href=".?action=signup" class="new btn btn-primary mt-4 py-2 px-4"><span class="ion-ios-book mr-2"></span>Enroll Now</a></p>
           </div>
         </div>
       </div>
@@ -128,82 +134,59 @@ and every business can get affordable Managerial skills”</p>
     <!-- END section -->
 	
 
-  <section class="site-section pt-3 element-animate" style="background-color:#d3455b; background-repeat: no-repeat; background-size: cover;">
+  <section class="site-section pt-3 element-animate" style="background: url('images/body.jpg'); background-repeat: no-repeat; background-size: cover;">
       <div class="container">
         <div class="row justify-content-center mb-5 element-animate">
-          <div class="col-md-7 text-center section-heading"><br>
+          <div class="col-md-7 text-center section-heading">
             <h2 class="text-primary heading">Services</h2>
-            <p>We aim to deliver to you these services from our end</p><hr>
+            <p>We aim to deliver to you these services from our end</p>
           </div>
         </div>
-		
         <div class="row">
-          <div class="col-md-4 col-lg-4">
+          <div class="col-md-6 col-lg-6">
             <div class="media block-6 d-block">
-              <div class="icon mb-3 text-center"><img src="images/leader 1.png" class="img-fluid" width="55px;"/></div>
-              <div class="media-body text-center">
-                <h3 class="heading">Learn From The Leaders</h3>
+              <div class="icon mb-3"><span class="flaticon-book"></span></div>
+              <div class="media-body">
+                <h3 class="heading">Guest Lectures</h3>
                 <p>Munshiji aims to invite experts from varied fields such as music, education, sports, art, etc. to share their experience and knowledge and motivate the youth to decide what their future should look like</p>
              <!--   <p><a href="#" class="more">Read More <span class="ion-arrow-right-c"></span></a></p>-->
               </div>
             </div> 
           </div>
-          <div class="col-md-4 col-lg-4">
+          <div class="col-md-6 col-lg-6">
             <div class="media block-6 d-block">
-              <div class="icon mb-3 text-center"><img src="images/withus 2.png" class="img-fluid" width="55px;"/></div>
-              <div class="media-body text-center">
-                <h3 class="heading">With us "YOU" can</h3>
-                <p>Our courses will restore pride and self-esteem of every youth who had the stigma of ‘dropping out’ or ‘running away’ from the race of life which he/she might carry due to abandoning the school/college education.</p>
+              <div class="icon mb-3"><span class="flaticon-student"></span></div>
+              <div class="media-body">
+                <h3 class="heading">Motivation therapy</h3>
+                <p>With the help of this program, we aim to restore the pride and self-esteem of those who have had the stigma of ‘dropping out’ from the race of life because of whatsoever reasons. This shall be done with the help of psychological analysis and boosting exercises</p>
              <!--   <p><a href="#" class="more">Read More <span class="ion-arrow-right-c"></span></a></p> -->
               </div>
             </div> 
           </div>
-		  <div class="col-md-4 col-lg-4">
+		  </div>
+		  <div class="row">
+		            <div class="col-md-6 col-lg-6">
             <div class="media block-6 d-block">
-              <div class="icon mb-3 text-center"><img src="images/discover 3.png" class="img-fluid" width="55px;"/></div>
-              <div class="media-body text-center">
-                <h3 class="heading">Discover Yourself</h3>
-				<p>Our program will help you to look within yourself and discover your potentials which will help you to exploit and make your life purposeful.<p>                
-           <!--     <p><a href="#" class="more">Read More <span class="ion-arrow-right-c"></span></a></p> -->
-              </div>
-            </div> 
-          </div>
-		   <div class="col-md-4 col-lg-4">
-            <div class="media block-6 d-block mb-2">			
-              <div class="icon mb-3 text-center"><img src="images/managmentc 4.png" class="img-fluid" width="55px;"/></div>
-              <div class="media-body text-center">
-                <h3 class="heading">Management Skills</h3>
-                <p>Our course will teach you “Basic Management Skill’ to manage your life better to face challenges of life.</p>
+              <div class="icon mb-3"><img src="images/empty_flag.png" class="img-fluid"/></div>
+              <div class="media-body">
+                <h3 class="heading">Self-awareness</h3>
+                <p>The program aims to motivate the youth to be self-aware about what they want to achieve and what they should be aiming at this point of time to lead a successful life ahead</p>
            <!--     <p><a href="#" class="more">Read More <span class="ion-arrow-right-c"></span></a></p> -->
               </div>
             </div> 
           </div>
 		  
-		   <div class="col-md-4 col-lg-4">
-            <div class="media block-6 d-block mb-2">			
-              <div class="icon mb-3 text-center"><img src="images/focus 5.png" class="img-fluid" width="55px;"/></div>
-              <div class="media-body text-center">
-                <h3 class="heading">Be Focused</h3>
-                <p>Our courses are designed to help you identify your goal of life for a better and successful living.</p>
+          <div class="col-md-6 col-lg-6">
+            <div class="media block-6 d-block mb-2">
+			
+              <div class="icon mb-3"><img src="images/helping.png" class="img-fluid"/></div>
+              <div class="media-body">
+                <h3 class="heading">Job Assistance</h3>
+                <p>Munshiji will assist every youth to search for a suitable opening to showcase his/her talent in the field by working and excelling at what they do </p>
            <!--     <p><a href="#" class="more">Read More <span class="ion-arrow-right-c"></span></a></p> -->
               </div>
             </div> 
           </div>
-		  
-		  
-		   <div class="col-md-4 col-lg-4">
-            <div class="media block-6 d-block mb-2">			
-              <div class="icon mb-3 text-center"><img src="images/career 6.png" class="img-fluid" width="55px;"/></div>
-              <div class="media-body text-center">
-                <h3 class="heading">Build a Career</h3>
-                <p>Munshiji will assist you to find suitable opening to showcase your talent by way of job, business or skill full activities</p>
-           <!--     <p><a href="#" class="more">Read More <span class="ion-arrow-right-c"></span></a></p> -->
-              </div>
-            </div> 
-          </div>
-		  
-		  </div>		  		       
-
 
     <!--      <div class="col-md-6 col-lg-3">
             <div class="media block-6 d-block">
@@ -242,23 +225,18 @@ and every business can get affordable Managerial skills”</p>
     <section class="site-section bg-light element-animate" id="section-counter" style="background: url('images/body.jpg'); background-repeat: no-repeat; background-size: cover;">
       <div class="container">
         <div class="row">
-          <div class="col-lg-3">
-            <figure><img src="images/img_2_b.png" width="100%" alt="Image placeholder" class="img-fluid"></figure>
+          <div class="col-lg-6">
+            <figure><img src="images/img_2_b.png" width="90%" alt="Image placeholder" class="img-fluid"></figure>
           </div>
-          <div class="col-lg-9 ml-auto">
+          <div class="col-lg-5 ml-auto">
             <div class="block-15">
               <div class="heading">
              <!--   <h2>Our method of training</h2> -->
               </div>
-              <div class=" mb-5">
+              <div class="text-center mb-5">
                 <p>श्रद्धावाँल्लभते ज्ञानं तत्परः संयतेन्द्रियः ।
-                                                       ज्ञानं लब्धवा परां शान्तिमचिरेणाधिगच्छति ॥4.39॥<br>A person full of devotion with subdued senses attains
+                                                       ज्ञानं लब्धवा परां शान्तिमचिरेणाधिगच्छति ॥4.39॥<br><br>A person full of devotion with subdued senses attains
 knowledge and achieves eternal peace instantly thereafter
-</p><br>
-<h3>Our Vision</h3>
-<p>EMPOWERMENT OF YOUTH
-TO LIVE WITH A BETTER WORLD
-HAVING BETTER LIFE SKILL & MANAGEMENT.
 </p>
               </div>
             </div>
@@ -270,11 +248,11 @@ HAVING BETTER LIFE SKILL & MANAGEMENT.
       </div>
     </section>
     <!-- END section -->
-   <section class="site-section element-animate" id="section-counter" style="background-repeat: no-repeat; background-size: cover;background-color:#d3455b; ">
+   <section class="site-section bg-light element-animate" id="section-counter" style="background: url('images/body.jpg'); background-repeat: no-repeat; background-size: cover;">
       <div class="container text-center">
        
-		<h2>Transform your vision and be motivated by our daily blogs !</h2>
-                   <p><a href=".?action=blogs" class="new btn btn-light mt-4 py-2 px-4">Explore</a></p>
+		<h2>Transform your life through education</h2>
+                   <p><a href=".?action=courses" class="new btn btn-primary mt-4 py-2 px-4">Explore</a></p>
       </div>
     </section>
    

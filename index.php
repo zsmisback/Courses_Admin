@@ -191,6 +191,8 @@ function blogcontent(){
 	$results = array();
 	$results['blogs'] = Blogs::getBlogsById((int)$_GET['id']);
 	$tags = explode(",",$results['blogs']->tags);
+	
+	
 	$results['comments'] = $data3['results'];
 	
 	$error = '';

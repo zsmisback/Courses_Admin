@@ -115,7 +115,7 @@
                 <a class='nav-link dropdown-toggle' href='#' id='dropdown05' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>Support</a>
                 <div class='dropdown-menu' aria-labelledby='dropdown05'>
                   <a class='dropdown-item' href='index.php?action=support'>Need Help?</a>
-                  <a class='dropdown-item' href='index.php?action=listquery'>List of query</a>
+                  
 
                 </a>
                  
@@ -177,6 +177,7 @@
 	}
 		  
 		  ?>
+		  <!--<a class='dropdown-item' href='index.php?action=listquery'>List of query</a>-->
         </div>
       </nav>
     </header>

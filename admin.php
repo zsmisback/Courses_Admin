@@ -6,7 +6,7 @@ session_start();
 $action = isset( $_GET['action'] ) ? $_GET['action'] : "";
 $loggedin = isset( $_SESSION['loggedin'] ) ? $_SESSION['loggedin'] : "";
 
-if ( $action != "login" && $action != "logout" && !$loggedin ) {
+if ( $action != "login" && $action != "logout" && $action != "terms" && $action != "privacy" && !$loggedin ) {
   login();
   exit;
 }
@@ -15,6 +15,14 @@ switch ( $action ) {
   
   case 'dashboard':
   dashboard();
+  break;
+  
+  case 'terms':
+  terms();
+  break;
+  
+  case 'privacy':
+  privacy();
   break;
   
   case 'login':
@@ -147,6 +155,18 @@ function dashboard(){
 	$results['users'] = $data['results'];
 	require(TEMPLATE_PATH."/index.php");
 	
+}
+
+function terms(){
+	
+	require(TEMPLATE_PATH_INDEX."/terms.php");
+
+}
+
+function privacy(){
+	
+	require(TEMPLATE_PATH_INDEX."/privacy.php");
+
 }
 
 //Courses------------------------------------------------

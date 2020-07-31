@@ -262,7 +262,7 @@
               </ul>
             </div>
 
-            <div class="block-26">
+           <!-- <div class="block-26">
               <h3 class="heading">Tags</h3>
               <ul>
                 <li><a href="#">code</a></li>
@@ -272,7 +272,7 @@
                 <li><a href="#">creative</a></li>
                 <li><a href="#">codehack</a></li>
               </ul>
-            </div>
+            </div> -->
 
 
           </div>

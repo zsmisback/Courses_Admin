@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Munshiji.org - SB Admin</title>
+        <title>Munshiji.org</title>
         <link href="css/styles.css" rel="stylesheet" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" crossorigin="anonymous"></script>
     </head>
@@ -49,9 +49,9 @@
                         <div class="d-flex align-items-center justify-content-between small">
                             <div class="text-muted">Copyright &copy; MUNSHIJI</div>
                             <div>
-                                <a href="#">Privacy Policy</a>
+                                <a href="admin.php?action=terms">Privacy Policy</a>
                                 &middot;
-                                <a href="#">Terms &amp; Conditions</a>
+                                <a href="admin.php?action=privacy">Terms &amp; Conditions</a>
                             </div>
                         </div>
                     </div>

@@ -23,21 +23,19 @@
           <div class="col-md-6 order-md-2">
             <div class="block-16">
               <figure>
-			  <center>
-                <img src="images/PNG.png" alt="Image placeholder" class="img-fluid" style="height:20em;">
-              </center>
-			  </figure>
+                <img src="images/about.jpg" alt="Image placeholder" class="img-fluid">
+              </figure>
             </div>
           </div>
           <div class="col-md-6 order-md-1">
 
             <div class="">
               <div class="heading pb-4">
-                <h2>About Us</h2>
+                <h2>About Company</h2>
               </div>
-                 
               <div class="text mb-5">
-                 <p>The concept of Munshiji believes in transforming the lives of the individuals who missed a chance in their earlier days to upgrade and educate themselves with varied subjects such as Accounts, Finance, etc. The aim is to educate them by reaching out via online resources and create a platform that leads them to a better career prospect and future ahead. With access to online learning resources and instruction, anyone, anywhere, can gain skills and transform their lives in meaningful ways. This concept will make youth powerful and independent so that they stand out of the crowd and take decisions with complete freedom.</p>              
+                 <p>We at Munshiji envision a world where we can empower the youth to work on their skills, upgrade themselves, and make the world a better place to live in. It aims at bridging the gap between the need of educating the youth and providing education to them with the help of our program.
+The program offered by Munshiji is a package of knowledge that delivers a variety of solutions to the youth for a better future for themselves by developing their skills of self-awareness and enhancing their skills with regards to the core concepts to be known for either gaining a job or starting something of their own soon. The core concepts to be taught include Finance, Accounting, Banking, Taxation, Insurance, Communication, and IT.</p>              
               </div>
               
             </div>
@@ -61,15 +59,11 @@
           <div class="col-md-6 order-md-2">
 
             <div class="">
-          
+             
               <div class="text mb-5">
-                 <p>
-				 We believe that when a youth though happily or reluctantly abort his pursuit of school education he is all alone to face this world for rest of his life. In daily life in our own family, society and work place we find many people who had abandoned school or college education and have even made a killing by harnessing their inherent skill and much better off than the other graduates.				 				
-				 </p>
-				 <p>
-				 For the ones who are leading a tough life due lack of education or are educated but are not employable, we have identified few basic areas of management and accounting which can enhance their value in employment market and even in self-employment opportunities.
-				 </p>              
+                 <p>The concept of Munshiji believes in transforming the lives of the individuals who missed a chance in their earlier days to upgrade and educate themselves with varied subjects such as Accounts, Finance, etc. by teaching them every concept in a step-by-step manner. The aim is to educate them by reaching out via online resources and create a platform that leads them to a better career prospect and future ahead. With access to online learning resources and instruction, anyone, anywhere, can gain skills and transform their lives in meaningful ways.</p>              
               </div>
+              
             </div>
 
           </div>
@@ -84,7 +78,7 @@
           <div class="col-md-6 order-md-2">
             <div class="block-16">
               <figure>
-                <img src="images/teacher5.jpg" alt="Image placeholder" class="img-fluid">
+                <img src="images/about.jpg" alt="Image placeholder" class="img-fluid">
               </figure>
             </div>
           </div>
@@ -93,7 +87,7 @@
             <div class="">
       
               <div class="text mb-5">
-                 <p>Accounting is an essential part of any business, often referred to as “the language of business.” The foundation will be set up by our program which will in turn help push themselves to find an opportunity that might best suit their interests and goals. The central objective is to make basic management education and skills easily accessible to the youth of India. The mordern munshi will be employable and will have freedom to choose his career path with his wisdom. MSMEs will be empowered with such financial and managerial expertise. </p>              
+                 <p>Accounting is an essential part of any business, often referred to as “the language of business.” The foundation will be set up by our program which will in turn help push themselves to find an opportunity that might best suit their interests and goals. The central objective is to make basic management education and skills easily accessible to the youth of India to make them employable and to empower our MSMEs with such financial and managerial expertise. </p>              
               </div>
               
             </div>
@@ -121,8 +115,8 @@
         <div class="image mt-5" style="background-image: url('images/teacher1.jpg'); "></div>
         <div class="text">
          <!-- <h4 class="subheading">Nice text here</h4>-->
-          <h2 class="heading">Quality Programs</h2>
-          <p>Holistic and integrated program which covers self-awareness, training as well as essential managerial skills.</p>
+          <h2 class="heading">All under one roof</h2>
+          <p>The objective is to develop and enhance the skills of the youth in every aspect. Munshiji aims to cover self-awareness, training as well as essential managerial skills</p>
         </div>
       </div>
       <div class="block-3 d-md-flex">
@@ -130,8 +124,7 @@
         <div class="text order-1">
           <!-- <h4 class="subheading">Nice text here</h4>-->
           <h2 class="heading">Industry-based experts</h2>
-          <p>Program conceptualised, designed and monitored by the well experienced professionals with practical experience.
-		  </p>
+          <p>All the courses are taught by industry experts and professionals who have the required updated knowledge of the industry and have the appropriate experiences to share and teach</p>
         </div>
       </div>
       <div class="block-3 d-md-flex">
@@ -139,10 +132,7 @@
         <div class="text">
            <!-- <h4 class="subheading">Nice text here</h4>-->
           <h2 class="heading">Easy Access & Affordable pricing</h2>
-          <p>Our program is primarily online which makes it easily accessible to any and everyone across the globe. 
-		  </p>
-		  <p>
-		  The aim is to educate and make self-aware 'Munshi' by enhancing youth's managerial skills. The program is for everyone who are in need therefore we have kept it affordable.</p>		
+          <p>The program being operated online, it is easily accessible to everyone in any corner of the country making it possible for everyone in need to educate themselves if and when required. The aim is to educate the youth and make them capable enough by enhancing their managerial skills. To do so, the program is made, keeping in mind, everyone who is in need should be able to afford it</p>
         </div>
       </div>
       <div class="block-3 d-md-flex">
@@ -150,7 +140,7 @@
         <div class="text order-1">
           <!-- <h4 class="subheading">Nice text here</h4>-->
           <h2 class="heading">Innovative training methods</h2>
-          <p>The methods adopted by our teaching professionals are innovative and up to the mark. This motivates the learners to pay attention and get involved in the process to know more</p>
+          <p>The methods adopted by our teaching professionals are innovative and up to the mark. This motivates the learners to pay attention and gain as much knowledge as they can. involved in getting to know more</p>
         </div>
       </div>
       <div class="block-3 d-md-flex">
@@ -158,11 +148,11 @@
         <div class="text">
            <!-- <h4 class="subheading">Nice text here</h4>-->
           <h2 class="heading">Mentoring & Counselling</h2>
-          <p>To ensure that every enrolled person is on the right path and follows the right direction, we will have one-on-one counseling and mentoring sessions.</p>
+          <p>To ensure that every enrolled person is on the right path and follows the right direction, there are going to be counseling and mentoring sessions that will be provided on a one-on-one basis</p>
         </div>
       </div>
       <div class="block-3 d-md-flex">
-        <div class="image order-2" style="background-image: url('images/kids.jpg'); "></div>
+        <div class="image order-2" style="background-image: url('images/teacher5.jpg'); "></div>
         <div class="text order-1">
           <!-- <h4 class="subheading">Nice text here</h4>-->
           <h2 class="heading">Practical exposures & Projects</h2>
