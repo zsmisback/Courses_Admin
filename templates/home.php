@@ -86,15 +86,18 @@ and every business can get affordable Managerial skills”</p>
         
    foreach($results['courses'] as $courses)
    {   
-	echo" <div class='item'>
+   $out = strlen($courses->course_summary) > 60 ? substr($courses->course_summary,0,60)."..." : $courses->course_summary;
+	echo" 
+			<a href='.?action=lessons&course_id=$courses->course_id'>
+			<div class='item'>
             <div class='block-19'>
                 <figure>
                   <img src='Profilepics/Courses/thumb/$courses->course_id$courses->course_image' alt='Image' class='img-fluid'>
                 </figure>
                 <div class='text'>
-                  <h2 class='heading'><a href='.?action=lessons&course_id=$courses->course_id'>$courses->course_code</a></h2>
-				  <a href='.?action=lessons&course_id=$courses->course_id' style='color:#80878a; font-size: 15px;'>$courses->course_name</a></h2>
-                  <p class='mb-4'>$courses->course_summary</p>
+                  <h2 class='heading'>$courses->course_code</h2>
+				  <h6>$courses->course_name</h6>
+                  <p class='mb-4'>$out</p>
                   <div class='meta d-flex align-items-center'>
                     <div class='number'>
                       <span>$courses->course_language</span>
@@ -115,7 +118,8 @@ and every business can get affordable Managerial skills”</p>
              echo"</div>
                 </div>
               </div>
-          </div>";
+          </div>
+		  </a>";
    }
 		  
 		  ?>

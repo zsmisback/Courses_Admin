@@ -37,3 +37,12 @@ If (isset($_POST["additionalCharges"])) {
           echo "<h4>We have received a payment of Rs. " . $amount . ". Thank you for your purchase.<br>You will be redirected to the main website shortly.Please click <a href='index.php'>here</a> if you haven't been redirected.</h4>";
 		   }
 ?>	
+
+<script>
+window.onload = function(){
+   setInterval(function(){
+      window.location.assign('index.php?action=home');
+   }, 5000);
+};
+	
+</script>

@@ -37,3 +37,12 @@ If (isset($_POST["additionalCharges"])) {
          echo "<h4>Your transaction id for this transaction is ".$txnid.". You may try making the payment by choosing your preferred course again.You will be redirected to the main website shortly.<br>Please click <a href='index.php'>here</a> if you haven't been redirected after 5 seconds.</h4>";
 		 } 
 ?>
+
+<script>
+window.onload = function(){
+   setInterval(function(){
+      window.location.assign('index.php?action=home');
+   }, 5000);
+};
+	
+</script>

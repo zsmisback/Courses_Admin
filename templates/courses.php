@@ -66,7 +66,7 @@
 					echo "<h3>$_GET[tags] is not available in $_GET[language]</h3>";
 				}
 				foreach($results['search_courses'] as $courses)
-		{		
+		{		$out = strlen($courses->course_summary) > 60 ? substr($courses->course_summary,0,60)."..." : $courses->course_summary;
         echo"<div class='col-md-12 col-lg-6 mb-5'>
                 <div class='block-19'>
                   <figure>
@@ -75,7 +75,7 @@
                     <div class='text'>
                       <h2 class='heading'><a href='.?action=lessons&course_id=$courses->course_id'>$courses->course_code</a></h2>
 					  <a href='.?action=lessons&course_id=$courses->course_id' style='color:#80878a; font-size: 15px;'>$courses->course_name</a></h2>
-                      <p class='mb-4'>$courses->course_summary</p>
+                      <p class='mb-4'>$out</p>
                       <div class='meta d-flex align-items-center'>
                         <div class='number'>
                           <span>$courses->course_language</span>
@@ -112,7 +112,7 @@
 			}
 			
 		foreach($results['courses'] as $courses)
-		{		
+		{	$out = strlen($courses->course_summary) > 60 ? substr($courses->course_summary,0,60)."..." : $courses->course_summary;	
         echo"<div class='col-md-12 col-lg-6 mb-5'>
                 <div class='block-19'>
                   <figure>
@@ -121,7 +121,7 @@
                     <div class='text'>
                       <h2 class='heading'><a href='.?action=lessons&course_id=$courses->course_id'>$courses->course_code</a></h2>
 					  <a href='.?action=lessons&course_id=$courses->course_id' style='color:#80878a; font-size: 15px;'>$courses->course_name</a></h2>
-                      <p class='mb-4'>$courses->course_summary</p>
+                      <p class='mb-4'>$out</p>
                       <div class='meta d-flex align-items-center'>
                         <div class='number'>
                           <span>$courses->course_language</span>

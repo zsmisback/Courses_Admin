@@ -45,10 +45,15 @@
       </div>
     </section>-->
     <!-- END section -->
-<section>
+<section style="background: url('images/body.jpg');">
 <div class="container mb-4">
   <div class="row">
   <?php
+  
+	if(empty($results['blogs']))
+	{
+		echo'<h2>No Blogs</h2>';
+	}
 		foreach($results['blogs'] as $blogs)
 		{
 			echo'
@@ -59,8 +64,8 @@
                       <img class="card-img-top" src="'.BLOG_IMAGE_PATH.'/'.IMG_TYPE_THUMB.'/'.$blogs->id.$blogs->image.'" alt="">
                   </a>
                   <ul class="list-inline mt-3">
-                      <li class="list-inline-item"><i class="fas fa-user"></i> '.$blogs->author.'</li>
-                      <li class="list-inline-item"><i class="far fa-clock"></i> '.$blogs->dates.'</li>
+                      <li class="list-inline-item"> '.$blogs->author.'</li>
+                      <li class="list-inline-item"> '.$blogs->dates.'</li>
                   </ul>
                   <hr>
                   <p class="lead">'.$blogs->title.'</p>

@@ -105,7 +105,7 @@ function checkauthentication($form)
 			{
 				return "Please enter the course name";
 			}
-			elseif(strlen($form['course_name']) > 30)
+			elseif(strlen($form['course_name']) > 40)
 			{
 				return "The course name is too long";
 			}

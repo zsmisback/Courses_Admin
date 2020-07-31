@@ -79,7 +79,7 @@
                                     <a class="nav-link" href="admin.php?action=viewlessons">List lessons</a>
                                 </nav>
                             </div>
-							<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseComments" aria-expanded="false" aria-controls="collapseLayouts">
+						<!--	<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseComments" aria-expanded="false" aria-controls="collapseLayouts">
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                                 Comments
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
@@ -89,7 +89,7 @@
                                     <a class="nav-link" href="admin.php?action=addcomments">Add Comments</a>
                                     <a class="nav-link" href="admin.php?action=viewcomments">List Comments</a>
                                 </nav>
-							</div>
+							</div> -->
                             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
                                 <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
                                 Users

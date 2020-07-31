@@ -46,12 +46,12 @@
                       <input type="password" id="password" class="form-control py-2" name="re_pass">
                     </div>
                   </div>
-				  <div class="form-check mb-4">
+				<!--  <div class="form-check mb-4">
                   <input class="form-check-input" type="checkbox" id="inlineFormCheck">
                  <label class="form-check-label" for="inlineFormCheck">
                        I’m in for emails with exciting discounts and personalized recommendations
                   </label>
-                   </div>
+                   </div> -->
                   
                   <div class="row">
                     <div class="col-md-6 form-group">
