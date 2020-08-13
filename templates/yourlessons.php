@@ -48,7 +48,7 @@
               <p>$lessons->lesson_content</p>
             </div>
             <div class='col-md-3 text-center'>
-                <a class='btn btn-primary px-3 py-2' href='.?action=yourcontent&course_id=$_GET[course_id]&lesson_id=$lessons->lesson_id' style='background-color:#C03F53;' role='button'>Watch Video</a>
+                <a class='btn btn-primary px-3 py-2' href='.?action=yourcontent&course_id=$_GET[course_id]&lesson_id=$lessons->lesson_id' style='background-color:#C03F53;' role='button'>View Contents</a>
 
             </div>
           </div>";
@@ -109,7 +109,7 @@
               </div>
 			  
 			  <div class="block-28 mb-5">
-                <h2 class="heading">Materials Required</h2>
+                <h2 class="heading">Course Materials</h2>
                 <ul>
                <?php echo $results['courses_continue']->course_material; ?>
                 </ul>
@@ -192,15 +192,18 @@
           <div class="nonloop-block-11 owl-carousel">
 		  <?php
             foreach($results['recommended_courses'] as $courses)
-   {   $out = strlen($courses->course_summary) > 60 ? substr($courses->course_summary,0,60)."..." : $courses->course_summary;
-	echo" <div class='item'>
+   {  
+	$name = strlen($courses->course_name) > 30 ? substr($courses->course_name,0,30)."..." : $courses->course_name;
+	$out = strlen($courses->course_summary) > 60 ? substr($courses->course_summary,0,60)."..." : $courses->course_summary;
+	echo" <a href='.?action=lessons&course_id=$courses->course_id'>
+			<div class='item'>
             <div class='block-19'>
                 <figure>
                   <img src='Profilepics/Courses/thumb/$courses->course_id$courses->course_image' alt='Image' class='img-fluid'>
                 </figure>
                 <div class='text'>
-                  <h2 class='heading'><a href='.?action=lessons&course_id=$courses->course_id'>$courses->course_code</a></h2>
-				  <a href='.?action=lessons&course_id=$courses->course_id' style='color:#80878a; font-size: 15px;'>$courses->course_name</a></h2>
+                  <h2 class='heading'>$courses->course_code</h2>
+				  <h6>$name</h6>
                   <p class='mb-4'>$out</p>
                   <div class='meta d-flex align-items-center'>
                     <div class='number'>
@@ -221,7 +224,8 @@
             echo"</div>
                 </div>
               </div>
-          </div>";
+          </div>
+		  </a>";
    }
 		  
 		  ?>

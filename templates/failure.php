@@ -41,7 +41,7 @@ If (isset($_POST["additionalCharges"])) {
 <script>
 window.onload = function(){
    setInterval(function(){
-      window.location.assign('index.php?action=home');
+      window.location.assign('index.php');
    }, 5000);
 };
 	

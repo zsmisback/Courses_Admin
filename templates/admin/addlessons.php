@@ -45,8 +45,12 @@
 											<label for="lesson_bys">Lesson By:</label>
 											<input class="form-control py-4" id="lesson_bys" type="text" placeholder="Lesson By" name="lesson_by" value="<?php echo $lesson_by; ?>"/>
 											<br>
-											<label for="lesson_vid_urls">Lesson Video Url (Please Upload the source link from the embed link):</label>
-											<input class="form-control py-4" id="lesson_vid_urls" type="text" placeholder="Lesson Vid Url" name="lesson_vid_url" value="<?php echo $lesson_vid_url; ?>"/>
+											<div class="form-group">
+                                              Lesson Main Content:  
+                                             <textarea class="form-control py-4 ckeditor" id="inputEmailAddress" type="text" name="lesson_vid_url" placeholder="Enter lesson main content"><?php echo $lesson_vid_url; ?></textarea>
+                                            </div>
+											<!--<label for="lesson_vid_urls">Lesson Video Url (Please Upload the source link from the embed link):</label>
+											<input class="form-control py-4" id="lesson_vid_urls" type="text" placeholder="Lesson Vid Url" name="lesson_vid_url" value="<?php echo $lesson_vid_url; ?>"/>-->
 											<br>
 											<div class="form-group">
                                             <label for="sel2">Lesson Status:</label>

@@ -30,7 +30,9 @@
 				echo "<h3>No Courses</h3>";
 			}
 			foreach($results['your_courses'] as $your_courses)
-			{$out = strlen($your_courses->course_summary) > 60 ? substr($your_courses->course_summary,0,60)."..." : $your_courses->course_summary;
+			{
+				$name = strlen($your_courses->course_name) > 30 ? substr($your_courses->course_name,0,30)."..." : $your_courses->course_name;
+				$out = strlen($your_courses->course_summary) > 60 ? substr($your_courses->course_summary,0,60)."..." : $your_courses->course_summary;
               echo"<div class='col-md-12 col-lg-6 mb-5'>
                 <div class='block-19'>
                   <figure>
@@ -38,7 +40,7 @@
                   </figure>
                     <div class='text'>
                       <h2 class='heading'><a href='.?action=yourlessons&course_id=$your_courses->course_id'>$your_courses->course_code</a></h2>
-                      <a href='.?action=yourlessons&course_id=$your_courses->course_id' style='color:#80878a; font-size: 15px;'>$your_courses->course_name</a></h2>
+                      <a href='.?action=yourlessons&course_id=$your_courses->course_id' style='color:#80878a; font-size: 15px;'>$name</a></h2>
                       <p class='mb-4'>$out</p>
                       <div class='meta d-flex align-items-center'>
                         <div class='number'>

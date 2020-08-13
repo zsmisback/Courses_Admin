@@ -22,8 +22,8 @@
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label for="inputEmailAddress">Course Summary (Minimum letter requirement = 100 - 110):</label>
-                                                <textarea class="form-control py-4" id="inputEmailAddress" type="text" name="course_summary" maxlength="110" placeholder="Enter course summary"><?php echo $course_summary; ?></textarea>
+                                                <label for="inputEmailAddress">Course Summary (Minimum letter requirement = 100 - 200):</label>
+                                                <textarea class="form-control py-4" id="inputEmailAddress" type="text" name="course_summary" maxlength="200" placeholder="Enter course summary"><?php echo $course_summary; ?></textarea>
                                             </div>
 											<label for="course_tagss">Course Tags (Please seperate them by commas.Example:Bcom,Bachelors of commerce):</label>
 											<input class="form-control py-4" id="course_tagss" type="text" placeholder="Enter course tags" name="course_tags" value="<?php echo $course_tags; ?>"/>

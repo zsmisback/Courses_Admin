@@ -42,7 +42,11 @@
                                             </div>
 											<input class="form-control py-4" id="inputLastName" type="text" placeholder="Lesson By" name="lesson_by" value="<?php echo $results['lessons']->lesson_by; ?>"/>
 											<br>
-											<input class="form-control py-4" id="inputLastName" type="text" placeholder="Lesson Vid Url" name="lesson_vid_url" value="<?php echo $results['lessons']->lesson_vid_url; ?>"/>
+											<div class="form-group">
+                                              Lesson Main Content:  
+                                             <textarea class="form-control py-4 ckeditor" id="inputEmailAddress" type="text" name="lesson_vid_url" placeholder="Enter lesson main content"><?php echo $results['lessons']->lesson_vid_url; ?></textarea>
+                                            </div>
+											<!--<input class="form-control py-4" id="inputLastName" type="text" placeholder="Lesson Vid Url" name="lesson_vid_url" value="<?php echo $results['lessons']->lesson_vid_url; ?>"/>-->
 											<br>
 											<div class="form-group">
                                             <label for="sel2">Lesson Status:</label>

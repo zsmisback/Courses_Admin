@@ -6,7 +6,7 @@ echo "Thank you for your purchase.You will be redirected to the website shortly.
 <script>
 window.onload = function(){
    setInterval(function(){
-      window.location.assign('index.php?action=home');
+      window.location.assign('index.php');
    }, 5000);
 };
 	

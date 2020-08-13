@@ -105,7 +105,7 @@ function checkauthentication($form)
 			{
 				return "Please enter the course name";
 			}
-			elseif(strlen($form['course_name']) > 40)
+			elseif(strlen($form['course_name']) > 50)
 			{
 				return "The course name is too long";
 			}
@@ -133,7 +133,7 @@ function checkauthentication($form)
 			{
 				return "The course summary is too short";
 			}
-			elseif(strlen($form['course_summary']) > 110)
+			elseif(strlen($form['course_summary']) > 200)
 			{
 				return "The course summary is too long";
 			}
@@ -278,16 +278,16 @@ function checkauthentication($form)
 		}
 		if(isset($form['lesson_vid_url']))
 		{
-			$url = filter_var($form['lesson_vid_url'], FILTER_SANITIZE_URL);
+			//$url = filter_var($form['lesson_vid_url'], FILTER_SANITIZE_URL);
 
            if(empty($form['lesson_vid_url']))
 			{
-				return "Please place in an embedded url";
+				return "Please enter the main content";
 			}
-		   elseif(!filter_var($url, FILTER_VALIDATE_URL))
+		  /* elseif(!filter_var($url, FILTER_VALIDATE_URL))
 		   {
 			   return "This url is not valid";
-		   }
+		   }*/
   
 		}
 		if(isset($form['lesson_del_vpcode']))

@@ -49,6 +49,7 @@
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
           <img src="images/logo.png" alt="" sizes="" srcset="" width="100px">
+		  <img src="images/bms2.png" alt="" sizes="" srcset="" width="250px">
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -112,7 +113,7 @@
                 <a class='nav-link active' href='index.php?action=blogs'>Blogs</a>
               </li>
 			  <li class='nav-item dropdown'>
-                <a class='nav-link dropdown-toggle' href='#' id='dropdown05' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>Support</a>
+                <a class='nav-link dropdown-toggle' href='#' id='dropdown05' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>Enquiry</a>
                 <div class='dropdown-menu' aria-labelledby='dropdown05'>
                   <a class='dropdown-item' href='index.php?action=support'>Need Help?</a>
                   
