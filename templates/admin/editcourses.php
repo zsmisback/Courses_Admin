@@ -36,8 +36,12 @@
                                              <select class="form-control" id="sel1" name="course_language">
 											 <option value="<?php echo $results['courses']->course_language; ?>"><?php echo $results['courses']->course_language; ?></option>
                                               <option value="English">English</option>
+											  <option value="English,Hindi">English,Hindi</option>
+											  <option value="English,Hindi,Marathi">English,Hindi,Marathi</option>
                                               <option value="Hindi">Hindi</option>
+											  <option value="Hindi,Marathi">Hindi,Marathi</option>
                                               <option value="Marathi">Marathi</option>
+											  <option value="Marathi">English,Marathi</option>
                                                
                                                  </select>
 												 <br>

@@ -3,6 +3,8 @@
       <div class="row">
         <div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
           <h3 class="heading" style='color:#999999;'>MUNSHIJI</h3>
+		  <img src="images/bms3.png" class="img-fluid" width="80%"/>
+		  <br><br>
           <p class="headd mb-5" style="color:white;">Empowering the youth to work and on their skills, upgrade themselves and make the world a better place to live in</p>
     
         </div>
@@ -101,17 +103,17 @@ function googleTranslateElementInit() {
   new google.translate.TranslateElement({pageLanguage: 'en',layout:google.translate.TranslateElement.InlineLayout.HORIZONTAL}, 'google_translate_element');
 }
 </script>
-  <script src="js/jquery-3.2.1.min.js"></script>
-  <script src="js/jquery-migrate-3.0.0.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/owl.carousel.min.js"></script>
-  <script src="js/jquery.waypoints.min.js"></script>
-  <script src="js/jquery.stellar.min.js"></script>
-  <script src="js/jquery.animateNumber.min.js"></script>
+  <script src="http://localhost/Courses_Admin/js/jquery-3.2.1.min.js"></script>
+  <script src="http://localhost/Courses_Admin/js/jquery-migrate-3.0.0.js"></script>
+  <script src="http://localhost/Courses_Admin/js/popper.min.js"></script>
+  <script src="http://localhost/Courses_Admin/js/bootstrap.min.js"></script>
+  <script src="http://localhost/Courses_Admin/js/owl.carousel.min.js"></script>
+  <script src="http://localhost/Courses_Admin/js/jquery.waypoints.min.js"></script>
+  <script src="http://localhost/Courses_Admin/js/jquery.stellar.min.js"></script>
+  <script src="http://localhost/Courses_Admin/js/jquery.animateNumber.min.js"></script>
   
-  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="http://localhost/Courses_Admin/js/jquery.magnific-popup.min.js"></script>
 
-  <script src="js/main.js"></script>
+  <script src="http://localhost/Courses_Admin/js/main.js"></script>
 </body>
 </html>

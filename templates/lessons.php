@@ -97,10 +97,7 @@
 				else
 				{
 				echo"
-                  <form action='$action' method='post' name='payuForm'>
-      <input type='hidden' name='key' value='$MERCHANT_KEY' />
-      <input type='hidden' name='hash' value='$hash'/>
-      <input type='hidden' name='txnid' value='$txnid' />
+                  <form action='templates/pay.php?checkout=automatic' method='post' name='payuForm'>
       <table>
         
         <tr>
@@ -120,18 +117,6 @@
           <td colspan='3'><input type='hidden' name='productinfo' value='".$results['courses']->course_id."' /></td>
         </tr>
 		
-        <tr>
-          
-          <td colspan='3'><input type='hidden' name='surl' value='http://localhost/Courses_Admin/index.php?action=successpayment' size='64' /></td>
-        </tr>
-        <tr>
-          
-          <td colspan='3'><input type='hidden' name='furl' value='http://localhost/Courses_Admin/index.php?action=failurepayment' size='64' /></td>
-        </tr>
-
-        <tr>
-          <td colspan='3'><input type='hidden' name='service_provider' value='payu_paisa' size='64' /></td>
-        </tr>
 
         
         <tr>

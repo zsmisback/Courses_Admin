@@ -76,6 +76,7 @@ and every business can get affordable Managerial skills”</p>
         <div class="row justify-content-center mb-1 element-animate">
           <div class="col-md-7 text-center section-heading">
             <h2 class="text-danger heading">Our Courses</h2>
+			<hr>
           <!--  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit qui neque sint eveniet tempore sapiente.</p> -->            
           </div>
         </div>

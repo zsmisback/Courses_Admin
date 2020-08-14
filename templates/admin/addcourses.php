@@ -34,8 +34,12 @@
 											<label for="sel1">Select Language:</label>
                                              <select class="form-control" id="sel1" name="course_language">
                                               <option value="English">English</option>
+											  <option value="English,Hindi">English,Hindi</option>
+											  <option value="English,Hindi,Marathi">English,Hindi,Marathi</option>
                                               <option value="Hindi">Hindi</option>
+											  <option value="Hindi,Marathi">Hindi,Marathi</option>
                                               <option value="Marathi">Marathi</option>
+											  <option value="Marathi">English,Marathi</option>
                                                
                                                  </select>
 												 <br>

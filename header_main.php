@@ -8,17 +8,17 @@
      <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/animate.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="http://localhost/Courses_Admin/css/bootstrap.css">
+    <link rel="stylesheet" href="http://localhost/Courses_Admin/css/animate.css">
+    <link rel="stylesheet" href="http://localhost/Courses_Admin/css/owl.carousel.min.css">
 
-    <link rel="stylesheet" href="fonts/ionicons/css/ionicons.min.css">
-    <link rel="stylesheet" href="fonts/fontawesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+    <link rel="stylesheet" href="http://localhost/Courses_Admin/fonts/ionicons/css/ionicons.min.css">
+    <link rel="stylesheet" href="http://localhost/Courses_Admin/fonts/fontawesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://localhost/Courses_Admin/fonts/flaticon/font/flaticon.css">
 
     <!-- Theme Style -->
-    <link rel="stylesheet" href="css/style.css">
-	<link href="css/aboutus.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://localhost/Courses_Admin/css/style.css">
+	<link href="http://localhost/Courses_Admin/css/aboutus.css" rel="stylesheet">
 	<style>
 	.invoice-title h2, .invoice-title h3 {
     display: inline-block;
@@ -49,7 +49,7 @@
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
           <img src="images/logo.png" alt="" sizes="" srcset="" width="100px">
-		  <img src="images/bms2.png" alt="" sizes="" srcset="" width="250px">
+		  <!--<img src="images/bms2.png" alt="" sizes="" srcset="" width="250px">-->
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>

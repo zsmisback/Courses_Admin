@@ -165,6 +165,8 @@ function privacy(){
 
 }
 
+
+
 function blogs(){
 	
 	
@@ -293,7 +295,7 @@ function lessons(){
 		$results['owned'] = $data['totalRows'];
 	}
 	
-		$MERCHANT_KEY = "2Rap5UWr";
+/*$MERCHANT_KEY = "2Rap5UWr";
 $SALT = "CxLo29EGTk";
 // Merchant Key and Salt as provided by Payu.
 
@@ -355,7 +357,7 @@ if(empty($posted['hash']) && sizeof($posted) > 0) {
 } elseif(!empty($posted['hash'])) {
   $hash = $posted['hash'];
   $action = $PAYU_BASE_URL . '/_payment';
-}
+}*/
 	require(TEMPLATE_PATH_INDEX."/lessons.php");
 }
 
