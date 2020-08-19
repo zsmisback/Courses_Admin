@@ -10,89 +10,24 @@
           <div class="row">
             
             <div class="col-md-6 col-lg-8 order-md-1 mb-5">
-              <div class="row">
-                <div class="col-md-12">
-               
-                </div>  
-              </div>
-              
-              <section class="episodes">
-                <div class="container">
-                  <div class="row">
-                    <div class="col-md-12 pt-2">
-					
-                      <h2><?php echo $results['courses']->course_name; ?></h2>
+			<div class="block-28 mb-5">
+			<h2><?php echo $results['courses']->course_name; ?></h2>
                       <p><?php echo $results['courses']->course_summary; ?></p>
-                    </div>
-                  </div>
-                </div>
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12 mb-2">
-              
-            </div>
-          </div>
-		 <?php
-		
-		if(empty($results['lessons']))
-		{
-			echo "<h2>No lessons</h2>";
-		}
-		foreach($results['lessons'] as $lessons)
-		{
-			if($lessons->lesson_status == 0)
-			{
-		echo"		
-          <div class='row bg-light align-items-center p-4 episode'>
-            <div class='col-md-9'>
-              <p class='meta'>Lesson $lessons->lesson_no</p>
-              <h2><a href='.?action=content&course_id=$_GET[course_id]&lesson_id=$lessons->lesson_id'>$lessons->lesson_name</a></h2>
-              <p>$lessons->lesson_content</p>
-            </div>
-            <div class='col-md-3 text-center'>
-                <a class='btn btn-primary px-3 py-2' href='.?action=content&course_id=$_GET[course_id]&lesson_id=$lessons->lesson_id' style='background-color:#C03F53;' role='button'>View Contents</a>
-
-            </div>
-          </div>";
-			}
-			else
-			{
-				echo"		
-          <div class='row bg-light align-items-center p-4 episode'>
-            <div class='col-md-9'>
-              <p class='meta'>Lesson $lessons->lesson_no</p>
-              <h2>$lessons->lesson_name</h2>
-              <p>$lessons->lesson_content</p>
-            </div>
-            <div class='col-md-3 text-center'>
-                <a class='btn btn-primary px-3 py-2' role='button' style='background-color:#C03F53;' disabled>Paid</a>
-
-            </div>
-          </div>";
-			}
-		}
-  
-          ?>
-        </div>
-      </section>
-            </div>
-            <!-- END content -->
-            <div class="col-md-6 col-lg-4 order-md-2">
-              <div class="block-28 mb-5">
                 <h2 class="heading">Get this course</h2>
-                <ul>
+                
+				
 				<?php
 				if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true)
 				{
-					echo"<a href='.?action=login'><button type='button' class='btn btn-primary px-5 py-2 ml-5 mt-4' style='background-color:#C03F53;'>Add Course</button></a>";
+					echo"<a href='.?action=login'><button type='button' class='btn btn-primary px-5 py-2 mt-4 mr-4' style='background-color:#C03F53;'>Add Course</button></a>";
 				}
 				elseif($results['owned'] > 0)
 				{
-					echo"<button type='button' class='btn btn-primary px-5 py-2 ml-5 mt-4' style='background-color:#C03F53;'>Owned!</button>";
+					echo"<button type='button' class='btn btn-primary px-5 py-2 mt-4' style='background-color:#C03F53;'>Owned!</button>";
 				}
 				elseif(empty($results['courses']->course_price))
 				{
-					echo"<a href='index.php?action=addcourses&course_id=".$results['courses']->course_id."'><button type='button' class='btn btn-primary px-5 py-2 ml-5 mt-4' style='background-color:#C03F53;'>Add Course</button></a>";
+					echo"<a href='index.php?action=addcourses&course_id=".$results['courses']->course_id."'><button type='button' class='btn btn-primary px-5 py-2 mt-4' style='background-color:#C03F53;'>Add Course</button></a>";
 				}
 				else
 				{
@@ -122,7 +57,7 @@
         <tr>
           
             <div class='col-md-6 form-group d-flex align-items-center'>
-                    <button type='submit' class='btn btn-primary px-5 py-2 ml-5 mt-4' style='background-color:#C03F53;'>Add Course</button>
+                    <button type='submit' class='btn btn-primary px-5 py-2 mt-4' style='background-color:#C03F53;'>Add Course</button>
 
                   </div>
             
@@ -131,10 +66,10 @@
     </form>";
 				}
 				?>
-                </ul>
+				
+                
               </div>
-			  
-			 <!-- <div class="block-28 text-center mb-5">
+             <!-- <div class="block-28 text-center mb-5">
                 <figure>
                   <img src="images/teacher2.jpg" alt="" class="img-fluid">
                 </figure>
@@ -243,6 +178,76 @@
                 </ul>
               </div> -->
   
+            </div>
+            <!-- END content -->
+            <div class="col-md-6 col-lg-4 order-md-2">
+			 <div class="row">
+                <div class="col-md-12">
+               
+                </div>  
+              </div>
+              
+              <section class="episodes">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-md-12 pt-2">
+					
+                      
+                    </div>
+                  </div>
+                </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 mb-2">
+              
+            </div>
+          </div>
+		 <?php
+		
+		if(empty($results['lessons']))
+		{
+			echo "<h2>No lessons</h2>";
+		}
+		foreach($results['lessons'] as $lessons)
+		{
+			if($lessons->lesson_status == 0)
+			{
+		echo"		
+          <div class='row bg-light align-items-center p-4 episode'>
+            <div class='col-md-9'>
+              <p class='meta'>Lesson $lessons->lesson_no</p>
+              <h2><a href='.?action=content&course_id=$_GET[course_id]&lesson_id=$lessons->lesson_id'>$lessons->lesson_name</a></h2>
+              <p>$lessons->lesson_content</p>
+            </div>
+            <div class='col-md-3 text-center'>
+                <a class='btn btn-primary px-3 py-2' href='.?action=content&course_id=$_GET[course_id]&lesson_id=$lessons->lesson_id' style='background-color:#C03F53;' role='button'>View Contents</a>
+
+            </div>
+          </div>";
+			}
+			else
+			{
+				echo"		
+          <div class='row bg-light align-items-center p-4 episode'>
+            <div class='col-md-9'>
+              <p class='meta'>Lesson $lessons->lesson_no</p>
+              <h2>$lessons->lesson_name</h2>
+              <p>$lessons->lesson_content</p>
+            </div>
+            <div class='col-md-3 text-center'>
+                <a class='btn btn-primary px-3 py-2' role='button' style='background-color:#C03F53;' disabled>Paid</a>
+
+            </div>
+          </div>";
+			}
+		}
+  
+          ?>
+        </div>
+      </section>
+              
+			  
+			 
               
               
   
