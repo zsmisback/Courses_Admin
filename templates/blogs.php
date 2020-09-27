@@ -69,7 +69,7 @@
                   </ul>
                   <hr>
                   <p class="lead">'.$blogs->title.'</p>
-                  <a class="btn btn-outline-dark my-2" href="?action=blogcontent&id='.$blogs->id.'" role="button">Read more...</a>
+                  <a class="btn btn-outline-dark my-2" href="?action=blogcontent&id='.$blogs->id.'" role="button">Read more</a>
               </div>
           </div>
       </div>';

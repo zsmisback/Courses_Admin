@@ -88,7 +88,8 @@
                 <h2 class="heading">Course Details</h2>
 				<br>
                 <ul>
-				  <li><span class="text-1">Course By - <span class="text-2"><?php echo $results['courses']->course_by; ?></span>
+				<!--
+				  <li><span class="text-1">Course By - <span class="text-2"><?php echo $results['courses']->course_by; ?></span></li>-->
                   <li><span class="text-1">Duration - <span class="text-2"><?php echo $results['courses_continue']->course_reading; ?></span></li>
            
                   <li><span class="text-1">Subject - </span> <span class="text-2"><?php echo $results['courses']->course_name; ?></span></li>
@@ -261,7 +262,7 @@
         <div class="container">
           <div class="row justify-content-center mb-5 element-animate">
             <div class="col-md-7 text-left section-heading">
-              <h2 class="text-primary heading text-center">You May Also Like</h2>
+              <h2 class="heading text-center">You May Also Like</h2>
         <!--      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit qui neque sint eveniet tempore sapiente.</p> -->
             </div>
           </div>

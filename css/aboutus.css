@@ -77,12 +77,12 @@
 
 .backside .card a {
     font-size: 18px;
-    color: #007b5e !important;
+  /*  color: #007b5e !important; */
 }
 
 .frontside .card .card-title,
 .backside .card .card-title {
-    color: #007b5e !important;
+   /* color: #007b5e !important; */
 }
 
 .frontside .card .card-body img {

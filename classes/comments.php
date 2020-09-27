@@ -20,6 +20,8 @@ class Comments{
 	public $lesson_rating=null;
 	public $lesson_rating_by=null;
 	public $lesson_rating_unique=null;
+	public $id = null;
+	public $title = null;
 	
 	public function __construct($data=array())
 	{
@@ -95,6 +97,14 @@ class Comments{
 		{
 			$this->lesson_rating_unique = $data['lesson_rating_unique'];
 		}
+		if(isset($data['id']))
+		{
+			$this->id = $data['id'];
+		}
+		if(isset($data['title']))
+		{
+			$this->title = $data['title'];
+		}
 		
 		
 	}
@@ -104,7 +114,7 @@ class Comments{
 	public static function getCommentsList()
 	{
 		$conn = new PDO(DB_DSN,DB_USERNAME,DB_PASSWORD);
-		$sql = "SELECT * FROM comments LEFT JOIN lessons ON lesson_id = comment_lesson";
+		$sql = "SELECT * FROM comments LEFT JOIN lessons ON lessons.lesson_id = comments.comment_lesson LEFT JOIN users ON users.user_id = comments.comment_by WHERE comments.comment_lesson != 0";
 		$result = $conn->query($sql);
 		$list = array();
 		
@@ -117,7 +127,26 @@ class Comments{
 		$conn = null;
         return(array("results" => $list));
 	}
+
+//Get the Blog Comments list 
 	
+	public static function getBlogCommentsList()
+	{
+		$conn = new PDO(DB_DSN,DB_USERNAME,DB_PASSWORD);
+		$sql = "SELECT * FROM comments LEFT JOIN blogs ON blogs.id = comments.comment_blog LEFT JOIN users ON users.user_id = comments.comment_by WHERE comments.comment_blog != 0";
+		$result = $conn->query($sql);
+		$list = array();
+		
+		while($row = $result->fetch())
+		{
+			$comments = new Comments($row);
+			$list[] = $comments;
+		}
+		
+		$conn = null;
+        return(array("results" => $list));
+	}
+		
 
 	
 	

@@ -47,6 +47,7 @@
     
                 <li class='mb-3'><a href='?action=terms' style='color:white;' class='quick'>Terms & Conditions</a></li>
 				<li class='mb-3'><a href='?action=privacy' style='color:white;' class='quick'>Privacy Policy</a></li>
+				<li class='mb-3'><a href='?action=payment' style='color:white;' class='quick'>Payment Policy</a></li>
               </ul>
             </div>
            
@@ -57,7 +58,7 @@
           <h3 class="heading" style='color:#999999;'>Contact Information</h3>
           <div class="block-23">
             <ul>
-              <li><span class="icon ion-android-pin" style='color:#999999;'></span><span class="headnd" style='color:white;'>BMS Talent Management PVT LTD.A 2905 Vishnu Shivan Towers,Dattani Park,Thakur Village Kandivali East,Mumbai - 400101</span></li>
+              <li><span class="icon ion-android-pin" style='color:#999999;'></span><span class="headnd" style='color:white;'>BMS Talent Management Pvt Ltd.<br>A 2905 Vishnu Shivan Towers<br>Thakur Village Kandivali East<br>Mumbai - 400101</span></li>
               <li><a href="#"><span class="icon ion-ios-telephone" style='color:#999999;'></span><span class="headnd" style='color:white;'>+91-98197 28197</span></a>
       </li>
               <li><a href="#"><span class="icon ion-android-mail" style='color:#999999;'></span><span class="headnd" style='color:white;'>bms4munshiji@gmail.com</span></a></li>

@@ -53,6 +53,10 @@ switch ( $action ) {
   privacy();
   break;
   
+  case 'payment':
+  payment();
+  break;
+  
   case 'profile':
   profile();
   break;
@@ -96,6 +100,7 @@ switch ( $action ) {
   case 'blogcontent':
   blogcontent();
   break;
+  
   case 'support':
   support();
   break;
@@ -165,7 +170,10 @@ function privacy(){
 
 }
 
-
+function payment(){
+	
+	require(TEMPLATE_PATH_INDEX."/payment_gateway.php");
+}
 
 function blogs(){
 	
@@ -468,8 +476,8 @@ function signup(){
 		else
 		{
 			 $users->insert();
-		     header("Location:index.php?action=login");
-		     exit;
+		    /* header("Location:index.php?action=login");
+		     exit;*/
 		}
 
 		}

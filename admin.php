@@ -77,6 +77,10 @@ switch ( $action ) {
   viewcomments();
   break;
   
+  case 'viewblogcomments':
+  viewblogcomments();
+  break;
+  
   case 'addadmins':
   addadmins();
   break;
@@ -533,6 +537,13 @@ function viewcomments(){
 	require(TEMPLATE_PATH."/listcomments.php");
 }
 
+function viewblogcomments(){
+	
+	$results = array();
+	$data = Comments::getBlogCommentsList();
+	$results['blogcomments'] = $data['results'];
+	require(TEMPLATE_PATH."/listblogcomments.php");
+}
 //Users--------------------------
 
 //Add an admin
@@ -634,11 +645,11 @@ function edituserspass(){
 		
 		
 		
-		if(!password_verify($_POST['curr_pass'],$results['password']))
+		/*if(!password_verify($_POST['curr_pass'],$results['password']))
 		{
 			$error = "This password does not match the current password";
-		}
-		elseif(empty($_POST['user_password']))
+		}*/
+		if(empty($_POST['user_password']))
 		{
 			$error = "Please type in the new password";
 		}

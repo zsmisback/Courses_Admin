@@ -37,7 +37,7 @@
               </div>
                  
               <div class="text mb-5">
-                 <p>The concept of Munshiji believes in transforming the lives of the individuals who missed a chance in their earlier days to upgrade and educate themselves with varied subjects such as Accounts, Finance, etc. The aim is to educate them by reaching out via online resources and create a platform that leads them to a better career prospect and future ahead. With access to online learning resources and instruction, anyone, anywhere, can gain skills and transform their lives in meaningful ways. This concept will make youth powerful and independent so that they stand out of the crowd and take decisions with complete freedom.</p>              
+                 <p>The concept of MUNSHIJI is to transform the lives of the individuals by ‘Self-Awareness’. The aim is to empower them by reaching out via online resources and create a platform that leads them to a better career prospect and future ahead. With access to online learning resources and instruction, anyone, anywhere, can gain skills and transform their lives in meaningful ways. This concept will make youth powerful and independent so that they stand out of the crowd and take decisions with complete freedom.</p>              
               </div>
               
             </div>
@@ -64,10 +64,10 @@
           
               <div class="text mb-5">
                  <p>
-				 We believe that when a youth though happily or reluctantly abort his pursuit of school education he is all alone to face this world for rest of his life. In daily life in our own family, society and work place we find many people who had abandoned school or college education and have even made a killing by harnessing their inherent skill and much better off than the other graduates.				 				
+				 We believe that when a youth though happily or reluctantly abort his pursuit of formal education; he is all alone to face this world for the rest of his life. In daily life in our own family, society, and workplace we find many people who had abandoned school or college education and have even made a killing by harnessing their inherent skill and much better off than the other graduates.				 				
 				 </p>
 				 <p>
-				 For the ones who are leading a tough life due lack of education or are educated but are not employable, we have identified few basic areas of management and accounting which can enhance their value in employment market and even in self-employment opportunities.
+				 On the other hand the one who are leading a tough life due to lack of education or are educated but are not employable, we have identified few basic areas of management and skill development which can enhance their value in the employment market and even in self-employment opportunities.
 				 </p>              
               </div>
             </div>
@@ -93,7 +93,8 @@
             <div class="">
       
               <div class="text mb-5">
-                 <p>Accounting is an essential part of any business, often referred to as “the language of business.” The foundation will be set up by our program which will in turn help push themselves to find an opportunity that might best suit their interests and goals. The central objective is to make basic management education and skills easily accessible to the youth of India. The mordern munshi will be employable and will have freedom to choose his career path with his wisdom. MSMEs will be empowered with such financial and managerial expertise. </p>              
+                 <p>The foundation will be set up by our program which will in turn help push themselves to find an opportunity that might best suit their interests and goals. The central objective is to make basic management education and skills easily accessible to the youth of India. </p>    
+				 <p>MUNSHIJI thus trained by us will be employable and have the freedom to choose his career path with his wisdom. </p>
               </div>
               
             </div>
@@ -113,7 +114,7 @@
     <div class="container-fluid site-section element-animate" style="background: url('images/body.jpg'); background-repeat: no-repeat; background-size: cover;" >
       <div class="row justify-content-center element-animate">
           <div class="col-md-7 text-center section-heading">
-            <h2 class="text-primary heading">Why Choose Us?</h2>
+            <h2 class="heading">Why Choose Us?</h2>
             <p>Munshiji is here to extend a helping hand to all those who are looking out to build a career</p>
           </div>
         </div>
@@ -122,7 +123,7 @@
         <div class="text">
          <!-- <h4 class="subheading">Nice text here</h4>-->
           <h2 class="heading">Quality Programs</h2>
-          <p>Holistic and integrated program which covers self-awareness, training as well as essential managerial skills.</p>
+          <p>A holistic and integrated program which covers self-awareness, training as well as essential managerial skills.</p>
         </div>
       </div>
       <div class="block-3 d-md-flex">
@@ -130,7 +131,7 @@
         <div class="text order-1">
           <!-- <h4 class="subheading">Nice text here</h4>-->
           <h2 class="heading">Industry-based experts</h2>
-          <p>Program conceptualised, designed and monitored by the well experienced professionals with practical experience.
+          <p>Program conceptualized, designed and monitored by the well-experienced professionals with practical experience.
 		  </p>
         </div>
       </div>
@@ -139,10 +140,10 @@
         <div class="text">
            <!-- <h4 class="subheading">Nice text here</h4>-->
           <h2 class="heading">Easy Access & Affordable pricing</h2>
-          <p>Our program is primarily online which makes it easily accessible to any and everyone across the globe. 
+          <p>Our program is primarily online which makes it easily accessible to any and every one across the globe. 
 		  </p>
 		  <p>
-		  The aim is to educate and make self-aware 'Munshi' by enhancing youth's managerial skills. The program is for everyone who are in need therefore we have kept it affordable.</p>		
+		  The aim is to educate and make self-aware 'MUNSHIJI' by enhancing youth's managerial skills. The program is for everyone therefore we have kept it affordable.</p>		
         </div>
       </div>
       <div class="block-3 d-md-flex">

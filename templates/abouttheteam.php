@@ -29,7 +29,8 @@
                                 <div class="card-body text-center mt-4">
                                     <h4 class="card-title text-danger">CA Shashikant Khemani</h4>
                                     <p class="card-text">He has more than 20 years of experience in providing consultancy in the areas of Finance, Accounting, Analytics, FP&A as well as designing financial and accounting systems for large corporates in India as well as Abroad.</p>
-                                    <ul class="list-inline">
+                                   <!--
+									<ul class="list-inline">
                                         <li class="list-inline-item">
                                             <a class="social-icon text-xs-center" target="_blank" href="https://www.fiverr.com/share/qb8D02">
                                                 <i class="fa fa-facebook"></i>
@@ -51,6 +52,7 @@
                                             </a>
                                         </li>
                                     </ul>
+									-->
                                 </div>
                             </div>
                         </div>
@@ -77,7 +79,8 @@
                                 <div class="card-body text-center mt-4">
                                     <h4 class="card-title">Brij Mohan Sharma</h4>
                                     <p class="card-text">He is a corporate leader, author, coach, visionary, a veteran Rashtrapati Scout, awarded in 1968 and devoted to the scouting spirit of Service.</p>
-                                    <ul class="list-inline">
+									<!--
+								   <ul class="list-inline">
                                         <li class="list-inline-item">
                                             <a class="social-icon text-xs-center" target="_blank" href="https://www.fiverr.com/share/qb8D02">
                                                 <i class="fa fa-facebook"></i>
@@ -99,6 +102,7 @@
                                             </a>
                                         </li>
                                     </ul>
+									-->
                                 </div>
                             </div>
                         </div>
@@ -125,7 +129,8 @@
                                 <div class="card-body text-center mt-4">
                                     <h4 class="card-title">CA Vivek Agarwal</h4>
                                     <p class="card-text">He has more than 20 years of experience in providing consultancy in the areas of Finance, Accounting, Analytics, FP&A as well as designing financial and accounting systems for large corporates in India as well as Abroad.
-</p>
+									</p>
+									<!--
                                     <ul class="list-inline">
                                         <li class="list-inline-item">
                                             <a class="social-icon text-xs-center" target="_blank" href="https://www.fiverr.com/share/qb8D02">
@@ -148,6 +153,7 @@
                                             </a>
                                         </li>
                                     </ul>
+									-->
                                 </div>
                             </div>
                         </div>
@@ -177,6 +183,7 @@
                                     <h4 class="card-title text-danger">B.Vijaya Lakshmi</h4>
                                     <p class="card-text">She has completed her Master’s in Business Administration with specialisation in Human
 Resource Management from Osmania University in 2000.</p>
+									<!--
                                     <ul class="list-inline">
                                         <li class="list-inline-item">
                                             <a class="social-icon text-xs-center" target="_blank" href="https://www.fiverr.com/share/qb8D02">
@@ -199,6 +206,7 @@ Resource Management from Osmania University in 2000.</p>
                                             </a>
                                         </li>
                                     </ul>
+									-->
                                 </div>
                             </div>
                         </div>
@@ -226,6 +234,7 @@ Resource Management from Osmania University in 2000.</p>
                                     <h4 class="card-title">Dr.Vaishali Pagaria</h4>
                                     <p class="card-text" style="font-size:15px">Dr. Vaishali Pagaria has an experience of more than 19 years in Teaching and Industry put
 together. She has obtained her Phd in management.</p>
+									<!--
                                     <ul class="list-inline">
                                         <li class="list-inline-item">
                                             <a class="social-icon text-xs-center" target="_blank" href="https://www.fiverr.com/share/qb8D02">
@@ -248,6 +257,7 @@ together. She has obtained her Phd in management.</p>
                                             </a>
                                         </li>
                                     </ul>
+									-->
                                 </div>
                             </div>
                         </div>
@@ -275,7 +285,8 @@ together. She has obtained her Phd in management.</p>
                                     <h4 class="card-title">Shashikanth Kotagiri</h4>
                                     <p class="card-text" style="font-size:15px">A total two decades of experience in Teaching, Education counseling, Training &amp; development, &amp;
 Business development.Guided around 2500 MBA student projects in Marketing.
-</p>
+</p>								
+									<!--
                                     <ul class="list-inline">
                                         <li class="list-inline-item">
                                             <a class="social-icon text-xs-center" target="_blank" href="https://www.fiverr.com/share/qb8D02">
@@ -298,6 +309,7 @@ Business development.Guided around 2500 MBA student projects in Marketing.
                                             </a>
                                         </li>
                                     </ul>
+									-->
                                 </div>
                             </div>
                         </div>
@@ -338,10 +350,9 @@ Our key objectives are as follows:
 	  <section class="site-section pt-3 element-animate" style="background: url('images/body.jpg'); background-repeat: no-repeat; background-size: cover;">
 	   <div class="container">
 	   <h2 class="text-danger text-center heading">Idea behind Munshiji</h2><hr>
-	   <p class="text-left">Nelson Mandela once quoted that "The youth of today are the leaders of tomorrow". As he rightly described the development of the country depends upon its youth population. India mainly comprises of youth and they are the future of our nation. Education as a field has been expanding over the years and so is the need for educated people. The idea behind starting Munshiji is to contribute to the development of the nation by educating the youth and providing them the training of the required skills to start a business or get oneself employed.<br><br>It is been observed that out of an initial enrollment of 100 students, on average, only 70 could manage to finish up with their studies. The rest of them couldn’t make through it because of a varied number of reasons. Munshiji aims at educating these students, helping them build a career and make themselves worthy enough to be employable or start a business themselves.<br><br>
-		Despite being one of the biggest creators of jobs and GDP the MSMEs and Agricultural sectors have a serious challenge of hiring the right managerial and technical skills at affordable cost. This sector has a crucial role to play in the vision of “Make in India” and “Atmanirbhar Bharat” of our PM Hon Shri Narendra Modi.There is a need to empower our MSMEs with the affordable managerial and technical skills.
-		We will create Munshi's that will address this problems of the MSME's and help in the development of the country.
-.</p>
+	   <p class="text-left">The idea behind starting MUNSHIJI is to contribute to the development of the nation by educating the youth and providing them the training of the required skills to start a business or get oneself employed.<br><br>It is been observed that out of the initial enrollment of 100 students, on average, only 70 could manage to finish up with their studies. The rest of them couldn't make through it because of a varied number of reasons. <br><br>
+		MUNSHIJI aims at educating these students, helping them build a career and make themselves worthy enough to be employable or start a business themselves.<br><br>
+		Despite being one of the biggest creators of jobs and GDP the MSMEs and Agricultural sectors have a serious challenge of hiring the right managerial and technical skills at an affordable cost. There is a need to empower our MSMEs with affordable managerial and technical skills. MSMEs will be empowered with such financial and managerial expertise of MUNSHIJI.</p>
 	   </div>
 	  </section>
 

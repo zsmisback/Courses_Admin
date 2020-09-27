@@ -15,7 +15,7 @@
                                         <thead>
                                             <tr>
                                                 <th>Comment Summary</th>
-                                                <th>Comment Lesson</th>
+                                                <th>Comment Blog</th>
                                                 <th>Comment Create</th>
                                                 <th>Comment By</th>
                                                 
@@ -25,7 +25,7 @@
                                         <tfoot>
                                             <tr>
                                                 <th>Comment Summary</th>
-                                                <th>Comment Lesson</th>
+                                                <th>Comment Blog</th>
                                                 <th>Comment Create</th>
                                                 <th>Comment By</th>
                                                 
@@ -35,12 +35,12 @@
                                         <tbody>
 										<?php 
 										
-										foreach($results['comments'] as $comments)
+										foreach($results['blogcomments'] as $comments)
 										{
 										echo"
                                             <tr>
                                                 <td>$comments->comment_summary</td>
-                                                <td>$comments->lesson_name</td>
+                                                <td>$comments->title</td>
                                                 <td>$comments->comment_create</td>
                                                 <td>$comments->user_name</td>
 												<!--

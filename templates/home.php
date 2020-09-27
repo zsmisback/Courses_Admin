@@ -39,8 +39,8 @@ and every business can get affordable Managerial skills”</p>
             <div class="block-16">
               <figure>
                 
-                <iframe width="450" height="315" src="https://www.youtube.com/embed/d8pDp441JgQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
+                <!--<iframe width="450" height="315" src="https://www.youtube.com/embed/d8pDp441JgQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
+				<img src="images/logo.png" class="img-fluid" />
               </figure>
             </div>
           </div>
@@ -52,12 +52,18 @@ and every business can get affordable Managerial skills”</p>
                 <h2>About Munshiji</h2>
               </div>
               <div class="text mb-5">
-				<p> Munshiji is an program to provide ‘END TO END & BEYOND’ solutions to the youth. We empower the youth for starting up their economic activity through job or business by creating awareness and helping them develop required management skills. 
+				<p>We, Humans are born Intelligent yet Ignorant, Ignorant about our Self, Ignorant about our capability and Ignorant of our potential. To remove this ignorance we need self-awareness.</p>
 				<p>	
-				Munshiji program starts with the self-awareness and progresses through the training on the core concepts of management such as Finance, Accounting, Banking, Taxation, Insurance, communication and IT.
+				Another dilemma we face in life is miss-match of our need and resources like sometime there is plentiful and sometime there is scarcity.  To ensure appropriate resources meet requirement we need Management.
 				</p>
-					
-              </div>
+				<p style="display:inline;">Therefore a youth at the threshold of his journey of life need Self-awareness and Management. </p><a class="showmore" style="cursor:pointer;" data-toggle="collapse" data-target="#demo">Show More...</a>
+				
+				<div id="demo" class="collapse">
+				<br>
+				<p>MUNSHIJI is an initiative to provide 'END TO END & BEYOND' solutions to the youth. We empower the youth for leading his life through awareness and develop required management skills.</p>
+				<p>MUNSHIJI program starts with self-awareness and progresses through the training on the core concepts of management. </p>
+				</div>
+			 </div>
               <p><a href="?action=about" class=" new btn btn-primary reverse py-2 px-4">Read More</a></p>
               
             </div>
@@ -75,7 +81,7 @@ and every business can get affordable Managerial skills”</p>
       <div class="container">
         <div class="row justify-content-center mb-1 element-animate">
           <div class="col-md-7 text-center section-heading">
-            <h2 class="text-danger heading">Our Courses</h2>
+            <h2 class="heading">Our Courses</h2>
 			<hr>
           <!--  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit qui neque sint eveniet tempore sapiente.</p> -->            
           </div>
@@ -138,8 +144,8 @@ and every business can get affordable Managerial skills”</p>
       <div class="container">
         <div class="row justify-content-center mb-5 element-animate">
           <div class="col-md-7 text-center section-heading"><br>
-            <h2 class="text-primary heading">Services</h2>
-            <p>We aim to deliver to you these services from our end</p><hr>
+            <h2 class="heading" style="color:#FFFFD5;">Services</h2>
+            <p style="color:#FFFFD5;">We aim to deliver to you these services from our end</p><hr>
           </div>
         </div>
 		
@@ -148,8 +154,8 @@ and every business can get affordable Managerial skills”</p>
             <div class="media block-6 d-block">
               <div class="icon mb-3 text-center"><img src="images/leader 1.png" class="img-fluid" width="55px;"/></div>
               <div class="media-body text-center">
-                <h3 class="heading">Learn From The Leaders</h3>
-                <p>Munshiji aims to invite experts from varied fields such as music, education, sports, art, etc. to share their experience and knowledge and motivate the youth to decide what their future should look like</p>
+                <h3 class="heading" style="color:#FFFFD5;">Learn From The Leaders</h3>
+                <p style="color:#FFFFD5;">MUNSHIJI aims to invite experts from varied fields such as music, education, sports, art, etc. to share their experience and knowledge and motivate the youth to decide what their future should look like</p>
              <!--   <p><a href="#" class="more">Read More <span class="ion-arrow-right-c"></span></a></p>-->
               </div>
             </div> 
@@ -158,8 +164,8 @@ and every business can get affordable Managerial skills”</p>
             <div class="media block-6 d-block">
               <div class="icon mb-3 text-center"><img src="images/withus 2.png" class="img-fluid" width="55px;"/></div>
               <div class="media-body text-center">
-                <h3 class="heading">With us "YOU" can</h3>
-                <p>Our courses will restore pride and self-esteem of every youth who had the stigma of ‘dropping out’ or ‘running away’ from the race of life which he/she might carry due to abandoning the school/college education.</p>
+                <h3 class="heading" style="color:#FFFFD5;">With us "YOU" can</h3>
+                <p style="color:#FFFFD5;">Our courses will restore pride and self-esteem of every youth who had the stigma of 'dropping out' or 'running away' from the race of life which he/she might carry due to abandoning the school/college education</p>
              <!--   <p><a href="#" class="more">Read More <span class="ion-arrow-right-c"></span></a></p> -->
               </div>
             </div> 
@@ -168,8 +174,8 @@ and every business can get affordable Managerial skills”</p>
             <div class="media block-6 d-block">
               <div class="icon mb-3 text-center"><img src="images/discover 3.png" class="img-fluid" width="55px;"/></div>
               <div class="media-body text-center">
-                <h3 class="heading">Discover Yourself</h3>
-				<p>Our program will help you to look within yourself and discover your potentials which will help you to exploit and make your life purposeful.<p>                
+                <h3 class="heading" style="color:#FFFFD5;">Discover Yourself</h3>
+				<p style="color:#FFFFD5;">Our program will help you to look within yourself and discover your potentials which will help you to exploit and make your life purposeful<p>                
            <!--     <p><a href="#" class="more">Read More <span class="ion-arrow-right-c"></span></a></p> -->
               </div>
             </div> 
@@ -178,8 +184,8 @@ and every business can get affordable Managerial skills”</p>
             <div class="media block-6 d-block mb-2">			
               <div class="icon mb-3 text-center"><img src="images/managmentc 4.png" class="img-fluid" width="55px;"/></div>
               <div class="media-body text-center">
-                <h3 class="heading">Management Skills</h3>
-                <p>Our course will teach you “Basic Management Skill’ to manage your life better to face challenges of life.</p>
+                <h3 class="heading" style="color:#FFFFD5;">Management Skills</h3>
+                <p style="color:#FFFFD5;">Our courses will teach you "Basic Management Skill" to manage your life better to face challenges of life</p>
            <!--     <p><a href="#" class="more">Read More <span class="ion-arrow-right-c"></span></a></p> -->
               </div>
             </div> 
@@ -189,8 +195,8 @@ and every business can get affordable Managerial skills”</p>
             <div class="media block-6 d-block mb-2">			
               <div class="icon mb-3 text-center"><img src="images/focus 5.png" class="img-fluid" width="55px;"/></div>
               <div class="media-body text-center">
-                <h3 class="heading">Be Focused</h3>
-                <p>Our courses are designed to help you identify your goal of life for a better and successful living.</p>
+                <h3 class="heading" style="color:#FFFFD5;">Be Focused</h3>
+                <p style="color:#FFFFD5;">Our courses are designed to help you identify your goal of life for a better and successful living</p>
            <!--     <p><a href="#" class="more">Read More <span class="ion-arrow-right-c"></span></a></p> -->
               </div>
             </div> 
@@ -201,8 +207,8 @@ and every business can get affordable Managerial skills”</p>
             <div class="media block-6 d-block mb-2">			
               <div class="icon mb-3 text-center"><img src="images/career 6.png" class="img-fluid" width="55px;"/></div>
               <div class="media-body text-center">
-                <h3 class="heading">Build a Career</h3>
-                <p>Munshiji will assist you to find suitable opening to showcase your talent by way of job, business or skill full activities</p>
+                <h3 class="heading" style="color:#FFFFD5;">Build a Career</h3>
+                <p style="color:#FFFFD5;">MUNSHIJI will assist you to find a suitable opening to showcase your talent by way of a job, business or skill full activities</p>
            <!--     <p><a href="#" class="more">Read More <span class="ion-arrow-right-c"></span></a></p> -->
               </div>
             </div> 
@@ -258,13 +264,10 @@ and every business can get affordable Managerial skills”</p>
               </div>
               <div class=" mb-5">
                 <p>श्रद्धावाँल्लभते ज्ञानं तत्परः संयतेन्द्रियः ।
-                                                       ज्ञानं लब्धवा परां शान्तिमचिरेणाधिगच्छति ॥4.39॥<br>A person full of devotion with subdued senses attains
-knowledge and achieves eternal peace instantly thereafter
+                                                       ज्ञानं लब्धवा परां शान्तिमचिरेणाधिगच्छति ॥4.39॥<br> A person full of devotion with subdued senses attains knowledge and achieves eternal peace instantly thereafter. (Gita chapter 4, verse 39)
 </p><br>
 <h3>Our Vision</h3>
-<p>EMPOWERMENT OF YOUTH
-TO LIVE WITH A BETTER WORLD
-HAVING BETTER LIFE SKILL & MANAGEMENT.
+<p>EMPOWERMENT OF YOUTH TO LIVE WITH A BETTER LIFE SKILLS & MANAGEMENT.
 </p>
               </div>
             </div>
@@ -279,8 +282,8 @@ HAVING BETTER LIFE SKILL & MANAGEMENT.
    <section class="site-section element-animate" id="section-counter" style="background-repeat: no-repeat; background-size: cover;background-color:#d3455b; ">
       <div class="container text-center">
        
-		<h2>Transform your vision and be motivated by our daily blogs !</h2>
-                   <p><a href=".?action=blogs" class="new btn btn-light mt-4 py-2 px-4">Explore</a></p>
+		<h2 style="color:#FFFFD5;">Transform your vision and be motivated by our daily blogs !</h2>
+                   <p><a style="color:#FFFFD5;" href=".?action=blogs" class="new btn btn-light mt-4 py-2 px-4">Explore</a></p>
       </div>
     </section>
    
@@ -494,6 +497,19 @@ HAVING BETTER LIFE SKILL & MANAGEMENT.
       var payuForm = document.forms.payuForm;
       payuForm.submit();
     }
+
+	
+$(document).ready(function(){
+	var test = $(".showmore").val();
+	
+	alert(test);
+  $("#demo").on("hide.bs.collapse", function(){
+    $(".showmore").html('<span class="glyphicon glyphicon-collapse-down"></span> Open');
+  });
+  $("#demo").on("show.bs.collapse", function(){
+    $(".showmore").html('Close');
+  });
+});
 
   </script>
   <!-- Footer --->

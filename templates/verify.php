@@ -7,6 +7,8 @@ $displayCurrency = 'INR';
 require('../config.php');
 session_start();
 
+var_dump($_POST);
+
 require('razorpay-php/Razorpay.php');
 use Razorpay\Api\Api;
 use Razorpay\Api\Errors\SignatureVerificationError;
@@ -46,7 +48,7 @@ if ($success === true)
     $html = "<h3>Thank you for your purchase</h3>
 			 <p>Your payment was successful</p>
              <p>Payment ID: {$_POST['razorpay_payment_id']}</p>
-			 <h4>We have received a payment of Rs. " . $_POST['amount'] . ". Thank you for your purchase.<br>You will be redirected to the main website shortly.Please click <a href='index.php'>here</a> if you haven't been redirected.</h4>";
+			 <h4>We have received a payment of Rs. " . $_POST['amount'] . ". Thank you for your purchase.<br>You will be redirected to the main website shortly.Please click <a href='../index.php'>here</a> if you haven't been redirected.</h4>";
 }
 else
 {

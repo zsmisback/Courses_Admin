@@ -1,12 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Srisakdi&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 body {
   background: url(images/body.jpg) !important;
-  font-family:'Montserrat', sans-serif;
-  font-weight: 600;
+  font-family: 'Roboto', sans-serif;
   font-size: 16px;
   line-height: 2;
-  color: gray;
+  color: #d3455b;
  overflow-x: hidden;
 }
 
@@ -15,16 +16,22 @@ a {
   -o-transition: .3s all ease;
   transition: .3s all ease;
   text-decoration: none;
+  color:#d3455b;
+  
 }
 
 a:hover {
   text-decoration: none;
 }
 
-h1, h2, h3, h4, h5 {
-  color: #000;
-  font-family:'Montserrat', sans-serif;
-  font-weight: 700;
+h1, h2, h3, h4, h5, h6, p, li {
+  font-family: 'Roboto', sans-serif;
+  color:#d3455b;
+
+}
+
+img{
+		color:gold;
 }
 
 header {
@@ -292,7 +299,8 @@ header .nav-link:hover{
 }
 
 .episodes .episode a {
-  color: #000;
+  /*color: #000;*/
+ 
 }
 
 .episodes .episode a:hover {
@@ -307,8 +315,9 @@ header .nav-link:hover{
   text-transform: uppercase;
   font-size: 14px;
   letter-spacing: .2em;
-  color: #cccccc;
-  color:black;
+  /*color: #cccccc;
+  color:black;*/
+  
 }
 
 .episodes .episode-number {
@@ -714,7 +723,7 @@ textarea.form-control {
 
 .box h2 {
   font-size: 18px;
-  font-family: "Rubik", arial, sans-serif;
+  font-family: 'Roboto', sans-serif;
   -webkit-transition: .3s all ease;
   -o-transition: .3s all ease;
   transition: .3s all ease;
@@ -1117,7 +1126,7 @@ blockquote p {
 .list-unstyled.check li:b {
   color: black !important;
   left: 0;
-  font-family: "Ionicons";
+  font-family: 'Roboto', sans-serif;
   content: "\f122";
   position: absolute;
 }
@@ -1273,7 +1282,7 @@ blockquote p {
   font-size: 45px;
   margin: 0;
   padding: 0;
-  color: black;
+ /* color: black;*/
 }
 
 .block-15 .text {
@@ -1478,14 +1487,14 @@ p a.new{
 }
 
 .block-19 .text .heading a {
-  color: #000;
+  /*color: #000;*/
 }
 .block-19 .text p {
 
   overflow: hidden;
   text-overflow: ellipsis;
   height:120px;
-  font-size: 20px;
+ /* font-size: 20px; */	
 }
 
 .block-19 .text .heading a:hover {
@@ -1497,7 +1506,7 @@ p a.new{
 }
 
 .block-19 .text .meta .number span {
-  color: #000;
+  /*color: #000;*/
 }
 
 .block-19 .text .meta .price del {
@@ -1656,7 +1665,7 @@ p a.new{
 
 .section-heading .heading {
   font-size: 45px;
-  color:black !important;
+ /* color:black !important;*/
 }
 
 .block-22 {
@@ -1916,7 +1925,7 @@ p a.new{
   font-size: 20px;
   margin: 0 0 20px 0;
   padding: 20px 0 0 20px;
-  color: #000;
+ /* color: #000; */
 }
 
 .block-24 ul, .block-24 ul li {
@@ -1933,7 +1942,7 @@ p a.new{
   padding: 2px 16px;
   border-left: 4px solid transparent;
   position: relative;
-  color: #000;
+  /*color: #000;*/
 }
 
 .block-24 ul li a span {
@@ -1960,7 +1969,7 @@ p a.new{
 .block-25 .heading {
   font-size: 20px;
   margin: 0 0 20px 0;
-  color: #000;
+  /*color: #000;*/
 }
 
 .block-25 ul, .block-25 ul li {
@@ -2192,7 +2201,7 @@ p a.new{
   font-size: 18px;
   top: .1em;
   left: 0;
-  font-family: 'Ionicons';
+  font-family: 'Roboto', sans-serif;
 }
 
 .block-8 .accordion-item .heading > a[aria-expanded="true"]:before {

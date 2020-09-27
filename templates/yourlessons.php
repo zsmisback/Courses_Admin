@@ -10,57 +10,7 @@
           <div class="row">
             
             <div class="col-md-6 col-lg-8 order-md-1 mb-5">
-              <div class="row">
-                <div class="col-md-12">
-               
-                </div>  
-              </div>
-              
-              <section class="episodes">
-                <div class="container">
-                  <div class="row">
-                    <div class="col-md-12 pt-2">
-					
-                      <h2><?php echo $results['courses']->course_name; ?></h2>
-                      <p><?php echo $results['courses']->course_summary; ?></p>
-                    </div>
-                  </div>
-                </div>
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12 mb-2">
-              
-            </div>
-          </div>
-		 <?php
-		
-		if(empty($results['lessons']))
-		{
-			echo "<h2>No lessons</h2>";
-		}
-		foreach($results['lessons'] as $lessons)
-		{
-       echo"		
-          <div class='row bg-light align-items-center p-4 episode'>
-            <div class='col-md-9'>
-              <p class='meta'>Lesson $lessons->lesson_no</p>
-              <h2><a href='.?action=yourcontent&course_id=$_GET[course_id]&lesson_id=$lessons->lesson_id'>$lessons->lesson_name</a></h2>
-              <p>$lessons->lesson_content</p>
-            </div>
-            <div class='col-md-3 text-center'>
-                <a class='btn btn-primary px-3 py-2' href='.?action=yourcontent&course_id=$_GET[course_id]&lesson_id=$lessons->lesson_id' style='background-color:#C03F53;' role='button'>View Contents</a>
-
-            </div>
-          </div>";
-		}
-  
-          ?>
-        </div>
-      </section>
-            </div>
-            <!-- END content -->
-            <div class="col-md-6 col-lg-4 order-md-2">
-              
+			
 			<!--  <div class="block-28 text-center mb-5">
                 <figure>
                   <img src="images/teacher2.jpg" alt="" class="img-fluid">
@@ -75,11 +25,15 @@
                 <p>Hi I'm Pooja Joshi, consectetur adipisicing elit. Quibusdam nulla beatae modi itaque nemo magni molestiae explicabo sint dolorum cum</p>
                 
               </div> -->
-			  
+			  <div class="block-28 mb-5">
+			<h2><?php echo $results['courses']->course_name; ?></h2>
+                      <p><?php echo $results['courses']->course_summary; ?></p>
+			</div>	
               <div class="block-28 mb-5">
                 <h2 class="heading">Course Details</h2>
                 <ul>
-				  <li><span class="text-1">Course By - <span class="text-2"><?php echo $results['courses']->course_by; ?></span></li>
+				<!--
+				  <li><span class="text-1">Course By - <span class="text-2"><?php echo $results['courses']->course_by; ?></span></li>-->
                   <li><span class="text-1">Duration - <span class="text-2"><?php echo $results['courses_continue']->course_reading; ?></span></li>
            
                   <li><span class="text-1">Subject - </span> <span class="text-2"><?php echo $results['courses']->course_name; ?></span></li>
@@ -169,6 +123,104 @@
                   <li><a href="#">Swift <span>22</span></a></li>
                 </ul>
               </div> -->
+              <div class="row">
+                <div class="col-md-12">
+               
+                </div>  
+              </div>
+              
+              <section class="episodes">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-md-12 pt-2">
+					
+                      <h2><?php echo $results['courses']->course_name; ?></h2>
+                      <p><?php echo $results['courses']->course_summary; ?></p>
+                    </div>
+                  </div>
+                </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 mb-2">
+              
+            </div>
+          </div>
+		 <?php
+		
+		if(empty($results['lessons']))
+		{
+			echo "<h2>No lessons</h2>";
+		}
+		foreach($results['lessons'] as $lessons)
+		{
+       echo"		
+          <div class='row bg-light align-items-center p-4 episode'>
+            <div class='col-md-9'>
+              <p class='meta'>Lesson $lessons->lesson_no</p>
+              <h2><a href='.?action=yourcontent&course_id=$_GET[course_id]&lesson_id=$lessons->lesson_id'>$lessons->lesson_name</a></h2>
+              <p>$lessons->lesson_content</p>
+            </div>
+            <div class='col-md-3 text-center'>
+                <a class='btn btn-primary px-3 py-2' href='.?action=yourcontent&course_id=$_GET[course_id]&lesson_id=$lessons->lesson_id' style='background-color:#C03F53;' role='button'>View Contents</a>
+
+            </div>
+          </div>";
+		}
+  
+          ?>
+        </div>
+      </section>
+            </div>
+            <!-- END content -->
+            <div class="col-md-6 col-lg-4 order-md-2">
+              
+			<!--  <div class="block-28 text-center mb-5">
+                <figure>
+                  <img src="images/teacher2.jpg" alt="" class="img-fluid">
+                </figure>
+                <h2 class="heading"></h2>
+                <h3 class="subheading">JavaScript </h3>
+                <p>
+                  <a href="#" class="fa fa-twitter p-2"></a>
+                  <a href="#" class="fa fa-facebook p-2"></a>
+                  <a href="#" class="fa fa-linkedin p-2"></a>
+                </p>
+                <p>Hi I'm Pooja Joshi, consectetur adipisicing elit. Quibusdam nulla beatae modi itaque nemo magni molestiae explicabo sint dolorum cum</p>
+                
+              </div> -->
+			  <section class="episodes">
+			  <div class="container">
+          <div class="row">
+            <div class="col-md-12 mb-2">
+              
+            </div>
+          </div>
+		 <?php
+		
+		if(empty($results['lessons']))
+		{
+			echo "<h2>No lessons</h2>";
+		}
+		foreach($results['lessons'] as $lessons)
+		{
+       echo"		
+          <div class='row bg-light align-items-center p-4 episode'>
+            <div class='col-md-9'>
+              <p class='meta'>Lesson $lessons->lesson_no</p>
+              <h2><a href='.?action=yourcontent&course_id=$_GET[course_id]&lesson_id=$lessons->lesson_id'>$lessons->lesson_name</a></h2>
+              <p>$lessons->lesson_content</p>
+            </div>
+            <div class='col-md-3 text-center'>
+                <a class='btn btn-primary px-3 py-2' href='.?action=yourcontent&course_id=$_GET[course_id]&lesson_id=$lessons->lesson_id' style='background-color:#C03F53;' role='button'>View Contents</a>
+
+            </div>
+          </div>";
+		}
+  
+          ?>
+        </div>
+		</section>
+             
   
               
               
@@ -183,7 +235,7 @@
         <div class="container">
           <div class="row justify-content-center mb-5 element-animate">
             <div class="col-md-7 text-left section-heading">
-              <h2 class="text-primary heading text-center">You May Also Like</h2>
+              <h2 class="heading text-center">You May Also Like</h2>
            <!--   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit qui neque sint eveniet tempore sapiente.</p> -->
             </div>
           </div>

@@ -54,7 +54,7 @@
 			  
 			  for($pageNumbers=1;$pageNumbers<=$results['totalpages'];$pageNumbers++) :
 		echo'
-                <li><a href=".?action=yourcontent&course_id='.$_GET['course_id'].'&lesson_id='.$results['paginations'][$pageNumbers-1]->lesson_id.'">Lesson '.$pageNumbers.'</a></li>';
+                <li><a href=".?action=yourcontent&course_id='.$_GET['course_id'].'&lesson_id='.$results['paginations'][$pageNumbers-1]->lesson_id.'">Lesson '.$results['paginations'][$pageNumbers-1]->lesson_no.'</a></li>';
 				endfor;
 				?>
      

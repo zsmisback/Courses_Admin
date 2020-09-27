@@ -10,10 +10,10 @@
 						<input type="hidden" name="user_id" value="<?php echo $_GET['user_id']; ?>"/>
 						
                                             
-                                                    <div class="form-group">
-                                                        <label for="curr_passs">User/Admin Current Password:</label>
+                                                   <!-- <div class="form-group">
+                                                      <label for="curr_passs">User/Admin Current Password:</label>
                                                         <input class="form-control py-4" id="curr_passs" type="password" placeholder="User/Admin Current Password" name="curr_pass"/>
-                                                    </div>
+                                                    </div> -->
                                                 
                                                 
                                                     <div class="form-group">
