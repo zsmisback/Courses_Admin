@@ -906,16 +906,17 @@ function addblogs(){
 	    {
 		  $error = $authenticate;
 	    }
+		/*
 		elseif(empty($_FILES['image']['name']))
 		{
 			$error = "Please add in a cover image";
 		}
+		*/
 	    else
 	    {
 			$blogs = new Blogs;
 			$blogs->storeFormValues($_POST);
 			$blogs->insert();
-			$blogs->storeUploadedImage($_FILES['image']);
 			listblogs();
 			return;
 		}
@@ -941,6 +942,7 @@ function editblogs(){
 	    {
 		  $error = $authenticate;
 	    }
+		/*
 		elseif(empty($_FILES['image']['name']))
 		{
 			$blogs = new Blogs;
@@ -949,12 +951,12 @@ function editblogs(){
 			listblogs();
 			return;
 		}
+		*/
 		else
 		{
 			$blogs = new Blogs;
 			$blogs->storeFormValues($_POST);
 			$blogs->edit();
-			$blogs->storeUploadedImage($_FILES['image']);
 			listblogs();
 			return;
 		}

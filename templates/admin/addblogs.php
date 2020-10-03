@@ -27,6 +27,7 @@
                                                     </div>
                                                 </div>
                                             </div>
+											<!--
 											<div class="form-group">
 											<p>Blog Cover Image:</p>
 											<div class="custom-file mb-3">
@@ -44,6 +45,7 @@
 											}
 											?>
 											</div>
+											-->
                                             <div class="form-group">
                                               Blog Content:  
                                              <textarea class="form-control py-4 ckeditor" id="inputEmailAddress" type="text" name="content" placeholder="Enter Blog Content"><?php if($_GET['action'] == 'editblogs'){echo $results['blog']->content;}else{echo $content;} ?></textarea>

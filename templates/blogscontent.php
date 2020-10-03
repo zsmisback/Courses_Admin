@@ -1,6 +1,6 @@
 <?php include 'header_main.php'; ?>
     <!-- END header -->
-	
+	<!--
 	<section class="site-hero site-sm-hero overlay" data-stellar-background-ratio="0.5" style="background-image: url(<?php echo BLOG_IMAGE_PATH.'/'.IMG_TYPE_FULLSIZE.'/'.$results['blogs']->id.$results['blogs']->image; ?>);">
       <div class="container">
         <div class="row align-items-center justify-content-center site-hero-sm-inner">
@@ -11,6 +11,7 @@
         </div>
       </div>
     </section>
+	-->
     <!-- END section -->
 
     <div class="site-section bg-light" >

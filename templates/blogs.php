@@ -60,9 +60,11 @@
 			<div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 mt-4">
           <div class="card shadow">
               <div class="card-body text-center">
+			  <!--
                   <a href="?action=blogcontent&id='.$blogs->id.'">
                       <img class="card-img-top" src="'.BLOG_IMAGE_PATH.'/'.IMG_TYPE_THUMB.'/'.$blogs->id.$blogs->image.'" alt="">
                   </a>
+				  -->
                   <ul class="list-inline mt-3">
                       <li class="list-inline-item"> '.$blogs->author.'</li>
                       <li class="list-inline-item"> '.$blogs->dates.'</li>
