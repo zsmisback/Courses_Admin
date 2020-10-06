@@ -5,6 +5,14 @@
     <title>Munshiji.org</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="author" content="munshiji.org">
+	<meta name="description" content="The concept of MUNSHIJI is to transform the lives of the individuals by ‘Self-Awareness’. The aim is to empower them by reaching out via online resources and create a platform that leads them to a better career prospect and future ahead.">
+	
+	<meta property="og:title" content="Munshiji.org" >
+	<meta property="og:url" content="http://munshiji.org/index.php?action=home" >
+	<meta property="og:description" content="The concept of MUNSHIJI is to transform the lives of the individuals by ‘Self-Awareness’. The aim is to empower them by reaching out via online resources and create a platform that leads them to a better career prospect and future ahead." >
+	<meta property="og:image" content="http://munshiji.org/images/logo.png" >
+	
      <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500" rel="stylesheet">
 

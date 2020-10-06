@@ -70,10 +70,10 @@
         <div class="col-md-4 col-lg-2 mb-5 mb-lg-0">
           <h3 class="heading" style='color:#999999;'>Social Links</h3>
           <p class="float-md-left">
-                  <a href="http://www.facebook.com/brijmohan.sharma.9400" class="fa fa-facebook p-2 quick" style='color:white;'></a>
-                  <a href="http://www.twitter.com/bms4brijmohan" class="fa fa-twitter p-2 quick" style='color:white;'></a>
+                  <a href="http://www.facebook.com/brijmohan.sharma.9400" style='color:white;'><img src="images/facebook-removebg-preview.png" style="width:25px;" /></a>
+                  <a href="http://www.twitter.com/bms4brijmohan" style='color:white;'><img src="images/twitter-removebg-preview.png" style="width:30px;" /></a>
                  <!-- <a href="#" class="fa fa-linkedin p-2"></a> -->
-                  <a href="http://www.instagram.com/bms.brijmohan/" class="fa fa-instagram p-2 quick" style='color:white;'></a>
+                  <a href="http://www.instagram.com/bms.brijmohan/" style='color:white;'><img src="images/instagram-removebg-preview.png" style="width:30px;" /></a>
     
                 </p>
         </div>

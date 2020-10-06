@@ -476,8 +476,17 @@ function signup(){
 		else
 		{
 			 $users->insert();
-		    /* header("Location:index.php?action=login");
-		     exit;*/
+			 $content = "<html><body><img src='http://munshiji.org/images/logo.png' width='200px;' />
+							<p>Hello, </p>
+							<p>Thank you for joining <a href='http://munshiji.org/index.php?action=home'>Munshiji.org</a>. We've put alot of effort into it and hope that you'll like it!</p>
+							<p>You're now one step closer to becoming a munshi, <a href='http://munshiji.org/index.php?action=login'>click here</a> to login and dive in to our courses and services available just for you.</p>
+							<p>Let us know if we can help you further,</p>
+							<p>If you liked our concept, why not share it on <a href='https://www.facebook.com/brijmohan.sharma.9400'>facebook.</a> I'm sure they would appreciate it.</p>
+							</body></html>";
+							$title = "Welcome";
+			sendEmail(1,$_POST['user_email_address'],$content,$title);				
+		    header("Location:index.php?action=login");
+		     exit;
 		}
 
 		}
@@ -608,6 +617,11 @@ function addcourses(){
 	else
 	{
 	 Courses::addaCourse((int)$_GET['course_id']);
+	 $content = "<html><body><img src='http://munshiji.org/images/logo.png' width='200px;' />
+	 <p>Thank you for adding our course. You can view and enjoy your course by <a href='http://munshiji.org/index.php?action=yourcourses'>clicking here</a>. Thank you for being a part of munshiji.</p></body></html>";
+	 $results['user_email_address'] = Admins::getUsersById($_SESSION['user_id']);
+	 $title = "Thank you for adding our course";
+	 sendEmail(2,$results['user_email_address']->user_email_address,$content,$title);
 	 successfree();
 	 return;
 	}
@@ -768,6 +782,26 @@ function failurepayment(){
 
 //Users--------------------------
 
+function sendEmail($flag,$to,$content,$title){
+		
+		$headers = "MIME-Version: 1.0" . "\r\n";
+       $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+
+      // More headers
+      $headers .= 'From: <coolzsm36@gmail.com>';
+	  //$to = $this->email;
+	  switch ($flag){
+		  case 1:
+		  $msg = $content;
+		  break;
+		  case 2:
+		  $msg = $content;
+		  break;
+	  }
+	  
+	  mail($to,$title,$msg,$headers);
+	  
+	}
 
 
 //Login
